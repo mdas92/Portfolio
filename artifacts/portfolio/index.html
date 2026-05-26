@@ -8,6 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" rel="stylesheet">
+    <script>
+      // Restore path from GitHub Pages 404 redirect
+      (function(l) {
+        if (l.search[1] === 'p' && l.search[2] === '=') {
+          var parts = l.search.slice(3).split('~s~');
+          var restoredPath = parts[0].replace(/~and~/g, '&');
+          var restoredSearch = parts[1] ? '?' + parts[1].replace(/~and~/g, '&') : '';
+          window.history.replaceState(null, null, restoredPath + restoredSearch + l.hash);
+        }
+      }(window.location));
+    </script>
   </head>
   <body>
     <div id="root"></div>
