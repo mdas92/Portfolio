@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 export function Navbar() {
   const [isHome] = useRoute("/");
-  const [isJourney] = useRoute("/journey");
   const [isWork, params] = useRoute("/work/*?");
 
   return (
@@ -17,14 +16,6 @@ export function Navbar() {
             About
           </Link>
           {isHome && (
-            <motion.div layoutId="nav-indicator" className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary" />
-          )}
-        </li>
-        <li className="relative group">
-          <Link href="/journey" className={`transition-colors duration-300 ${isJourney ? "text-primary" : "text-foreground hover:text-primary"}`}>
-            Journey
-          </Link>
-          {isJourney && (
             <motion.div layoutId="nav-indicator" className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary" />
           )}
         </li>

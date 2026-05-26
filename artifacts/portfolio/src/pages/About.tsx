@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { journey } from "../data/portfolio";
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -84,82 +85,45 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* Professional values */}
+      {/* Journey */}
       <motion.div
         variants={fadeUp}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="border-t border-border/50 pt-16 mb-24 grid md:grid-cols-12 gap-8 md:gap-16"
+        className="border-t border-border/50 pt-16"
       >
-        <div className="md:col-span-3">
-          <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
-            What I believe
-          </span>
-        </div>
-        <div className="md:col-span-8 flex flex-col gap-8">
-          <p className="text-lg text-foreground/70 leading-relaxed font-light">
-            A few principles that shape how I approach every project — placeholder content, to be updated.
-          </p>
-
-          <div className="flex flex-col gap-px bg-border/50 border border-border/50">
-            {[
-              {
-                heading: "Content is a design decision",
-                body: "Words aren't what you add after the layout is done. The best work happens when content and design are figured out together — which means I push to be in the room early."
-              },
-              {
-                heading: "Clarity is kindness",
-                body: "Jargon, hedging, and over-explaining are all forms of noise. I write to be understood on the first read, by the person with the least context in the room."
-              },
-              {
-                heading: "Research before writing",
-                body: "Good content starts with knowing who you're talking to, what they need, and what they already believe. I'd rather spend more time on the brief than redo the work later."
-              },
-              {
-                heading: "Small words, big ideas",
-                body: "Complexity in the thinking is fine. Complexity in the output is a failure. The harder the concept, the simpler the language needs to be."
-              }
-            ].map(({ heading, body }) => (
-              <div key={heading} className="bg-background p-6 md:p-8 flex flex-col sm:flex-row gap-4 sm:gap-8">
-                <h3 className="text-base font-medium text-foreground sm:w-52 shrink-0">{heading}</h3>
-                <p className="text-base text-foreground/60 leading-relaxed font-light">{body}</p>
+        <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-12">
+          Career
+        </span>
+        <div className="flex flex-col border-t border-border/50">
+          {journey.map((item, i) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: i * 0.08 }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
+            >
+              <div className="md:col-span-3">
+                <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">
+                  {item.date}
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Career arc */}
-      <motion.div
-        variants={fadeUp}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="border-t border-border/50 pt-16 grid md:grid-cols-12 gap-8 md:gap-16"
-      >
-        <div className="md:col-span-3">
-          <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
-            Background
-          </span>
-        </div>
-        <div className="md:col-span-8 flex flex-col gap-4">
-          {[
-            { period: "2022 – Present", role: "Lead UX Writer → Content Strategist", place: "PayU Finance (LazyPay) · current role" },
-            { period: "2021 – 2022", role: "Senior UX Writer", place: "PayU Finance — first UX Writer in the org" },
-            { period: "2020 – 2021", role: "UX Writer & Copywriter", place: "Freelance" },
-            { period: "2019 – 2020", role: "Senior UX Designer", place: "GoIbibo" },
-            { period: "2014 – 2019", role: "Software Engineer → UX Designer", place: "Adobe · 5 years" },
-          ].map(({ period, role, place }) => (
-            <div key={period} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-4 border-b border-border/30 last:border-0">
-              <span className="text-[11px] uppercase tracking-[0.15em] text-muted-foreground w-28 shrink-0">{period}</span>
-              <div>
-                <span className="text-base font-medium text-foreground">{role}</span>
-                <span className="text-sm text-foreground/50 ml-2">— {place}</span>
+              <div className="md:col-span-8 flex flex-col gap-2">
+                <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">
+                  {item.role}
+                </h3>
+                <div className="text-muted-foreground font-medium mb-2">
+                  {item.company}
+                </div>
+                <p className="text-foreground/80 leading-relaxed font-light">
+                  {item.description}
+                </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.div>
