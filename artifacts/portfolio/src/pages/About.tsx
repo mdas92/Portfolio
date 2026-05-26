@@ -18,22 +18,22 @@ export default function About() {
       <div className="flex items-center gap-3 mb-8 md:mb-12">
         <div className="w-8 h-[2px] bg-primary" />
         <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-foreground">
-          Content Strategist & Product Thinker
+          hi, i'm mohana 👋
         </span>
       </div>
 
       <h1 className="text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] leading-[0.85] tracking-[-0.04em] font-serif mb-12">
-        Hello, I'm <br className="hidden md:block" /> Mohana<span className="text-primary">.</span>
+        content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> product thinker<span className="text-primary">.</span>
       </h1>
 
       {/* Hero grid */}
       <div className="grid md:grid-cols-12 gap-12 md:gap-24 items-start mt-8 mb-24">
         <div className="md:col-span-6 lg:col-span-5 flex flex-col gap-8">
           <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-light font-sans">
-            Content strategist and product thinker with 10+ years across engineering, design, and writing. I help teams say the right thing — to the right person, in the right moment.
+            With 12 years of experience across engineering, design and writing, I help craft a holistic customer experience through content strategy, product positioning, and value frameworks.
           </p>
           <p className="text-lg text-foreground/60 leading-relaxed font-light">
-            Based in Tokyo, Japan.
+            Based in Tokyo, JP (fully remote)
           </p>
           <div>
             <a
