@@ -1,0 +1,125 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "DM Sans",
+      "role": "body"
+    },
+    {
+      "family": "Fraunces",
+      "role": "heading"
+    }
+  ],
+  "colors": {
+    "primary": "#E8703A",
+    "accent": "#E8703A",
+    "background": "#FFFCF5",
+    "textPrimary": "#3D2817",
+    "link": "#3D2817"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "DM Sans",
+      "heading": "Fraunces"
+    },
+    "fontStacks": {
+      "heading": [
+        "Fraunces",
+        "Georgia",
+        "serif"
+      ],
+      "body": [
+        "DM Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "DM Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "64px",
+      "h2": "64px",
+      "body": "18px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "4px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#E8703A",
+      "textColor": "#FFFCF5",
+      "borderColor": "#3D2817",
+      "borderRadius": "999px",
+      "borderRadiusCorners": {
+        "topLeft": "999px",
+        "topRight": "999px",
+        "bottomRight": "999px",
+        "bottomLeft": "999px"
+      },
+      "shadow": "rgb(61, 40, 23) 3px 3px 0px 0px"
+    },
+    "buttonSecondary": {
+      "background": "#FFFCF5",
+      "textColor": "#3D2817",
+      "borderColor": "#3D2817",
+      "borderRadius": "999px",
+      "borderRadiusCorners": {
+        "topLeft": "999px",
+        "topRight": "999px",
+        "bottomRight": "999px",
+        "bottomLeft": "999px"
+      },
+      "shadow": "rgb(61, 40, 23) 3px 3px 0px 0px"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": null,
+    "ogImage": null
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "See my work →",
+      "reasoning": "Button #0 ('See my work →') is the primary CTA due to its vibrant orange background (#E8703A), which is a strong brand color, and its action-oriented text encouraging users to view the portfolio."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Let's cook",
+      "reasoning": "Button #3 ('Let's cook') is selected as the secondary CTA because it has a different background color (#FFFCF5) and serves as a less prominent action, fitting the secondary role."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "professionals in tech and product management"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": false,
+      "llmSucceeded": false,
+      "finalSource": "none"
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
