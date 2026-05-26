@@ -17,4 +17,10 @@ title = "Portfolio Design Spec — Markdown"
 id = "yMbWJOka_t5MvXtpoJMv1"
 uri = "file://portfolio-design-spec.tar.gz"
 type = "unspecified"
-title = "Portfolio Design Spec — Full Package (Markdown + HTML viewer)"
+title = "Full Package — PDF + Markdown + HTML"
+
+[[outputs]]
+id = "tgvnEUwf8qDp062YnMyLP"
+uri = "file://portfolio-design-spec.pdf"
+type = "pdf"
+title = "Portfolio Design Spec — PDF"

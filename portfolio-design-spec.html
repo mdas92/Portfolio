@@ -3,1050 +3,897 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Website — Design Specification</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <title>Portfolio Design Spec — Concept B</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink: #111827;
-      --ink-muted: #6b7280;
-      --ink-faint: #9ca3af;
-      --surface: #ffffff;
-      --surface-alt: #f9fafb;
-      --surface-alt2: #f3f4f6;
-      --border: #e5e7eb;
-      --border-strong: #d1d5db;
-      --accent-a: #ccff00;
-      --accent-b: #7B856A;
-      --accent-c: #e07a5f;
-      --font-sans: 'Inter', system-ui, sans-serif;
-      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --bg:           #FAFAFA;
+      --ink:          #111111;
+      --muted:        rgba(17,17,17,0.6);
+      --accent:       #FF4530;
+      --accent-dark:  #E03D2A;
+      --white:        #FFFFFF;
+      --border:       rgba(17,17,17,0.12);
+      --code-bg:      #F0EFED;
+      --font-display: 'Fraunces', serif;
+      --font-body:    'DM Sans', sans-serif;
     }
 
-    html { font-size: 16px; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
-      font-family: var(--font-sans);
+      background: var(--bg);
       color: var(--ink);
-      background: var(--surface);
-      line-height: 1.65;
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 64px 48px;
-    }
-
-    /* ── Cover ── */
-    .cover {
-      min-height: 220px;
-      border-bottom: 2px solid var(--ink);
-      padding-bottom: 40px;
-      margin-bottom: 48px;
-    }
-    .cover-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 16px;
-    }
-    .cover h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .cover-meta {
-      font-size: 0.875rem;
-      color: var(--ink-muted);
-      display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-    .cover-meta span { display: flex; align-items: center; gap: 6px; }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
+    /* ── Print banner ────────────────────────────────── */
+    .print-banner {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      font-size: 0.8125rem;
       font-weight: 500;
-      color: #92400e;
-      background: #fef3c7;
-      border: 1px solid #fde68a;
-      border-radius: 20px;
-      padding: 4px 12px;
-      margin-bottom: 32px;
+      letter-spacing: 0.03em;
     }
-    .status-pill::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; display: block; }
+    @media print { .print-banner { display: none; } }
 
-    /* ── TOC ── */
-    .toc {
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 24px 28px;
-      margin-bottom: 56px;
+    /* ── Layout ──────────────────────────────────────── */
+    .page { max-width: 860px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+    /* ── Doc header ──────────────────────────────────── */
+    .doc-header { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem; margin-bottom: 3.5rem; }
+    .doc-label {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem;
     }
-    .toc h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px; }
-    .toc ol { padding-left: 20px; }
-    .toc li { font-size: 0.9rem; padding: 3px 0; color: var(--ink); }
-    .toc li a { color: var(--ink); text-decoration: none; }
-    .toc li a:hover { text-decoration: underline; }
+    .doc-label::before {
+      content: ''; display: block;
+      width: 8px; height: 2px; background: var(--accent); flex-shrink: 0;
+    }
+    .doc-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+    .doc-title em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--accent);
+    }
+    .doc-meta { font-size: 0.875rem; color: var(--muted); margin-top: 1rem; }
 
-    /* ── Typography ── */
+    /* ── Section headings ────────────────────────────── */
     h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 500;
       letter-spacing: -0.02em;
-      margin-top: 64px;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--ink);
-      page-break-after: avoid;
-    }
-    h2 .section-num {
-      color: var(--ink-muted);
-      font-weight: 400;
-      margin-right: 8px;
+      margin-top: 3.5rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
     }
     h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-top: 36px;
-      margin-bottom: 12px;
-      page-break-after: avoid;
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 500;
+      font-style: italic;
+      margin-top: 2.25rem;
+      margin-bottom: 0.75rem;
     }
     h4 {
-      font-size: 0.875rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-top: 24px;
-      margin-bottom: 10px;
+      color: var(--muted);
+      margin-top: 1.75rem;
+      margin-bottom: 0.5rem;
     }
-    p {
-      font-size: 0.9375rem;
-      color: #374151;
-      margin-bottom: 14px;
-    }
-    ul, ol { padding-left: 20px; margin-bottom: 16px; }
-    li { font-size: 0.9375rem; color: #374151; padding: 2px 0; }
 
-    /* ── Concept Cards ── */
-    .concept-card {
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      page-break-inside: avoid;
-    }
-    .concept-header {
-      padding: 16px 20px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    /* ── Body text ───────────────────────────────────── */
+    p { margin-bottom: 1rem; font-weight: 300; color: var(--ink); }
+
+    /* ── Tables ──────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; margin: 1.25rem 0 1.75rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    thead th {
+      text-align: left; padding: 0.625rem 1rem;
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
       border-bottom: 1px solid var(--border);
     }
-    .concept-dot {
-      width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
-    }
-    .concept-header h3 { margin: 0; font-size: 1rem; font-weight: 600; }
-    .concept-header .tagline { font-size: 0.8125rem; color: var(--ink-muted); margin-left: auto; }
-    .concept-body { padding: 20px 20px 4px; }
-
-    .concept-a .concept-header { background: #050505; }
-    .concept-a .concept-header h3 { color: #f4f4f4; }
-    .concept-a .concept-header .tagline { color: #ccff00; }
-    .concept-a .concept-dot { background: #ccff00; }
-
-    .concept-b .concept-header { background: #F9F8F6; border-bottom-color: #D4D0C5; }
-    .concept-b .concept-header h3 { color: #2D2A26; }
-    .concept-b .concept-header .tagline { color: #7B856A; }
-    .concept-b .concept-dot { background: #7B856A; }
-
-    .concept-c .concept-header { background: #0a192f; }
-    .concept-c .concept-header h3 { color: #f8f7f5; }
-    .concept-c .concept-header .tagline { color: #e07a5f; }
-    .concept-c .concept-dot { background: #e07a5f; }
-
-    /* ── Tables ── */
-    .table-wrap { overflow-x: auto; margin-bottom: 20px; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
-    }
-    thead tr {
-      background: var(--surface-alt2);
-      border-bottom: 1px solid var(--border-strong);
-    }
-    th {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      text-align: left;
-      padding: 10px 14px;
-      white-space: nowrap;
-    }
-    td {
-      padding: 10px 14px;
+    tbody td {
+      padding: 0.625rem 1rem;
       border-bottom: 1px solid var(--border);
-      color: #374151;
       vertical-align: top;
+      font-weight: 300;
     }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: var(--surface-alt); }
-
-    /* Color swatches in tables */
-    .swatch {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-    }
-    .swatch-dot {
-      width: 14px; height: 14px; border-radius: 3px;
-      border: 1px solid rgba(0,0,0,0.1);
-      flex-shrink: 0;
-    }
-
-    /* ── Code blocks ── */
-    pre {
-      background: #0f172a;
-      color: #e2e8f0;
-      border-radius: 8px;
-      padding: 20px 22px;
-      overflow-x: auto;
-      font-family: var(--font-mono);
-      font-size: 0.8125rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      page-break-inside: avoid;
-    }
+    tbody tr:last-child td { border-bottom: none; }
     code {
-      font-family: var(--font-mono);
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.8125em;
+      background: var(--code-bg);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+      color: var(--accent-dark);
+    }
+
+    /* ── Code blocks ─────────────────────────────────── */
+    pre {
+      background: #1a1a1a;
+      color: #e8e6e3;
+      border-radius: 8px;
+      padding: 1.375rem 1.5rem;
+      overflow-x: auto;
+      margin: 1.25rem 0 1.75rem;
       font-size: 0.8125rem;
-      background: var(--surface-alt2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2px 6px;
-      color: #be185d;
+      line-height: 1.65;
     }
     pre code {
       background: none;
-      border: none;
-      padding: 0;
       color: inherit;
-      border-radius: 0;
-    }
-    .code-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 6px;
+      padding: 0;
+      font-size: inherit;
     }
 
-    /* ── Site map / tree ── */
-    .sitemap {
-      background: var(--surface-alt);
+    /* ── Swatch row ──────────────────────────────────── */
+    .swatches { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1.25rem 0 1.75rem; }
+    .swatch {
+      display: flex; flex-direction: column; align-items: center; gap: 0.375rem;
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.04em;
+      text-align: center;
+    }
+    .swatch-color {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 1px solid var(--border);
+    }
+    .swatch-label { color: var(--muted); }
+    .swatch-hex { color: var(--ink); font-weight: 500; }
+
+    /* ── Motif cards ─────────────────────────────────── */
+    .motif-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem; margin: 1.25rem 0 1.75rem;
+    }
+    .motif-card {
+      background: white;
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 20px 24px;
-      font-family: var(--font-mono);
-      font-size: 0.8125rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      color: var(--ink);
+      padding: 1.25rem;
+    }
+    .motif-card-name {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+    }
+    .motif-card p { font-size: 0.875rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    /* ── Motif demos ─────────────────────────────────── */
+    .motif-demo { margin: 0.75rem 0 0.5rem; }
+
+    .demo-dash { display: inline-flex; align-items: center; gap: 0.625rem; }
+    .demo-dash::before { content: ''; display: block; width: 8px; height: 2px; background: var(--accent); }
+    .demo-dash span { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+
+    .demo-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: white;
+      padding: 0.5rem 1.25rem; border-radius: 9999px;
+      font-size: 0.8125rem; font-weight: 500;
     }
 
-    /* ── Page sections ── */
-    .page-section {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 20px;
-      overflow: hidden;
-      page-break-inside: avoid;
+    .demo-tag-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .demo-tag {
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.25rem 0.625rem;
+      border: 1px solid var(--border); border-radius: 4px; color: var(--muted);
     }
-    .page-section-header {
-      background: var(--surface-alt2);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 18px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .page-section-route {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--ink-muted);
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 2px 8px;
-      margin-left: auto;
-    }
-    .page-section-body { padding: 16px 18px 4px; }
+    .demo-tag.active { border-color: var(--accent); color: var(--accent); }
 
-    .section-block {
-      background: var(--surface-alt);
-      border-left: 3px solid var(--border-strong);
-      border-radius: 0 4px 4px 0;
-      padding: 10px 14px;
-      margin-bottom: 10px;
+    /* ── Site map ────────────────────────────────────── */
+    .sitemap { margin: 1.25rem 0 1.75rem; }
+    .sitemap-route {
+      display: flex; align-items: baseline; gap: 1rem;
+      padding: 0.625rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
     }
-    .section-block-name {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-muted);
-      margin-bottom: 6px;
-    }
-    .section-block ul { margin: 0; padding-left: 16px; }
-    .section-block li { font-size: 0.8125rem; color: #4b5563; padding: 1px 0; }
+    .sitemap-route:last-child { border-bottom: none; }
+    .sitemap-path { font-family: monospace; font-size: 0.8125rem; color: var(--accent-dark); min-width: 10rem; }
+    .sitemap-desc { color: var(--muted); font-weight: 300; font-size: 0.875rem; }
 
-    /* ── Component cards ── */
-    .component-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+    /* ── Component cards ─────────────────────────────── */
     .component-card {
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 14px 16px;
-      page-break-inside: avoid;
+      overflow: hidden;
+      margin: 1.25rem 0;
     }
-    .component-card h4 { margin-top: 0; margin-bottom: 8px; }
-    .component-card .pages-used {
-      font-size: 11px;
-      color: var(--ink-faint);
-      margin-top: 8px;
-      font-style: italic;
+    .component-card-header {
+      background: white;
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .prop-row {
-      display: flex;
-      gap: 8px;
-      align-items: baseline;
-      font-size: 0.8125rem;
-      padding: 3px 0;
+    .component-card-name {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
+    }
+    .component-card-body { padding: 0; }
+    .component-card-body pre { margin: 0; border-radius: 0; }
+
+    /* ── File tree ───────────────────────────────────── */
+    .file-tree {
+      background: #1a1a1a; color: #a8c6a0;
+      border-radius: 8px; padding: 1.375rem 1.5rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8125rem; line-height: 1.8;
+      margin: 1.25rem 0 1.75rem;
+      overflow-x: auto;
+    }
+    .file-tree .dir { color: #7ec8e3; }
+    .file-tree .comment { color: #666; }
+
+    /* ── Token preview ───────────────────────────────── */
+    .token-preview {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    @media (max-width: 600px) { .token-preview { grid-template-columns: 1fr; } }
+    .token-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.25rem;
+    }
+    .token-card-label {
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem;
+    }
+    .type-specimen { font-family: var(--font-display); line-height: 0.9; color: var(--ink); }
+    .type-specimen.italic { font-style: italic; font-weight: 300; }
+
+    /* ── Hero preview ────────────────────────────────── */
+    .hero-preview {
+      border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; background: #FAFAFA;
+      margin: 1.5rem 0 2rem;
+    }
+    .hero-preview-nav {
+      padding: 1.25rem 1.75rem;
+      display: flex; justify-content: space-between; align-items: center;
       border-bottom: 1px solid var(--border);
     }
-    .prop-row:last-child { border-bottom: none; }
-    .prop-name { font-family: var(--font-mono); font-size: 11px; color: #be185d; min-width: 100px; }
-    .prop-type { font-family: var(--font-mono); font-size: 11px; color: #0369a1; min-width: 80px; }
-    .prop-desc { font-size: 11px; color: #6b7280; }
+    .hero-preview-logo {
+      font-family: var(--font-display); font-style: italic;
+      font-weight: 600; font-size: 1.125rem;
+    }
+    .hero-preview-links {
+      display: flex; gap: 1.5rem; list-style: none;
+      font-size: 0.75rem; font-weight: 500; color: var(--muted);
+    }
+    .hero-preview-body { padding: 2rem 1.75rem 2.5rem; }
+    .hero-preview-label {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ink); margin-bottom: 1.25rem;
+    }
+    .hero-preview-label::before {
+      content: ''; display: block; width: 8px; height: 2px; background: var(--accent);
+    }
+    .hero-preview-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 0.88;
+      letter-spacing: -0.04em;
+    }
+    .hero-preview-h1 .line1 { display: block; font-weight: 500; }
+    .hero-preview-h1 .line2 { display: block; font-style: italic; font-weight: 300; }
+    .hero-preview-h1 .coral { color: var(--accent); font-style: normal; font-weight: 400;
+      text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+    .hero-preview-bio {
+      margin-top: 2rem; font-size: 0.9375rem; font-weight: 300;
+      color: var(--muted); max-width: 28rem; margin-bottom: 1.5rem;
+    }
+    .hero-preview-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: white;
+      padding: 0.625rem 1.5rem; border-radius: 9999px;
+      font-size: 0.8125rem; font-weight: 500;
+    }
 
-    /* ── Stack table ── */
-    .stack-table td:first-child { font-weight: 500; }
-    .stack-table td:nth-child(2) { color: #059669; font-weight: 500; }
-    .stack-table td:nth-child(3) { color: var(--ink-muted); font-size: 0.8125rem; }
+    /* ── Utilities ───────────────────────────────────── */
+    .accent { color: var(--accent); }
+    ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.25rem; font-weight: 300; }
+    strong { font-weight: 500; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
 
-    /* ── Divider ── */
-    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
-
-    /* ── Print styles ── */
     @media print {
-      body { font-size: 14px; }
-      .page { padding: 40px 40px; max-width: 100%; }
-      pre { font-size: 11px; }
-      h2 { page-break-before: always; }
-      h2:first-of-type { page-break-before: avoid; }
-      .no-break { page-break-inside: avoid; }
-      .toc { page-break-after: always; }
-      a { text-decoration: none; color: inherit; }
+      body { font-size: 11pt; }
+      .page { padding: 0; }
+      pre { background: #f5f5f5 !important; color: #111 !important; border: 1px solid #ddd; }
+      .file-tree { background: #f5f5f5 !important; color: #333 !important; }
+      h2 { page-break-before: auto; }
+      .component-card, .motif-card { break-inside: avoid; }
     }
-
-    /* ── Print banner ── */
-    .print-banner {
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 0.875rem;
-      color: #166534;
-      margin-bottom: 40px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .print-banner strong { font-weight: 600; }
-    @media print { .print-banner { display: none; } }
   </style>
 </head>
 <body>
+
+<div class="print-banner">
+  To save as PDF: open this file in Chrome or Safari → File → Print → Save as PDF
+</div>
+
 <div class="page">
 
-  <!-- Cover -->
-  <div class="cover">
-    <div class="cover-label">Design Specification Document</div>
-    <h1>Portfolio Website</h1>
-    <div class="status-pill">Branding direction pending approval — all 3 options documented</div>
-    <div class="cover-meta">
-      <span>📅 May 26, 2026</span>
-      <span>📄 Sections: 6</span>
-      <span>🎨 Concepts: A, B, C</span>
-    </div>
-  </div>
+  <!-- ── Doc Header ── -->
+  <header class="doc-header">
+    <div class="doc-label">Design Specification</div>
+    <h1 class="doc-title">Portfolio Website<br><em>Fraunces + Vivid Coral</em></h1>
+    <div class="doc-meta">Approved direction: Concept B &nbsp;·&nbsp; Version 1.0 &nbsp;·&nbsp; May 2026</div>
+  </header>
 
-  <!-- Print tip -->
-  <div class="print-banner">
-    <span>💡</span>
-    <div><strong>Save as PDF:</strong> Press <strong>Ctrl+P</strong> (or ⌘P on Mac) → Select "Save as PDF" → Set margins to "None" or "Minimum" for best results.</div>
-  </div>
-
-  <!-- TOC -->
-  <div class="toc">
-    <h2>Contents</h2>
-    <ol>
-      <li><a href="#s1">Branding Options — A, B, C</a></li>
-      <li><a href="#s2">Site Map</a></li>
-      <li><a href="#s3">Page-by-Page Layout Outline</a></li>
-      <li><a href="#s4">Component Inventory</a></li>
-      <li><a href="#s5">Suggested File Structure</a></li>
-      <li><a href="#s6">Implementation Notes</a></li>
-    </ol>
-  </div>
-
-  <!-- ─────────────────────────────────────────── -->
-  <!-- Section 1: Branding                         -->
-  <!-- ─────────────────────────────────────────── -->
-  <h2 id="s1"><span class="section-num">1.</span> Branding Options</h2>
-  <p>Three distinct visual directions were explored. Review them on the canvas, choose one, and use the corresponding values in the <a href="#s5">file structure section</a>.</p>
-
-  <!-- Concept A -->
-  <div class="concept-card concept-a">
-    <div class="concept-header">
-      <div class="concept-dot"></div>
-      <h3>Option A — Dark &amp; Stark</h3>
-      <span class="tagline">Bold · High-contrast · Brutalist</span>
-    </div>
-    <div class="concept-body">
-
-      <h4>Color Palette</h4>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
-          <tbody>
-            <tr><td><code>--color-bg</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#050505;border-color:#555"></div>#050505</div></td><td>Page background</td></tr>
-            <tr><td><code>--color-surface</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#0f0f0f;border-color:#555"></div>#0f0f0f</div></td><td>Card / panel backgrounds</td></tr>
-            <tr><td><code>--color-text-primary</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#f4f4f4"></div>#f4f4f4</div></td><td>Body text, headings</td></tr>
-            <tr><td><code>--color-text-secondary</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#a3a3a3"></div>#a3a3a3</div></td><td>Muted / supporting text</td></tr>
-            <tr><td><code>--color-accent</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#ccff00"></div>#ccff00</div></td><td>CTA, highlights, selection bg</td></tr>
-            <tr><td><code>--color-border</code></td><td><code>rgba(255,255,255,0.05)</code></td><td>Subtle dividers</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>Typography</h4>
-      <div class="code-label">Google Fonts import</div>
-      <pre>https://fonts.googleapis.com/css2?family=Syne:wght@400..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap</pre>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Role</th><th>Font</th><th>Weight</th><th>Size (desktop)</th><th>Line-height</th><th>Tracking</th></tr></thead>
-          <tbody>
-            <tr><td>Hero H1</td><td>Syne</td><td>800</td><td>7rem – 8rem</td><td>0.9</td><td>−0.04em</td></tr>
-            <tr><td>Section H2</td><td>Syne</td><td>700</td><td>3rem</td><td>1.1</td><td>−0.02em</td></tr>
-            <tr><td>H3 / Eyebrow</td><td>Space Grotesk</td><td>600</td><td>1rem</td><td>1.4</td><td>+0.1em (caps)</td></tr>
-            <tr><td>Body</td><td>Space Grotesk</td><td>300</td><td>1.125rem</td><td>1.6</td><td>0</td></tr>
-            <tr><td>Nav links</td><td>Space Grotesk</td><td>500</td><td>0.875rem</td><td>1</td><td>+0.05em</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>Style Notes</h4>
-      <ul>
-        <li>Background: large radial blur blobs — <code>#ccff00</code> at 5% opacity + white at 5% opacity, blurred 100–120px</li>
-        <li>Vertical hairline centered on page: <code>1px, rgba(255,255,255,0.05)</code></li>
-        <li>Buttons: solid rectangle, <strong>no border-radius</strong>, white fill → <code>#ccff00</code> on hover (300ms transition)</li>
-        <li>Nav links: <code>#a3a3a3</code> → <code>#f4f4f4</code> on hover</li>
-        <li>Decorative metadata label (coordinates, year) in mono bottom-right, very faint</li>
-        <li>Selection: <code>#ccff00</code> background, black text</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Concept B -->
-  <div class="concept-card concept-b">
-    <div class="concept-header">
-      <div class="concept-dot"></div>
-      <h3>Option B — Soft &amp; Airy</h3>
-      <span class="tagline">Refined · Breathable · Classical</span>
-    </div>
-    <div class="concept-body">
-
-      <h4>Color Palette</h4>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
-          <tbody>
-            <tr><td><code>--color-bg</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#F9F8F6"></div>#F9F8F6</div></td><td>Page background (warm cream)</td></tr>
-            <tr><td><code>--color-surface</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#F3F1EC"></div>#F3F1EC</div></td><td>Card / panel backgrounds</td></tr>
-            <tr><td><code>--color-text-primary</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#2D2A26"></div>#2D2A26</div></td><td>Body text, headings</td></tr>
-            <tr><td><code>--color-text-secondary</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#5A5753"></div>#5A5753</div></td><td>Muted / supporting text</td></tr>
-            <tr><td><code>--color-accent</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#7B856A"></div>#7B856A</div></td><td>Italic subtitles, arrow icon, underline</td></tr>
-            <tr><td><code>--color-divider</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#D4D0C5"></div>#D4D0C5</div></td><td>Horizontal rules, hairlines</td></tr>
-            <tr><td><code>--color-selection</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#E3E0D8"></div>#E3E0D8</div></td><td>Text selection background</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>Typography</h4>
-      <div class="code-label">Google Fonts import</div>
-      <pre>https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:opsz,wght@9..40,300..400&amp;display=swap</pre>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Role</th><th>Font</th><th>Weight / Style</th><th>Size (desktop)</th><th>Line-height</th></tr></thead>
-          <tbody>
-            <tr><td>Hero H1</td><td>Libre Baskerville</td><td>400 Regular</td><td>5rem – 7rem</td><td>1.1</td></tr>
-            <tr><td>Subtitle / Role</td><td>Libre Baskerville</td><td>400 Italic</td><td>2rem – 3rem</td><td>1.2</td></tr>
-            <tr><td>Section H2</td><td>Libre Baskerville</td><td>700</td><td>2rem</td><td>1.2</td></tr>
-            <tr><td>Body</td><td>DM Sans</td><td>300</td><td>1.125rem</td><td>1.7</td></tr>
-            <tr><td>Nav / CTA</td><td>DM Sans</td><td>400</td><td>0.8125rem</td><td>1</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>Style Notes</h4>
-      <ul>
-        <li>Hero: <strong>centered layout</strong>, constrained max-width <code>48rem</code>, centered text</li>
-        <li>Vertical hairline divider: <code>1px wide, 64px tall, #D4D0C5</code>, centered, between headline and body copy</li>
-        <li>Entrance animation: <code>fade-in + slide-in-from-bottom</code>, 1000ms, on page load</li>
-        <li>CTA: text link with animated underline border (500ms), arrow in sage accent</li>
-        <li>Nav: all-caps, wide tracking (<code>0.15em</code>), bottom-border underline on hover (500ms)</li>
-        <li>Nav constrained max-width <code>72rem</code>, centered, generous top padding</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- Concept C -->
-  <div class="concept-card concept-c">
-    <div class="concept-header">
-      <div class="concept-dot"></div>
-      <h3>Option C — Modern Editorial</h3>
-      <span class="tagline">Grid-forward · Magazine · Opinionated</span>
-    </div>
-    <div class="concept-body">
-
-      <h4>Color Palette</h4>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Token</th><th>Value</th><th>Usage</th></tr></thead>
-          <tbody>
-            <tr><td><code>--color-bg</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#f8f7f5"></div>#f8f7f5</div></td><td>Page background</td></tr>
-            <tr><td><code>--color-text-primary</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#0a192f"></div>#0a192f</div></td><td>Body text, headings (deep navy)</td></tr>
-            <tr><td><code>--color-text-secondary</code></td><td><code>rgba(10,25,47,0.5)</code></td><td>Labels, muted content</td></tr>
-            <tr><td><code>--color-accent</code></td><td><div class="swatch"><div class="swatch-dot" style="background:#e07a5f"></div>#e07a5f</div></td><td>Terracotta — italic display, CTA, nav underline</td></tr>
-            <tr><td><code>--color-border</code></td><td><code>rgba(10,25,47,0.2)</code></td><td>Nav separator, column divider</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>Typography</h4>
-      <div class="code-label">Google Fonts import</div>
-      <pre>https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap</pre>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Role</th><th>Font</th><th>Weight / Style</th><th>Size (desktop)</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td>Display Sans</td><td>Space Grotesk</td><td>700 Bold</td><td>6rem – 7rem</td><td>Uppercase, tight tracking</td></tr>
-            <tr><td>Display Italic</td><td>Playfair Display</td><td>400 Italic</td><td>6.5rem – 7.5rem</td><td>Terracotta, normal-case</td></tr>
-            <tr><td>Display Outline</td><td>Space Grotesk</td><td>700 Bold</td><td>6rem – 7rem</td><td><code>-webkit-text-stroke: 2px #0a192f</code></td></tr>
-            <tr><td>Eyebrow H3</td><td>Space Grotesk</td><td>700</td><td>0.625rem</td><td>Uppercase, wide tracking</td></tr>
-            <tr><td>Body</td><td>Space Grotesk</td><td>300</td><td>1.125rem</td><td>Navy at 80% opacity</td></tr>
-            <tr><td>Nav name</td><td>Playfair Display</td><td>400 Italic</td><td>1.5rem</td><td>Left-side of nav</td></tr>
-            <tr><td>Nav links</td><td>Space Grotesk</td><td>500</td><td>0.75rem</td><td>Uppercase, wide tracking</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>Layout Grid</h4>
-      <ul>
-        <li>Desktop: 12-column CSS grid — hero content <code>col-span-8</code>, right sidebar <code>col-span-4</code></li>
-        <li>Right sidebar: separated by left border, contains status + clients list + image block</li>
-        <li>Image block: navy bg, <code>mix-blend-luminosity</code>, terracotta inner-border inset, zoom on hover</li>
-      </ul>
-
-      <h4>Style Notes</h4>
-      <ul>
-        <li>Nav: full-width, <strong>bottom border separator</strong>, no max-width constraint</li>
-        <li>Nav left: italic serif name + terracotta <code>48px</code> horizontal rule + terracotta discipline label</li>
-        <li>Hero H1 mixes three typographic treatments in one element: bold uppercase sans, italic terracotta serif, stroke-outline text</li>
-        <li>CTA: uppercase bold link with terracotta underline → navy underline on hover</li>
-        <li>Hover underlines: animated width transition from <code>0 → 100%</code> via pseudo-element</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ─────────────────────────────────────────── -->
-  <!-- Section 2: Site Map                         -->
-  <!-- ─────────────────────────────────────────── -->
-  <h2 id="s2"><span class="section-num">2.</span> Site Map</h2>
-  <p>All three branding directions share the same page structure.</p>
-
-  <div class="sitemap">
-/ (Home)
-├── /work               → Selected Projects grid
-│   └── /work/[slug]   → Project detail (v2 — add later)
-├── /about              → Bio, experience, current focus
-├── /contact            → Contact form + email + socials
-└── /journal            → Optional — writing / notes
-  </div>
-
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Route</th><th>Name</th><th>Purpose</th></tr></thead>
-      <tbody>
-        <tr><td><code>/</code></td><td>Home</td><td>Identity statement, hero, optional work teaser</td></tr>
-        <tr><td><code>/work</code></td><td>Work / Index</td><td>Grid of projects — title, year, category, thumbnail</td></tr>
-        <tr><td><code>/work/[slug]</code></td><td>Project Detail</td><td>Case study deep-dive <em>(add in v2)</em></td></tr>
-        <tr><td><code>/about</code></td><td>About</td><td>Bio, skills, experience, current focus</td></tr>
-        <tr><td><code>/contact</code></td><td>Contact</td><td>Contact form or email CTA + social links</td></tr>
-        <tr><td><code>/journal</code></td><td>Journal</td><td>Writing, notes, process posts <em>(optional)</em></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- ─────────────────────────────────────────── -->
-  <!-- Section 3: Page Layouts                     -->
-  <!-- ─────────────────────────────────────────── -->
-  <h2 id="s3"><span class="section-num">3.</span> Page-by-Page Layout Outline</h2>
-
-  <!-- Home -->
-  <div class="page-section">
-    <div class="page-section-header">
-      Home
-      <span class="page-section-route">/</span>
-    </div>
-    <div class="page-section-body">
-      <div class="section-block">
-        <div class="section-block-name">A · Navigation (global)</div>
-        <ul>
-          <li>Left: Name or initials (logo mark)</li>
-          <li>Right: Work · About · Contact (+ Journal if included)</li>
-          <li>Behavior: sticky, or transparent-to-solid on scroll</li>
-          <li>Mobile: hamburger → slide-in drawer or full-screen overlay</li>
+  <!-- ── Live Preview ── -->
+  <section>
+    <div class="hero-preview">
+      <div class="hero-preview-nav">
+        <div class="hero-preview-logo">Aura.</div>
+        <ul class="hero-preview-links">
+          <li>Index</li><li>Archive</li><li>Info</li>
         </ul>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">B · Hero</div>
-        <ul>
-          <li>Eyebrow label: Role / discipline</li>
-          <li>Headline: Your name or defining statement (typographic treatment per chosen option)</li>
-          <li>Sub-copy: 1–2 sentences, approach or current focus (max 25 words)</li>
-          <li>Primary CTA: "View Work" → /work</li>
-          <li>Optional decorative: background gradient, grid lines, or image (branding-dependent)</li>
-        </ul>
-      </div>
-      <div class="section-block">
-        <div class="section-block-name">C · Selected Work Teaser (optional)</div>
-        <ul>
-          <li>2–3 featured project tiles with thumbnail, title, year, category</li>
-          <li>"See all work" link → /work</li>
-        </ul>
-      </div>
-      <div class="section-block">
-        <div class="section-block-name">D · Footer (global)</div>
-        <ul>
-          <li>Copyright · Nav links · Social icons · Email · Availability status</li>
-        </ul>
+      <div class="hero-preview-body">
+        <div class="hero-preview-label">Creative Director &amp; Designer</div>
+        <h2 class="hero-preview-h1" style="margin:0; border:none; padding:0; font-size:clamp(2.5rem,8vw,5rem)">
+          <span class="line1">Making</span>
+          <span class="line2">things <span class="coral">pop</span>.</span>
+        </h2>
+        <p class="hero-preview-bio">I design digital experiences that feel human, look sharp, and don't take themselves too seriously.</p>
+        <div class="hero-preview-cta">Start a project &nbsp;↗</div>
       </div>
     </div>
-  </div>
+    <p style="font-size:0.75rem; color:var(--muted); text-align:center; margin-top:-1rem">Approved hero concept rendered from the actual design tokens</p>
+  </section>
 
-  <!-- Work -->
-  <div class="page-section">
-    <div class="page-section-header">
-      Work / Projects
-      <span class="page-section-route">/work</span>
-    </div>
-    <div class="page-section-body">
-      <div class="section-block">
-        <div class="section-block-name">A · Navigation</div>
-        <ul><li>Same as all pages</li></ul>
-      </div>
-      <div class="section-block">
-        <div class="section-block-name">B · Page Header</div>
-        <ul>
-          <li>Section title: "Work", "Selected Projects", or "Index"</li>
-          <li>Optional: project count, year range, or short philosophy statement</li>
-        </ul>
-      </div>
-      <div class="section-block">
-        <div class="section-block-name">C · Project Grid</div>
-        <ul>
-          <li>2-column desktop, 1-column mobile</li>
-          <li>Each card: <strong>thumbnail</strong> (16:9 or 4:3), <strong>title</strong>, <strong>year</strong>, <strong>category tag</strong>, <strong>1-sentence description</strong></li>
-          <li>Hover: image scale-up or overlay reveal</li>
-          <li>Click: → /work/[slug] or external URL</li>
-        </ul>
-      </div>
-      <div class="section-block">
-        <div class="section-block-name">D · Footer</div>
-      </div>
-    </div>
-  </div>
+  <!-- ── 1. Branding ── -->
+  <section>
+    <h2>1. Branding</h2>
 
-  <!-- About -->
-  <div class="page-section">
-    <div class="page-section-header">
-      About
-      <span class="page-section-route">/about</span>
-    </div>
-    <div class="page-section-body">
-      <div class="section-block">
-        <div class="section-block-name">A · Navigation</div>
+    <h4>Colour Palette</h4>
+    <div class="swatches">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FAFAFA"></div>
+        <div class="swatch-label">Background</div>
+        <div class="swatch-hex">#FAFAFA</div>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">B · Bio Block</div>
-        <ul>
-          <li>Large "About" heading or your name</li>
-          <li>2–4 paragraphs: origin, approach, values, current focus</li>
-          <li>Optional profile photo (square or portrait)</li>
-        </ul>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#111111"></div>
+        <div class="swatch-label">Text</div>
+        <div class="swatch-hex">#111111</div>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">C · Skills / Tools (optional)</div>
-        <ul>
-          <li>Brief list or tag cloud — keep it short, no progress bars</li>
-        </ul>
+      <div class="swatch">
+        <div class="swatch-color" style="background:rgba(17,17,17,0.3); border:1px solid #ccc"></div>
+        <div class="swatch-label">Muted Text</div>
+        <div class="swatch-hex">70% opacity</div>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">D · Experience / Timeline (optional)</div>
-        <ul>
-          <li>Minimal list: role, company/client, year range — link to PDF resume</li>
-        </ul>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FF4530"></div>
+        <div class="swatch-label">Accent</div>
+        <div class="swatch-hex">#FF4530</div>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">E · Current Status (optional)</div>
-        <ul>
-          <li>1–2 sentences on current availability or focus</li>
-          <li>AvailabilityBadge component</li>
-        </ul>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#E03D2A"></div>
+        <div class="swatch-label">Accent Hover</div>
+        <div class="swatch-hex">#E03D2A</div>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">F · Footer</div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#FFFFFF; border:1px solid #ddd"></div>
+        <div class="swatch-label">White</div>
+        <div class="swatch-hex">#FFFFFF</div>
       </div>
     </div>
-  </div>
 
-  <!-- Contact -->
-  <div class="page-section">
-    <div class="page-section-header">
-      Contact
-      <span class="page-section-route">/contact</span>
-    </div>
-    <div class="page-section-body">
-      <div class="section-block">
-        <div class="section-block-name">A · Navigation</div>
+    <h4>Typography</h4>
+    <p style="margin-bottom:0.5rem"><strong>Google Fonts import URL:</strong></p>
+    <pre><code>https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap</code></pre>
+
+    <div class="token-preview">
+      <div class="token-card">
+        <div class="token-card-label">Fraunces — Display upright</div>
+        <div class="type-specimen" style="font-size:2.5rem; font-weight:500">Making</div>
+        <p style="font-size:0.75rem; color:var(--muted); margin-top:0.5rem; margin-bottom:0">wght 500, opsz 144, upright</p>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">B · Contact Block</div>
-        <ul>
-          <li>Heading: "Get in Touch" or "Let's Work Together" or "Contact"</li>
-          <li>Primary: large email link (<code>mailto:</code>) styled as CTA</li>
-          <li>Contact form: Name · Email · Message · Send</li>
-          <li>Form states: Idle → Submitting → Success → Error</li>
-        </ul>
+      <div class="token-card">
+        <div class="token-card-label">Fraunces — Display italic</div>
+        <div class="type-specimen italic" style="font-size:2.5rem; font-weight:300">things <span style="color:var(--accent); font-style:normal; font-weight:400">pop</span>.</div>
+        <p style="font-size:0.75rem; color:var(--muted); margin-top:0.5rem; margin-bottom:0">wght 300, opsz 144, italic</p>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">C · Social Links</div>
-        <ul>
-          <li>GitHub, LinkedIn, Dribbble, Twitter/X — only what you actively use</li>
-        </ul>
+      <div class="token-card">
+        <div class="token-card-label">DM Sans — Body light</div>
+        <p style="margin:0; font-weight:300; font-size:0.9375rem; line-height:1.65">I design digital experiences that feel human, look sharp, and don't take themselves too seriously.</p>
       </div>
-      <div class="section-block">
-        <div class="section-block-name">D · Footer</div>
+      <div class="token-card">
+        <div class="token-card-label">DM Sans — Label medium</div>
+        <div style="display:flex; align-items:center; gap:0.625rem; font-size:0.6875rem; font-weight:500; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-top:0.5rem">
+          <span style="width:8px; height:2px; background:var(--accent); display:block; flex-shrink:0"></span>
+          Creative Director
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ─────────────────────────────────────────── -->
-  <!-- Section 4: Components                       -->
-  <!-- ─────────────────────────────────────────── -->
-  <h2 id="s4"><span class="section-num">4.</span> Component Inventory</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Role</th><th>Family</th><th>Weight</th><th>Style</th><th>Size</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Hero line 1</td><td>Fraunces</td><td>500 medium</td><td>Normal</td><td><code>clamp(4rem, 10vw, 11rem)</code></td></tr>
+          <tr><td>Hero line 2</td><td>Fraunces</td><td>300 light</td><td>Italic</td><td><code>clamp(4rem, 10vw, 11rem)</code></td></tr>
+          <tr><td>Hero accent word</td><td>Fraunces</td><td>400 normal</td><td>Normal</td><td>Inherits hero</td></tr>
+          <tr><td>Brand logotype</td><td>Fraunces</td><td>600 semibold</td><td>Italic</td><td><code>1.5rem</code></td></tr>
+          <tr><td>Body / bio</td><td>DM Sans</td><td>300 light</td><td>Normal</td><td><code>1.125–1.25rem</code></td></tr>
+          <tr><td>Labels / nav</td><td>DM Sans</td><td>500 medium</td><td>Normal</td><td><code>0.75–0.875rem</code></td></tr>
+          <tr><td>CTA button</td><td>DM Sans</td><td>500 medium</td><td>Normal</td><td><code>0.875rem</code></td></tr>
+        </tbody>
+      </table>
+    </div>
 
-  <div class="component-grid">
+    <p><strong>Critical type settings:</strong></p>
+    <ul>
+      <li>Hero <code>line-height: 0.85</code> — tighter than default, essential for the stacked look</li>
+      <li>Hero <code>letter-spacing: -0.04em</code> — negative tracking makes display text feel intentional</li>
+      <li>Label <code>letter-spacing: 0.2em</code> — wide-spaced provides structural contrast</li>
+      <li>Body <code>line-height: 1.625</code> (Tailwind <code>leading-relaxed</code>)</li>
+    </ul>
+  </section>
+
+  <!-- ── 2. Signature Motifs ── -->
+  <section>
+    <h2>2. Signature Motifs</h2>
+    <p>Recurring elements that create visual consistency across the site:</p>
+
+    <div class="motif-grid">
+      <div class="motif-card">
+        <div class="motif-card-name">Coral Dash Separator</div>
+        <div class="motif-demo"><div class="demo-dash"><span>Section Label</span></div></div>
+        <p>8px × 2px coral bar + uppercase spaced DM Sans. Used before every section heading.</p>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card-name">Nav Hover Dot</div>
+        <div class="motif-demo" style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem">
+          <span style="width:6px; height:6px; border-radius:50%; background:var(--accent); display:block"></span>
+          <span>Index</span>
+        </div>
+        <p>6px coral circle, opacity 0 → 1 on hover, positioned left of the link text.</p>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card-name">Rounded Pill CTA</div>
+        <div class="motif-demo"><div class="demo-pill">Start a project ↗</div></div>
+        <p>Coral fill, white text, full border-radius, hover scale 1.05 + darker coral.</p>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card-name">Tag Component</div>
+        <div class="motif-demo demo-tag-row">
+          <span class="demo-tag">Brand</span>
+          <span class="demo-tag active">Web</span>
+          <span class="demo-tag">Motion</span>
+        </div>
+        <p>Default: grey border + muted. Active: coral border + coral text.</p>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card-name">Opacity Muting</div>
+        <div class="motif-demo">
+          <p style="color:var(--ink); margin:0; font-size:0.875rem">Primary text — #111111</p>
+          <p style="color:var(--muted); margin:0; font-size:0.875rem">Muted text — 70% opacity</p>
+        </div>
+        <p>Body text uses #111111 at 70% opacity — not a separate grey — keeping the palette strict.</p>
+      </div>
+      <div class="motif-card">
+        <div class="motif-card-name">Curved SVG Underline</div>
+        <div class="motif-demo">
+          <span style="font-family:var(--font-display); font-size:1.5rem; color:var(--accent); position:relative; display:inline-block">
+            pop
+            <svg style="position:absolute; bottom:-6px; left:0; width:100%; height:10px; color:var(--accent)" viewBox="0 0 100 20" preserveAspectRatio="none">
+              <path d="M0 10 Q 50 20 100 10" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </div>
+        <p>SVG arc under the hero accent word: <code>Q 50 20 100 10</code> bezier, stroke-width 4.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. Site Map ── -->
+  <section>
+    <h2>3. Site Map</h2>
+    <div class="sitemap">
+      <div class="sitemap-route">
+        <div class="sitemap-path">/</div>
+        <div class="sitemap-desc">Home — hero, featured work preview, about teaser</div>
+      </div>
+      <div class="sitemap-route">
+        <div class="sitemap-path">/work</div>
+        <div class="sitemap-desc">Work index — filterable project grid</div>
+      </div>
+      <div class="sitemap-route">
+        <div class="sitemap-path">/work/[slug]</div>
+        <div class="sitemap-desc">Project detail — full case study</div>
+      </div>
+      <div class="sitemap-route">
+        <div class="sitemap-path">/about</div>
+        <div class="sitemap-desc">About — bio, skills, process</div>
+      </div>
+      <div class="sitemap-route">
+        <div class="sitemap-path">/contact</div>
+        <div class="sitemap-desc">Contact — form + social links</div>
+      </div>
+      <div class="sitemap-route">
+        <div class="sitemap-path">/journal</div>
+        <div class="sitemap-desc">Writing / notes (optional)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Page Layouts ── -->
+  <section>
+    <h2>4. Page-by-Page Layout</h2>
+
+    <h3>4.1 Home (<code>/</code>)</h3>
+    <h4>Navigation</h4>
+    <ul>
+      <li>Full-width flex row, <code>padding: 2rem 4rem</code> (fluid), <code>justify-between items-start</code></li>
+      <li>Left: brand logotype — Fraunces semibold italic, 1.5rem</li>
+      <li>Right: 3–4 DM Sans medium links, 0.875rem, gap 2.5rem</li>
+      <li>Hover: coral dot appears left of link + text → <code>#FF4530</code></li>
+      <li>No border, no background — nav floats over hero</li>
+    </ul>
+    <h4>Hero Section</h4>
+    <ul>
+      <li><strong>Role label row:</strong> coral 8px dash + uppercase DM Sans, <code>margin-bottom: 3rem</code></li>
+      <li><strong>&lt;h1&gt;:</strong> two-line stacked Fraunces at <code>clamp(4rem, 10vw, 11rem)</code>, <code>line-height: 0.85</code>, <code>letter-spacing: -0.04em</code></li>
+      <li>Line 1 — medium upright. Line 2 — light italic; accent word in coral with curved SVG underline</li>
+      <li><strong>Below-fold grid (12-col):</strong> bio sentence cols 1–5, coral pill CTA right-aligned cols 6–12</li>
+    </ul>
+    <h4>Featured Work</h4>
+    <ul>
+      <li>Section label → 2-column ProjectCard grid → "View all work →" coral text link</li>
+    </ul>
+
+    <h3>4.2 Work Index (<code>/work</code>)</h3>
+    <ul>
+      <li>Page title: Fraunces medium, 4–6rem</li>
+      <li>Filter tabs: DM Sans small caps — All / Brand / Web / Motion. Active: coral underline</li>
+      <li>2-column grid desktop, 1-column mobile, <code>gap: 2–3rem</code></li>
+      <li>Card hover: image <code>scale(1.03)</code>, coral accent mark</li>
+    </ul>
+
+    <h3>4.3 Project Detail (<code>/work/[slug]</code>)</h3>
+    <ul>
+      <li>Full-bleed hero image or video</li>
+      <li>Meta row: client · year · category in DM Sans caps, coral dash separators</li>
+      <li>Body: DM Sans light, <code>max-width: 40rem</code></li>
+      <li>Footer: "Next: <em>Project Name</em> →" — Fraunces italic, coral</li>
+    </ul>
+
+    <h3>4.4 About (<code>/about</code>)</h3>
+    <ul>
+      <li>Headline: Fraunces medium/italic, 4rem+</li>
+      <li>Portrait photo: asymmetric (right col desktop)</li>
+      <li>Bio: 2–3 paragraphs DM Sans light</li>
+      <li>Disciplines: coral dash + category name</li>
+    </ul>
+
+    <h3>4.5 Contact (<code>/contact</code>)</h3>
+    <ul>
+      <li>Headline: Fraunces italic — "Let's make something."</li>
+      <li>Form: name, email, message — underline-only borders, coral focus state</li>
+      <li>Submit: coral pill button</li>
+      <li>Below: email as coral text link + social icons</li>
+    </ul>
+  </section>
+
+  <!-- ── 5. Component Inventory ── -->
+  <section>
+    <h2>5. Component Inventory</h2>
 
     <div class="component-card">
-      <h4>Nav</h4>
-      <div class="prop-row"><span class="prop-name">currentPath</span><span class="prop-type">string</span><span class="prop-desc">Active route for link highlight</span></div>
-      <div class="prop-row"><span class="prop-name">scrolled</span><span class="prop-type">boolean</span><span class="prop-desc">Triggers solid background after scroll</span></div>
-      <p class="pages-used">Used on: all pages · Variants: default, mobile drawer</p>
+      <div class="component-card-header">
+        <div class="component-card-name">Nav</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface NavProps {
+  links: { label: string; href: string }[];
+  brandName: string;  // e.g. "Aura."
+}
+// Logotype: Fraunces semibold italic
+// Links: DM Sans medium, coral hover dot + text transition
+// Mobile: hamburger → full-screen overlay (v1 optional)</code></pre>
+      </div>
     </div>
 
     <div class="component-card">
-      <h4>Footer</h4>
-      <div class="prop-row"><span class="prop-name">showStatus</span><span class="prop-type">boolean</span><span class="prop-desc">Show availability status pill</span></div>
-      <p class="pages-used">Used on: all pages</p>
+      <div class="component-card-header">
+        <div class="component-card-name">Hero</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface HeroProps {
+  roleLabel:   string;  // "Creative Director & Designer"
+  headlineL1:  string;  // "Making"
+  headlineL2:  string;  // "things"
+  accentWord:  string;  // "pop" — coral + SVG underline
+  bio:         string;
+  ctaLabel:    string;  // "Start a project"
+  ctaHref:     string;
+}</code></pre>
+      </div>
     </div>
 
     <div class="component-card">
-      <h4>Hero</h4>
-      <div class="prop-row"><span class="prop-name">headline</span><span class="prop-type">string</span><span class="prop-desc">Main display heading</span></div>
-      <div class="prop-row"><span class="prop-name">eyebrow</span><span class="prop-type">string</span><span class="prop-desc">Small role label above headline</span></div>
-      <div class="prop-row"><span class="prop-name">subCopy</span><span class="prop-type">string</span><span class="prop-desc">Supporting sentence (≤25 words)</span></div>
-      <div class="prop-row"><span class="prop-name">ctaLabel</span><span class="prop-type">string</span><span class="prop-desc">Button / link text</span></div>
-      <div class="prop-row"><span class="prop-name">ctaHref</span><span class="prop-type">string</span><span class="prop-desc">CTA destination URL</span></div>
-      <p class="pages-used">Used on: Home</p>
+      <div class="component-card-header">
+        <div class="component-card-name">SectionLabel</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface SectionLabelProps {
+  text: string;
+}
+// Renders: [coral dash] [UPPERCASE DM SANS LABEL]
+// Used before every section heading site-wide</code></pre>
+      </div>
     </div>
 
     <div class="component-card">
-      <h4>ProjectCard</h4>
-      <div class="prop-row"><span class="prop-name">title</span><span class="prop-type">string</span><span class="prop-desc">Project name</span></div>
-      <div class="prop-row"><span class="prop-name">year</span><span class="prop-type">number</span><span class="prop-desc">Year completed</span></div>
-      <div class="prop-row"><span class="prop-name">category</span><span class="prop-type">string</span><span class="prop-desc">Category tag</span></div>
-      <div class="prop-row"><span class="prop-name">description</span><span class="prop-type">string</span><span class="prop-desc">One-line summary (≤15 words)</span></div>
-      <div class="prop-row"><span class="prop-name">thumbnail</span><span class="prop-type">string</span><span class="prop-desc">Image path or URL</span></div>
-      <div class="prop-row"><span class="prop-name">href</span><span class="prop-type">string</span><span class="prop-desc">Link to detail or external URL</span></div>
-      <p class="pages-used">Used on: /work, Home (teaser) · Variants: default, featured large</p>
+      <div class="component-card-header">
+        <div class="component-card-name">ProjectCard</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface ProjectCardProps {
+  title:      string;
+  category:   string;
+  thumbnail:  string;   // /public path or absolute URL
+  href:       string;
+  year?:      number;
+}
+// Title: Fraunces italic
+// Category: DM Sans caps 0.75rem
+// Hover: image scale(1.03) + coral accent</code></pre>
+      </div>
     </div>
 
     <div class="component-card">
-      <h4>ProjectGrid</h4>
-      <div class="prop-row"><span class="prop-name">projects</span><span class="prop-type">Project[]</span><span class="prop-desc">Array of project data</span></div>
-      <div class="prop-row"><span class="prop-name">columns</span><span class="prop-type">2 | 3</span><span class="prop-desc">Column count (default 2)</span></div>
-      <p class="pages-used">Used on: /work</p>
+      <div class="component-card-header">
+        <div class="component-card-name">ProjectGrid</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface ProjectGridProps {
+  projects: ProjectCardProps[];
+  columns?: 1 | 2 | 3;  // default: 2
+}</code></pre>
+      </div>
     </div>
 
     <div class="component-card">
-      <h4>ContactForm</h4>
-      <div class="prop-row"><span class="prop-name">Name</span><span class="prop-type">text</span><span class="prop-desc">Required</span></div>
-      <div class="prop-row"><span class="prop-name">Email</span><span class="prop-type">email</span><span class="prop-desc">Required, valid format</span></div>
-      <div class="prop-row"><span class="prop-name">Message</span><span class="prop-type">textarea</span><span class="prop-desc">Required, min 10 chars</span></div>
-      <p class="pages-used">States: Idle → Submitting → Success → Error · Used on: /contact</p>
+      <div class="component-card-header">
+        <div class="component-card-name">ContactForm</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface ContactFormProps {
+  onSubmit: (data: {
+    name: string;
+    email: string;
+    message: string;
+  }) => void;
+}
+// Fields: underline-only border, coral :focus ring
+// Submit: coral pill button
+// Errors: inline coral text</code></pre>
+      </div>
     </div>
 
     <div class="component-card">
-      <h4>SectionHeader</h4>
-      <div class="prop-row"><span class="prop-name">title</span><span class="prop-type">string</span><span class="prop-desc">Section heading</span></div>
-      <div class="prop-row"><span class="prop-name">subtitle</span><span class="prop-type">string?</span><span class="prop-desc">Optional supporting line</span></div>
-      <p class="pages-used">Used on: /work, /about, /contact</p>
+      <div class="component-card-header">
+        <div class="component-card-name">Tag</div>
+      </div>
+      <div class="component-card-body">
+        <pre><code>interface TagProps {
+  label:   string;
+  active?: boolean;  // default false
+}
+// Default: grey border + muted text
+// Active:  coral border + coral text</code></pre>
+      </div>
     </div>
+  </section>
 
-    <div class="component-card">
-      <h4>SocialLinks</h4>
-      <div class="prop-row"><span class="prop-name">links</span><span class="prop-type">Link[]</span><span class="prop-desc">Array of {platform, href}</span></div>
-      <div class="prop-row"><span class="prop-name">variant</span><span class="prop-type">'icon'|'text'</span><span class="prop-desc">Display style</span></div>
-      <p class="pages-used">Used on: Footer, /contact</p>
-    </div>
-
-    <div class="component-card">
-      <h4>AvailabilityBadge</h4>
-      <div class="prop-row"><span class="prop-name">status</span><span class="prop-type">'available'|…</span><span class="prop-desc">available / limited / unavailable</span></div>
-      <div class="prop-row"><span class="prop-name">label</span><span class="prop-type">string</span><span class="prop-desc">Display text</span></div>
-      <p class="pages-used">Used on: Footer, /about</p>
-    </div>
-
-    <div class="component-card">
-      <h4>Tag</h4>
-      <div class="prop-row"><span class="prop-name">label</span><span class="prop-type">string</span><span class="prop-desc">Category name</span></div>
-      <div class="prop-row"><span class="prop-name">color</span><span class="prop-type">string?</span><span class="prop-desc">Optional background override</span></div>
-      <p class="pages-used">Used on: ProjectCard, /about (skills)</p>
-    </div>
-
-  </div>
-
-  <!-- ─────────────────────────────────────────── -->
-  <!-- Section 5: File Structure                   -->
-  <!-- ─────────────────────────────────────────── -->
-  <h2 id="s5"><span class="section-num">5.</span> Suggested File Structure</h2>
-  <p>Structured for <strong>Next.js 15 (App Router)</strong> — easily adapted to React + React Router or Astro.</p>
-
-  <pre>my-portfolio/
-├── app/
-│   ├── layout.tsx              ← Root layout: Nav + Footer
-│   ├── page.tsx                ← Home / Hero
-│   ├── work/
-│   │   ├── page.tsx            ← /work — project grid
-│   │   └── [slug]/
-│   │       └── page.tsx        ← /work/[slug] — project detail
-│   ├── about/
+  <!-- ── 6. File Structure ── -->
+  <section>
+    <h2>6. File Structure</h2>
+    <p>Next.js 15 App Router with TypeScript and Tailwind CSS v4:</p>
+    <div class="file-tree">
+<span class="dir">my-portfolio/</span>
+├── <span class="dir">app/</span>
+│   ├── layout.tsx          <span class="comment"># Root layout — font link, global CSS, metadata</span>
+│   ├── page.tsx            <span class="comment"># Home</span>
+│   ├── <span class="dir">work/</span>
+│   │   ├── page.tsx        <span class="comment"># Work index</span>
+│   │   └── <span class="dir">[slug]/</span>
+│   │       └── page.tsx    <span class="comment"># Project detail</span>
+│   ├── <span class="dir">about/</span>
 │   │   └── page.tsx
-│   ├── contact/
+│   ├── <span class="dir">contact/</span>
 │   │   └── page.tsx
-│   └── journal/                ← Optional
-│       └── page.tsx
-│
-├── components/
-│   ├── layout/
-│   │   ├── Nav.tsx
-│   │   └── Footer.tsx
-│   ├── home/
-│   │   └── Hero.tsx
-│   ├── work/
-│   │   ├── ProjectCard.tsx
-│   │   └── ProjectGrid.tsx
-│   ├── about/
-│   │   └── Bio.tsx
-│   ├── contact/
-│   │   └── ContactForm.tsx
-│   └── ui/                     ← Shared primitives
-│       ├── SectionHeader.tsx
-│       ├── Tag.tsx
-│       ├── SocialLinks.tsx
-│       ├── AvailabilityBadge.tsx
-│       └── Button.tsx
-│
-├── data/
-│   └── projects.ts             ← Static project list
-│
-├── lib/
-│   └── utils.ts                ← cn(), formatDate(), etc.
-│
-├── public/
-│   ├── images/projects/        ← Project thumbnails
-│   └── fonts/                  ← Self-hosted fonts (optional)
-│
-├── styles/
-│   └── globals.css             ← CSS tokens + font imports
-│
-├── next.config.ts
+│   └── <span class="dir">journal/</span>  <span class="comment">          # Optional</span>
+├── <span class="dir">components/</span>
+│   ├── Nav.tsx
+│   ├── Hero.tsx
+│   ├── Footer.tsx
+│   ├── SectionLabel.tsx
+│   ├── ProjectCard.tsx
+│   ├── ProjectGrid.tsx
+│   ├── ContactForm.tsx
+│   └── Tag.tsx
+├── <span class="dir">data/</span>
+│   └── projects.ts         <span class="comment"># Content (swap for CMS later)</span>
+├── <span class="dir">public/images/projects/</span>
+├── <span class="dir">styles/</span>
+│   └── globals.css
 ├── tailwind.config.ts
-├── tsconfig.json
-└── package.json</pre>
+└── next.config.ts
+    </div>
 
-  <h3>CSS Custom Properties — globals.css</h3>
-  <p>Paste the block for your chosen option:</p>
-
-  <pre><span style="color:#94a3b8">/* ── Option A: Dark &amp; Stark ── */</span>
-:root {
-  --color-bg:             #050505;
-  --color-surface:        #0f0f0f;
-  --color-text-primary:   #f4f4f4;
-  --color-text-secondary: #a3a3a3;
-  --color-accent:         #ccff00;
-  --color-border:         rgba(255, 255, 255, 0.05);
-  --font-display:         'Syne', sans-serif;
-  --font-body:            'Space Grotesk', sans-serif;
-}
-
-<span style="color:#94a3b8">/* ── Option B: Soft &amp; Airy ── */</span>
-:root {
-  --color-bg:             #F9F8F6;
-  --color-surface:        #F3F1EC;
-  --color-text-primary:   #2D2A26;
-  --color-text-secondary: #5A5753;
-  --color-accent:         #7B856A;
-  --color-border:         #D4D0C5;
-  --font-display:         'Libre Baskerville', serif;
-  --font-body:            'DM Sans', sans-serif;
-}
-
-<span style="color:#94a3b8">/* ── Option C: Modern Editorial ── */</span>
-:root {
-  --color-bg:             #f8f7f5;
-  --color-surface:        #eeece8;
-  --color-text-primary:   #0a192f;
-  --color-text-secondary: rgba(10, 25, 47, 0.5);
-  --color-accent:         #e07a5f;
-  --color-border:         rgba(10, 25, 47, 0.2);
-  --font-display:         'Playfair Display', serif;
-  --font-body:            'Space Grotesk', sans-serif;
-}</pre>
-
-  <h3>Project Data Shape — data/projects.ts</h3>
-  <pre><span style="color:#7dd3fc">export interface</span> Project {
+    <h4>data/projects.ts shape</h4>
+    <pre><code>export interface Project {
   slug:        string;
   title:       string;
-  year:        number;
   category:    string;
-  description: string;   <span style="color:#94a3b8">// ≤15 words</span>
-  thumbnail:   string;   <span style="color:#94a3b8">// /public/images/projects/</span>
-  link?:       string;   <span style="color:#94a3b8">// external URL (optional)</span>
-  featured?:   boolean;  <span style="color:#94a3b8">// show on home teaser</span>
+  year:        number;
+  thumbnail:   string;     // /public path
+  description: string;
+  images:      string[];
+  tags:        string[];
+  client?:     string;
+  url?:        string;
 }
 
-<span style="color:#7dd3fc">export const</span> projects: Project[] = [
+export const projects: Project[] = [
   {
-    slug:        <span style="color:#86efac">"project-one"</span>,
-    title:       <span style="color:#86efac">"Project Title"</span>,
-    year:        2025,
-    category:    <span style="color:#86efac">"Brand Identity"</span>,
-    description: <span style="color:#86efac">"One-sentence summary of what this achieved."</span>,
-    thumbnail:   <span style="color:#86efac">"/images/projects/project-one.jpg"</span>,
-    featured:    true,
+    slug:        "brand-identity-acme",
+    title:       "Brand Identity — Acme Co.",
+    category:    "Brand",
+    year:         2025,
+    thumbnail:   "/images/projects/acme-thumb.jpg",
+    description: "A complete visual identity for a consumer tech startup.",
+    images:      ["/images/projects/acme-1.jpg"],
+    tags:        ["Brand", "Identity", "Typography"],
+    client:      "Acme Co.",
   },
-];</pre>
+];</code></pre>
+  </section>
 
-  <!-- ─────────────────────────────────────────── -->
-  <!-- Section 6: Implementation Notes             -->
-  <!-- ─────────────────────────────────────────── -->
-  <h2 id="s6"><span class="section-num">6.</span> Implementation Notes</h2>
+  <!-- ── 7. CSS Tokens ── -->
+  <section>
+    <h2>7. CSS Design Tokens</h2>
 
-  <h3>Recommended Stack</h3>
-  <div class="table-wrap">
-    <table class="stack-table">
-      <thead><tr><th>Layer</th><th>Recommended</th><th>Alternatives</th></tr></thead>
-      <tbody>
-        <tr><td>Framework</td><td>Next.js 15 (App Router)</td><td>Astro, React + Vite</td></tr>
-        <tr><td>Styling</td><td>Tailwind CSS v4</td><td>CSS Modules</td></tr>
-        <tr><td>Animation</td><td>Framer Motion</td><td>CSS transitions only</td></tr>
-        <tr><td>Forms</td><td>React Hook Form + Zod</td><td>Native validation</td></tr>
-        <tr><td>Email</td><td>Resend / Nodemailer</td><td>Formspree (no-backend)</td></tr>
-        <tr><td>CMS (v2)</td><td>Sanity / Contentlayer</td><td>MDX files</td></tr>
-        <tr><td>Hosting</td><td>Vercel</td><td>Netlify, GitHub Pages</td></tr>
-      </tbody>
-    </table>
-  </div>
+    <h4>styles/globals.css</h4>
+    <pre><code>@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
-  <h3>Getting Started</h3>
-  <pre>npx create-next-app@latest my-portfolio \
-  --typescript --tailwind --app
+:root {
+  /* Palette */
+  --color-bg:           #FAFAFA;
+  --color-text:         #111111;
+  --color-text-muted:   rgba(17, 17, 17, 0.7);
+  --color-accent:       #FF4530;
+  --color-accent-dark:  #E03D2A;
+  --color-white:        #FFFFFF;
 
-<span style="color:#94a3b8"># Then:</span>
-<span style="color:#94a3b8"># 1. Add Google Fonts &lt;link&gt; to app/layout.tsx</span>
-<span style="color:#94a3b8"># 2. Copy CSS tokens into styles/globals.css</span>
-<span style="color:#94a3b8"># 3. Add projects to data/projects.ts</span>
-<span style="color:#94a3b8"># 4. Build Nav → Footer → Hero → pages</span>
-<span style="color:#94a3b8"># 5. git init &amp;&amp; git remote add origin &lt;your-repo&gt;</span>
-<span style="color:#94a3b8"># 6. Push to GitHub → connect Vercel</span></pre>
+  /* Typography */
+  --font-display:       'Fraunces', serif;
+  --font-body:          'DM Sans', sans-serif;
 
-  <h3>Responsive Breakpoints</h3>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>Breakpoint</th><th>Width</th><th>Notes</th></tr></thead>
-      <tbody>
-        <tr><td>Mobile</td><td>&lt; 640px</td><td>Single column, nav collapses to hamburger</td></tr>
-        <tr><td>Tablet</td><td>640px – 1024px</td><td>2-col work grid, optional side panels collapse</td></tr>
-        <tr><td>Desktop</td><td>&gt; 1024px</td><td>Full layout incl. 12-col grid (Option C)</td></tr>
-      </tbody>
-    </table>
-  </div>
+  /* Spacing */
+  --section-px:         clamp(1.5rem, 6vw, 6rem);
+  --section-gap:        clamp(4rem, 10vw, 8rem);
+  --transition-base:    all 0.3s ease;
+}
 
-  <h3>Performance Tips</h3>
-  <ul>
-    <li>Use <code>next/image</code> for project thumbnails — automatic WebP + lazy-load</li>
-    <li>Load Google Fonts via <code>next/font</code> to avoid render-blocking requests</li>
-    <li>Hero section: CSS animations only, no heavy JS bundles at paint time</li>
-    <li>Lazy-load the contact form component with <code>next/dynamic</code></li>
-    <li>Use <code>prefers-reduced-motion</code> media query to disable entrance animations when needed</li>
-  </ul>
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
 
-  <hr />
-  <p style="font-size:0.8125rem;color:#9ca3af;text-align:center;padding-bottom:20px">
-    Generated May 26, 2026 · Portfolio Design Specification
-  </p>
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}</code></pre>
 
-</div>
+    <h4>tailwind.config.ts</h4>
+    <pre><code>import type { Config } from "tailwindcss";
+
+export default {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        bg:            "#FAFAFA",
+        ink:           "#111111",
+        accent:        "#FF4530",
+        "accent-dark": "#E03D2A",
+      },
+      fontFamily: {
+        display: ["Fraunces", "serif"],
+        body:    ["DM Sans", "sans-serif"],
+      },
+      letterSpacing: {
+        label: "0.2em",
+      },
+      lineHeight: {
+        hero: "0.85",
+      },
+    },
+  },
+} satisfies Config;</code></pre>
+  </section>
+
+  <!-- ── 8. Implementation Notes ── -->
+  <section>
+    <h2>8. Implementation Notes</h2>
+
+    <h4>Stack</h4>
+    <ul>
+      <li><strong>Next.js 15</strong> (App Router) + <strong>TypeScript</strong> + <strong>Tailwind CSS v4</strong></li>
+      <li>Deploy on <strong>Vercel</strong> — zero-config, auto-deploys on push to <code>main</code></li>
+      <li>Icons: <strong>lucide-react</strong></li>
+    </ul>
+
+    <h4>Bootstrap commands</h4>
+    <pre><code>npx create-next-app@latest my-portfolio \
+  --typescript --tailwind --app --eslint --src-dir=false
+cd my-portfolio
+npm install lucide-react</code></pre>
+
+    <h4>Fluid hero type</h4>
+    <pre><code>/* CSS */
+font-size: clamp(4rem, 10vw, 11rem);
+
+/* Tailwind 4 */
+className="text-[clamp(4rem,10vw,11rem)]"</code></pre>
+
+    <h4>Fraunces optical size (variable font)</h4>
+    <pre><code>/* Set opsz axis for max optical character at display sizes */
+.hero-text-italic  { font-variation-settings: 'opsz' 144, 'wght' 300; font-style: italic; }
+.hero-text-upright { font-variation-settings: 'opsz' 144, 'wght' 500; }</code></pre>
+
+    <h4>GitHub → Vercel connection</h4>
+    <ol style="padding-left:1.25rem; margin-bottom:1rem">
+      <li style="margin-bottom:0.25rem">Run <code>git init &amp;&amp; git add . &amp;&amp; git commit -m "init"</code></li>
+      <li style="margin-bottom:0.25rem">Create a repo on GitHub and push</li>
+      <li>Import the repo in the Vercel dashboard — auto-deploys on every push to <code>main</code></li>
+    </ol>
+
+    <h4>Responsive breakpoints (Tailwind defaults)</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Breakpoint</th><th>Min-width</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><code>sm</code></td><td>640px</td><td>Mobile landscape</td></tr>
+          <tr><td><code>md</code></td><td>768px</td><td>Tablet — nav goes horizontal</td></tr>
+          <tr><td><code>lg</code></td><td>1024px</td><td>Desktop — full hero scale</td></tr>
+          <tr><td><code>xl</code></td><td>1280px</td><td>Widescreen — apply max-w containers</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div><!-- /page -->
 </body>
 </html>
