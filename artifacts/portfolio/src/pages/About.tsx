@@ -29,10 +29,10 @@ export default function About() {
       <div className="grid md:grid-cols-12 gap-12 md:gap-24 items-start mt-8 mb-24">
         <div className="md:col-span-6 lg:col-span-5 flex flex-col gap-8">
           <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-light font-sans">
-            From engineering to design to writing — 10+ years of building things in tech. I work at the intersection of content strategy, client success, and product thinking.
+            Content strategist and product thinker with 10+ years across engineering, design, and writing. I help teams say the right thing — to the right person, in the right moment.
           </p>
           <p className="text-lg text-foreground/60 leading-relaxed font-light">
-            Currently based in Kolkata, India.
+            Based in Tokyo, Japan.
           </p>
           <div>
             <a
@@ -84,7 +84,7 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* Values Thinking */}
+      {/* Professional values */}
       <motion.div
         variants={fadeUp}
         initial="initial"
@@ -95,51 +95,39 @@ export default function About() {
       >
         <div className="md:col-span-3">
           <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
-            How I work
+            What I believe
           </span>
         </div>
         <div className="md:col-span-8 flex flex-col gap-8">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-serif mb-4">Values Thinking</h2>
-            <p className="text-lg text-foreground/70 leading-relaxed font-light">
-              A structured content methodology I apply across every client engagement — designed to bridge the gap between how a product team thinks about features and how users actually experience value.
-            </p>
-          </div>
+          <p className="text-lg text-foreground/70 leading-relaxed font-light">
+            A few principles that shape how I approach every project — placeholder content, to be updated.
+          </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border/50 border border-border/50">
+          <div className="flex flex-col gap-px bg-border/50 border border-border/50">
             {[
               {
-                step: "01",
-                heading: "Map Offerings",
-                body: "List everything the product offers: features, capabilities, functional benefits. These are Offerings — what the product does, not what the user gains."
+                heading: "Content is a design decision",
+                body: "Words aren't what you add after the layout is done. The best work happens when content and design are figured out together — which means I push to be in the room early."
               },
               {
-                step: "02",
-                heading: "Apply the Inner Monologue",
-                body: "For each Offering, ask: what is the user actually thinking or feeling when this matters to them? This surfaces authentic value propositions in the user's own voice."
+                heading: "Clarity is kindness",
+                body: "Jargon, hedging, and over-explaining are all forms of noise. I write to be understood on the first read, by the person with the least context in the room."
               },
               {
-                step: "03",
-                heading: "Prioritise & Deduplicate",
-                body: "Narrow to the top 5–10 value props that are mutually exclusive, meaningfully distinct, and testable. Overlapping props slow agent learning."
+                heading: "Research before writing",
+                body: "Good content starts with knowing who you're talking to, what they need, and what they already believe. I'd rather spend more time on the brief than redo the work later."
               },
               {
-                step: "04",
-                heading: "Build the Label Architecture",
-                body: "Translate final value propositions into a clean label library — one label per concept, consistently named, so every message alternate is labelled in a way the agent can use reliably."
+                heading: "Small words, big ideas",
+                body: "Complexity in the thinking is fine. Complexity in the output is a failure. The harder the concept, the simpler the language needs to be."
               }
-            ].map(({ step, heading, body }) => (
-              <div key={step} className="bg-background p-6 md:p-8 flex flex-col gap-3">
-                <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-primary">{step}</span>
-                <h3 className="text-base font-medium text-foreground">{heading}</h3>
-                <p className="text-sm text-foreground/60 leading-relaxed font-light">{body}</p>
+            ].map(({ heading, body }) => (
+              <div key={heading} className="bg-background p-6 md:p-8 flex flex-col sm:flex-row gap-4 sm:gap-8">
+                <h3 className="text-base font-medium text-foreground sm:w-52 shrink-0">{heading}</h3>
+                <p className="text-base text-foreground/60 leading-relaxed font-light">{body}</p>
               </div>
             ))}
           </div>
-
-          <p className="text-sm text-foreground/50 leading-relaxed font-light">
-            Applied across 7+ clients during 2025 — fintech, sports, food delivery, fitness, travel, tax filing, and barbershop booking. Now documented in the Content Playbook and used in pre-sales and onboarding contexts company-wide.
-          </p>
         </div>
       </motion.div>
 

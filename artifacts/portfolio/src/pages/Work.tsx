@@ -2,6 +2,29 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { projects } from "../data/portfolio";
 
+const valuesThinkingSteps = [
+  {
+    step: "01",
+    heading: "Map Offerings",
+    body: "List everything the product offers: its features, capabilities, and functional benefits. These are Offerings — what the product does, not what the user gains."
+  },
+  {
+    step: "02",
+    heading: "Apply the Inner Monologue",
+    body: "For each Offering, ask: what is the user actually thinking or feeling when this matters to them? This surfaces authentic value propositions in the user's own voice rather than marketing language."
+  },
+  {
+    step: "03",
+    heading: "Prioritise & Deduplicate",
+    body: "Narrow to the top 5–10 value props that are mutually exclusive, meaningfully distinct, and testable. Overlapping props slow agent learning — fewer labels that explain the same reaction means faster system learning."
+  },
+  {
+    step: "04",
+    heading: "Build the Label Architecture",
+    body: "Translate the final value propositions into a clean label library: one label per concept, consistently named, so every message alternate is labelled in a way the agent can use reliably."
+  }
+];
+
 export default function Work() {
   const currentProjects = projects.filter((p) => p.year === "2025");
   const olderProjects = projects.filter((p) => p.year !== "2025");
@@ -154,6 +177,39 @@ export default function Work() {
           );
         })}
       </div>
+
+      {/* Values Thinking methodology */}
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-32 border-t border-border/50 pt-16 grid md:grid-cols-12 gap-8 md:gap-16"
+      >
+        <div className="md:col-span-3">
+          <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-2">
+            Methodology
+          </span>
+          <h2 className="text-2xl md:text-3xl font-serif leading-tight">Values Thinking</h2>
+        </div>
+        <div className="md:col-span-8 flex flex-col gap-8">
+          <p className="text-lg text-foreground/70 leading-relaxed font-light">
+            A structured content methodology applied across every Aampe client engagement — designed to bridge the gap between how a product team thinks about features and how users actually experience value. It produces label architectures that support effective agent learning, not just content that sounds good.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-border/50 border border-border/50">
+            {valuesThinkingSteps.map(({ step, heading, body }) => (
+              <div key={step} className="bg-background p-6 md:p-8 flex flex-col gap-3">
+                <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-primary">{step}</span>
+                <h3 className="text-base font-medium text-foreground">{heading}</h3>
+                <p className="text-sm text-foreground/60 leading-relaxed font-light">{body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-foreground/50 leading-relaxed font-light">
+            Applied across 7+ clients in 2025 — fintech, sports, food delivery, fitness, travel, tax filing, and barbershop booking. Now documented in the Content Playbook and used in pre-sales and client onboarding contexts company-wide.
+          </p>
+        </div>
+      </motion.div>
     </motion.div>
   );
 }
