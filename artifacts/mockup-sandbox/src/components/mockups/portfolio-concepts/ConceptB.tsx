@@ -1,66 +1,77 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function ConceptB() {
   return (
     <>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300..400&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" />
       <div 
-        className="min-h-screen w-full flex flex-col relative text-[#2D2A26] overflow-hidden selection:bg-[#E3E0D8] selection:text-[#2D2A26]"
+        className="min-h-screen w-full flex flex-col relative text-[#111111] overflow-hidden selection:bg-[#FF4530] selection:text-white"
         style={{ 
-          backgroundColor: "#F9F8F6",
+          backgroundColor: "#FAFAFA",
           fontFamily: "'DM Sans', sans-serif" 
         }}
       >
-        {/* Subtle background texture/gradient */}
-        <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#EAE7DF] via-transparent to-transparent" />
-        
         {/* Navigation */}
-        <nav className="w-full max-w-6xl mx-auto px-8 md:px-12 py-10 flex justify-between items-center z-10">
+        <nav className="w-full px-6 md:px-16 py-8 flex justify-between items-start z-10">
           <div 
-            className="text-lg tracking-widest uppercase font-semibold"
-            style={{ fontFamily: "'Libre Baskerville', serif" }}
+            className="text-2xl italic font-semibold tracking-tight"
+            style={{ fontFamily: "'Fraunces', serif" }}
           >
-            E.W.
+            Aura.
           </div>
-          <ul className="hidden md:flex gap-12 text-[13px] tracking-widest uppercase text-[#5A5753]">
-            <li><a href="#" className="hover:text-[#2D2A26] transition-colors duration-500 pb-1 border-b border-transparent hover:border-[#2D2A26]">Work</a></li>
-            <li><a href="#" className="hover:text-[#2D2A26] transition-colors duration-500 pb-1 border-b border-transparent hover:border-[#2D2A26]">About</a></li>
-            <li><a href="#" className="hover:text-[#2D2A26] transition-colors duration-500 pb-1 border-b border-transparent hover:border-[#2D2A26]">Journal</a></li>
-            <li><a href="#" className="hover:text-[#2D2A26] transition-colors duration-500 pb-1 border-b border-transparent hover:border-[#2D2A26]">Contact</a></li>
+          <ul className="flex flex-col md:flex-row gap-4 md:gap-10 text-sm font-medium tracking-wide">
+            <li className="relative group cursor-pointer">
+              <span className="hover:text-[#FF4530] transition-colors duration-300">Index</span>
+              <span className="absolute -left-3 top-2 w-1.5 h-1.5 rounded-full bg-[#FF4530] opacity-0 group-hover:opacity-100 transition-opacity" />
+            </li>
+            <li className="relative group cursor-pointer">
+              <span className="hover:text-[#FF4530] transition-colors duration-300">Archive</span>
+              <span className="absolute -left-3 top-2 w-1.5 h-1.5 rounded-full bg-[#FF4530] opacity-0 group-hover:opacity-100 transition-opacity" />
+            </li>
+            <li className="relative group cursor-pointer">
+              <span className="hover:text-[#FF4530] transition-colors duration-300">Info</span>
+              <span className="absolute -left-3 top-2 w-1.5 h-1.5 rounded-full bg-[#FF4530] opacity-0 group-hover:opacity-100 transition-opacity" />
+            </li>
           </ul>
         </nav>
 
         {/* Hero Content */}
-        <main className="flex-1 flex flex-col justify-center items-center text-center max-w-4xl mx-auto px-8 md:px-12 z-10 pb-20">
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            <h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-normal leading-[1.1] tracking-tight text-[#2D2A26]"
-              style={{ fontFamily: "'Libre Baskerville', serif" }}
-            >
-              Elena Wright
-              <span className="block mt-4 md:mt-6 text-2xl md:text-3xl lg:text-4xl text-[#7B856A] italic">
-                Digital Product Designer
+        <main className="flex-1 flex flex-col justify-center px-6 md:px-16 lg:px-24 z-10 pb-20 mt-12 md:mt-0">
+          <div className="max-w-5xl animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
+            
+            <div className="flex items-center gap-3 mb-8 md:mb-12">
+              <div className="w-8 h-[2px] bg-[#FF4530]" />
+              <span className="text-xs uppercase tracking-[0.2em] font-medium text-[#111111]">
+                Creative Director & Designer
               </span>
+            </div>
+
+            <h1 
+              className="text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] leading-[0.85] tracking-[-0.04em] text-[#111111]"
+              style={{ fontFamily: "'Fraunces', serif" }}
+            >
+              <span className="block font-medium">Making</span>
+              <span className="block italic font-light">things <span className="text-[#FF4530] font-normal not-italic relative">pop<svg className="absolute -bottom-4 left-0 w-full h-4 text-[#FF4530]" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 10 Q 50 20 100 10" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" /></svg></span>.</span>
             </h1>
             
-            <div className="w-[1px] h-16 bg-[#D4D0C5] mx-auto my-12" />
-
-            <p className="text-lg md:text-xl text-[#5A5753] font-light max-w-2xl mx-auto leading-relaxed">
-              Crafting calm, intuitive digital experiences that bring clarity to complex systems. Currently exploring the intersection of typography and interaction.
-            </p>
-
-            <div className="pt-12">
-              <a 
-                href="#" 
-                className="inline-flex items-center gap-4 text-sm tracking-widest uppercase text-[#2D2A26] group"
-              >
-                <span className="pb-1 border-b border-[#D4D0C5] group-hover:border-[#2D2A26] transition-colors duration-500">
-                  View Selected Works
-                </span>
-                <ArrowRight className="w-4 h-4 text-[#7B856A] group-hover:translate-x-1 transition-transform duration-500" strokeWidth={1.5} />
-              </a>
+            <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-8 items-end">
+              <div className="md:col-span-5 lg:col-span-4">
+                <p className="text-lg md:text-xl text-[#111111]/70 leading-relaxed font-light">
+                  I design digital experiences that feel human, look sharp, and don't take themselves too seriously.
+                </p>
+              </div>
+              <div className="md:col-span-7 lg:col-span-8 flex justify-start md:justify-end">
+                <a 
+                  href="#" 
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF4530] text-white px-8 py-4 rounded-full text-sm font-medium hover:bg-[#e03d2a] transition-all duration-300 hover:scale-105 group"
+                >
+                  Start a project
+                  <ArrowUpRight className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                </a>
+              </div>
             </div>
+
           </div>
         </main>
       </div>

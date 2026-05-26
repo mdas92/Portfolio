@@ -3,85 +3,81 @@ import React from 'react';
 export function ConceptC() {
   return (
     <>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap" />
-      <div className="min-h-screen w-full bg-[#f8f7f5] text-[#0a192f] flex flex-col font-['Space_Grotesk',sans-serif]">
-        {/* Nav */}
-        <nav className="w-full flex flex-col md:flex-row items-center justify-between px-8 py-6 border-b border-[#0a192f]/20">
-          <div className="flex items-baseline gap-4 mb-4 md:mb-0">
-            <span className="font-['Playfair_Display',serif] text-2xl italic tracking-wider">Jane Doe</span>
-            <div className="w-12 h-[1px] bg-[#e07a5f]"></div>
-            <span className="text-xs uppercase tracking-widest font-semibold text-[#e07a5f]">Design Systems</span>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Space+Grotesk:wght@300;400;500;600&display=swap" />
+      <div className="min-h-screen w-full bg-[#FFFFFF] text-[#000000] font-['Space_Grotesk',sans-serif] selection:bg-[#0040FF] selection:text-white flex flex-col overflow-hidden relative">
+        
+        {/* Giant structural background element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] leading-none font-['Dela_Gothic_One',cursive] text-[#000000] opacity-[0.03] pointer-events-none select-none z-0">
+          *
+        </div>
+
+        {/* Navigation */}
+        <nav className="relative z-10 w-full flex flex-col sm:flex-row items-center justify-between px-6 py-5 border-b-2 border-[#000000]">
+          <div className="font-['Dela_Gothic_One',cursive] text-2xl tracking-tighter uppercase mb-4 sm:mb-0">
+            ALEX<span className="text-[#0040FF]">.</span>
           </div>
-          <div className="flex gap-8 text-xs uppercase tracking-widest font-medium">
-            <a href="#" className="hover:text-[#e07a5f] transition-colors relative group">
+          <div className="flex items-center gap-6 sm:gap-10 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]">
+            <a href="#" className="hover:text-[#0040FF] transition-colors flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0040FF]"></span>
               Index
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#e07a5f] transition-all group-hover:w-full"></span>
             </a>
-            <a href="#" className="hover:text-[#e07a5f] transition-colors relative group">
-              Information
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#e07a5f] transition-all group-hover:w-full"></span>
-            </a>
-            <a href="#" className="hover:text-[#e07a5f] transition-colors relative group">
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#e07a5f] transition-all group-hover:w-full"></span>
-            </a>
+            <a href="#" className="hover:text-[#0040FF] transition-colors">Manifesto</a>
+            <a href="#" className="hover:text-[#0040FF] transition-colors">Archive</a>
+            <a href="#" className="text-[#0040FF] hover:text-[#000000] transition-colors">Connect</a>
           </div>
         </nav>
 
-        {/* Main */}
-        <main className="flex-1 grid grid-cols-1 lg:grid-cols-12 px-8 py-16 gap-8">
-          {/* Left Column - Structural Typography */}
-          <div className="lg:col-span-8 flex flex-col justify-center">
-            <h1 className="text-[12vw] lg:text-[6rem] xl:text-[7rem] leading-[0.9] font-bold text-[#0a192f] uppercase tracking-tighter">
-              Structured
+        {/* Hero Section */}
+        <main className="relative z-10 flex-1 flex flex-col justify-center w-full max-w-[1600px] mx-auto px-6 py-12 md:py-24">
+          
+          {/* Typographic Hero */}
+          <div className="w-full mb-16 md:mb-32">
+            <h1 className="font-['Dela_Gothic_One',cursive] text-[16vw] lg:text-[14rem] leading-[0.8] uppercase tracking-tighter break-words">
+              SYSTEM
               <br />
-              <span className="font-['Playfair_Display',serif] italic font-normal text-[#e07a5f] normal-case tracking-normal text-[13vw] lg:text-[6.5rem] xl:text-[7.5rem]">Intelligence</span>
-              <br />
-              <span className="text-transparent" style={{ WebkitTextStroke: '2px #0a192f' }}>By Design</span>
+              <span className="text-[#0040FF] md:ml-[15vw]">DESIGN</span>
             </h1>
+          </div>
+
+          {/* Grid Content */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 w-full">
+            <div className="md:col-span-3 border-t-2 border-[#000000] pt-4">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] mb-2 text-[#0040FF]">Role & Location</h2>
+              <p className="text-lg font-medium leading-snug">
+                Senior Interface Architect<br />
+                San Francisco, CA
+              </p>
+            </div>
             
-            <div className="mt-12 max-w-xl text-lg leading-relaxed text-[#0a192f]/80 font-light">
-              I am a digital designer and creative technologist based in New York. I build systematic, grid-forward interfaces that don't sacrifice soul for scalability.
+            <div className="md:col-span-4 md:col-start-5 border-t-2 border-[#000000] pt-4">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] mb-2 text-[#0040FF]">The Practice</h2>
+              <p className="text-base font-light leading-relaxed">
+                Constructing digital environments with unapologetic scale and brutal precision. I believe the internet should feel solid, intentional, and dangerously sharp. Less decoration, more structure.
+              </p>
             </div>
 
-            <div className="mt-16">
-              <a href="#" className="inline-flex items-center gap-4 text-[#0a192f] font-bold text-sm uppercase tracking-widest group">
-                <span className="border-b border-[#e07a5f] pb-1 group-hover:border-[#0a192f] transition-colors">Explore the Archive</span>
-                <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform text-[#e07a5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+            <div className="md:col-span-3 md:col-start-10 border-t-2 border-[#000000] pt-4 flex flex-col items-start">
+              <h2 className="text-xs font-bold uppercase tracking-[0.2em] mb-4 text-[#0040FF]">Status</h2>
+              <div className="flex items-center gap-2 mb-8">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0040FF] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-[#0040FF]"></span>
+                </span>
+                <span className="text-sm font-medium">Accepting Inquiries</span>
+              </div>
+              <a href="#" className="inline-block border-2 border-[#000000] text-[#000000] font-bold uppercase tracking-widest text-sm px-6 py-3 hover:bg-[#0040FF] hover:border-[#0040FF] hover:text-[#FFFFFF] transition-colors">
+                View Archive
               </a>
             </div>
           </div>
-
-          {/* Right Column - Secondary Info / Image */}
-          <div className="lg:col-span-4 flex flex-col justify-between lg:border-l border-[#0a192f]/20 lg:pl-8 pt-12 lg:pt-0">
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-[10px] uppercase tracking-widest text-[#0a192f]/50 mb-4 font-bold">Current Status</h3>
-                <p className="text-sm font-medium leading-snug">Available for freelance opportunities starting Q4 2023.</p>
-              </div>
-              
-              <div>
-                <h3 className="text-[10px] uppercase tracking-widest text-[#0a192f]/50 mb-4 font-bold">Selected Clients</h3>
-                <ul className="text-sm font-medium leading-relaxed space-y-1">
-                  <li className="flex justify-between border-b border-[#0a192f]/10 pb-2"><span>Acne Studios</span> <span className="font-mono text-xs opacity-60">2023</span></li>
-                  <li className="flex justify-between border-b border-[#0a192f]/10 pb-2 pt-2"><span>SSENSE</span> <span className="font-mono text-xs opacity-60">2022</span></li>
-                  <li className="flex justify-between border-b border-[#0a192f]/10 pb-2 pt-2"><span>Vogue</span> <span className="font-mono text-xs opacity-60">2021</span></li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-12 h-[300px] w-full bg-[#0a192f] relative overflow-hidden group">
-              <img 
-                src="/__mockup/images/editorial-abstract.jpg" 
-                alt="Editorial Abstract" 
-                className="w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-              />
-              <div className="absolute inset-0 border border-[#e07a5f] m-4 pointer-events-none opacity-50"></div>
-            </div>
-          </div>
         </main>
+        
+        {/* Footer Marquee / Bar */}
+        <div className="relative z-10 border-t-2 border-[#000000] py-4 px-6 flex justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em]">
+          <span>© 2024 / EDITION 001</span>
+          <span className="hidden sm:inline-block">NO COMPROMISE</span>
+          <span className="text-[#0040FF]">INITIATE SEQUENCE →</span>
+        </div>
       </div>
     </>
   );

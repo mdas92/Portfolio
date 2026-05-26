@@ -4,77 +4,88 @@ import { ArrowRight } from "lucide-react";
 export function ConceptA() {
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&display=swap"
+      <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@300;400;500;600&display=swap" 
       />
       <div 
-        className="min-h-screen w-full bg-[#050505] text-[#f4f4f4] flex flex-col relative overflow-hidden selection:bg-[#ccff00] selection:text-black"
-        style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+        className="min-h-screen w-full bg-[#FFFFFF] text-[#0D0D0D] flex flex-col selection:bg-[#FFE600] selection:text-[#0D0D0D]"
+        style={{ fontFamily: "'Inter', sans-serif" }}
       >
-        {/* Abstract Background Elements */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#ccff00]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
-
         {/* Navigation */}
-        <nav className="w-full flex items-center justify-between px-8 py-8 md:px-12 relative z-10">
-          <div className="text-xl font-bold tracking-tighter uppercase flex items-center gap-2">
-            <span className="w-3 h-3 bg-[#ccff00] rounded-sm block" />
-            V.A.
+        <nav className="w-full flex items-center justify-between px-6 py-5 md:px-12 border-b border-[#0D0D0D]">
+          <div 
+            className="text-2xl md:text-3xl flex items-center gap-2 tracking-wide"
+            style={{ fontFamily: "'Bungee', cursive" }}
+          >
+            <span className="w-4 h-4 bg-[#FFE600] block -mt-1" />
+            STUDIO
           </div>
-          <ul className="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide text-neutral-400">
+          <ul className="hidden md:flex items-center gap-12 text-sm font-semibold tracking-[0.1em] uppercase">
             <li>
-              <a href="#" className="hover:text-white transition-colors">Work</a>
+              <a href="#" className="hover:text-[#FFE600] transition-colors relative group">
+                WORK
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FFE600] transition-all group-hover:w-full"></span>
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition-colors">About</a>
+              <a href="#" className="hover:text-[#FFE600] transition-colors relative group">
+                SERVICES
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FFE600] transition-all group-hover:w-full"></span>
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition-colors">Services</a>
+              <a href="#" className="hover:text-[#FFE600] transition-colors relative group">
+                ABOUT
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FFE600] transition-all group-hover:w-full"></span>
+              </a>
             </li>
             <li>
-              <a href="#" className="hover:text-white transition-colors">Contact</a>
+              <a href="#" className="hover:text-[#FFE600] transition-colors relative group">
+                CONTACT
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#FFE600] transition-all group-hover:w-full"></span>
+              </a>
             </li>
           </ul>
         </nav>
 
         {/* Hero Content */}
-        <main className="flex-1 flex flex-col justify-center px-8 md:px-12 relative z-10 max-w-[1400px] mx-auto w-full">
-          <div className="max-w-5xl">
-            <p className="text-[#ccff00] font-medium tracking-widest uppercase mb-6 text-sm flex items-center gap-4">
-              <span className="w-8 h-[1px] bg-[#ccff00]" />
-              Creative Technologist
-            </p>
-            
+        <main className="flex-1 flex flex-col justify-center px-6 md:px-12 relative w-full pt-12 pb-24">
+          <div className="w-full flex flex-col items-start max-w-7xl mx-auto">
             <h1 
-              className="text-[4rem] md:text-[7rem] lg:text-[8rem] font-extrabold leading-[0.9] tracking-tighter mb-8"
-              style={{ fontFamily: "'Syne', sans-serif" }}
+              className="text-[14vw] sm:text-[12vw] md:text-[9rem] lg:text-[11rem] leading-[0.85] tracking-tight mb-8 break-words uppercase text-left w-full"
+              style={{ fontFamily: "'Bungee', cursive" }}
             >
-              DESIGNER.<br />
-              <span className="text-neutral-500">DEVELOPER.</span><br />
-              CREATOR.
+              WE MAKE<br />
+              <span className="text-transparent" style={{ WebkitTextStroke: "2px #0D0D0D" }}>THINGS</span><br />
+              <span className="relative inline-block">
+                HAPPEN
+                <span className="absolute bottom-2 md:bottom-4 left-0 w-full h-[12px] md:h-[24px] bg-[#FFE600] -z-10 mix-blend-multiply"></span>
+              </span>
             </h1>
             
-            <div className="max-w-xl">
-              <p className="text-xl md:text-2xl text-neutral-400 leading-relaxed mb-12 font-light">
-                I build digital experiences that live at the intersection of stark minimalism and raw engineering.
-              </p>
+            <div className="w-full flex flex-col md:flex-row gap-8 md:gap-16 items-start mt-8">
+              <div className="md:w-1/3">
+                <p className="font-semibold tracking-[0.15em] uppercase text-xs md:text-sm border-l-2 border-[#FFE600] pl-4">
+                  Creative Direction<br/>
+                  Brand Identity<br/>
+                  Digital Design
+                </p>
+              </div>
               
-              <button className="group relative inline-flex items-center gap-4 px-8 py-4 bg-white text-black font-semibold text-lg hover:bg-[#ccff00] transition-colors duration-300">
-                View Selected Work
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <div className="md:w-2/3 max-w-2xl">
+                <p className="text-xl md:text-2xl leading-relaxed mb-10 font-normal">
+                  We are a digital design studio partnering with ambitious founders to build brands that refuse to be ignored. Bold work for brave clients.
+                </p>
+                
+                <button className="group inline-flex items-center gap-3 px-8 py-5 bg-[#0D0D0D] text-[#FFFFFF] font-semibold tracking-widest text-sm uppercase hover:bg-[#FFE600] hover:text-[#0D0D0D] transition-colors duration-200">
+                  Start a Project
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
           </div>
         </main>
-        
-        {/* Decorative Grid / Lines */}
-        <div className="absolute inset-0 border-l border-r border-white/5 w-[1px] left-1/2 -translate-x-1/2 pointer-events-none hidden md:block" />
-        <div className="absolute bottom-12 right-12 flex flex-col gap-2 text-xs text-neutral-600 font-mono items-end pointer-events-none">
-          <span>LAT_34.0522° N</span>
-          <span>LNG_118.2437° W</span>
-          <span>EST_2025</span>
-        </div>
       </div>
     </>
   );
