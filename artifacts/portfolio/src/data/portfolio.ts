@@ -334,44 +334,44 @@ export const projects: Project[] = [
 export const journey = [
   {
     id: 0,
-    date: "2024 – Present",
+    date: "Nov 2024 – Present",
     role: "Content Strategist",
     company: "Aampe",
     description: "Building message content for consumer apps across fintech, sports, travel, food delivery, and fitness — designing label architectures, value proposition frameworks, and message variants to help clients unlock agentic optimisation. Alongside client work, translating practitioner insight into formal product pitches and UX feedback: a systematic bridge between what customers need and what the product becomes."
   },
   {
     id: 1,
-    date: "Jan 2022 – Present",
+    date: "Jan 2022 – Oct 2024 · 3 years",
     role: "Lead UX Writer",
     company: "PayU · LazyPay, PayU Finance",
     description: "Spearheading content strategy and design for LazyPay across touchpoints."
   },
   {
     id: 2,
-    date: "Oct 2021 – Dec 2022",
+    date: "Oct 2021 – Dec 2021 · 3 months",
     role: "Senior UX Writer",
     company: "PayU Finance",
     description: "First and only UX Writer at PayU Finance. Owned UX writing for LazyPay, defined content guidelines, and advocated for content design across the org."
   },
   {
     id: 3,
-    date: "Oct 2020 – Sep 2021",
+    date: "Oct 2020 – Sep 2021 · 1 year",
     role: "UX Writer & Copywriter",
     company: "Freelance · Spotdraft (part-time)",
     description: "Transitioned into UX writing. Worked on copywriting and social media content with various agencies."
   },
   {
     id: 4,
-    date: "Jul 2019 – Sep 2020",
+    date: "Jul 2019 – Sep 2020 · 1 year",
     role: "Senior UX Designer",
     company: "GoIbibo",
     description: "Designed end-to-end user experience for GoIbibo's homescreen, chatbot, and loyalty program GoTribe."
   },
   {
     id: 5,
-    date: "Jul 2014 – Jul 2019",
+    date: "Jul 2014 – Jul 2019 · 5 years",
     role: "Software Engineer → UX Designer",
-    company: "Adobe · 5 years",
+    company: "Adobe",
     description: "Started as a Quality Engineer straight out of college. Owned product quality and customer support across multiple release cycles. After 3.5 years, moved laterally into a UX Design role — singlehandedly taking over design for a new B2B e-learning product."
   }
 ];
