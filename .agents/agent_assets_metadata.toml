@@ -1,5 +1,40 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "AaKyn11O7aon5jnrBzfAR"
+uri = "file://artifacts/portfolio/public/mohana-photo.png"
+type = "image"
+title = "Warm abstract portrait"
+
+[[generated]]
+id = "pH9882lDesfyBkJnBcG6Z"
+uri = "file://artifacts/portfolio/public/fintech-overhaul.png"
+type = "image"
+title = "Fintech abstract visual"
+
+[[generated]]
+id = "Jtb2GyqrpSH-MnKV-5Tr_"
+uri = "file://artifacts/portfolio/public/sports-training.png"
+type = "image"
+title = "Sports abstract visual"
+
+[[generated]]
+id = "aXReVTYeooXebD3BqWUmS"
+uri = "file://artifacts/portfolio/public/tax-onboarding.png"
+type = "image"
+title = "Tax abstract visual"
+
+[[generated]]
+id = "JNLkc-CFL-0srGRwMJ29R"
+uri = "file://artifacts/portfolio/public/superapp-l10n.png"
+type = "image"
+title = "Superapp abstract visual"
+
+[[generated]]
+id = "nynNwEa-B7e0BHZlVNei9"
+uri = "file://artifacts/portfolio/public/playbook.png"
+type = "image"
+title = "Playbook abstract visual"
 
 [[outputs]]
 id = "r9SJl2ji7IvAYaFR0bvNq"

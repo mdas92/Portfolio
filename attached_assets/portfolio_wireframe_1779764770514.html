@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohana Das — Portfolio Wireframe</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f4f0;
+      --fg: #1a1a1a;
+      --muted: #888;
+      --border: #d0cec8;
+      --accent: #1a1a1a;
+      --block: #e0ddd7;
+      --label-bg: #dddbd4;
+      --serif: 'Georgia', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+      --nav-h: 56px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--fg);
+    }
+
+    /* ── WIREFRAME LABEL ── */
+    .wf-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 24px;
+      background: var(--fg);
+      color: var(--bg);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      padding: 5px 10px;
+      border-radius: 2px;
+      z-index: 200;
+      text-transform: uppercase;
+    }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      display: none;
+      padding-top: var(--nav-h);
+      min-height: 100vh;
+    }
+
+    .page.active { display: block; }
+
+    /* ── SHARED SECTION HELPERS ── */
+    .section {
+      padding: 80px 48px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .section-sm {
+      padding: 60px 48px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 42px;
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: #444;
+      max-width: 560px;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 48px;
+    }
+
+    /* ── PLACEHOLDER BLOCK ── */
+    .placeholder {
+      background: var(--block);
+      border: 1px dashed var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 1 — ABOUT
+    ──────────────────────────────────── */
+    #page-about .hero {
+      padding: 100px 48px 80px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #page-about .hero h1 {
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+
+    #page-about .hero p {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 520px;
+      color: #555;
+    }
+
+    .resume-link {
+      display: inline-block;
+      margin-top: 28px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid var(--fg);
+      padding-bottom: 2px;
+      cursor: pointer;
+    }
+
+    .photo-block {
+      width: 100%;
+      height: 200px;
+      background: var(--block);
+      border: 1px dashed var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 48px;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 2 — JOURNEY
+    ──────────────────────────────────── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-date {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      padding-top: 3px;
+    }
+
+    .timeline-content h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .timeline-content .role-co {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 14px;
+      color: #555;
+      max-width: 480px;
+      margin: 0;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 3 — WORK
+    ──────────────────────────────────── */
+    .work-intro {
+      padding: 80px 48px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .work-intro h1 { font-size: 38px; }
+
+    .project-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-row:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .project-card {
+      padding: 36px 0 36px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .project-card:first-child {
+      border-right: 1px solid var(--border);
+      padding-right: 32px;
+    }
+
+    .project-card:last-child {
+      padding-left: 32px;
+    }
+
+    .project-card:hover { opacity: 0.6; }
+
+    .project-card .tag {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .project-card h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 300px;
+      margin: 0;
+    }
+
+    /* Full-width project card */
+    .project-row.full .project-card {
+      border-right: none;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    /* ────────────────────────────────────
+       PAGE 4 — PROJECT DETAIL
+    ──────────────────────────────────── */
+    #page-project .back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 24px 48px 0;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #page-project .back:hover { color: var(--fg); }
+
+    .project-hero {
+      padding: 48px 48px 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .project-hero .tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .project-hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .project-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .project-meta-item .meta-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .project-meta-item .meta-val {
+      font-size: 14px;
+    }
+
+    .project-image-hero {
+      width: 100%;
+      height: 320px;
+      background: var(--block);
+      border: 1px dashed var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 64px;
+    }
+
+    .project-body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 48px 80px;
+    }
+
+    .project-section {
+      margin-bottom: 56px;
+    }
+
+    .project-section .section-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-section p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+      max-width: 600px;
+    }
+
+    .project-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .project-section ul li {
+      font-size: 15px;
+      color: #444;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .project-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    .image-block {
+      width: 100%;
+      height: 240px;
+      background: var(--block);
+      border: 1px dashed var(--border);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 24px;
+    }
+
+    .quote-block {
+      border-left: 2px solid var(--fg);
+      padding: 8px 0 8px 20px;
+      margin-top: 16px;
+    }
+
+    .quote-block p {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-style: italic;
+      color: #555;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    footer span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+    }
+
+    /* ── ANNOTATION ── */
+    .annotation {
+      display: inline-block;
+      background: #fff8d6;
+      border: 1px solid #e8d96a;
+      font-size: 11px;
+      color: #7a6800;
+      padding: 3px 8px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('about')">Mohana Das</div>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('about')" id="nav-about" class="active">About</a>
+    <a href="#" onclick="showPage('journey')" id="nav-journey">Journey</a>
+    <a href="#" onclick="showPage('work')" id="nav-work">Work</a>
+  </div>
+</nav>
+
+<div class="wf-badge">Wireframe</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 1 — ABOUT
+══════════════════════════════════════ -->
+<div class="page active" id="page-about">
+
+  <div class="section" style="padding-bottom: 0;">
+    <div class="label">Content Designer & UX Writer</div>
+    <h1>Hello, I'm Mohana.</h1>
+    <p style="font-size:17px; line-height:1.75; max-width:520px;">
+      From engineering to design to writing — 10 years of building things in tech.
+      I work at the intersection of content strategy, product thinking, and language.
+      Currently based in Kolkata, India.
+    </p>
+    <a class="resume-link" href="#">Download Resume ↗</a>
+  </div>
+
+  <div class="section" style="padding-top: 56px;">
+    <div class="photo-block">Photo / illustration</div>
+  </div>
+
+  <footer>
+    <span>Mohana Das · mohanadas.dsi@gmail.com</span>
+    <a href="#">LinkedIn ↗</a>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 2 — JOURNEY
+══════════════════════════════════════ -->
+<div class="page" id="page-journey">
+
+  <div class="section" style="padding-bottom: 32px;">
+    <div class="label">Career</div>
+    <h1>My Journey</h1>
+    <p>Engineering to design to writing. Here's how the path unfolded.</p>
+  </div>
+
+  <div style="max-width:800px; margin: 0 auto; padding: 0 48px;">
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jan 2022 – Present</div>
+        <div class="timeline-content">
+          <h3>Lead UX Writer</h3>
+          <div class="role-co">PayU · LazyPay, PayU Finance</div>
+          <p>Spearheading content strategy and design for LazyPay across touchpoints.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2021 – Dec 2022</div>
+        <div class="timeline-content">
+          <h3>Senior UX Writer</h3>
+          <div class="role-co">PayU Finance</div>
+          <p>First and only UX Writer at PayU Finance. Owned UX writing for LazyPay, defined content guidelines, and advocated for content design across the org.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Oct 2020 – Sep 2021</div>
+        <div class="timeline-content">
+          <h3>UX Writer & Copywriter</h3>
+          <div class="role-co">Freelance · Spotdraft (part-time)</div>
+          <p>Transitioned into UX writing. Worked on copywriting and social media content with various agencies.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jul 2019 – Sep 2020</div>
+        <div class="timeline-content">
+          <h3>Senior UX Designer</h3>
+          <div class="role-co">GoIbibo</div>
+          <p>Designed end-to-end user experience for GoIbibo's homescreen, chatbot, and loyalty program GoTribe.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">Jul 2014 – Jul 2019</div>
+        <div class="timeline-content">
+          <h3>Software Engineer → UX Designer</h3>
+          <div class="role-co">Adobe · 5 years</div>
+          <p>Started as a Quality Engineer straight out of college. Owned product quality and customer support across multiple release cycles. After 3.5 years, moved laterally into a UX Design role — singlehandedly taking over design for a new B2B e-learning product.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer style="margin-top: 48px;">
+    <span>Mohana Das · mohanadas.dsi@gmail.com</span>
+    <a href="#">LinkedIn ↗</a>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 3 — WORK
+══════════════════════════════════════ -->
+<div class="page" id="page-work">
+
+  <div class="work-intro">
+    <div class="label">Selected Work</div>
+    <h1>Projects</h1>
+    <p>A selection of content strategy, UX writing, and product thinking work.</p>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- ROW 1 -->
+    <div class="project-row">
+      <div class="project-card" onclick="showProject('fintech-overhaul')">
+        <div class="tag">Content Strategy · Fintech</div>
+        <h3>End-to-End Content Overhaul for a Major Fintech App</h3>
+        <p>Push notification overhaul — value props, 15 new message groups, legal review.</p>
+      </div>
+      <div class="project-card" onclick="showProject('sports-training')">
+        <div class="tag">Training · Content Co-Creation</div>
+        <h3>In-Person Training for a Major Sports League</h3>
+        <p>NYC-based content workshop — co-wrote 800+ message alternates in under 15 minutes.</p>
+      </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="project-row">
+      <div class="project-card" onclick="showProject('tax-onboarding')">
+        <div class="tag">Client Onboarding · Europe</div>
+        <h3>New-Client Kick-Off for a European Tax Filing App</h3>
+        <p>Solo-led onboarding from scratch — Values Thinking, label framework, rapid launch.</p>
+      </div>
+      <div class="project-card" onclick="showProject('superapp-l10n')">
+        <div class="tag">Localisation · SEA</div>
+        <h3>Localisation Framework for a Southeast Asian Super App</h3>
+        <p>Multi-language push notification framework across 4+ markets.</p>
+      </div>
+    </div>
+
+    <!-- ROW 3 — full width -->
+    <div class="project-row full">
+      <div class="project-card" onclick="showProject('playbook')">
+        <div class="tag">Internal · Company-Wide</div>
+        <h3>Content Playbook — Company-Wide Training Resource</h3>
+        <p>Comprehensive Figma deck covering label strategy, message architecture, and best practices. Distributed to all active clients.</p>
+      </div>
+    </div>
+
+    <!-- ROW 4 — LazyPay work (leave blank) -->
+    <div class="project-row">
+      <div class="project-card" onclick="showProject('lazypay')">
+        <div class="tag">UX Writing · Fintech</div>
+        <h3>LazyPay — UX Writing at PayU Finance <span class="annotation">fill in later</span></h3>
+        <p style="color: #bbb; font-style: italic;">Details to be added</p>
+      </div>
+      <div class="project-card" onclick="showProject('goibibo')">
+        <div class="tag">UX Design · Travel</div>
+        <h3>GoIbibo Homescreen & Loyalty <span class="annotation">fill in later</span></h3>
+        <p style="color: #bbb; font-style: italic;">Details to be added</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>Mohana Das · mohanadas.dsi@gmail.com</span>
+    <a href="#">LinkedIn ↗</a>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PAGE 4 — PROJECT DETAIL (template)
+══════════════════════════════════════ -->
+<div class="page" id="page-project">
+
+  <div class="back" onclick="showPage('work')">← Back to Work</div>
+
+  <div class="project-hero">
+    <div class="tag" id="proj-tag">Content Strategy · Fintech</div>
+    <h1 id="proj-title">Project Title</h1>
+
+    <div class="project-meta">
+      <div class="project-meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-val" id="proj-role">Content Strategist</span>
+      </div>
+      <div class="project-meta-item">
+        <span class="meta-label">Context</span>
+        <span class="meta-val" id="proj-context">—</span>
+      </div>
+      <div class="project-meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-val" id="proj-year">2025</span>
+      </div>
+    </div>
+
+    <div class="project-image-hero">Hero image / screenshot</div>
+  </div>
+
+  <div class="project-body" id="proj-body">
+    <!-- injected dynamically -->
+  </div>
+
+  <footer>
+    <span>Mohana Das · mohanadas.dsi@gmail.com</span>
+    <a href="#">LinkedIn ↗</a>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     PROJECT DATA
+══════════════════════════════════════ -->
+<script>
+  const projects = {
+    'fintech-overhaul': {
+      tag: 'Content Strategy · Fintech',
+      title: 'End-to-End Content Overhaul for a Major Fintech App',
+      role: 'Content Strategist & Project Manager',
+      context: 'Leading personal finance / budgeting app (US consumer)',
+      year: '2025',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p>Push notification content had grown stale and unstructured. Messages lacked a coherent value proposition framework, labels were inconsistently applied, and the account needed a full reset before agent learning could resume cleanly.</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Did</div>
+          <ul>
+            <li>Ran a Values Thinking exercise — mapping 10–11 distinct, user-centric value propositions from the product's core offerings.</li>
+            <li>Created 15 new message groups combining evergreen fintech content with renewed engagement and retention messaging.</li>
+            <li>Coordinated a cross-functional working group, delegating message writing with detailed briefs and reviewing all output.</li>
+            <li>Managed the legal review cycle, incorporating compliance feedback and prioritising launch sequencing.</li>
+            <li>Oversaw archiving of legacy campaigns and restructured the label library for clean agent learning.</li>
+          </ul>
+          <div class="image-block">Process diagram / label architecture screenshot</div>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p>Completed on schedule — all 15 new message groups entered legal review within the first week of February, and the first campaigns went live shortly after.</p>
+          <div class="quote-block"><p>"Copywriting support has been really helpful 🔥"</p></div>
+        </div>
+      `
+    },
+    'sports-training': {
+      tag: 'Training · Content Co-Creation',
+      title: 'In-Person Training & Content Co-Creation for a Major Sports League',
+      role: 'Content Strategist',
+      context: 'Premier professional sports league (US)',
+      year: '2025',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p>A newly onboarded sports league needed their internal marketing team to become confident and self-sufficient with the Composer tool — building campaigns, understanding label strategy, and producing content at scale.</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Did</div>
+          <ul>
+            <li>Travelled to the client's New York City headquarters for an in-person working session.</li>
+            <li>Delivered a hands-on training covering the Composer, label system, and spreadsheet-based campaign building.</li>
+            <li>Co-wrote a live "Standings" push notification — producing 800+ message alternates in roughly 10–15 minutes.</li>
+            <li>Defined a prioritised roadmap of 8 new campaign categories.</li>
+            <li>Provided content strategy guidance on messaging across multiple audience types.</li>
+          </ul>
+          <div class="image-block">Photo / session documentation</div>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p>By end of February, the client had 3 new messages ready to launch. By end of March, the account had grown to 10+ active campaigns.</p>
+          <div class="quote-block"><p>"It was truly impactful just sitting next to [the client] and working together to build and brainstorm messages. We co-wrote a message with 800+ alternates in just 10 or 15 mins."</p></div>
+        </div>
+      `
+    },
+    'tax-onboarding': {
+      tag: 'Client Onboarding · Europe',
+      title: 'New-Client Kick-Off & Onboarding for a European Tax Filing App',
+      role: 'Content Strategist',
+      context: 'Fast-growing European consumer tax app · $102K deal value',
+      year: '2025',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p>A newly closed account with a highly seasonal user base needed onboarding onto the platform's content methodology from scratch — the first solo content kick-off of its kind.</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Did</div>
+          <ul>
+            <li>Led a pre-sync with internal stakeholders to tailor the methodology to a tax product context.</li>
+            <li>Facilitated the first live content kick-off using Values Thinking and Inner Monologue frameworks.</li>
+            <li>Created and shared a collaborative Label Worksheet for the client's ongoing reference.</li>
+            <li>Ran a follow-up Labels & Messaging Workshop, narrowing the library to 6 core value propositions.</li>
+            <li>Reviewed the client's first independently-built push campaigns weeks after kick-off.</li>
+          </ul>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p>The client was reviewing self-created campaigns in the Composer within weeks of their first session — the fastest any client had moved from onboarding to independent content creation.</p>
+          <div class="quote-block"><p>"That was FAST. I wonder if any other partner created messages this fast."</p></div>
+        </div>
+      `
+    },
+    'superapp-l10n': {
+      tag: 'Localisation · Southeast Asia',
+      title: 'Localisation Framework & PMM Content Architecture for a Southeast Asian Super App',
+      role: 'Content Strategist',
+      context: 'Major Southeast Asian ride-hailing and delivery super app',
+      year: '2025',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p>A super app operating across multiple Southeast Asian markets needed personalised push notifications in multiple languages — with copy written by their internal PMM team. The challenge was both technical (word-order differences across languages) and strategic (multiple value props per message slowing agent learning).</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Did</div>
+          <ul>
+            <li>Designed a localisation template with a Loom walkthrough for structuring messages across languages.</li>
+            <li>Identified a word-order problem in translated components (SVO vs SOV language structures) and proposed a fix.</li>
+            <li>Reviewed PMM-authored copy across multiple rounds for label structure, value prop clarity, and alternate quality.</li>
+            <li>Explained why single-CVP messages support faster agent learning, with a practical experiment structure.</li>
+          </ul>
+          <div class="image-block">Localisation template / framework diagram</div>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p>Use Case 2 launched in early March — with Dineout Deals, Advanced Booking, Group Order, and Family Account campaigns going live across multiple Southeast Asian markets.</p>
+        </div>
+      `
+    },
+    'playbook': {
+      tag: 'Internal · Company-Wide Resource',
+      title: 'Content Playbook — Company-Wide Training Resource',
+      role: 'Content Strategist & Author',
+      context: 'Internal deliverable distributed to all active clients',
+      year: '2025',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p>As the client portfolio grew, onboarding was inconsistent and time-consuming. There was no single resource covering label strategy, message architecture, and best practices — from first-day clients to high-maturity accounts.</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Built</div>
+          <p>A comprehensive Figma deck covering everything a client or account manager needs to create effective agentic content:</p>
+          <ul>
+            <li>Labels and content strategies — how to structure a label library, what makes a good value proposition, common mistakes.</li>
+            <li>Step-by-step message creation guide: from brief to published campaign.</li>
+            <li>Best practices: writing copy that supports agent learning, not just copy that sounds good.</li>
+            <li>Content Personalisation Map: a visual framework for identifying gaps across audiences and use cases.</li>
+            <li>Content Scorecard: a maturity model for evaluating client progress.</li>
+          </ul>
+          <div class="image-block">Playbook cover / key slide screenshots</div>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p>Adopted company-wide within days of internal launch. Distributed to clients including the sports league, the fintech rewards app, the barbershop booking app, the super app, and others.</p>
+          <div class="quote-block"><p>"This deck is on fire… Components never were so clear."</p></div>
+          <div class="quote-block"><p>"This is an incredible deck… should be mandatory during onboarding."</p></div>
+        </div>
+      `
+    },
+    'lazypay': {
+      tag: 'UX Writing · Fintech',
+      title: 'LazyPay — UX Writing at PayU Finance',
+      role: 'Lead UX Writer',
+      context: 'LazyPay, PayU Finance — India',
+      year: '2022–Present',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p style="color:#bbb; font-style:italic;">To be filled in.</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Did</div>
+          <p style="color:#bbb; font-style:italic;">To be filled in.</p>
+          <div class="image-block">Screenshots / screens</div>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p style="color:#bbb; font-style:italic;">To be filled in.</p>
+        </div>
+      `
+    },
+    'goibibo': {
+      tag: 'UX Design · Travel',
+      title: 'GoIbibo — Homescreen & Loyalty Program Design',
+      role: 'Senior UX Designer',
+      context: 'GoIbibo — India',
+      year: '2019–2020',
+      body: `
+        <div class="project-section">
+          <div class="section-label">The Challenge</div>
+          <p style="color:#bbb; font-style:italic;">To be filled in.</p>
+        </div>
+        <div class="project-section">
+          <div class="section-label">What I Did</div>
+          <p style="color:#bbb; font-style:italic;">To be filled in.</p>
+          <div class="image-block">Screens / prototypes</div>
+        </div>
+        <div class="project-section">
+          <div class="section-label">The Result</div>
+          <p style="color:#bbb; font-style:italic;">To be filled in.</p>
+        </div>
+      `
+    }
+  };
+
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    const navEl = document.getElementById('nav-' + name);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showProject(slug) {
+    const p = projects[slug];
+    if (!p) return;
+    document.getElementById('proj-tag').textContent = p.tag;
+    document.getElementById('proj-title').textContent = p.title;
+    document.getElementById('proj-role').textContent = p.role;
+    document.getElementById('proj-context').textContent = p.context;
+    document.getElementById('proj-year').textContent = p.year;
+    document.getElementById('proj-body').innerHTML = p.body;
+    showPage('project');
+  }
+</script>
+
+</body>
+</html>
