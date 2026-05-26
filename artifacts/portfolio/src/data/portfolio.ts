@@ -1,4 +1,38 @@
-export const projects = [
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  display: "inline" | "full-width";
+}
+
+export interface ProjectSection {
+  heading: string;
+  content?: string;
+  bullets?: string[];
+  image?: ProjectImage;
+  note?: string;
+}
+
+export interface Project {
+  slug: string;
+  tag: string;
+  title: string;
+  summary: string;
+  role: string;
+  context: string;
+  year: string;
+  duration?: string;
+  challenge: string;
+  whatIDid: string[];
+  result: string;
+  quote?: string;
+  image: string;
+  thumbnail?: string;
+  comingSoon?: boolean;
+  confidential?: boolean;
+  sections?: ProjectSection[];
+}
+
+export const projects: Project[] = [
   {
     slug: "fintech-overhaul",
     tag: "Content Strategy · Fintech",
@@ -98,19 +132,188 @@ export const projects = [
     image: "/playbook.png"
   },
   {
-    slug: "lazypay",
-    tag: "UX Writing · Fintech",
-    title: "LazyPay — UX Writing at PayU Finance",
-    summary: "Details to be added.",
-    role: "",
-    context: "",
-    year: "",
-    challenge: "",
+    slug: "chatbot",
+    tag: "Conversation Design · Fintech",
+    title: "Building an In-App Chat Assistant",
+    summary: "End-to-end conversation design for a support bot resolving 50,000+ monthly queries — from research to a 5-product decision tree.",
+    role: "Sole Content Owner — IA, Content Strategy, Conversation Design",
+    context: "LazyPay (PayU Finance)",
+    year: "2022",
+    duration: "2 months · XL project",
+    challenge: "82% of queries received by the call centre — over 50,000 per month — could be resolved with factual information. The business needed to reduce incoming calls and improve CSAT with a faster, more satisfying support experience. In-app, 45% of new users were not repaying on time. The existing support experience was phone-first and offered no automated path to resolution.",
     whatIDid: [],
-    result: "",
-    quote: "",
-    image: "",
-    comingSoon: true
+    result: "Delivered a full decision tree spanning 5 product lines — one of the most structurally complex content projects I have led. Phase I covered Help & Support with simple decision-tree logic; Phase II scope included NLP and in-app ticket raising, informed directly by prototype findings.",
+    image: "/images/projects/chatbot/01_cover_thumbnail.svg",
+    thumbnail: "/images/projects/chatbot/01_cover_thumbnail.svg",
+    sections: [
+      {
+        heading: "Research & Data",
+        content: "I collated all available data from UX research and customer care teams — reviewing user interviews, call centre recordings, transcripts, and monthly reports. I also ran a competitor analysis of other fintech apps and conducted journey mapping sessions with the designer and PM.",
+        image: {
+          src: "/images/projects/chatbot/02_research-data_inline.svg",
+          alt: "Horizontal bar chart showing top call centre query categories: Account Related 21.1%, Loans and EMIs 14.6%, Charges and Fees 6.1%",
+          display: "inline"
+        }
+      },
+      {
+        heading: "Content Guidelines & Framework",
+        content: "Working with stakeholders, I established four governing principles for the chatbot's content — covering tone, information relevance, decision architecture, and user control.",
+        image: {
+          src: "/images/projects/chatbot/03_content-framework_inline.svg",
+          alt: "Four framework principles: Empathetic tone, Co-operative, At most 3 options per node, User stays in control",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Prototype & Test",
+        content: "Before building the full tree, I tested two prototypes — one using Use Case categories, one using Product categories — across 10 user sessions.",
+        image: {
+          src: "/images/projects/chatbot/04_prototype-findings_inline.svg",
+          alt: "Six findings from 10 user prototype sessions, including preference for use-case categorisation and requests for NLP and in-app ticket raising",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Final Tree & Designs",
+        content: "The complete decision tree spanned 5 product lines with interconnected flows, covering everything from transactions to repayments. I collaborated closely with the product designer to finalise the app UI with a focus on discoverability and comprehension.",
+        bullets: [
+          "Capabilities limited to Help & Support",
+          "Simple decision-tree logic (NLP in Phase II scope)",
+          "Bot has a persona but no name or avatar",
+          "Implemented via a third-party vendor, not a native build",
+          "Each new chat carries the same context"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "lazycard",
+    tag: "UX Writing · Fintech",
+    title: "UX Writing Review for LazyCard",
+    summary: "Full content audit and rewrite for a new physical and digital credit card — first project as LazyPay's first UX Writer.",
+    role: "Sole Content Owner — IA, Content Strategy, Copy Review",
+    context: "LazyPay (PayU Finance)",
+    year: "2021",
+    duration: "4 days · M project",
+    challenge: "LazyCard was a credit offering launched by LazyPay near the end of 2021, available as both a physical and digital card. As a newly joined UX Writer — the first at the company — my first project was to review the existing copy across the entire LazyCard app flow and bring it up to standard.",
+    whatIDid: [],
+    result: "Delivered a full copy review with concrete, implemented recommendations — restructured value propositions, removed a misleading approval claim, standardised casing, and replaced jargon throughout.",
+    image: "/images/projects/lazycard/01_cover_thumbnail.svg",
+    thumbnail: "/images/projects/lazycard/01_cover_thumbnail.svg",
+    sections: [
+      {
+        heading: "Understanding the Users",
+        content: "An earlier persona study (March 2020) identified three major persona types for young Indian users. Hedonists and Attackers were the primary target group for LazyCard — they are more likely to opt for credit products and are already comfortable with the concept of credit.",
+        image: {
+          src: "/images/projects/lazycard/02_user-personas_inline.svg",
+          alt: "Three user persona cards: Defender (save for future), Hedonist (earn to enjoy, target), and Attacker (earn for future, target). Hedonist and Attacker are highlighted as LazyCard target groups.",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Mapping the User Journey",
+        content: "I mapped the end-to-end journey across four stages — from first awareness of LazyCard through to activation — to identify where copy problems were most impactful.",
+        image: {
+          src: "/images/projects/lazycard/03_user-journey_full-width.svg",
+          alt: "Four-stage user journey map for LazyCard: Awareness, Consideration, Onboarding, Activation — with descriptions and emotional states at each stage",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Designs and Copy Review",
+        content: "I conducted a full IA, content strategy, and copy review across the finished designs — covering the entry point on the homescreen, the LazyCard landing screen, and the onboarding and KYC flow.",
+        image: {
+          src: "/images/projects/lazycard/04_copy-review_full-width.svg",
+          alt: "Before and after copy comparison table showing improvements to the LazyCard landing screen: headline, value props list, acceptance copy, and CTA button",
+          display: "full-width"
+        }
+      }
+    ]
+  },
+  {
+    slug: "expense-mgmt",
+    tag: "Content Strategy · Fintech",
+    title: "Exploring Expense Management",
+    summary: "Research-driven IA, content strategy, and terminology framework for a new expense tracking feature — built before a single screen was designed.",
+    role: "Sole UX Writer — IA, Content Strategy, Terminology Framework",
+    context: "LazyPay (PayU Finance)",
+    year: "2022",
+    duration: "2 weeks · L project",
+    challenge: "LazyPay wanted to build a new expense tracking feature. As the sole UX Writer, I was tasked with defining the terminology, information architecture, and overall content strategy before a single screen was designed.",
+    whatIDid: [],
+    result: "Delivered a complete content strategy and IA framework that defined how the product would communicate its core concept — \"Manage your money\" — and how every type of expense, spend, and transaction would be categorised and named.",
+    image: "/images/projects/expense-mgmt/01_cover_thumbnail.svg",
+    thumbnail: "/images/projects/expense-mgmt/01_cover_thumbnail.svg",
+    confidential: true,
+    sections: [
+      {
+        heading: "Analysing the Competition",
+        content: "I researched 12–15 apps in the current market to understand how they structure their products and what terminology they use — specifically to understand whether Indian users, whose first language is often not English, were already exposed to terms like 'expense', 'transactions', or 'budget'."
+      },
+      {
+        heading: "Researching User Needs",
+        content: "The designer and I conducted internal and external user interviews alongside a demographic study. Sessions revealed that the primary motivation was to save and manage money — not to automate tracking. Most users preferred a physical diary. Users were comfortable with terms like 'expense tracking' and 'categories'.",
+        image: {
+          src: "/images/projects/expense-mgmt/02_user-research-stats_inline.svg",
+          alt: "Five statistics from user research: 40% want to save more, 33% struggle with saving, 30% don't track expenses, 26% use a physical diary, 14% use an app",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Information Architecture",
+        content: "Based on user mental models, I defined a clear IA framework that separated credit and debit as distinct entities, treated any immediate loss of money as an expense, and organised everyday transactions as 'Spends' — a subset of expenses — grouped by categories like travel and food.",
+        image: {
+          src: "/images/projects/expense-mgmt/03_ia-framework_full-width.svg",
+          alt: "Expense information architecture tree: Expenses branches into Spends (everyday transactions), Bills and Subscriptions, and Upcoming Payments. Spends further splits into category types like Food and Travel.",
+          display: "full-width"
+        },
+        note: "This feature was in progress at time of documentation and had not yet been publicly released."
+      }
+    ]
+  },
+  {
+    slug: "repayments",
+    tag: "Content Strategy · Fintech",
+    title: "Improving Repayment Rates",
+    summary: "Content and design interventions to drive on-time repayments — a three-pronged strategy targeting discoverability, urgency, and transparency.",
+    role: "Content Strategist — Problem Identification, Multi-level Solution Design, Content-First Design",
+    context: "LazyPay (PayU Finance)",
+    year: "2022",
+    duration: "1 month · L project",
+    challenge: "High repayment rates signal user trust and reduce risk for the business. The rate was especially poor among new users — 45% were not repaying on time. Of these, 23% were opening the app during the repayment window but still not paying, while the rest were not opening the app at all.",
+    whatIDid: [],
+    result: "Delivered a full three-strategy solution across all repayment touchpoints, with a primary success target of a 10% improvement in on-time repayment rate based on analyst modelling.",
+    image: "/images/projects/repayments/01_cover_thumbnail.svg",
+    thumbnail: "/images/projects/repayments/01_cover_thumbnail.svg",
+    sections: [
+      {
+        heading: "Defining the Problem",
+        content: "Through research and data analysis, the team identified several root causes: users lacked awareness of late fees, they knew repayment was important but not urgent, reminders were perceived as boring and robotic, and new users had the same experience as mature users despite being unfamiliar with the process.",
+        image: {
+          src: "/images/projects/repayments/02_problem-data_inline.svg",
+          alt: "Flow diagram showing 100% of new users breaking into 45% not repaying (split into 23% who opened the app but didn't pay and 22% who didn't open at all) and 55% paying on time. Root causes listed: no urgency signals, late fee not visible, notification easy to ignore.",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Solution Strategy",
+        content: "I reviewed the existing UI screens and notifications, then designed a three-pronged strategy covering all touch-points in the user's repayment journey.",
+        image: {
+          src: "/images/projects/repayments/03_solution-strategy_full-width.svg",
+          alt: "Three-column strategy framework: 01 Discoverability (redesigned notification placement and hierarchy), 02 Urgency (new bottom sheet after due date breach), 03 Transparency (surfaced late fees, clearer CTA)",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Content-First Design",
+        content: "My key contribution was applying a content-first design approach to the notification component — prioritising information based on what users actually need to know, in the order they need to know it.",
+        image: {
+          src: "/images/projects/repayments/04_content-hierarchy_full-width.svg",
+          alt: "Prioritised table of notification content: Amount (essential), Due date (essential), Due status (essential), Penalties, Count, Product name — with example text and purpose for each",
+          display: "full-width"
+        }
+      }
+    ]
   },
   {
     slug: "goibibo",
@@ -123,7 +326,6 @@ export const projects = [
     challenge: "",
     whatIDid: [],
     result: "",
-    quote: "",
     image: "",
     comingSoon: true
   }

@@ -18,7 +18,7 @@ export default function ProjectDetail() {
   }
 
   return (
-    <motion.article 
+    <motion.article
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
@@ -29,7 +29,7 @@ export default function ProjectDetail() {
         <Link href="/work" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
           ← Back to Work
         </Link>
-        
+
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-12 tracking-tight leading-tight">
           {project.title}
         </h1>
@@ -44,25 +44,29 @@ export default function ProjectDetail() {
             <div className="font-medium text-foreground">{project.context}</div>
           </div>
           <div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Year</div>
-            <div className="font-medium text-foreground">{project.year}</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+              {project.duration ? "Duration" : "Year"}
+            </div>
+            <div className="font-medium text-foreground">{project.duration ?? project.year}</div>
           </div>
         </div>
       </div>
 
       {/* Hero Image */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-16 md:mb-24">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="aspect-[16/9] md:aspect-[3/1] bg-muted w-full overflow-hidden"
+          className="w-full overflow-hidden"
+          style={{ maxHeight: 480 }}
         >
           {project.image && (
-            <img 
-              src={project.image} 
+            <img
+              src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full object-cover"
+              style={{ maxHeight: 480 }}
             />
           )}
         </motion.div>
@@ -70,11 +74,12 @@ export default function ProjectDetail() {
 
       {/* Content */}
       <div className="px-6 md:px-16 lg:px-24 max-w-3xl mx-auto w-full flex flex-col gap-16">
-        
+
+        {/* Challenge */}
         {project.challenge && (
           <section>
             <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
-              Challenge
+              The Challenge
             </h2>
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
               {project.challenge}
@@ -82,6 +87,46 @@ export default function ProjectDetail() {
           </section>
         )}
 
+        {/* Rich sections (for older projects) */}
+        {project.sections && project.sections.map((section, i) => (
+          <section key={i}>
+            <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
+              {section.heading}
+            </h2>
+
+            {section.content && (
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light mb-8">
+                {section.content}
+              </p>
+            )}
+
+            {section.image && (
+              <div className={`mb-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
+                <img
+                  src={section.image.src}
+                  alt={section.image.alt}
+                  className="w-full h-auto rounded-lg shadow-sm"
+                />
+              </div>
+            )}
+
+            {section.bullets && section.bullets.length > 0 && (
+              <ul className="flex flex-col gap-3 text-lg text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary">
+                {section.bullets.map((b, j) => (
+                  <li key={j}>{b}</li>
+                ))}
+              </ul>
+            )}
+
+            {section.note && (
+              <p className="mt-6 text-sm text-muted-foreground italic border-l-2 border-border pl-4">
+                {section.note}
+              </p>
+            )}
+          </section>
+        ))}
+
+        {/* What I Did (for current-job projects) */}
         {project.whatIDid && project.whatIDid.length > 0 && (
           <section>
             <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
@@ -95,6 +140,7 @@ export default function ProjectDetail() {
           </section>
         )}
 
+        {/* Result */}
         {project.result && (
           <section>
             <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
@@ -106,6 +152,15 @@ export default function ProjectDetail() {
           </section>
         )}
 
+        {/* Confidential notice */}
+        {project.confidential && (
+          <div className="border border-border/50 p-6 text-sm text-muted-foreground">
+            <span className="text-[10px] uppercase tracking-[0.2em] font-medium block mb-2">Confidential</span>
+            Screens and detailed wireframes for this project are not shown. This feature was in progress at time of documentation and had not been publicly released.
+          </div>
+        )}
+
+        {/* Quote */}
         {project.quote && (
           <section className="pt-8">
             <blockquote className="border-l-2 border-primary pl-6 py-2">
@@ -115,7 +170,7 @@ export default function ProjectDetail() {
             </blockquote>
           </section>
         )}
-        
+
       </div>
     </motion.article>
   );

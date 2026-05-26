@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#FAFAFA"/>
+
+  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
+  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">COPY REVIEW</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">Before / After</text>
+
+  <!-- Column headers -->
+  <text x="200" y="108" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#737373" letter-spacing="2" text-anchor="middle">ORIGINAL COPY</text>
+  <text x="460" y="108" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#737373" letter-spacing="2" text-anchor="middle">RECOMMENDED</text>
+  <text x="680" y="108" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#737373" letter-spacing="2" text-anchor="middle">REASON</text>
+
+  <line x1="48" y1="116" x2="752" y2="116" stroke="#E0E0E0" stroke-width="1"/>
+
+  <rect x="48" y="128" width="704" height="72" rx="0" fill="rgba(255,69,48,0.03)"/>
+  <text x="52" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#111111">Landing screen headline</text>
+  <text x="108" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" text-decoration="line-through">100% approval for everyone!</text>
+  <text x="340" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">Everyone can get the credit they deserve</text>
+  <text x="580" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">100% approval is misleading if</text>
+  <text x="580" y="166" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">flow ends in waitlist</text>
+  <line x1="48" y1="200" x2="752" y2="200" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="48" y="200" width="704" height="72" rx="0" fill="#FAFAFA"/>
+  <text x="52" y="222" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#111111">Value props list</text>
+  <text x="108" y="222" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" text-decoration="line-through">Earn rewards</text>
+  <text x="108" y="238" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" text-decoration="line-through">Instant cashback</text>
+  <text x="108" y="254" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" text-decoration="line-through">Cashback on purchases</text>
+  <text x="340" y="222" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">5% instant cashback</text>
+  <text x="340" y="238" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">Monthly rewards</text>
+  <text x="340" y="254" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">Jackpots</text>
+  <text x="580" y="222" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">Remove duplicate 'cashback', use consistent</text>
+  <text x="580" y="238" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">format</text>
+  <line x1="48" y1="272" x2="752" y2="272" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="48" y="272" width="704" height="72" rx="0" fill="rgba(255,69,48,0.03)"/>
+  <text x="52" y="294" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#111111">Acceptance copy</text>
+  <text x="108" y="294" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" text-decoration="line-through">Available at VISA merchants</text>
+  <text x="340" y="294" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">99.5% acceptance, all over India</text>
+  <text x="340" y="310" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">Powered by VISA</text>
+  <text x="580" y="294" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">'Merchants' is too jargony for</text>
+  <text x="580" y="310" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">target users</text>
+  <line x1="48" y1="344" x2="752" y2="344" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="48" y="344" width="704" height="72" rx="0" fill="#FAFAFA"/>
+  <text x="52" y="366" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#111111">CTA button</text>
+  <text x="108" y="366" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" text-decoration="line-through">Claim your LazyCard now</text>
+  <text x="340" y="366" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="500" fill="#111111">Get your card</text>
+  <text x="580" y="366" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373">Shorter, simpler, lower reading level</text>
+  <text x="580" y="382" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373"></text>
+  <line x1="48" y1="416" x2="752" y2="416" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="320" y1="116" x2="320" y2="416" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="570" y1="116" x2="570" y2="416" stroke="#E0E0E0" stroke-width="1"/>
+</svg>

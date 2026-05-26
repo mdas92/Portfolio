@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="800" height="400" fill="#FAFAFA"/>
+
+  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
+  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">THE PROBLEM</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">Why Users Weren't Repaying</text>
+
+  <!-- Sankey-style flow diagram -->
+  <!-- 100% bar -->
+  <rect x="48" y="116" width="704" height="48" rx="4" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="48" y="108" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373" letter-spacing="1">ALL NEW USERS</text>
+  <text x="752" y="147" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#111111" text-anchor="end">100%</text>
+
+  <!-- Arrow down -->
+  <line x1="400" y1="164" x2="400" y2="190" stroke="#E0E0E0" stroke-width="2"/>
+  <polygon points="394,190 406,190 400,200" fill="#E0E0E0"/>
+
+  <!-- 45% not repaying bar -->
+  <rect x="48" y="208" width="317" height="48" rx="4" fill="#FF4530" opacity="0.15"/>
+  <rect x="48" y="208" width="317" height="48" rx="4" fill="none" stroke="#FF4530" stroke-width="1.5"/>
+  <text x="206" y="238" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#FF4530" text-anchor="middle">45% not repaying on time</text>
+
+  <rect x="383" y="208" width="369" height="48" rx="4" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="567" y="238" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" fill="#737373" text-anchor="middle">55% paying on time</text>
+
+  <!-- Arrow from 45% block -->
+  <line x1="206" y1="256" x2="206" y2="284" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="206" y1="284" x2="100" y2="284" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="206" y1="284" x2="320" y2="284" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="100" y1="284" x2="100" y2="300" stroke="#E0E0E0" stroke-width="1.5"/>
+  <line x1="320" y1="284" x2="320" y2="300" stroke="#E0E0E0" stroke-width="1.5"/>
+
+  <!-- Sub-segments -->
+  <rect x="28" y="300" width="144" height="52" rx="4" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="100" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#FF4530" text-anchor="middle">23%</text>
+  <text x="100" y="342" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373" text-anchor="middle">Opened app, didn't pay</text>
+
+  <rect x="248" y="300" width="144" height="52" rx="4" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="320" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="16" font-weight="700" fill="#111111" text-anchor="middle">22%</text>
+  <text x="320" y="342" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" fill="#737373" text-anchor="middle">Didn't open app at all</text>
+
+  <!-- Root causes -->
+  <rect x="480" y="280" width="272" height="88" rx="6" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="480" y="280" width="272" height="3" rx="1.5" fill="#FF4530"/>
+  <text x="496" y="302" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">ROOT CAUSES</text>
+  <text x="496" y="324" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">— No urgency signals in the UI</text>
+  <text x="496" y="344" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">— Late fee not visible upfront</text>
+  <text x="496" y="364" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">— Notification was easy to ignore</text>
+</svg>

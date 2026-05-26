@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A2E"/>
+      <stop offset="100%" style="stop-color:#2D1B3D"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF4530"/>
+      <stop offset="100%" style="stop-color:#E03D2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#cardBg)"/>
+  <pattern id="dots2" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <circle cx="20" cy="20" r="1.5" fill="#FFFFFF" opacity="0.06"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#dots2)"/>
+
+  <!-- Credit card mockup -->
+  <g transform="translate(390, 100)">
+    <rect x="0" y="0" width="320" height="196" rx="16" fill="url(#cardGrad)" opacity="0.92"/>
+    <!-- Card circles (Visa-style) -->
+    <circle cx="270" cy="148" r="40" fill="#FFAA00" opacity="0.6"/>
+    <circle cx="295" cy="148" r="40" fill="#FF6600" opacity="0.5"/>
+    <!-- Chip -->
+    <rect x="28" y="60" width="44" height="34" rx="4" fill="#FFD700" opacity="0.7"/>
+    <line x1="28" y1="77" x2="72" y2="77" stroke="#CC9900" stroke-width="1" opacity="0.5"/>
+    <line x1="50" y1="60" x2="50" y2="94" stroke="#CC9900" stroke-width="1" opacity="0.5"/>
+    <!-- Card number -->
+    <text x="28" y="134" font-family="system-ui, monospace" font-size="16" fill="rgba(255,255,255,0.8)" letter-spacing="3">•••• •••• •••• 4521</text>
+    <!-- Card name -->
+    <text x="28" y="172" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" letter-spacing="1">LAZYPAY CREDIT</text>
+    <!-- LazyCard label -->
+    <text x="200" y="32" font-family="Georgia, serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="end">LazyCard</text>
+  </g>
+
+  <!-- Text content left -->
+  <rect x="60" y="60" width="4" height="48" rx="2" fill="#FF4530"/>
+  <text x="80" y="92" font-family="Georgia, serif" font-size="28" font-weight="600" fill="#FFFFFF" letter-spacing="-0.5">UX Writing Review</text>
+  <text x="80" y="120" font-family="Georgia, serif" font-size="28" font-weight="300" font-style="italic" fill="rgba(255,255,255,0.7)">for LazyCard</text>
+  <text x="80" y="148" font-family="system-ui, sans-serif" font-size="12" fill="#FF4530" letter-spacing="3">CONTENT AUDIT · LAZYPAY</text>
+
+  <!-- Key results row -->
+  <text x="80" y="220" font-family="system-ui, sans-serif" font-size="13" fill="rgba(255,255,255,0.5)">First project as UX Writer at PayU Finance</text>
+
+  <!-- Three persona chips -->
+  <g transform="translate(80, 260)">
+    <rect x="0" y="0" width="120" height="36" rx="18" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <text x="60" y="23" font-family="system-ui, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">Defender</text>
+
+    <rect x="136" y="0" width="120" height="36" rx="18" fill="rgba(255,69,48,0.3)" stroke="#FF4530" stroke-width="1"/>
+    <text x="196" y="23" font-family="system-ui, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">Hedonist ✓</text>
+
+    <rect x="272" y="0" width="120" height="36" rx="18" fill="rgba(255,69,48,0.3)" stroke="#FF4530" stroke-width="1"/>
+    <text x="332" y="23" font-family="system-ui, sans-serif" font-size="12" fill="#FFFFFF" text-anchor="middle">Attacker ✓</text>
+  </g>
+
+  <!-- Bottom stats -->
+  <rect x="0" y="420" width="800" height="80" fill="rgba(0,0,0,0.4)"/>
+  <text x="80" y="452" font-family="system-ui, sans-serif" font-size="11" fill="#737373" letter-spacing="2">DURATION</text>
+  <text x="80" y="476" font-family="Georgia, serif" font-size="22" font-weight="600" fill="#FFFFFF">4 days</text>
+  <text x="260" y="452" font-family="system-ui, sans-serif" font-size="11" fill="#737373" letter-spacing="2">SCOPE</text>
+  <text x="260" y="476" font-family="Georgia, serif" font-size="22" font-weight="600" fill="#FFFFFF">Full app flow</text>
+  <text x="480" y="452" font-family="system-ui, sans-serif" font-size="11" fill="#737373" letter-spacing="2">TARGET PERSONAS</text>
+  <text x="480" y="476" font-family="Georgia, serif" font-size="22" font-weight="600" fill="#FF4530">Hedonists + Attackers</text>
+</svg>

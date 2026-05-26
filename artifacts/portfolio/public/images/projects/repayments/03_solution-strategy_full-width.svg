@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440">
+  <rect width="800" height="440" fill="#FAFAFA"/>
+
+  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
+  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">SOLUTION STRATEGY</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">Three-Pronged Approach</text>
+
+  <rect x="48" y="108" width="224" height="310" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="48" y="108" width="224" height="4" rx="2" fill="#FF4530" opacity="1.00"/>
+  <text x="66" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FF4530" opacity="0.2">01</text>
+  <text x="66" y="176" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="15" font-weight="600" fill="#111111">Discoverability</text>
+
+  <text x="66" y="204" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">PROBLEM</text>
+  <text x="66" y="224" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Many users claimed to not</text>
+  <text x="66" y="242" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">know their due date. The</text>
+  <text x="66" y="260" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">notification blended into</text>
+  <text x="66" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">the background UI.</text>
+  <line x1="66" y1="312" x2="254" y2="312" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="66" y="330" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">SOLUTION</text>
+  <text x="66" y="350" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">Redesigned component</text>
+  <text x="66" y="368" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">with clearer placement,</text>
+  <text x="66" y="386" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">better visual hierarchy</text>
+  <rect x="290" y="108" width="224" height="310" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="290" y="108" width="224" height="4" rx="2" fill="#FF4530" opacity="0.88"/>
+  <text x="308" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FF4530" opacity="0.2">02</text>
+  <text x="308" y="176" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="15" font-weight="600" fill="#111111">Urgency</text>
+
+  <text x="308" y="204" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">PROBLEM</text>
+  <text x="308" y="224" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Some users saw reminders</text>
+  <text x="308" y="242" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">but still deferred. No</text>
+  <text x="308" y="260" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">visible state change after</text>
+  <text x="308" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">the due date passed.</text>
+  <line x1="308" y1="312" x2="496" y2="312" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="308" y="330" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">SOLUTION</text>
+  <text x="308" y="350" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">New bottom sheet</text>
+  <text x="308" y="368" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">appears after breach,</text>
+  <text x="308" y="386" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">persists until cleared</text>
+  <rect x="532" y="108" width="224" height="310" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  <rect x="532" y="108" width="224" height="4" rx="2" fill="#FF4530" opacity="0.76"/>
+  <text x="550" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FF4530" opacity="0.2">03</text>
+  <text x="550" y="176" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="15" font-weight="600" fill="#111111">Transparency</text>
+
+  <text x="550" y="204" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">PROBLEM</text>
+  <text x="550" y="224" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Late fees not communicated</text>
+  <text x="550" y="242" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">upfront. Repayment page</text>
+  <text x="550" y="260" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">had vague hierarchy and</text>
+  <text x="550" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">no clear call to action.</text>
+  <line x1="550" y1="312" x2="738" y2="312" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="550" y="330" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">SOLUTION</text>
+  <text x="550" y="350" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">Surfaced consequences,</text>
+  <text x="550" y="368" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">rebuilt info hierarchy,</text>
+  <text x="550" y="386" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">cleaner CTA</text>
+</svg>
