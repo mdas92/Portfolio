@@ -21,7 +21,7 @@ export default function About() {
           hi, i'm mohana 👋
         </span>
       </div>
-      <h1 className="sm:text-[7rem] md:text-[9rem] lg:text-[11rem] leading-[0.85] tracking-[-0.04em] font-serif mb-12 text-[80px]">
+      <h1 className="text-[2.8rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[7rem] leading-[0.85] tracking-[-0.04em] font-serif mb-12">
         writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> product thinker<span className="text-primary">.</span>
       </h1>
       {/* Hero grid */}
