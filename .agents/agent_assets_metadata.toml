@@ -6,3 +6,15 @@ id = "r9SJl2ji7IvAYaFR0bvNq"
 uri = "file://artifacts/mockup-sandbox/public/images/editorial-abstract.jpg"
 type = "image"
 title = "minimalist modern abstract architecture black and terracotta or deep navy lines"
+
+[[outputs]]
+id = "ZcKF50dRRDbbOSd_khlIM"
+uri = "file://portfolio-design-spec.md"
+type = "text"
+title = "Portfolio Design Spec — Markdown"
+
+[[outputs]]
+id = "yMbWJOka_t5MvXtpoJMv1"
+uri = "file://portfolio-design-spec.tar.gz"
+type = "unspecified"
+title = "Portfolio Design Spec — Full Package (Markdown + HTML viewer)"
