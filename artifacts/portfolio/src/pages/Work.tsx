@@ -1,6 +1,21 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { projects } from "../data/portfolio";
+import {
+  FintechVisual,
+  SportsVisual,
+  TaxVisual,
+  SuperappVisual,
+  PlaybookVisual,
+} from "../components/ProjectCardVisuals";
+
+const cardVisuals: Record<string, React.ReactNode> = {
+  "fintech-overhaul": <FintechVisual />,
+  "sports-training":  <SportsVisual />,
+  "tax-onboarding":   <TaxVisual />,
+  "superapp-l10n":    <SuperappVisual />,
+  "playbook":         <PlaybookVisual />,
+};
 
 const valuesThinkingSteps = [
   {
@@ -61,20 +76,27 @@ export default function Work() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="h-full flex flex-col justify-between"
+                className="h-full flex flex-col"
               >
-                <div>
-                  <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-6">
-                    {project.tag}
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-serif mb-4 leading-tight group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h2>
-                  <p className="text-muted-foreground">{project.summary}</p>
-                </div>
-                <div className="mt-12 flex items-center text-sm font-medium hover:text-primary relative self-start">
-                  <span className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform">View Project ↗</span>
-                  <div className="absolute -bottom-1 left-0 right-0 h-px bg-foreground/20 group-hover:bg-primary transition-colors" />
+                {cardVisuals[project.slug] && (
+                  <div className="w-full overflow-hidden border-b border-foreground/10">
+                    {cardVisuals[project.slug]}
+                  </div>
+                )}
+                <div className="p-8 md:p-12 flex flex-col flex-1 justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-6">
+                      {project.tag}
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-serif mb-4 leading-tight group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h2>
+                    <p className="text-muted-foreground">{project.summary}</p>
+                  </div>
+                  <div className="mt-12 flex items-center text-sm font-medium hover:text-primary relative self-start">
+                    <span className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform">View Project ↗</span>
+                    <div className="absolute -bottom-1 left-0 right-0 h-px bg-foreground/20 group-hover:bg-primary transition-colors" />
+                  </div>
                 </div>
               </motion.div>
             </Link>
