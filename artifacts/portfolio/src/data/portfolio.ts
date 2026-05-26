@@ -333,6 +333,13 @@ export const projects: Project[] = [
 
 export const journey = [
   {
+    id: 0,
+    date: "2024 – Present",
+    role: "Content Strategist",
+    company: "Aampe",
+    description: "Building message content for consumer apps across fintech, sports, travel, food delivery, and fitness — designing label architectures, value proposition frameworks, and message variants to help clients unlock agentic optimisation. Alongside client work, translating practitioner insight into formal product pitches and UX feedback: a systematic bridge between what customers need and what the product becomes."
+  },
+  {
     id: 1,
     date: "Jan 2022 – Present",
     role: "Lead UX Writer",
