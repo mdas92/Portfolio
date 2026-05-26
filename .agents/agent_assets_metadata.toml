@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "r9SJl2ji7IvAYaFR0bvNq"
+uri = "file://artifacts/mockup-sandbox/public/images/editorial-abstract.jpg"
+type = "image"
+title = "minimalist modern abstract architecture black and terracotta or deep navy lines"
