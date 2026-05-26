@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440">
+  <rect width="800" height="440" fill="#FAFAFA"/>
+
+  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
+  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">PROTOTYPE TEST · 10 USER SESSIONS</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">Key Findings</text>
+
+  <!-- Finding 1 -->
+  <rect x="48" y="106" width="224" height="140" rx="6" fill="#FFF5F4" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="64" y="134" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#FF4530" opacity="0.4">1</text>
+  <text x="88" y="134" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" font-weight="600" fill="#FF4530" letter-spacing="1">✓ CONFIRMED</text>
+  <text x="64" y="160" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">Use-case categories</text>
+  <text x="64" y="179" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">were more intuitive</text>
+  <text x="64" y="232" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Finalised this IA approach</text>
+  <!-- Finding 2 -->
+  <rect x="292" y="106" width="224" height="140" rx="6" fill="#FFF5F4" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="308" y="134" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#FF4530" opacity="0.4">2</text>
+  <text x="332" y="134" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" font-weight="600" fill="#FF4530" letter-spacing="1">✓ CONFIRMED</text>
+  <text x="308" y="160" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">'Top questions' section</text>
+  <text x="308" y="179" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">was well-received</text>
+  <text x="308" y="232" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Kept in final design</text>
+  <!-- Finding 3 -->
+  <rect x="536" y="106" width="224" height="140" rx="6" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="552" y="134" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#737373" opacity="0.4">3</text>
+  <text x="576" y="134" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" font-weight="600" fill="#737373" letter-spacing="1">→ SCOPE ITEM</text>
+  <text x="552" y="160" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">Users wanted free-</text>
+  <text x="552" y="179" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">typing (NLP)</text>
+  <text x="552" y="232" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Added to Phase II scope</text>
+  <!-- Finding 4 -->
+  <rect x="48" y="262" width="224" height="140" rx="6" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="64" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#737373" opacity="0.4">4</text>
+  <text x="88" y="290" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" font-weight="600" fill="#737373" letter-spacing="1">→ SCOPE ITEM</text>
+  <text x="64" y="316" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">In-app ticket raising</text>
+  <text x="64" y="335" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">was requested</text>
+  <text x="64" y="388" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Added to Phase II scope</text>
+  <!-- Finding 5 -->
+  <rect x="292" y="262" width="224" height="140" rx="6" fill="#F8F8F8" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="308" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#737373" opacity="0.4">5</text>
+  <text x="332" y="290" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" font-weight="600" fill="#737373" letter-spacing="1">→ SCOPE ITEM</text>
+  <text x="308" y="316" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">More visual cues</text>
+  <text x="308" y="335" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">alongside text wanted</text>
+  <text x="308" y="388" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Added rich media answers</text>
+  <!-- Finding 6 -->
+  <rect x="536" y="262" width="224" height="140" rx="6" fill="#FFF5F4" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="552" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="20" font-weight="700" fill="#FF4530" opacity="0.4">6</text>
+  <text x="576" y="290" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" font-weight="600" fill="#FF4530" letter-spacing="1">✓ CONFIRMED</text>
+  <text x="552" y="316" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">Interface format</text>
+  <text x="552" y="335" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="500" fill="#111111">was comfortable</text>
+  <text x="552" y="388" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">No changes needed</text>
+</svg>

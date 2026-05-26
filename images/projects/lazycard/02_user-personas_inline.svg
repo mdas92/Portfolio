@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <rect width="800" height="460" fill="#FAFAFA"/>
+
+  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
+  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">USER RESEARCH · MARCH 2020</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">Three User Personas</text>
+  <text x="48" y="100" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" fill="#737373">LazyCard targets Hedonists and Attackers — both comfortable with credit.</text>
+
+  <!-- Defender -->
+  <rect x="48" y="124" width="224" height="300" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+  
+  <text x="68" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#111111">Defender</text>
+  <text x="68" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#737373">Save for future.</text>
+  <text x="68" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="#737373">Win steadily.</text>
+  <line x1="68" y1="254" x2="252" y2="254" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="68" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Grew up poor/middle-class.</text>
+  <text x="68" y="297" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Fiercely protective of progress.</text>
+  <text x="68" y="316" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Money is hard-earned.</text>
+  <text x="68" y="376" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">CREDIT COMFORT</text>
+  <text x="68" y="398" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="600" fill="#111111">Low</text>
+
+  <!-- Hedonist -->
+  <rect x="290" y="124" width="224" height="300" rx="8" fill="#FF4530"/>
+  <text x="498" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="end" letter-spacing="2">TARGET</text>
+  <text x="310" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#FFFFFF">Hedonist</text>
+  <text x="310" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="rgba(255,255,255,0.75)">Earn to enjoy.</text>
+  <text x="310" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="rgba(255,255,255,0.75)">Live in the present.</text>
+  <line x1="310" y1="254" x2="494" y2="254" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="310" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="rgba(255,255,255,0.75)">Grew up upper-middle-class.</text>
+  <text x="310" y="297" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="rgba(255,255,255,0.75)">Comfortable upbringing.</text>
+  <text x="310" y="316" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="rgba(255,255,255,0.75)">Money enables everyday joy.</text>
+  <text x="310" y="376" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">CREDIT COMFORT</text>
+  <text x="310" y="398" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Medium</text>
+
+  <!-- Attacker -->
+  <rect x="532" y="124" width="224" height="300" rx="8" fill="#FF4530"/>
+  <text x="740" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="rgba(255,255,255,0.6)" text-anchor="end" letter-spacing="2">TARGET</text>
+  <text x="552" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#FFFFFF">Attacker</text>
+  <text x="552" y="200" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="rgba(255,255,255,0.75)">Earn for future.</text>
+  <text x="552" y="222" font-family="Georgia, 'Times New Roman', serif" font-size="14" font-style="italic" fill="rgba(255,255,255,0.75)">Big wins.</text>
+  <line x1="552" y1="254" x2="736" y2="254" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="552" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="rgba(255,255,255,0.75)">Grew up middle-class. Confident.</text>
+  <text x="552" y="297" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="rgba(255,255,255,0.75)">Money is the end goal.</text>
+  <text x="552" y="316" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="rgba(255,255,255,0.75)">Comfortable with risk.</text>
+  <text x="552" y="376" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="rgba(255,255,255,0.5)" letter-spacing="2">CREDIT COMFORT</text>
+  <text x="552" y="398" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">High</text>
+</svg>
