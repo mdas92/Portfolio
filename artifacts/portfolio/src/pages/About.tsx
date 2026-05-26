@@ -21,11 +21,9 @@ export default function About() {
           hi, i'm mohana 👋
         </span>
       </div>
-
-      <h1 className="text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[11rem] leading-[0.85] tracking-[-0.04em] font-serif mb-12">
-        content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> product thinker<span className="text-primary">.</span>
+      <h1 className="sm:text-[7rem] md:text-[9rem] lg:text-[11rem] tracking-[-0.04em] font-serif mb-12 text-[80px]">
+        writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> product thinker<span className="text-primary">.</span>
       </h1>
-
       {/* Hero grid */}
       <div className="grid md:grid-cols-12 gap-12 md:gap-24 items-start mt-8 mb-24">
         <div className="md:col-span-6 lg:col-span-5 flex flex-col gap-8">
@@ -60,7 +58,6 @@ export default function About() {
           </motion.div>
         </div>
       </div>
-
       {/* What I do */}
       <motion.div
         variants={fadeUp}
@@ -84,7 +81,6 @@ export default function About() {
           </p>
         </div>
       </motion.div>
-
       {/* Journey */}
       <motion.div
         variants={fadeUp}
