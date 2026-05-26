@@ -41,7 +41,8 @@ const valuesThinkingSteps = [
 ];
 
 export default function Work() {
-  const currentProjects = projects.filter((p) => p.year === "2025");
+  const featuredProjects = projects.filter((p) => p.year === "2025" && p.featured);
+  const otherEngagements = projects.filter((p) => p.year === "2025" && !p.featured);
   const olderProjects = projects.filter((p) => p.year !== "2025");
 
   return (
@@ -61,9 +62,9 @@ export default function Work() {
         </p>
       </div>
 
-      {/* Current Work */}
+      {/* Featured Work */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10 mb-24">
-        {currentProjects.map((project, i) => {
+        {featuredProjects.map((project, i) => {
           const isFullWidth = project.slug === "playbook";
           const classes = `bg-background p-8 md:p-12 flex flex-col justify-between group hover:bg-muted/30 transition-colors ${
             isFullWidth ? "md:col-span-2" : ""
@@ -94,6 +95,53 @@ export default function Work() {
                     <p className="text-muted-foreground">{project.summary}</p>
                   </div>
                   <div className="mt-12 flex items-center text-sm font-medium hover:text-primary relative self-start">
+                    <span className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform">View Project ↗</span>
+                    <div className="absolute -bottom-1 left-0 right-0 h-px bg-foreground/20 group-hover:bg-primary transition-colors" />
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          );
+        })}
+      </div>
+
+      {/* Other 2025 Engagements */}
+      <div className="mb-10">
+        <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-2">
+          Also in 2025
+        </span>
+        <h2 className="text-3xl md:text-4xl font-serif mb-4 tracking-tight">Other Engagements</h2>
+        <p className="text-lg text-foreground/60 font-light max-w-2xl">
+          A wider set of client accounts I contributed to across content strategy, label architecture, and client education.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-foreground/10 border border-foreground/10 mb-24">
+        {otherEngagements.map((project, i) => {
+          const accentColors = ['#C45C26', '#C5F135', '#0D3B2E', '#C45C26', '#C5F135', '#0D3B2E', '#C45C26', '#C5F135'];
+          const accent = accentColors[i % accentColors.length];
+          const isLight = accent === '#C5F135';
+          return (
+            <Link key={project.slug} href={`/work/${project.slug}`} className="bg-background flex flex-col group hover:bg-muted/30 transition-colors">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="h-full flex flex-col"
+              >
+                <div className="h-1.5 w-full" style={{ backgroundColor: accent }} />
+                <div className="p-6 md:p-8 flex flex-col flex-1 justify-between">
+                  <div>
+                    <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-4">
+                      {project.tag}
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-serif mb-3 leading-tight group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{project.summary}</p>
+                  </div>
+                  <div className="mt-6 flex items-center text-sm font-medium relative self-start">
                     <span className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform">View Project ↗</span>
                     <div className="absolute -bottom-1 left-0 right-0 h-px bg-foreground/20 group-hover:bg-primary transition-colors" />
                   </div>

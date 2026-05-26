@@ -27,6 +27,7 @@ export interface Project {
   quote?: string;
   image: string;
   thumbnail?: string;
+  featured?: boolean;
   comingSoon?: boolean;
   confidential?: boolean;
   sections?: ProjectSection[];
@@ -41,6 +42,7 @@ export const projects: Project[] = [
     role: "Content Strategist & Project Manager",
     context: "Leading personal finance / budgeting app (US consumer)",
     year: "2025",
+    featured: true,
     challenge: "Push notification content had grown stale and unstructured. Messages lacked a coherent value proposition framework, labels were inconsistently applied, and the account needed a full reset before agent learning could resume cleanly.",
     whatIDid: [
       "Ran a Values Thinking exercise — mapping 10–11 distinct, user-centric value propositions from the product's core offerings.",
@@ -61,15 +63,18 @@ export const projects: Project[] = [
     role: "Content Strategist",
     context: "Premier professional sports league (US)",
     year: "2025",
+    featured: true,
     challenge: "A newly onboarded sports league needed their internal marketing team to become confident and self-sufficient with the Composer tool — building campaigns, understanding label strategy, and producing content at scale.",
     whatIDid: [
       "Travelled to the client's New York City headquarters for an in-person working session.",
       "Delivered a hands-on training covering the Composer, label system, and spreadsheet-based campaign building.",
       "Co-wrote a live \"Standings\" push notification — producing 800+ message alternates in roughly 10–15 minutes.",
       "Defined a prioritised roadmap of 8 new campaign categories.",
-      "Provided content strategy guidance on messaging across multiple audience types."
+      "Ran a content and label performance working session in March — walked through agent learnings and introduced the Content Personalisation Map.",
+      "Presented semantic label analysis in April with re-labelling recommendations going into the playoffs.",
+      "Became the internal expert on Custom Components, recording a how-to Loom demo for the client team."
     ],
-    result: "By end of February, the client had 3 new messages ready to launch. By end of March, the account had grown to 10+ active campaigns.",
+    result: "The account grew from 1 message live at end of February to 26+ active campaigns by the start of the playoffs. The client requested ongoing monthly working sessions directly with me.",
     quote: "It was truly impactful just sitting next to the client and working together to build and brainstorm messages. We co-wrote a message with 800+ alternates in just 10 or 15 mins.",
     image: "/sports-training.png"
   },
@@ -81,15 +86,18 @@ export const projects: Project[] = [
     role: "Content Strategist",
     context: "Fast-growing European consumer tax app · $102K deal value",
     year: "2025",
+    featured: true,
     challenge: "A newly closed account with a highly seasonal user base needed onboarding onto the platform's content methodology from scratch — the first solo content kick-off of its kind.",
     whatIDid: [
       "Led a pre-sync with internal stakeholders to tailor the methodology to a tax product context.",
       "Facilitated the first live content kick-off using Values Thinking and Inner Monologue frameworks.",
       "Created and shared a collaborative Label Worksheet for the client's ongoing reference.",
       "Ran a follow-up Labels & Messaging Workshop, narrowing the library to 6 core value propositions.",
+      "Built a detailed email component guide with a Loom recording for structuring Aampe components within email templates.",
+      "Prepared copy for a DIY onboarding demo, coordinating directly with the CEO — delivered same-day.",
       "Reviewed the client's first independently-built push campaigns weeks after kick-off."
     ],
-    result: "The client was reviewing self-created campaigns in the Composer within weeks of their first session — the fastest any client had moved from onboarding to independent content creation.",
+    result: "The client was reviewing self-created campaigns in the Composer within weeks of their first session — the fastest any client had moved from onboarding to independent content creation. The interactive Figma personalisation demo was built and delivered same-day.",
     quote: "That was FAST. I wonder if any other partner created messages this fast.",
     image: "/tax-onboarding.png"
   },
@@ -101,14 +109,16 @@ export const projects: Project[] = [
     role: "Content Strategist",
     context: "Major Southeast Asian ride-hailing and delivery super app",
     year: "2025",
+    featured: true,
     challenge: "A super app operating across multiple Southeast Asian markets needed personalised push notifications in multiple languages — with copy written by their internal PMM team. The challenge was both technical (word-order differences across languages) and strategic (multiple value props per message slowing agent learning).",
     whatIDid: [
       "Designed a localisation template with a Loom walkthrough for structuring messages across languages.",
-      "Identified a word-order problem in translated components (SVO vs SOV language structures) and proposed a fix.",
+      "Identified a word-order problem in translated components (SVO vs SOV language structures) and proposed a platform-level fix to engineering.",
       "Reviewed PMM-authored copy across multiple rounds for label structure, value prop clarity, and alternate quality.",
-      "Explained why single-CVP messages support faster agent learning, with a practical experiment structure."
+      "Covered for the account manager to personally coordinate and launch campaigns in early March, including the Family Account push across all target markets.",
+      "Led content review for Use Case 3 (CRM team content) as a third expansion of the engagement in March."
     ],
-    result: "Use Case 2 launched in early March — with Dineout Deals, Advanced Booking, Group Order, and Family Account campaigns going live across multiple Southeast Asian markets.",
+    result: "Use Case 2 launched in early March — Dineout Deals, Advanced Booking, Group Order, and Family Account campaigns live across six Southeast Asian markets. A third use case kicked off by end of March. The localisation template became a reusable asset company-wide.",
     image: "/superapp-l10n.png"
   },
   {
@@ -119,17 +129,145 @@ export const projects: Project[] = [
     role: "Content Strategist & Author",
     context: "Internal deliverable distributed to all active clients",
     year: "2025",
+    featured: true,
     challenge: "As the client portfolio grew, onboarding was inconsistent and time-consuming. There was no single resource covering label strategy, message architecture, and best practices — from first-day clients to high-maturity accounts.",
     whatIDid: [
       "Labels and content strategies — how to structure a label library, what makes a good value proposition, common mistakes.",
       "Step-by-step message creation guide: from brief to published campaign.",
       "Best practices: writing copy that supports agent learning, not just copy that sounds good.",
+      "Beyond the basics: advanced creative strategies for high-maturity accounts.",
       "Content Personalisation Map: a visual framework for identifying gaps across audiences and use cases.",
-      "Content Scorecard: a maturity model for evaluating client progress."
+      "Content Scorecard: a maturity model for evaluating how far along a client is and what to focus on next."
     ],
-    result: "Adopted company-wide within days of internal launch. Distributed to clients including the sports league, the fintech rewards app, the barbershop booking app, the super app, and others.",
+    result: "Adopted company-wide within days of internal launch. Distributed to all active clients. Used as a live reference in onboarding sessions, working visits, and sales demos throughout April.",
     quote: "This deck is on fire… Components never were so clear.",
     image: "/playbook.png"
+  },
+  {
+    slug: "barbershop-booking",
+    tag: "Content Strategy · Marketplace",
+    title: "Barbershop Booking App",
+    summary: "Full label audit and 6 new message groups — drove the account's first-ever active user messaging milestone.",
+    role: "Content Strategist",
+    context: "US consumer app for barbershop discovery and booking",
+    year: "2025",
+    challenge: "Joined the account mid-engagement with inconsistent label architecture and no clear content strategy for reaching active users.",
+    whatIDid: [
+      "Conducted a full label audit across the existing account.",
+      "Designed and built 6 new message groups: payments (casual and professional tones), scheduling, barbershop tips for barbers and clients, and barber facts.",
+      "Pitched a creative Affirmation push notification campaign concept with referral-linked action buttons."
+    ],
+    result: "In March, the account broke into active user messaging for the first time — a milestone directly attributed to the new message groups.",
+    image: "/barbershop-booking.png"
+  },
+  {
+    slug: "travel-superapp",
+    tag: "Content Strategy · Travel",
+    title: "Travel & Accommodation Super App",
+    summary: "Full-day Jakarta onsite across 5 sessions — content audit, label strategy, and promo optimisation. Account renewed at $172K ACV.",
+    role: "Content Strategist",
+    context: "Major Southeast Asian travel booking platform · $172K ACV renewal (+15% expansion)",
+    year: "2025",
+    challenge: "A high-value account needed a structured content strategy review to unlock growth and justify renewal — requiring an in-person engagement to build momentum.",
+    whatIDid: [
+      "Provided structured guidance on message formatting in February, unlocking 15 new campaigns without writing from scratch.",
+      "Attended a full-day onsite at the client's Jakarta offices — a 7-hour workshop across 5 sessions covering performance review, content audit, content strategy, promo/blockbuster optimisation, and product roadmap.",
+      "Co-led content and label strategy sessions and demonstrated ChatGPT-assisted content generation.",
+      "Left with a detailed action item list and followed up with written summaries and Loom recordings."
+    ],
+    result: "Account renewed at $172K ACV with a 15% expansion. The onsite was cited as a key factor in the renewal outcome.",
+    quote: "Mohana, Madhuri, Patty — your two-day onsite workshop marathon laid the groundwork for this milestone.",
+    image: "/travel-superapp.png"
+  },
+  {
+    slug: "running-app",
+    tag: "Content Strategy · Fitness",
+    title: "Running Training App",
+    summary: "Restructured label architecture and scoped a new campaign pipeline including Refer a Friend and Marathon upsell.",
+    role: "Content Strategist",
+    context: "Subscription fitness app for structured running plans",
+    year: "2025",
+    challenge: "An established fitness app account needed its label architecture overhauled and a new content pipeline scoped to drive retention and growth.",
+    whatIDid: [
+      "Led a value props and offerings naming exercise, restructuring labels for cleaner agent learning.",
+      "Created a label audit sheet and advocated for indirect benefit-led content over feature-forward copy.",
+      "Added 6 new messages for the Tip Dataset.",
+      "Scoped new campaigns: Refer a Friend (two-step), Running Facts, and Marathon upsell.",
+      "Advised on label placement for new blog and Pilates feature messages in April."
+    ],
+    result: "Delivered a restructured label library, a prioritised campaign pipeline, and a clear content roadmap for the account's next growth phase.",
+    image: "/running-app.png"
+  },
+  {
+    slug: "music-streaming",
+    tag: "Content Strategy · Entertainment",
+    title: "Music Streaming Platform",
+    summary: "Identified a structural translation bug across 27 languages and co-created a platform-level fix with engineering.",
+    role: "Content Strategist",
+    context: "European music streaming service with 27 active languages",
+    year: "2025",
+    challenge: "Push notification components broke when translated into languages with different sentence structures — a technical problem that also affected content quality across the entire account.",
+    whatIDid: [
+      "Prepared and presented a content deep dive for the client's change management call.",
+      "Identified a structural problem with translated components — different languages reorder subject, verb, and object when only part of a sentence is dynamic, breaking the rendered message.",
+      "Created an examples sheet documenting the issue across multiple language families.",
+      "Coordinated a joint solution call between the client and engineering."
+    ],
+    result: "The word-order bug was surfaced as a platform-level issue, escalated to engineering with a concrete examples sheet and a proposed detection solution.",
+    image: "/music-streaming.png"
+  },
+  {
+    slug: "financial-rewards",
+    tag: "Content Strategy · Fintech",
+    title: "Financial Rewards App",
+    summary: "Full account optimisation review — 15 new message group proposals and two working sessions with the client's content team.",
+    role: "Content Strategist",
+    context: "US consumer cashback and rewards platform",
+    year: "2025",
+    challenge: "An existing account needed a structured reset: campaigns were unoptimised, and the internal content team needed onboarding onto the platform's label and campaign-building process.",
+    whatIDid: [
+      "Audited all existing campaigns and produced a structured label audit.",
+      "Proposed 15 new message groups covering the full product surface.",
+      "Ran two working sessions with the client's internal copywriter and content lead.",
+      "Onboarded the client's copywriter onto the label and campaign-building process."
+    ],
+    result: "By April, six message groups were marked ready for launch — labelled, structured in the Composer, and ready for the client's team to publish independently.",
+    image: "/financial-rewards.png"
+  },
+  {
+    slug: "greeting-card-app",
+    tag: "Content Strategy · Consumer",
+    title: "Personalised Greeting Card App",
+    summary: "Built a full Content Roadmap strategy deck and Custom Components implementation plan — delivered independently, without a live session.",
+    role: "Content Strategist",
+    context: "European consumer app for custom postcards and greeting cards",
+    year: "2025",
+    challenge: "A self-sufficient client needed strategic direction for the next phase of their content programme — delivered without the usual live workshop format.",
+    whatIDid: [
+      "Reviewed the client's self-built label library and prepared messages for launch.",
+      "Proactively wrote Easter-themed value-based messages as inspiration.",
+      "Independently reviewed the client's Miro board and built a Content Roadmap strategy deck covering the next few months.",
+      "Built a Custom Components implementation plan to give the client a clear development path."
+    ],
+    result: "Delivered a full content strategy and implementation roadmap entirely asynchronously — no live session required.",
+    image: "/greeting-card-app.png"
+  },
+  {
+    slug: "shopping-rewards",
+    tag: "Client Onboarding · Retail",
+    title: "Shopping Rewards App",
+    summary: "Contributed to the initial client success call for a newly closed $101K ACV account targeting three use cases.",
+    role: "Content Strategist",
+    context: "US consumer shopping rewards / cashback app · $101K ACV",
+    year: "2025",
+    challenge: "A newly closed account needed a strong first impression to set expectations and build confidence in the platform's content methodology across three distinct use cases.",
+    whatIDid: [
+      "Participated in the initial client success call, covering three use cases: converting installs to active users, winning back lapsed users, and retaining and growing current users.",
+      "Contributed content strategy framing and direction for the early engagement."
+    ],
+    result: "The client success call was cited internally as a key factor in the positive early client relationship.",
+    quote: "The CS call was an absolute home run for Sarah and the team.",
+    image: "/shopping-rewards.png"
   },
   {
     slug: "chatbot",
