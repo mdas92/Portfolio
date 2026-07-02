@@ -108,6 +108,8 @@ export default function Work() {
       </div>
 
       {/* Other 2025 Engagements */}
+      {otherEngagements.length > 0 && (
+      <>
       <div className="mb-10">
         <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-2">
           Also in 2025
@@ -153,6 +155,8 @@ export default function Work() {
           );
         })}
       </div>
+      </>
+      )}
 
       {/* Older Projects */}
       <div className="mb-10">

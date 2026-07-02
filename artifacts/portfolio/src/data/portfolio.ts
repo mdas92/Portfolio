@@ -60,6 +60,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fintech-overhaul",
+    archived: true,
     tag: "Content Strategy · Fintech",
     title: "End-to-End Content Overhaul for a Major Fintech App",
     summary: "Push notification overhaul — value props, 15 new message groups, legal review.",
@@ -129,6 +130,7 @@ export const projects: Project[] = [
   },
   {
     slug: "superapp-l10n",
+    archived: true,
     tag: "Localisation · SEA",
     title: "Localisation Framework for a Southeast Asian Super App",
     summary: "Multi-language push notification framework across 4+ markets.",
@@ -248,6 +250,7 @@ export const projects: Project[] = [
   },
   {
     slug: "financial-rewards",
+    archived: true,
     tag: "Content Strategy · Fintech",
     title: "Financial Rewards App",
     summary: "Full account optimisation review — 15 new message group proposals and two working sessions with the client's content team.",
@@ -266,6 +269,7 @@ export const projects: Project[] = [
   },
   {
     slug: "greeting-card-app",
+    archived: true,
     tag: "Content Strategy · Consumer",
     title: "Personalised Greeting Card App",
     summary: "Built a full Content Roadmap strategy deck and Custom Components implementation plan — delivered independently, without a live session.",
@@ -284,6 +288,7 @@ export const projects: Project[] = [
   },
   {
     slug: "shopping-rewards",
+    archived: true,
     tag: "Client Onboarding · Retail",
     title: "Shopping Rewards App",
     summary: "Contributed to the initial client success call for a newly closed $101K ACV account targeting three use cases.",
