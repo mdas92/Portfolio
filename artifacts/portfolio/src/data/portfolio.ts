@@ -31,6 +31,7 @@ export interface Project {
   comingSoon?: boolean;
   confidential?: boolean;
   sections?: ProjectSection[];
+  archived?: boolean;
 }
 
 export const projects: Project[] = [
@@ -80,6 +81,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sports-training",
+    archived: true,
     tag: "Training · Content Co-Creation",
     title: "In-Person Training for a Major Sports League",
     summary: "NYC-based content workshop — co-wrote 800+ message alternates in under 15 minutes.",
@@ -103,6 +105,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tax-onboarding",
+    archived: true,
     tag: "Client Onboarding · Europe",
     title: "New-Client Kick-Off for a European Tax Filing App",
     summary: "Solo-led onboarding from scratch — Values Thinking, label framework, rapid launch.",
@@ -168,6 +171,7 @@ export const projects: Project[] = [
   },
   {
     slug: "barbershop-booking",
+    archived: true,
     tag: "Content Strategy · Marketplace",
     title: "Barbershop Booking App",
     summary: "Full label audit and 6 new message groups — drove the account's first-ever active user messaging milestone.",
@@ -185,6 +189,7 @@ export const projects: Project[] = [
   },
   {
     slug: "travel-superapp",
+    archived: true,
     tag: "Content Strategy · Travel",
     title: "Travel & Accommodation Super App",
     summary: "Full-day Jakarta onsite across 5 sessions — content audit, label strategy, and promo optimisation. Account renewed at $172K ACV.",
@@ -204,6 +209,7 @@ export const projects: Project[] = [
   },
   {
     slug: "running-app",
+    archived: true,
     tag: "Content Strategy · Fitness",
     title: "Running Training App",
     summary: "Restructured label architecture and scoped a new campaign pipeline including Refer a Friend and Marathon upsell.",
@@ -223,6 +229,7 @@ export const projects: Project[] = [
   },
   {
     slug: "music-streaming",
+    archived: true,
     tag: "Content Strategy · Entertainment",
     title: "Music Streaming Platform",
     summary: "Identified a structural translation bug across 27 languages and co-created a platform-level fix with engineering.",

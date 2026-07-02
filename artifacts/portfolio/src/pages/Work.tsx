@@ -43,9 +43,9 @@ const valuesThinkingSteps = [
 ];
 
 export default function Work() {
-  const featuredProjects = projects.filter((p) => p.year === "2025" && p.featured);
-  const otherEngagements = projects.filter((p) => p.year === "2025" && !p.featured);
-  const olderProjects = projects.filter((p) => p.year !== "2025");
+  const featuredProjects = projects.filter((p) => p.year === "2025" && p.featured && !p.archived);
+  const otherEngagements = projects.filter((p) => p.year === "2025" && !p.featured && !p.archived);
+  const olderProjects = projects.filter((p) => p.year !== "2025" && !p.archived);
 
   return (
     <motion.div
