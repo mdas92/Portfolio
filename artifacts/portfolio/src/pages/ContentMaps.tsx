@@ -77,7 +77,7 @@ export default function ContentMaps() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/10 border border-foreground/10 mb-12">
           {[
             { label: "Role", value: "Originator & owner of the methodology" },
-            { label: "Commercial impact", value: "Credited in a $90K closed-won deal (Mintos)" },
+            { label: "Commercial impact", value: "Credited in a $90K closed-won deal" },
             { label: "Scale", value: "~15 people trained company-wide; maps across 15+ accounts" },
             { label: "Legacy", value: "Proposed as a 60-day certification for every new hire" },
           ].map(({ label, value }) => (
@@ -112,7 +112,7 @@ export default function ContentMaps() {
           </p>
           <p className="text-lg text-foreground/80 leading-relaxed font-light">
             Every account team improvised its own version. Accounts a full year into their
-            relationship — Taxfix, MyPostcard — had no map of their content at all.
+            relationship — a major European fintech app, a digital greeting-card service — had no map of their content at all.
             CRM, growth, and product functions optimized in silos, and strategy conversations ran
             on tribal knowledge instead of a common artifact. The result: uneven onboarding, slow
             ramp-up, and agents stuck learning from a small cluster of topics.
@@ -326,14 +326,14 @@ export default function ContentMaps() {
 
           <Phase time="Phase 1 · July 2025 — The proposal" heading="Made the map a standard, not a one-off">
             <p className="text-foreground/80 leading-relaxed font-light mb-0">
-              On the Deezer account, I proposed that every customer get a content map before
+              On a major music streaming account, I proposed that every customer get a content map before
               post-sales handoff, and defined the artifact for the team: "a strategic outline of
               the key features, user actions, message topics and surfaces that should be covered
               over the course of partnership — it helps ensure we've got the right breadth
               of content for agent learning."
             </p>
             <PullQuote cite='Paul Meinshausen, CEO — same day, with four teammates asking to join the working session'>
-              "I'm confident we don't have that for Deezer. Please kick it off Mohana. Thank you!"
+              "I'm confident we don't have that for this account. Please kick it off Mohana. Thank you!"
             </PullQuote>
           </Phase>
 
@@ -341,16 +341,16 @@ export default function ContentMaps() {
 
           <Phase time="Phase 2 · Jul–Sep 2025 — Templates that traveled" heading="Proved the artifact was portable across verticals">
             <p className="text-foreground/80 leading-relaxed font-light mb-0">
-              I built the Taxfix content map as a reusable template — and watched it travel
-              without me in the room. A colleague ported it directly into theCut's Q3 strategy
-              session (fintech → barbershop marketplace), and I went on to build maps for
-              Deezer, Carousell, NBA, Traveloka, and Swiggy. The Carousell map's channel-aware
+              I built a map for a major European fintech app as a reusable template — and watched it travel
+              without me in the room. A colleague ported it directly into a barbershop marketplace's Q3 strategy
+              session, and I went on to build maps across a music platform, a regional marketplace, a sports
+              media platform, a travel super-app, and a food delivery platform. One map's channel-aware
               structure was adopted as the team template for cross-channel mapping.
             </p>
-            <PullQuote cite="Derek Geryol, CSM — #internal-thecut, July 2025" variant="sienna">
-              "The content map you prepared for Taxfix was an incredible resource. I was able to map out theCut based on how you built that doc out."
+            <PullQuote cite="Derek Geryol, CSM — July 2025" variant="sienna">
+              "The content map you prepared for the fintech client was an incredible resource. I was able to map out my account based on how you built that doc out."
             </PullQuote>
-            <PullQuote cite="Schaun Wheeler, Co-founder — on the Deezer content map, August 2025" variant="sienna">
+            <PullQuote cite="Schaun Wheeler, Co-founder — on a client content map, August 2025" variant="sienna">
               "Every time Mohana pulls another one of these out, I feel like I'm watching a magician at work."
             </PullQuote>
           </Phase>
@@ -378,7 +378,7 @@ export default function ContentMaps() {
               I authored a step-by-step "How to Build Content Maps" guide in Notion, then designed and ran a company-wide contest to pressure-test it: ~15 participants, each assigned a real customer or prospect, two-week window, judged submissions with individualized written feedback on every single map. I also founded the #temp_content_maps channel and a Notion library centralising every client's map.
             </p>
             <ul className="flex flex-col gap-2 text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary mb-4 text-base">
-              <li>Winners announced with transparent criteria and real prizes; the winning map (Whatnot) was built by a new hire who credited the exercise for nailing a live ThredUp demo weeks later.</li>
+              <li>Winners announced with transparent criteria and real prizes; the winning map (built for a live-shopping platform) was built by a new hire who credited the exercise for nailing a demo for a fashion resale client weeks later.</li>
               <li>Insights from all submissions were folded back into evolving the map format itself.</li>
               <li>Leadership response: "a great onboarding requirement for future new hires" (Zach Dorner), "I'll add it to the checklist" (Alana Wilder), and a proposal from senior leadership to make it a company-wide certification within every new hire's first 60 days.</li>
             </ul>
@@ -395,12 +395,12 @@ export default function ContentMaps() {
               (Oct 2025) — framing maps as the connective tissue of agentic personalization.
             </p>
             <p className="text-foreground/80 leading-relaxed font-light mb-0">
-              Inside the company, the map started driving product thinking: I proposed topic-coverage metrics and progressive "unlock analytics as you expand coverage" mechanics that fed the product team's roadmap discussion. The map-led onsite session for Mintos was later credited in the closed-won announcement.
+              Inside the company, the map started driving product thinking: I proposed topic-coverage metrics and progressive "unlock analytics as you expand coverage" mechanics that fed the product team's roadmap discussion. The map-led onsite session was later credited in the closed-won announcement.
             </p>
-            <PullQuote cite="Sam McGill, Sales — Mintos closed-won announcement, $90K TCV, October 2025" variant="sienna">
+            <PullQuote cite="Sam McGill, Sales — Closed-won announcement, $90K TCV, October 2025" variant="sienna">
               "Mohana — thank you for all of your work on the content map!! This was a key session ran on-site in Berlin."
             </PullQuote>
-            <PullQuote cite='Director of Lifecycle at Monday.com (prospect), on the map-led POC deck'>
+            <PullQuote cite="Director of Lifecycle, enterprise SaaS prospect — on the map-led POC deck">
               "This was the selling point of the session. If I do a presentation to my executives, this is it."
             </PullQuote>
           </Phase>
@@ -421,7 +421,7 @@ export default function ContentMaps() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10 mb-8">
             {[
-              { label: "Commercial", value: "Publicly credited as a key session in the $90K Mintos closed-won deal. A prospect called the map-led deck \"the selling point of the session.\"" },
+              { label: "Commercial", value: "Publicly credited as a key session in a $90K closed-won deal. A prospect called the map-led deck \"the selling point of the session.\"" },
               { label: "Operational", value: "Went from \"doesn't exist on accounts a year in\" to a standard expected at onboarding and QBRs, embedded in the 4-session onboarding methodology." },
               { label: "Organizational", value: "~15 people across every function built full end-to-end maps; proposed as a 60-day certification for all new hires." },
               { label: "Technical", value: "Map templates became training data for two custom GPTs (ContentMaPT, MapPT) and a repeatable Content Map + aamPT onboarding workflow." },
@@ -436,8 +436,8 @@ export default function ContentMaps() {
           <div className="flex flex-col gap-4">
             {[
               { quote: "This Content Map template is fire.", cite: "Amaan Kulatunga, Solutions Consultant" },
-              { quote: "I'm loving the new content map format in action.", cite: "Amaan Kulatunga, on the client-facing Traveloka map" },
-              { quote: "No wonder you absolutely nailed the demo with ThredUp and drafted such good message content!", cite: "Piper Martz, to the Challenge winner — skill transfer in action" },
+              { quote: "I'm loving the new content map format in action.", cite: "Amaan Kulatunga, on a client-facing map" },
+              { quote: "No wonder you absolutely nailed the demo and drafted such good message content!", cite: "Piper Martz, to the Challenge winner — skill transfer in action" },
               { quote: "We pulled a lot of insights from this exercise, and it's really helping shape how we evolve the Content Map.", cite: "Amaan Kulatunga, Challenge wrap-up" },
             ].map(({ quote, cite }) => (
               <PullQuote key={cite} cite={cite} variant="lime">
@@ -447,6 +447,41 @@ export default function ContentMaps() {
           </div>
 
           <ClosedWonVisual />
+        </motion.section>
+
+        {/* Challenges */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
+        >
+          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
+            Challenges
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-serif mb-8">What made it hard</h3>
+          <div className="flex flex-col gap-px bg-foreground/10 border border-foreground/10">
+            {[
+              {
+                title: "The format wasn't right on the first try",
+                body: "The early map captured features and offerings but missed the value-proposition dimension — and a live prospect flagged the gap the moment they tried to use it. The core design had to be reworked in front of the people it was meant to win over.",
+              },
+              {
+                title: "Standardizing across wildly different products",
+                body: "A format that worked for a fintech app had to survive a barbershop marketplace, a greeting-card service, a music platform, and a super-app. Every new vertical surfaced edge cases the previous version hadn't anticipated — catalog-driven e-commerce alone demanded a different structure than feature-led products.",
+              },
+              {
+                title: "Scaling a personal skill into a company capability",
+                body: "The map lived in my head before it lived in a guide. Turning it into something teachable meant building the whole apparatus from scratch — the written guide, a graded company-wide contest, individualized feedback on ~15 submissions, and real-time logistics fixes when assigned apps weren't available in participants' regions.",
+              },
+            ].map(({ title, body }) => (
+              <div key={title} className="bg-background p-6 flex flex-col gap-2">
+                <h4 className="text-base font-medium text-foreground">{title}</h4>
+                <p className="text-sm text-foreground/60 leading-relaxed font-light m-0">{body}</p>
+              </div>
+            ))}
+          </div>
         </motion.section>
 
         {/* Skills */}

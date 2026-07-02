@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Maps | Mohana Das</title>
+    <meta
+      name="description"
+      content="Case study: how Mohana Das turned a one-off planning habit into Aampe's shared strategic language — templated, taught, AI-paired, and credited in closed-won deals."
+    >
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .case-hero {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 64px 28px 24px;
+      }
+      .case-hero h1 {
+        font-size: clamp(2.6rem, 6vw, 4.6rem);
+        max-width: 980px;
+      }
+      .case-hero .hero-statement {
+        font-size: 1.5rem;
+        max-width: 860px;
+      }
+      .case-facts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 16px;
+        max-width: var(--max);
+        margin: 36px auto 0;
+        padding: 0 28px;
+      }
+      .case-fact {
+        background: var(--paper-strong);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px 20px;
+      }
+      .case-fact span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .case-fact strong {
+        font-size: 1.05rem;
+        line-height: 1.35;
+        display: block;
+      }
+      .case-body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 24px 28px 80px;
+      }
+      .case-body section {
+        margin-top: 56px;
+      }
+      .case-body h2 {
+        font-size: 2.1rem;
+        margin-bottom: 18px;
+      }
+      .case-body h3 {
+        margin: 30px 0 10px;
+        color: var(--teal);
+      }
+      .case-body p {
+        color: #403b34;
+        font-size: 1.05rem;
+      }
+      .case-body ul {
+        color: #403b34;
+        font-size: 1.02rem;
+        padding-left: 22px;
+      }
+      .case-body li {
+        margin: 8px 0;
+      }
+      .phase {
+        border-left: 3px solid var(--line);
+        padding: 4px 0 4px 26px;
+        margin: 34px 0;
+        position: relative;
+      }
+      .phase::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 10px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--teal);
+        border: 3px solid var(--paper);
+      }
+      .phase time {
+        display: block;
+        color: var(--coral);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .pullquote {
+        background: var(--teal-soft);
+        border-left: 4px solid var(--teal);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        margin: 26px 0;
+        padding: 18px 22px;
+      }
+      .pullquote p {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.12rem;
+        line-height: 1.45;
+      }
+      .pullquote cite {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-style: normal;
+        font-size: 0.88rem;
+        font-weight: 700;
+      }
+      .pullquote.is-coral {
+        background: var(--coral-soft);
+        border-left-color: var(--coral);
+      }
+      .pullquote.is-gold {
+        background: var(--gold-soft);
+        border-left-color: var(--gold);
+      }
+      .receipt-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .receipt-grid blockquote {
+        margin: 0;
+        background: var(--paper-strong);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px 22px;
+      }
+      .receipt-grid blockquote p {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.02rem;
+      }
+      .receipt-grid cite {
+        display: block;
+        margin-top: 12px;
+        color: var(--muted);
+        font-style: normal;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      .skill-map {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .skill-map article {
+        background: var(--paper-strong);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px 22px;
+      }
+      .skill-map h3 {
+        margin: 0 0 8px;
+        color: var(--ink);
+        font-size: 1.05rem;
+      }
+      .skill-map p {
+        margin: 0;
+        font-size: 0.95rem;
+      }
+      .map-anatomy {
+        background: var(--paper-strong);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px 28px;
+        margin-top: 24px;
+      }
+      .map-anatomy .axis {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .map-anatomy .axis span {
+        background: var(--plum-soft);
+        color: var(--plum);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      .map-anatomy .axis.is-teal span {
+        background: var(--teal-soft);
+        color: var(--teal);
+      }
+      .map-anatomy .axis.is-gold span {
+        background: var(--gold-soft);
+        color: var(--gold);
+      }
+      .map-table-wrap {
+        overflow-x: auto;
+        margin-top: 14px;
+      }
+      .map-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.84rem;
+        min-width: 720px;
+      }
+      .map-table th {
+        background: var(--ink);
+        color: var(--paper-strong);
+        text-align: left;
+        padding: 8px 10px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .map-table td {
+        border: 1px solid var(--line);
+        background: var(--paper-strong);
+        padding: 8px 10px;
+        vertical-align: top;
+      }
+      .map-table .impact-high {
+        color: var(--teal);
+        font-weight: 800;
+      }
+      .map-table .impact-med {
+        color: var(--gold);
+        font-weight: 800;
+      }
+      .step-list {
+        list-style: none;
+        counter-reset: step;
+        padding: 0;
+        margin: 20px 0 0;
+      }
+      .step-list li {
+        counter-increment: step;
+        position: relative;
+        padding: 0 0 0 58px;
+        margin: 22px 0;
+      }
+      .step-list li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        background: var(--ink);
+        color: var(--paper-strong);
+        border-radius: var(--radius);
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+      .step-list h3 {
+        margin: 0 0 6px;
+        color: var(--ink);
+      }
+      .step-list p {
+        margin: 0;
+        font-size: 0.98rem;
+      }
+      .type-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .type-chips span {
+        background: var(--plum-soft);
+        color: var(--plum);
+        border-radius: 999px;
+        padding: 5px 12px;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .back-link {
+        display: inline-block;
+        margin-bottom: 26px;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      .back-link:hover {
+        color: var(--ink);
+      }
+      @media (max-width: 640px) {
+        .case-hero {
+          padding-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <span class="brand-mark" aria-label="Mohana Das">
+        <span>MD</span>
+      </span>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="https://linkedin.com/in/dasmohana" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:mohanadas.dsi@gmail.com">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="case-hero">
+        <p class="eyebrow">Case study &middot; Aampe &middot; Jul 2025 &ndash; Apr 2026</p>
+        <h1>Content Maps: building the shared language for agentic content strategy</h1>
+        <p class="hero-statement">
+          I took a scattered planning habit and turned it into Aampe's standard strategic
+          artifact &mdash; defined, templated, named, taught, paired with AI tooling, and
+          credited in closed-won deals.
+        </p>
+      </div>
+
+      <div class="case-facts" aria-label="Project at a glance">
+        <div class="case-fact">
+          <span>Role</span>
+          <strong>Originator &amp; owner of the methodology</strong>
+        </div>
+        <div class="case-fact">
+          <span>Commercial impact</span>
+          <strong>Credited in a $90K closed-won deal (Mintos)</strong>
+        </div>
+        <div class="case-fact">
+          <span>Scale</span>
+          <strong>~15 people trained company-wide; maps across 15+ accounts</strong>
+        </div>
+        <div class="case-fact">
+          <span>Legacy</span>
+          <strong>Proposed as a 60-day certification for every new hire</strong>
+        </div>
+      </div>
+
+      <div class="case-body">
+        <section aria-labelledby="context-title">
+          <p class="eyebrow">Context</p>
+          <h2 id="context-title">The problem: no shared way to see the whole conversation</h2>
+          <p>
+            Aampe replaces campaign-based messaging with agentic AI &mdash; one agent per user,
+            learning what to say, when, and where. But agents can only learn from the content
+            they're given, and in 2025 there was no shared, repeatable way to answer the most
+            basic strategic question on any account: <em>what should we be saying to whom, and
+            where are the gaps?</em>
+          </p>
+          <p>
+            Every account team improvised its own version. Accounts a full year into their
+            relationship &mdash; Taxfix, MyPostcard &mdash; had no map of their content at all.
+            CRM, growth, and product functions optimized in silos, and strategy conversations ran
+            on tribal knowledge instead of a common artifact. The result: uneven onboarding, slow
+            ramp-up, and agents stuck learning from a small cluster of topics.
+          </p>
+        </section>
+
+        <section aria-labelledby="what-title">
+          <p class="eyebrow">The artifact</p>
+          <h2 id="what-title">What a content map is</h2>
+          <p>
+            A content map is a <strong>bird's-eye view of all possible touchpoints</strong>
+            across a product's architecture, journeys, flows, customer experience, and lifecycle.
+            A <em>touchpoint</em> is any opportunity where an agent can act as a medium of
+            interaction between a user and the brand &mdash; a push notification, an onboarding
+            screen, an email, an in-app banner, even a blog or FAQ that could be repurposed.
+          </p>
+          <p>
+            The craft is capturing <em>all</em> of those touchpoints and organizing them into a
+            structured hierarchy: features break into sub-features, sub-features generate
+            <strong>topics</strong> (the content idea or message theme an agent can speak to
+            &mdash; in Aampe, a topic maps to a message group), and each topic carries the
+            operational metadata that makes it buildable: channels, trigger events, audience,
+            and priority. In practice it lives in a spreadsheet anyone can read, critique, and
+            fill gaps in at a glance.
+          </p>
+
+          <div class="map-anatomy" aria-label="Sample content map rows">
+            <h3>Three rows of a content map (Uber, the teaching example from my guide)</h3>
+            <div class="map-table-wrap">
+              <table class="map-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Sub-feature</th>
+                    <th>Topic</th>
+                    <th>Content type</th>
+                    <th>Channels</th>
+                    <th>Entry event</th>
+                    <th>Audience</th>
+                    <th>Impact</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Rides</td>
+                    <td>Reserve</td>
+                    <td>Advance booking education</td>
+                    <td>foundational-feature-education</td>
+                    <td>Push, Email</td>
+                    <td>&mdash; (always on)</td>
+                    <td>All users</td>
+                    <td class="impact-high">High</td>
+                  </tr>
+                  <tr>
+                    <td>Eats</td>
+                    <td>Food</td>
+                    <td>Rainy-day comfort food</td>
+                    <td>contextual-datafeed</td>
+                    <td>Push, In-app</td>
+                    <td>weather = rain</td>
+                    <td>Active eaters</td>
+                    <td class="impact-med">Med</td>
+                  </tr>
+                  <tr>
+                    <td>Rides</td>
+                    <td>Cabs</td>
+                    <td>Add dinner to your ride home</td>
+                    <td>contextual-crosssell</td>
+                    <td>Push</td>
+                    <td>ride_booked</td>
+                    <td>Riders, non-Eats users</td>
+                    <td class="impact-med">Med</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="why-title">
+          <p class="eyebrow">The purpose</p>
+          <h2 id="why-title">Why we build one</h2>
+          <p>
+            Aampe's agents learn per user &mdash; but they can only learn from the content
+            they're given. If a team only writes discount pushes, the agent can only ever learn
+            "this user likes discounts." The content map exists to fix four problems at once:
+          </p>
+          <ul>
+            <li>
+              <strong>Coverage for agent learning.</strong> Agents need breadth &mdash; many
+              topics, tones, and contexts &mdash; to find what resonates with each user. The map
+              makes the full opportunity space visible, so content gets created for every moment
+              of value, not just the loudest campaign idea.
+            </li>
+            <li>
+              <strong>Seeing what <em>could</em> exist, not just what does.</strong> Most teams
+              unknowingly operate inside a small fraction of their opportunity space. The map
+              doesn't just catalog existing content &mdash; it exposes the openings: features
+              never messaged, intents never connected, tones never tried.
+            </li>
+            <li>
+              <strong>A shared canvas across silos.</strong> CRM, growth, product, and data
+              teams each see their piece of the user journey. The map puts every touchpoint on
+              one strategic surface, so alignment happens on evidence instead of tribal
+              knowledge.
+            </li>
+            <li>
+              <strong>Prioritization you can defend.</strong> The Impact column (High / Med /
+              Low) sequences which topics accelerate agentic learning in the first three months,
+              weighing content type, business KPIs, technical feasibility, and whether content
+              can be repurposed &mdash; turning "what should we build first?" into a
+              recommendation, not a debate.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="how-title">
+          <p class="eyebrow">The method</p>
+          <h2 id="how-title">How one gets built</h2>
+          <p>
+            I codified the build process into a step-by-step "How to Build Content Maps" guide
+            for internal teams &mdash; written so that someone who has never made one can go
+            from a blank sheet to a working map. Four steps:
+          </p>
+          <ol class="step-list">
+            <li>
+              <h3>Inventory features &amp; sub-features</h3>
+              <p>
+                Walk the entire product exhaustively &mdash; every screen, every flow, app and
+                web &mdash; and list every feature and sub-feature into a hierarchy. The
+                discipline matters: change locations, switch user modes, and keep going until
+                the feature space is genuinely exhausted.
+              </p>
+            </li>
+            <li>
+              <h3>Add global touchpoints</h3>
+              <p>
+                Step back and capture the feature-agnostic layer: subscription tiers, onboarding
+                and KYC flows, platform surfaces (Home, Account, Activity), and supporting
+                content beyond the app &mdash; FAQs, help articles, blogs, app reviews. These
+                become a "Global" feature so no relationship-building moment is invisible.
+              </p>
+            </li>
+            <li>
+              <h3>Generate topics through content-type lenses</h3>
+              <p>
+                For each touchpoint, ideate topics using a taxonomy of content types I defined
+                &mdash; creative lenses that turn one feature into many distinct engagement
+                opportunities. One feature might yield a foundational education topic for all
+                users, a lifecycle topic for new users, and a weather-triggered contextual topic
+                &mdash; each a separate row, each a separate thing agents can learn from.
+              </p>
+              <div class="type-chips" aria-label="Content type taxonomy">
+                <span>Foundational (repurpose, feature-education, thematic, general)</span>
+                <span>Contextual (event, lifecycle, time, datafeed, cross-sell, social, attribute)</span>
+                <span>Recommender</span>
+                <span>Seasonal</span>
+                <span>Transactional</span>
+              </div>
+            </li>
+            <li>
+              <h3>Make it operational</h3>
+              <p>
+                Add the columns that turn a brainstorm into a working plan: channels, entry and
+                exit events for triggered content, whether content already exists to repurpose,
+                audience type, and the Impact rating &mdash; plus deeplinks, status, and owners
+                so the map doubles as the content-production tracker for the whole engagement.
+              </p>
+            </li>
+          </ol>
+        </section>
+
+        <section aria-labelledby="role-title">
+          <p class="eyebrow">My role</p>
+          <h2 id="role-title">Owner of the artifact, end to end</h2>
+          <p>
+            I proposed the content map as a standard for every customer, defined its structure,
+            built the first templates that other people reused, led the exercise that named it,
+            wrote the guide that taught it, ran the company-wide challenge that scaled it, paired
+            it with AI tooling, and published the public thought-leadership piece that positioned
+            it. This is the full arc &mdash; from one Slack proposal to a company-wide capability
+            proposed as a hiring requirement. Here's how it evolved.
+          </p>
+        </section>
+
+        <section aria-labelledby="work-title">
+          <p class="eyebrow">The work</p>
+          <h2 id="work-title">From one proposal to company infrastructure</h2>
+
+          <article class="phase">
+            <time>Phase 1 &middot; July 2025 &mdash; The proposal</time>
+            <h3>Made the map a standard, not a one-off</h3>
+            <p>
+              On the Deezer account, I proposed that every customer get a content map before
+              post-sales handoff, and defined the artifact for the team: "a strategic outline of
+              the key features, user actions, message topics and surfaces that should be covered
+              over the course of partnership &mdash; it helps ensure we've got the right breadth
+              of content for agent learning."
+            </p>
+            <div class="pullquote">
+              <p>"I'm confident we don't have that for Deezer. Please kick it off Mohana. Thank you!"</p>
+              <cite>Paul Meinshausen, CEO &mdash; same day, with four teammates asking to join the working session</cite>
+            </div>
+          </article>
+
+          <article class="phase">
+            <time>Phase 2 &middot; Jul&ndash;Sep 2025 &mdash; Templates that traveled</time>
+            <h3>Proved the artifact was portable across verticals</h3>
+            <p>
+              I built the Taxfix content map as a reusable template &mdash; and watched it travel
+              without me in the room. A colleague ported it directly into theCut's Q3 strategy
+              session (fintech &rarr; barbershop marketplace), and I went on to build maps for
+              Deezer, Carousell, NBA, Traveloka, and Swiggy. The Carousell map's channel-aware
+              structure was adopted as the team template for cross-channel mapping.
+            </p>
+            <div class="pullquote is-coral">
+              <p>"The content map you prepared for Taxfix was an incredible resource. I was able to map out theCut based on how you built that doc out."</p>
+              <cite>Derek Geryol, CSM &mdash; #internal-thecut, July 2025</cite>
+            </div>
+            <div class="pullquote is-coral">
+              <p>"Every time Mohana pulls another one of these out, I feel like I'm watching a magician at work."</p>
+              <cite>Schaun Wheeler, Co-founder &mdash; on the Deezer content map, August 2025</cite>
+            </div>
+          </article>
+
+          <article class="phase">
+            <time>Phase 3 &middot; Aug 2025 &mdash; Pairing the map with AI</time>
+            <h3>My templates became the training base for AI tooling</h3>
+            <p>
+              When the team built ContentMaPT &mdash; a custom GPT that generates first-pass
+              content maps in about ten minutes &mdash; it was trained on my map templates. The
+              map also became one half of a repeatable onboarding workflow ("Content Map +
+              aamPT", pairing it with the custom GPT I built and maintained), demoed to the whole
+              CS team. I later built MapPT, a custom GPT for building maps, and rolled it out
+              across the GTM org with a working session.
+            </p>
+            <div class="pullquote is-gold">
+              <p>"Thank you for your stellar templates &mdash; they set the bar so high for GPT to follow."</p>
+              <cite>Amaan Kulatunga, Solutions Consultant &mdash; introducing ContentMaPT, built on the map templates, August 2025</cite>
+            </div>
+          </article>
+
+          <article class="phase">
+            <time>Phase 4 &middot; Aug&ndash;Sep 2025 &mdash; Naming &amp; positioning</time>
+            <h3>Led the exercise that gave the artifact its name</h3>
+            <p>
+              A tool this central needed language that could hold up in sales rooms. I opened the
+              naming debate ("Opportunity Map?"), facilitated input across CS, marketing, product,
+              and the CEO, and closed it with a company-wide vote (29 votes): <strong>Agentic
+              Personalization Map</strong>. It was in a live deal deck the same day. When the CEO
+              pushed to put "process and roadmap over any specific sheet," that shaped the map's
+              role inside a standardized onboarding methodology &mdash; the four-session structure
+              other strategists now use.
+            </p>
+            <div class="pullquote">
+              <p>"This was the selling point of the session. If I do a presentation to my executives, this is it."</p>
+              <cite>Director of Lifecycle at Monday.com (prospect), on the map-led POC deck &mdash; "It was a game changer for Mintos as well."</cite>
+            </div>
+          </article>
+
+          <article class="phase">
+            <time>Phase 5 &middot; Oct&ndash;Nov 2025 &mdash; Teaching it at scale</time>
+            <h3>The Content Map Challenge</h3>
+            <p>
+              To turn a personal skill into a company capability, I authored a step-by-step
+              "How to Build Content Maps" guide in Notion, then designed and ran a company-wide
+              contest to pressure-test it: ~15 participants, each assigned a real customer or
+              prospect, two-week window, judged submissions with individualized written feedback
+              on every single map. I also founded the #temp_content_maps channel and a Notion
+              library centralizing every client's map.
+            </p>
+            <ul>
+              <li>Winners announced with transparent criteria and real prizes; the winning map (Whatnot) was built by a new hire who credited the exercise for nailing a live ThredUp demo weeks later.</li>
+              <li>Insights from all submissions were folded back into evolving the map format itself.</li>
+              <li>Leadership response: "a great onboarding requirement for future new hires" (Zach Dorner), "I'll add it to the checklist" (Alana Wilder), and a proposal from senior leadership to make it a company-wide certification within every new hire's first 60 days.</li>
+            </ul>
+          </article>
+
+          <article class="phase">
+            <time>Phase 6 &middot; Oct 2025&ndash;Apr 2026 &mdash; Product, sales &amp; public voice</time>
+            <h3>The map becomes infrastructure</h3>
+            <p>
+              I published the public positioning piece &mdash; <a href="https://aampe.com/blog/the-bigger-picture-how-aampe-s-content-maps-redefine-content-strategy" target="_blank" rel="noreferrer"><em>The Bigger Picture: How Aampe's Content Maps Redefine Content Strategy</em></a>
+              (Oct 2025) &mdash; framing maps as the connective tissue of agentic personalization.
+              Inside the company, the map started driving product thinking: I proposed
+              topic-coverage metrics and progressive "unlock analytics as you expand coverage"
+              mechanics that fed the product team's coverage work. Maps now anchor account
+              resets (Runna's 2026 strategic reset started from its map and produced a 40&ndash;50
+              message-group launch plan), renewals (Traveloka's map moved to a client-facing
+              format), and closed deals.
+            </p>
+            <div class="pullquote is-coral">
+              <p>"Mohana &mdash; thank you for all of your work on the content map!! This was a key session ran on-site in Berlin."</p>
+              <cite>Sam McGill, Sales &mdash; Mintos closed-won announcement, $90K TCV, October 2025</cite>
+            </div>
+          </article>
+        </section>
+
+        <section aria-labelledby="outcome-title">
+          <p class="eyebrow">Outcomes</p>
+          <h2 id="outcome-title">Receipts</h2>
+          <ul>
+            <li><strong>Commercial:</strong> the map was publicly credited as a key session in the $90K Mintos closed-won deal, and a prospect called the map-led deck "the selling point of the session."</li>
+            <li><strong>Operational:</strong> went from "doesn't exist on accounts a year in" to a standard expected at onboarding and QBRs, embedded in the 4-session onboarding methodology.</li>
+            <li><strong>Organizational:</strong> ~15 people across every function built full end-to-end maps; the exercise was proposed as a 60-day certification for all new hires.</li>
+            <li><strong>Technical:</strong> map templates became training data for two custom GPTs (ContentMaPT, MapPT) and a repeatable Content Map + aamPT onboarding workflow.</li>
+            <li><strong>Public:</strong> authored the company's definitive blog on the concept, followed by <a href="https://aampe.com/blog/message-structures-giving-agents-more-choice" target="_blank" rel="noreferrer">Message Structures</a> (Jan 2026) extending the thinking.</li>
+          </ul>
+
+          <div class="receipt-grid">
+            <blockquote>
+              <p>"This Content Map template is fire."</p>
+              <cite>Amaan Kulatunga, Solutions Consultant</cite>
+            </blockquote>
+            <blockquote>
+              <p>"I'm loving the new content map format in action."</p>
+              <cite>Amaan Kulatunga, on the client-facing Traveloka map</cite>
+            </blockquote>
+            <blockquote>
+              <p>"No wonder you absolutely nailed the demo with ThredUp and drafted such good message content!"</p>
+              <cite>Piper Martz, to the Challenge winner &mdash; skill transfer in action</cite>
+            </blockquote>
+            <blockquote>
+              <p>"We pulled a lot of insights from this exercise, and it's really helping shape how we evolve the Content Map."</p>
+              <cite>Amaan Kulatunga, Challenge wrap-up</cite>
+            </blockquote>
+          </div>
+        </section>
+
+        <section aria-labelledby="challenges-title">
+          <p class="eyebrow">Challenges</p>
+          <h2 id="challenges-title">What made it hard</h2>
+          <ul>
+            <li>
+              <strong>The format wasn't right on the first try.</strong> The early
+              Personalisation Map captured features and offerings but missed the value-proposition
+              dimension &mdash; and a live prospect (Monday.com) flagged the gap the moment they
+              tried to use it. The core design had to be reworked in front of the people it was
+              meant to win over.
+            </li>
+            <li>
+              <strong>Standardizing across wildly different products.</strong> A format that
+              worked for a fintech app had to survive a barbershop marketplace, a greeting-card
+              service, a music platform, and a super-app. Every new vertical surfaced edge cases
+              the previous version hadn't anticipated &mdash; catalog-driven e-commerce alone
+              demanded a different structure than feature-led products.
+            </li>
+            <li>
+              <strong>Scaling a personal skill into a company capability.</strong> The map
+              lived in my head before it lived in a guide. Turning it into something teachable
+              meant building the whole apparatus from scratch &mdash; the written guide, a graded
+              company-wide contest, individualized feedback on ~15 submissions, and real-time
+              logistics fixes when assigned apps weren't available in participants' regions.
+            </li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="skills-title">
+          <p class="eyebrow">What this demonstrates</p>
+          <h2 id="skills-title">Skills, mapped for hiring managers</h2>
+          <div class="skill-map">
+            <article>
+              <h3>0&rarr;1 framework design</h3>
+              <p>Saw a structural gap, defined the artifact, and iterated the format against real prospect friction &mdash; including reworking a core dimension after a live session exposed it.</p>
+            </article>
+            <article>
+              <h3>Systems thinking</h3>
+              <p>Designed the map to connect strategy to execution: audiences to value props to labels to agent learning &mdash; one artifact legible to CRM, growth, product, and data teams.</p>
+            </article>
+            <article>
+              <h3>Cross-functional leadership</h3>
+              <p>Aligned CS, sales, product, marketing, and the CEO around one artifact &mdash; through facilitation and a company vote, not mandate.</p>
+            </article>
+            <article>
+              <h3>AI-native workflows</h3>
+              <p>Turned the methodology into GPT training material and paired it with custom AI tooling so a 4-hour expert task became a 10-minute first pass.</p>
+            </article>
+            <article>
+              <h3>Enablement &amp; teaching</h3>
+              <p>Authored the guide, designed the contest, gave individualized feedback on every submission, and built the channel and library that keep it alive.</p>
+            </article>
+            <article>
+              <h3>Commercial instinct</h3>
+              <p>Positioned an internal planning tool as a sales asset &mdash; credited in a closed-won deal and called "the selling point" by a prospect executive.</p>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="learned-title">
+          <p class="eyebrow">Reflection</p>
+          <h2 id="learned-title">What I learned</h2>
+          <p>
+            A genuinely good internal tool doesn't stay internal. It gets requested by name,
+            ported across verticals, paired with AI tooling, turned into a curriculum, and
+            eventually proposed as a hiring bar. Every major improvement to the map came from
+            watching someone else try to use it &mdash; the missing value-proposition dimension,
+            the pitch refinements, the Challenge's "wait, this part's confusing" moments. The bar
+            for a framework that scales isn't "people liked it"; it's showing up in someone
+            else's client win.
+          </p>
+
+          <div class="cta-row">
+            <a class="button button-primary" href="https://aampe.com/blog/the-bigger-picture-how-aampe-s-content-maps-redefine-content-strategy" target="_blank" rel="noreferrer">Read the Content Maps blog</a>
+            <a class="button button-quiet" href="mailto:mohanadas.dsi@gmail.com?subject=Hi%20from%20your%20portfolio">Get in touch</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
