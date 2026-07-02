@@ -1,5 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import {
+  HeroMapVisual,
+  FirstMapVisual,
+  ChallengeConstellationVisual,
+  ClosedWonVisual,
+} from "../components/ContentMapVisuals";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -83,9 +89,9 @@ export default function ContentMaps() {
         </div>
       </div>
 
-      {/* Screenshot placeholder — hero */}
+      {/* Hero visual */}
       <div className="w-full max-w-5xl mx-auto px-6 md:px-16 lg:px-24 mb-16">
-        <ScreenshotPlaceholder label="Hero image / overview screenshot — add image here" />
+        <HeroMapVisual />
       </div>
 
       {/* Body */}
@@ -331,7 +337,7 @@ export default function ContentMaps() {
             </PullQuote>
           </Phase>
 
-          <ScreenshotPlaceholder label="Screenshot: first content map (Deezer / Taxfix) — add image here" />
+          <FirstMapVisual />
 
           <Phase time="Phase 2 · Jul–Sep 2025 — Templates that traveled" heading="Proved the artifact was portable across verticals">
             <p className="text-foreground/80 leading-relaxed font-light mb-0">
@@ -367,8 +373,6 @@ export default function ContentMaps() {
             </p>
           </Phase>
 
-          <ScreenshotPlaceholder label="Screenshot: naming vote / map-led deal deck — add image here" />
-
           <Phase time="Phase 5 · Oct–Nov 2025 — Teaching it at scale: the Content Map Challenge" heading="Turned a personal skill into a company capability">
             <p className="text-foreground/80 leading-relaxed font-light mb-4">
               I authored a step-by-step "How to Build Content Maps" guide in Notion, then designed and ran a company-wide contest to pressure-test it: ~15 participants, each assigned a real customer or prospect, two-week window, judged submissions with individualized written feedback on every single map. I also founded the #temp_content_maps channel and a Notion library centralising every client's map.
@@ -380,7 +384,7 @@ export default function ContentMaps() {
             </ul>
           </Phase>
 
-          <ScreenshotPlaceholder label="Screenshot: Content Map Challenge guide / submissions — add image here" />
+          <ChallengeConstellationVisual />
 
           <Phase time="Phase 6 · Oct 2025–Apr 2026 — Product, sales & public voice" heading="From internal tool to public positioning">
             <p className="text-foreground/80 leading-relaxed font-light mb-4">
@@ -442,7 +446,7 @@ export default function ContentMaps() {
             ))}
           </div>
 
-          <ScreenshotPlaceholder label="Screenshot: closed-won announcement / blog post — add image here" />
+          <ClosedWonVisual />
         </motion.section>
 
         {/* Skills */}
