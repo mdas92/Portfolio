@@ -113,6 +113,176 @@ export default function ContentMaps() {
           </p>
         </motion.section>
 
+        {/* The artifact */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
+        >
+          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
+            The artifact
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-serif mb-6">What a content map is</h3>
+          <p className="text-lg text-foreground/80 leading-relaxed font-light mb-4">
+            A content map is a <strong>bird's-eye view of all possible touchpoints</strong> across
+            a product's architecture, journeys, flows, customer experience, and lifecycle. A{" "}
+            <em>touchpoint</em> is any opportunity where an agent can act as a medium of interaction
+            between a user and the brand — a push notification, an onboarding screen, an email,
+            an in-app banner, even a blog or FAQ that could be repurposed.
+          </p>
+          <p className="text-lg text-foreground/80 leading-relaxed font-light mb-8">
+            The craft is capturing <em>all</em> of those touchpoints and organizing them into a
+            structured hierarchy: features break into sub-features, sub-features generate{" "}
+            <strong>topics</strong> (the content idea or message theme an agent can speak to —
+            in Aampe, a topic maps to a message group), and each topic carries the operational
+            metadata that makes it buildable: channels, trigger events, audience, and priority.
+            In practice it lives in a spreadsheet anyone can read, critique, and fill gaps in
+            at a glance.
+          </p>
+
+          {/* Sample table */}
+          <div className="border border-border/50 rounded p-5 bg-muted/10">
+            <p className="text-[10px] uppercase tracking-[0.18em] font-medium text-muted-foreground mb-4">
+              Three rows of a content map (Uber — the teaching example from my guide)
+            </p>
+            <div className="overflow-x-auto -mx-1">
+              <table className="w-full text-xs border-collapse min-w-[640px]">
+                <thead>
+                  <tr>
+                    {["Feature", "Sub-feature", "Topic", "Content type", "Channels", "Entry event", "Audience", "Impact"].map((h) => (
+                      <th key={h} className="bg-foreground text-background text-left px-3 py-2 font-semibold tracking-wide whitespace-nowrap">{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { feature: "Rides", sub: "Reserve", topic: "Advance booking education", type: "foundational-feature-education", channels: "Push, Email", event: "— (always on)", audience: "All users", impact: "High", high: true },
+                    { feature: "Eats", sub: "Food", topic: "Rainy-day comfort food", type: "contextual-datafeed", channels: "Push, In-app", event: "weather = rain", audience: "Active eaters", impact: "Med", high: false },
+                    { feature: "Rides", sub: "Cabs", topic: "Add dinner to your ride home", type: "contextual-crosssell", channels: "Push", event: "ride_booked", audience: "Riders, non-Eats users", impact: "Med", high: false },
+                  ].map((row, i) => (
+                    <tr key={i}>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top">{row.feature}</td>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top">{row.sub}</td>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top">{row.topic}</td>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top text-muted-foreground">{row.type}</td>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top">{row.channels}</td>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top text-muted-foreground">{row.event}</td>
+                      <td className="border border-border/40 bg-background px-3 py-2 align-top">{row.audience}</td>
+                      <td className={`border border-border/40 bg-background px-3 py-2 align-top font-bold ${row.high ? "text-primary" : "text-muted-foreground"}`}>{row.impact}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* The purpose */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
+        >
+          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
+            The purpose
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-serif mb-6">Why we build one</h3>
+          <p className="text-lg text-foreground/80 leading-relaxed font-light mb-8">
+            Aampe's agents learn per user — but they can only learn from the content they're given.
+            If a team only writes discount pushes, the agent can only ever learn "this user likes
+            discounts." The content map exists to fix four problems at once:
+          </p>
+          <div className="flex flex-col gap-px bg-foreground/10 border border-foreground/10">
+            {[
+              { title: "Coverage for agent learning", body: "Agents need breadth — many topics, tones, and contexts — to find what resonates with each user. The map makes the full opportunity space visible, so content gets created for every moment of value, not just the loudest campaign idea." },
+              { title: "Seeing what could exist, not just what does", body: "Most teams unknowingly operate inside a small fraction of their opportunity space. The map doesn't just catalog existing content — it exposes the openings: features never messaged, intents never connected, tones never tried." },
+              { title: "A shared canvas across silos", body: "CRM, growth, product, and data teams each see their piece of the user journey. The map puts every touchpoint on one strategic surface, so alignment happens on evidence instead of tribal knowledge." },
+              { title: "Prioritization you can defend", body: "The Impact column (High / Med / Low) sequences which topics accelerate agentic learning in the first three months, weighing content type, business KPIs, technical feasibility, and whether content can be repurposed — turning \"what should we build first?\" into a recommendation, not a debate." },
+            ].map(({ title, body }) => (
+              <div key={title} className="bg-background p-6 flex flex-col gap-2">
+                <h4 className="text-base font-medium text-foreground">{title}</h4>
+                <p className="text-sm text-foreground/60 leading-relaxed font-light m-0">{body}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* The method */}
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-14"
+        >
+          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
+            The method
+          </h2>
+          <h3 className="text-2xl md:text-3xl font-serif mb-6">How one gets built</h3>
+          <p className="text-lg text-foreground/80 leading-relaxed font-light mb-8">
+            I codified the build process into a step-by-step guide for internal teams — written
+            so that someone who has never made one can go from a blank sheet to a working map.
+            Four steps:
+          </p>
+          <ol className="flex flex-col gap-6">
+            {[
+              {
+                n: "01",
+                title: "Inventory features & sub-features",
+                body: "Walk the entire product exhaustively — every screen, every flow, app and web — and list every feature and sub-feature into a hierarchy. The discipline matters: change locations, switch user modes, and keep going until the feature space is genuinely exhausted.",
+                chips: [],
+              },
+              {
+                n: "02",
+                title: "Add global touchpoints",
+                body: "Step back and capture the feature-agnostic layer: subscription tiers, onboarding and KYC flows, platform surfaces (Home, Account, Activity), and supporting content beyond the app — FAQs, help articles, blogs, app reviews. These become a \"Global\" feature so no relationship-building moment is invisible.",
+                chips: [],
+              },
+              {
+                n: "03",
+                title: "Generate topics through content-type lenses",
+                body: "For each touchpoint, ideate topics using a taxonomy of content types — creative lenses that turn one feature into many distinct engagement opportunities:",
+                chips: [
+                  { label: "Foundational", sub: "repurpose · feature-education · thematic · general" },
+                  { label: "Contextual", sub: "event-driven · lifecycle · time · datafeed · cross-sell · social · attribute" },
+                  { label: "Recommender", sub: "" },
+                  { label: "Seasonal", sub: "" },
+                  { label: "Transactional", sub: "" },
+                ],
+              },
+              {
+                n: "04",
+                title: "Make it operational",
+                body: "Add the columns that turn a brainstorm into a working plan: channels, entry and exit events for triggered content, whether content already exists to repurpose, audience type, and the Impact rating — plus deeplinks, status, and owners so the map doubles as the content-production tracker for the whole engagement.",
+                chips: [],
+              },
+            ].map(({ n, title, body, chips }) => (
+              <li key={n} className="flex gap-5">
+                <div className="flex-shrink-0 w-10 h-10 bg-foreground text-background rounded flex items-center justify-center text-sm font-bold font-sans">
+                  {n}
+                </div>
+                <div className="flex flex-col gap-2 pt-1">
+                  <h4 className="text-base font-medium text-foreground">{title}</h4>
+                  <p className="text-sm text-foreground/70 leading-relaxed font-light m-0">{body}</p>
+                  {chips.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-1">
+                      {chips.map(({ label, sub }) => (
+                        <span key={label} className="bg-foreground/8 border border-border/50 rounded-full px-3 py-1 text-xs font-semibold text-foreground/80">
+                          {label}{sub ? <span className="font-normal text-muted-foreground ml-1">— {sub}</span> : null}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </motion.section>
+
         {/* My role */}
         <motion.section
           initial={{ opacity: 0, y: 16 }}
@@ -125,41 +295,14 @@ export default function ContentMaps() {
             My role
           </h2>
           <h3 className="text-2xl md:text-3xl font-serif mb-6">Owner of the artifact, end to end</h3>
-          <p className="text-lg text-foreground/80 leading-relaxed font-light mb-8">
+          <p className="text-lg text-foreground/80 leading-relaxed font-light">
             I proposed the content map as a standard for every customer, defined its structure,
             built the first templates that other people reused, led the exercise that named it,
             wrote the guide that taught it, ran the company-wide challenge that scaled it, paired
             it with AI tooling, and published the public thought-leadership piece that positioned
             it. This is the full arc — from one Slack proposal to a company-wide capability
-            proposed as a hiring requirement.
+            proposed as a hiring requirement. Here's how it evolved.
           </p>
-
-          {/* Anatomy box */}
-          <div className="border border-border/50 rounded p-6 bg-muted/10">
-            <h4 className="text-base font-medium text-foreground mb-2">What a content map is</h4>
-            <p className="text-foreground/70 leading-relaxed font-light mb-5 text-sm">
-              A structured grid that plots every potential touchpoint between a brand and its
-              users — so teams can see coverage, gaps, and opportunity at a glance, and
-              agents get the breadth of content they need to learn.
-            </p>
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-wrap gap-2">
-                {["Audiences", "Use cases", "User intents"].map((t) => (
-                  <span key={t} className="bg-foreground/10 text-foreground rounded-full px-3 py-1 text-xs font-semibold">{t}</span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {["Features & offerings", "Value propositions", "Topics"].map((t) => (
-                  <span key={t} className="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-semibold">{t}</span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {["Channels & surfaces", "Labels & components", "Priority & roadmap"].map((t) => (
-                  <span key={t} className="bg-accent/20 text-foreground rounded-full px-3 py-1 text-xs font-semibold">{t}</span>
-                ))}
-              </div>
-            </div>
-          </div>
         </motion.section>
 
         {/* The Work */}
