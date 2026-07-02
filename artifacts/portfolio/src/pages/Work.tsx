@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { projects } from "../data/portfolio";
 import {
+  ContentMapsVisual,
   FintechVisual,
   SportsVisual,
   TaxVisual,
@@ -10,6 +11,7 @@ import {
 } from "../components/ProjectCardVisuals";
 
 const cardVisuals: Record<string, React.ReactNode> = {
+  "content-maps":     <ContentMapsVisual />,
   "fintech-overhaul": <FintechVisual />,
   "sports-training":  <SportsVisual />,
   "tax-onboarding":   <TaxVisual />,
@@ -65,7 +67,7 @@ export default function Work() {
       {/* Featured Work */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10 mb-24">
         {featuredProjects.map((project, i) => {
-          const isFullWidth = project.slug === "playbook";
+          const isFullWidth = project.slug === "playbook" || project.slug === "content-maps";
           const classes = `bg-background p-8 md:p-12 flex flex-col justify-between group hover:bg-muted/30 transition-colors ${
             isFullWidth ? "md:col-span-2" : ""
           }`;

@@ -35,6 +35,29 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "content-maps",
+    tag: "Content Strategy · Methodology",
+    title: "Content Maps: Building the Shared Language for Agentic Content Strategy",
+    summary: "Turned a one-off planning habit into Aampe's standard strategic artifact — credited in a $90K closed-won deal and proposed as a 60-day certification for every new hire.",
+    role: "Originator & owner of the methodology",
+    context: "Aampe — AI-powered lifecycle marketing platform",
+    year: "2025",
+    featured: true,
+    challenge: "No shared, repeatable way to answer the most basic strategic question on any account: what should we be saying to whom, and where are the gaps? Every team improvised its own version.",
+    whatIDid: [
+      "Proposed the content map as a standard for every customer and defined the artifact's structure.",
+      "Built the first templates (Taxfix, Deezer, Carousell, NBA, Traveloka, Swiggy) that other teams reused across verticals.",
+      "Led the company-wide naming exercise — facilitated 29-vote poll, landed on Agentic Personalization Map.",
+      "Authored a step-by-step Notion guide and ran the Content Map Challenge (~15 participants, individualized feedback on every map).",
+      "Paired the methodology with AI tooling: templates became training data for ContentMaPT and MapPT (custom GPTs).",
+      "Published the company's definitive blog post on the concept (Oct 2025).",
+      "Led the map-led onsite session for Mintos, credited in the $90K closed-won announcement.",
+    ],
+    result: "Credited in a $90K closed-won deal. ~15 people trained company-wide. Maps deployed across 15+ accounts. Proposed as a 60-day certification for every new hire.",
+    quote: "This was the selling point of the session. If I do a presentation to my executives, this is it.",
+    image: "/content-maps.png",
+  },
+  {
     slug: "fintech-overhaul",
     tag: "Content Strategy · Fintech",
     title: "End-to-End Content Overhaul for a Major Fintech App",

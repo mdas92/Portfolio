@@ -152,6 +152,67 @@ export function SuperappVisual() {
   );
 }
 
+export function ContentMapsVisual() {
+  const cols = ['Audiences', 'Features', 'Channels'];
+  const rows = ['Users', 'Power', 'Lapsed'];
+  const filled: Record<string, string> = {
+    '0-0': C.lime, '0-1': C.sienna, '0-2': C.lime,
+    '1-0': C.sienna, '1-1': C.lime, '1-2': C.cream,
+    '2-0': C.cream, '2-1': C.sienna, '2-2': C.lime,
+  };
+  return (
+    <div style={{ background: C.cream, height: 192, position: 'relative', overflow: 'hidden', width: '100%' }}>
+      {/* grid */}
+      <div style={{ position: 'absolute', top: 20, left: 20, display: 'flex', flexDirection: 'column', gap: 2 }}>
+        {/* header row */}
+        <div style={{ display: 'flex', gap: 2, marginLeft: 52 }}>
+          {cols.map((c) => (
+            <div key={c} style={{ width: 62, height: 18, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ fontSize: 7.5, fontWeight: 700, color: C.green, opacity: 0.5, letterSpacing: '0.06em', fontFamily: 'Space Grotesk, sans-serif', textTransform: 'uppercase' }}>{c}</span>
+            </div>
+          ))}
+        </div>
+        {/* data rows */}
+        {rows.map((row, ri) => (
+          <div key={row} style={{ display: 'flex', gap: 2 }}>
+            <div style={{ width: 50, height: 46, display: 'flex', alignItems: 'center' }}>
+              <span style={{ fontSize: 8, fontWeight: 700, color: C.green, opacity: 0.45, letterSpacing: '0.06em', fontFamily: 'Space Grotesk, sans-serif', textTransform: 'uppercase' }}>{row}</span>
+            </div>
+            {cols.map((_, ci) => {
+              const color = filled[`${ri}-${ci}`];
+              const isEmpty = color === C.cream;
+              return (
+                <div key={ci} style={{
+                  width: 62, height: 46,
+                  border: `1.5px solid ${C.green}`,
+                  borderColor: isEmpty ? `${C.green}22` : `${C.green}55`,
+                  borderRadius: 4,
+                  background: isEmpty ? 'transparent' : color,
+                  opacity: isEmpty ? 0.4 : 0.85,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  {!isEmpty && (
+                    <span style={{ fontSize: 14, color: isEmpty ? 'transparent' : (color === C.lime ? C.green : C.cream), fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif' }}>✓</span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+      {/* label */}
+      <div style={{ position: 'absolute', bottom: 14, right: 16, fontSize: 10, color: C.green, letterSpacing: '0.14em', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500, opacity: 0.45 }}>
+        CONTENT MAP · METHODOLOGY
+      </div>
+      {/* stat */}
+      <div style={{ position: 'absolute', right: 20, top: 20 }}>
+        <div style={{ fontSize: 38, fontWeight: 700, color: C.sienna, lineHeight: 1, fontFamily: 'DM Serif Display, serif' }}>$90K</div>
+        <div style={{ fontSize: 8, color: C.green, opacity: 0.5, letterSpacing: '0.14em', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, marginTop: 4 }}>DEAL CREDITED</div>
+      </div>
+    </div>
+  );
+}
+
 export function PlaybookVisual() {
   const slides = [
     { rotate: -8, opacity: 0.18, offsetX: -30 },
