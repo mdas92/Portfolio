@@ -9,5 +9,8 @@ export const modules: ModuleMap = {
   "./components/mockups/portfolio-quirky/QuirkyC.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyC.tsx"),
   "./components/mockups/portfolio-quirky/QuirkyD.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyD.tsx"),
   "./components/mockups/portfolio-quirky/QuirkyE.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyE.tsx"),
-  "./components/mockups/portfolio-quirky/QuirkyF.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyF.tsx")
+  "./components/mockups/portfolio-quirky/QuirkyF.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyF.tsx"),
+  "./components/mockups/work-redesign/SoftNeutral.tsx": () => import("../components/mockups/work-redesign/SoftNeutral.tsx"),
+  "./components/mockups/work-redesign/SwissGrid.tsx": () => import("../components/mockups/work-redesign/SwissGrid.tsx"),
+  "./components/mockups/work-redesign/WarmEditorial.tsx": () => import("../components/mockups/work-redesign/WarmEditorial.tsx")
 };
