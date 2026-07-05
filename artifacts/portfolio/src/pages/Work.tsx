@@ -92,9 +92,6 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
             >
               {project.tag.split(" · ")[0]}
             </div>
-            {project.archived && (
-              <span className="text-[9px] uppercase tracking-wider font-bold text-primary/60">Archived</span>
-            )}
             {project.confidential && (
               <span className="text-[9px] uppercase tracking-wider font-bold text-muted-foreground/60">Confidential</span>
             )}
@@ -117,8 +114,9 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
 
 export default function Work() {
   // Sorted list: 2025 projects first, then 2022, then 2021.
+  // Archived projects are excluded from the public Work page (data kept in portfolio.ts).
   // Within the same year, preserve original array order.
-  const sortedProjects = [...projects].sort((a, b) => {
+  const sortedProjects = [...projects].filter((p) => !p.archived).sort((a, b) => {
     const yearA = parseInt(a.year);
     const yearB = parseInt(b.year);
     if (yearA !== yearB) {
