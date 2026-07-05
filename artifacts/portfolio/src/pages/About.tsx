@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { journey } from "../data/portfolio";
+import mohanaPhoto from "@assets/IMG-20250407-WA0026-POP_OUT_1783247508725.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -58,13 +59,21 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="aspect-[3/4] bg-muted w-full overflow-hidden"
+            className="group relative aspect-[3/4] bg-muted w-full overflow-hidden border-2 border-foreground"
           >
             <img
-              src="/mohana-photo.png"
+              src={mohanaPhoto}
               alt="Mohana Das Portrait"
-              className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover grayscale contrast-110 group-hover:contrast-100 transition-all duration-700"
+              style={{ objectPosition: "center 20%" }}
             />
+            <div
+              className="absolute inset-0 mix-blend-color transition-opacity duration-700"
+              style={{
+                background: "linear-gradient(135deg, #0D3B2E 0%, #C45C26 55%, #C5F135 100%)",
+              }}
+            />
+            <div className="absolute inset-0 mix-blend-multiply bg-background/10" />
           </motion.div>
         </div>
       </div>
