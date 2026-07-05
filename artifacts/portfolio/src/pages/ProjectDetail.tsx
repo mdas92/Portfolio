@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { projects } from "../data/portfolio";
-
 import {
   FintechVisual,
   SportsVisual,
@@ -11,6 +10,26 @@ import {
   ProductTaxonomyVisual,
   PlaybookVisual
 } from "../components/ProjectCardVisuals";
+
+// Renders **bold** markdown-style emphasis as themed highlights so key
+// phrases stand out from body copy instead of one long grey wall of text.
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return (
+            <strong key={i} className="font-semibold text-primary">
+              {part.slice(2, -2)}
+            </strong>
+          );
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </>
+  );
+}
 
 const heroVisuals: Record<string, React.ReactNode> = {
   "fintech-overhaul": <FintechVisual />,
@@ -103,8 +122,8 @@ export default function ProjectDetail() {
             <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
               The Challenge
             </h2>
-            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-              {project.challenge}
+            <p className="text-lg md:text-xl text-foreground/95 leading-relaxed font-normal">
+              <RichText text={project.challenge} />
             </p>
           </section>
         )}
@@ -117,8 +136,8 @@ export default function ProjectDetail() {
             </h2>
 
             {section.content && (
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light mb-8">
-                {section.content}
+              <p className="text-lg md:text-xl text-foreground/95 leading-relaxed font-normal mb-8">
+                <RichText text={section.content} />
               </p>
             )}
 
@@ -127,22 +146,22 @@ export default function ProjectDetail() {
                 <img
                   src={section.image.src}
                   alt={section.image.alt}
-                  className="w-full h-auto rounded-lg shadow-sm"
+                  className="w-full h-auto rounded-lg border border-border/40 bg-background"
                 />
               </div>
             )}
 
             {section.bullets && section.bullets.length > 0 && (
-              <ul className="flex flex-col gap-3 text-lg text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary">
+              <ul className="flex flex-col gap-3 text-lg text-foreground/95 leading-relaxed font-normal list-disc pl-5 marker:text-primary">
                 {section.bullets.map((b, j) => (
-                  <li key={j}>{b}</li>
+                  <li key={j}><RichText text={b} /></li>
                 ))}
               </ul>
             )}
 
             {section.note && (
               <p className="mt-6 text-sm text-muted-foreground italic border-l-2 border-border pl-4">
-                {section.note}
+                <RichText text={section.note} />
               </p>
             )}
           </section>
@@ -154,9 +173,9 @@ export default function ProjectDetail() {
             <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
               What I Did
             </h2>
-            <ul className="flex flex-col gap-4 text-lg text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary">
+            <ul className="flex flex-col gap-4 text-lg text-foreground/95 leading-relaxed font-normal list-disc pl-5 marker:text-primary">
               {project.whatIDid.map((item, i) => (
-                <li key={i}>{item}</li>
+                <li key={i}><RichText text={item} /></li>
               ))}
             </ul>
           </section>
@@ -168,8 +187,8 @@ export default function ProjectDetail() {
             <h2 className="text-[11px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
               Result
             </h2>
-            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-              {project.result}
+            <p className="text-lg md:text-xl text-foreground/95 leading-relaxed font-normal">
+              <RichText text={project.result} />
             </p>
           </section>
         )}

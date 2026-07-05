@@ -475,33 +475,45 @@ export const projects: Project[] = [
     context: "LazyPay (PayU Finance)",
     year: "2022",
     duration: "1 month · L project",
-    challenge: "High repayment rates signal user trust and reduce risk for the business. The rate was especially poor among new users — 45% were not repaying on time. Of these, 23% were opening the app during the repayment window but still not paying, while the rest were not opening the app at all.",
+    challenge: "High repayment rates signal user trust and reduce risk for the business. The rate was especially poor among **new users — 45% were not repaying on time**. Of these, 23% were opening the app during the repayment window but still not paying, while the rest were not opening the app at all.",
     whatIDid: [],
-    result: "Delivered a full three-strategy solution across all repayment touchpoints, with a primary success target of a 10% improvement in on-time repayment rate based on analyst modelling.",
-    image: "/images/projects/repayments/00_cover.png",
-    thumbnail: "/images/projects/repayments/00_cover.png",
+    result: "Delivered a full three-strategy solution across all repayment touchpoints, with a primary success target of a **10% improvement in on-time repayment rate** based on analyst modelling.",
+    image: "/images/projects/repayments/00_cover.svg",
+    thumbnail: "/images/projects/repayments/00_cover.svg",
     sections: [
       {
         heading: "Defining the Problem",
-        content: "Through research and data analysis, the team identified several root causes: users lacked awareness of late fees, they knew repayment was important but not urgent, reminders were perceived as boring and robotic, and new users had the same experience as mature users despite being unfamiliar with the process. I mapped the problem to four core questions any repayment touchpoint needed to answer: how much to pay, when to pay, why to pay, and the level of urgency.",
+        content: "Through research and data analysis, the team identified several root causes behind late repayment:",
+        bullets: [
+          "Users **lacked awareness of late fees** — the cost of not paying wasn't visible upfront.",
+          "They knew repayment was important, but **it never felt urgent**.",
+          "Reminders were perceived as **boring and robotic**, easy to tune out.",
+          "**New users had the same experience as mature users**, despite being unfamiliar with the process."
+        ],
         image: {
-          src: "/images/projects/repayments/08_problem-sketch_full-width.png",
-          alt: "Early ideation sketch mapping the repayment problem to four questions radiating from a central point: how much to pay, when to pay, why pay, and level of urgency",
+          src: "/images/projects/repayments/08_problem-sketch_full-width.svg",
+          alt: "Wireframe diagram mapping the repayment problem to four questions radiating from a central point: how much to pay, when to pay, why to pay, and level of urgency",
           display: "full-width"
-        }
+        },
+        note: "I mapped the problem to four core questions any repayment touchpoint needed to answer: how much to pay, when to pay, why to pay, and the level of urgency.",
       },
       {
         heading: "User Journey",
-        content: "A typical repayment journey for a LazyPay user spans three days of escalating touchpoints — from a routine statement email to same-day SMS blasts — across WhatsApp, SMS, email, and the in-app notification itself.",
+        content: "A typical repayment journey for a LazyPay user spans **three days of escalating touchpoints** — from a routine statement email to same-day SMS blasts — across WhatsApp, SMS, email, and the in-app notification itself.",
         image: {
-          src: "/images/projects/repayments/09_user-journey_full-width.png",
-          alt: "Three-day repayment journey: Day 1 statement generated (WhatsApp, SMS, email, in-app card), Day 2 day before due date (reminder SMS, in-app card, email), Day 3 due date (repeated SMS, last-chance email)",
+          src: "/images/projects/repayments/09_user-journey_full-width.svg",
+          alt: "Wireframe of a three-day repayment journey: Day 1 statement generated (WhatsApp, SMS, email, in-app card), Day 2 day before due date (reminder SMS, in-app card, email), Day 3 due date (repeated SMS, last-chance email)",
           display: "full-width"
         }
       },
       {
         heading: "Solution Strategy",
-        content: "I reviewed the existing UI screens and notifications, then designed a three-pronged strategy covering all touch-points in the user's repayment journey: discoverability, urgency, and transparency.",
+        content: "I reviewed the existing UI screens and notifications, then designed a three-pronged strategy covering every touch-point in the user's repayment journey:",
+        bullets: [
+          "**Discoverability** — make the due date and amount impossible to miss.",
+          "**Urgency** — escalate visibly once a due date is breached.",
+          "**Transparency** — surface late fees and consequences upfront, with a clear call to action."
+        ],
         image: {
           src: "/images/projects/repayments/03_solution-strategy_full-width.svg",
           alt: "Three-column strategy framework: 01 Discoverability (redesigned notification placement and hierarchy), 02 Urgency (new bottom sheet after due date breach), 03 Transparency (surfaced late fees, clearer CTA)",
@@ -510,64 +522,69 @@ export const projects: Project[] = [
       },
       {
         heading: "Content-First Design",
-        content: "My key contribution was applying a content-first design approach to the notification component — prioritising information based on what users actually need to know, in the order they need to know it. Once a due date was breached, this meant surfacing the consequences plainly: the late fee, the credit score impact, and blocked transactions.",
+        content: "My key contribution was applying a **content-first design approach** to the notification component — prioritising information based on what users actually need to know, in the order they need to know it. Once a due date was breached, this meant surfacing the consequences plainly:",
+        bullets: [
+          "The **late fee** amount, stated upfront.",
+          "The **credit score impact** of continued non-payment.",
+          "That **transactions get blocked** until the user repays."
+        ],
         image: {
-          src: "/images/projects/repayments/10_content-hierarchy_inline.png",
-          alt: "Overdue message card reading '₹2,464.7 is overdue, please repay immediately to avoid more penalties' followed by a prioritised list: you're charged a late fee of ₹150, it impacts your credit score, your transactions are blocked, with a Pay Now button",
+          src: "/images/projects/repayments/10_content-hierarchy_inline.svg",
+          alt: "Wireframe of an overdue message card reading '₹2,464.7 is overdue, please repay immediately' followed by a prioritised list: late fee, credit score impact, blocked transactions, with a Pay Now button",
           display: "inline"
         }
       },
       {
         heading: "Before: The Old Experience",
-        content: "The old homescreen buried repayment behind a generic, dark \"Activity\" tab, with dues surfaced as a small, easy-to-miss inline banner and no sense of urgency.",
+        content: "The old homescreen buried repayment behind a generic, dark **\"Activity\"** tab, with dues surfaced as a small, easy-to-miss inline banner and **no sense of urgency**.",
         image: {
-          src: "/images/projects/repayments/11_before_inline.png",
-          alt: "Old LazyPay homescreen in a dark theme, showing available credit limit, a BillPay promo banner, and a small low-contrast 'dues is due' reminder near the bottom",
+          src: "/images/projects/repayments/11_before_inline.svg",
+          alt: "Wireframe of the old LazyPay homescreen in a dark theme, showing available credit limit, a BillPay promo banner, and a small low-contrast dues reminder near the bottom",
           display: "inline"
         }
       },
       {
         heading: "After: The New Experience",
-        content: "The new component leads with amount and due date, adds quick access to core products, and introduces a dedicated bottom sheet once a due date is breached — spelling out the late fee, credit score impact, and blocked transactions if the user still doesn't pay.",
+        content: "The new component **leads with amount and due date**, adds quick access to core products, and introduces a dedicated bottom sheet once a due date is breached — spelling out the late fee, credit score impact, and blocked transactions if the user still doesn't pay.",
         image: {
-          src: "/images/projects/repayments/12_after_inline.png",
-          alt: "Redesigned LazyPay homescreen on a light background, leading with a prominent 'Due by 3 Aug, ₹7,540.00 due' banner, quick-access tiles for PayLater, XpressLoan and BillPay, and progress tracking below",
+          src: "/images/projects/repayments/12_after_inline.svg",
+          alt: "Wireframe of the redesigned LazyPay homescreen on a light background, leading with a prominent due-by banner, quick-access tiles for PayLater, XpressLoan and BillPay, and progress tracking below",
           display: "inline"
         }
       },
       {
         heading: "Escalating to Urgency",
-        content: "If a due date passed unpaid, a dedicated overdue bottom sheet interrupted the flow to make the stakes unmistakable before the user could go any further in the app.",
+        content: "If a due date passed unpaid, a **dedicated overdue bottom sheet** interrupted the flow to make the stakes unmistakable before the user could go any further in the app.",
         image: {
-          src: "/images/projects/repayments/13_overdue-sheet_inline.png",
-          alt: "LazyPay app with a red overdue bottom sheet reading '₹2,464.7 is overdue, please repay immediately to avoid more penalties', listing the late fee, credit score impact and blocked transactions, with a Pay Now button",
+          src: "/images/projects/repayments/13_overdue-sheet_inline.svg",
+          alt: "Wireframe of a red overdue bottom sheet reading '₹2,464.7 is overdue, please repay immediately', listing the late fee, credit score impact and blocked transactions, with a Pay Now button",
           display: "inline"
         }
       },
       {
         heading: "Better Navigation",
-        content: "Users also struggled to find where their dues lived in the app. Renaming the ambiguous \"Activity\" tab to \"Dues\" — paired with a one-time coach mark — closed a simple but high-impact discoverability gap.",
+        content: "Users also struggled to find where their dues lived in the app. Renaming the ambiguous **\"Activity\"** tab to **\"Dues\"** — paired with a one-time coach mark — closed a simple but high-impact discoverability gap.",
         image: {
-          src: "/images/projects/repayments/14_nav-coachmark_full-width.png",
-          alt: "Bottom navigation bar with a coach mark bubble reading ''Activity' is now 'Dues' — track and pay dues and EMIs here', pointing to the renamed Dues tab between Home and Profile",
+          src: "/images/projects/repayments/14_nav-coachmark_full-width.svg",
+          alt: "Wireframe of a bottom navigation bar with a coach mark bubble reading 'Activity is now Dues — track and pay dues and EMIs here', pointing to the renamed Dues tab between Home and Profile",
           display: "full-width"
         }
       },
       {
         heading: "Impact: Notification Click-Through",
-        content: "Post-launch funnel data (Android + iOS) showed a significant lift in users clicking through from the redesigned homescreen notification to the repayment flow, compared to the old inline banner.",
+        content: "Post-launch funnel data (Android + iOS) showed a **significant lift** in users clicking through from the redesigned homescreen notification to the repayment flow, compared to the old inline banner — from **63.76% to 72.82%** completing the next step.",
         image: {
-          src: "/images/projects/repayments/15_impact-notif-funnel_full-width.png",
-          alt: "Funnel comparison charts: old notification click-through funnel showing 63.76% making it to the next step, versus new notification funnel showing 72.82% — both leading through to repayment status",
+          src: "/images/projects/repayments/15_impact-notif-funnel_full-width.svg",
+          alt: "Wireframe bar chart comparison: old notification click-through funnel showing 63.76% making it to the next step, versus new notification funnel showing 72.82%",
           display: "full-width"
         }
       },
       {
         heading: "Impact: Navigation to Repayment",
-        content: "The renamed \"Dues\" tab also lifted downstream conversion — more users who clicked into navigation went on to reach the repayment status step than under the old \"Activity\" label.",
+        content: "The renamed **\"Dues\"** tab also lifted downstream conversion — from **48.48% to 62.20%** of users who clicked into navigation going on to reach the repayment status step, versus the old **\"Activity\"** label.",
         image: {
-          src: "/images/projects/repayments/16_impact-nav-funnel_full-width.png",
-          alt: "Funnel comparison charts: old nav-bar-click-to-repayment funnel showing 48.48% making it to the next step, versus new funnel showing 62.20% — both leading through to repayment status",
+          src: "/images/projects/repayments/16_impact-nav-funnel_full-width.svg",
+          alt: "Wireframe bar chart comparison: old nav-bar-click-to-repayment funnel showing 48.48% making it to the next step, versus new funnel showing 62.20%",
           display: "full-width"
         }
       }
