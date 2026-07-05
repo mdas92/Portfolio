@@ -5,7 +5,7 @@ export function Navbar() {
   const [isWork, params] = useRoute("/work/*?");
 
   return (
-    <nav className="w-full px-6 md:px-16 py-8 flex justify-between items-center z-50 sticky top-0 bg-background/90 backdrop-blur-sm border-b border-transparent transition-all">
+    <nav className="w-full px-6 md:px-16 lg:px-24 py-8 flex justify-between items-center z-50 sticky top-0 bg-background/90 backdrop-blur-sm border-b border-transparent transition-all">
       <Link href="/" className="font-sans font-bold text-xl tracking-tight uppercase text-foreground hover:text-primary transition-colors">
         Mohana Das
       </Link>

@@ -25,7 +25,7 @@ export default function About() {
           </span>
         </div>
       </div>
-      <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] leading-[0.9] tracking-[-0.03em] font-serif mb-12">
+      <h1 className="text-[2.25rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.75rem] leading-[0.95] tracking-[-0.03em] font-serif mb-10">
         writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> 
         <span className="relative inline-block">
           <span className="relative z-10 italic">product thinker.</span>
@@ -36,8 +36,8 @@ export default function About() {
         </span>
       </h1>
       {/* Hero grid */}
-      <div className="grid md:grid-cols-12 gap-12 md:gap-24 items-start mt-8 mb-24">
-        <div className="md:col-span-6 lg:col-span-5 flex flex-col gap-8">
+      <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center mt-8 mb-24">
+        <div className="md:col-span-7 lg:col-span-7 flex flex-col gap-8">
           <p className="text-xl md:text-2xl text-foreground/80 leading-relaxed font-light font-sans">
             With 12 years of experience across engineering, design and writing, I help craft a holistic customer experience through content strategy, product positioning, and value frameworks.
           </p>
@@ -54,12 +54,12 @@ export default function About() {
           </div>
         </div>
 
-        <div className="md:col-span-6 lg:col-span-6 lg:col-start-7">
+        <div className="md:col-span-5 lg:col-span-4 lg:col-start-9 justify-self-center md:justify-self-end w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="group relative aspect-[3/4] bg-muted w-full overflow-hidden border-2 border-foreground"
+            className="group relative aspect-[3/4] bg-muted w-full max-w-[280px] md:max-w-none mx-auto overflow-hidden border-2 border-foreground"
           >
             <img
               src={mohanaPhoto}

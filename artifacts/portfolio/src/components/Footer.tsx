@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="w-full px-6 md:px-16 py-12 flex flex-col md:flex-row justify-between items-center z-10 mt-auto border-t border-border/50 text-[11px] tracking-[0.15em] uppercase font-sans font-semibold text-muted-foreground">
+    <footer className="w-full px-6 md:px-16 lg:px-24 py-12 flex flex-col md:flex-row justify-between items-center z-10 mt-auto border-t border-border/50 text-[11px] tracking-[0.15em] uppercase font-sans font-semibold text-muted-foreground">
       <div>
         Mohana Das ·{" "}
         <a
