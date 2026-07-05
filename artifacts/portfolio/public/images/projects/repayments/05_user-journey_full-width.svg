@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460">
+  <rect width="800" height="460" fill="#FAFAFA"/>
+
+  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
+  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">USER JOURNEY</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">A Typical Repayment Journey</text>
+  <text x="48" y="100" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="13" fill="#737373">How reminders escalate across channels as the due date approaches.</text>
+
+  <!-- Column dividers -->
+  <line x1="304" y1="130" x2="304" y2="432" stroke="#E0E0E0" stroke-width="1"/>
+  <line x1="552" y1="130" x2="552" y2="432" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Day 1 -->
+  <g>
+    <text x="64" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">DAY 1</text>
+    <text x="64" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#111111">Statement generated</text>
+
+    <rect x="64" y="192" width="216" height="52" rx="6" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+    <text x="76" y="212" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="#737373" letter-spacing="1">EMAIL</text>
+    <text x="76" y="230" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#111111">Statement of ₹2,637.46 generated</text>
+
+    <rect x="64" y="256" width="216" height="52" rx="6" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+    <text x="76" y="276" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="#737373" letter-spacing="1">WHATSAPP</text>
+    <text x="76" y="294" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#111111">Your bill amount + due date, 3 Apr</text>
+
+    <rect x="64" y="336" width="216" height="82" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1.5"/>
+    <rect x="80" y="352" width="90" height="10" rx="3" fill="#E0E0E0"/>
+    <text x="80" y="384" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Now pay utility bills</text>
+    <text x="80" y="400" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">with your limit!</text>
+  </g>
+
+  <!-- Day 2 -->
+  <g>
+    <text x="328" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">DAY 2</text>
+    <text x="328" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#111111">Day before due date</text>
+
+    <rect x="328" y="192" width="216" height="52" rx="6" fill="rgba(255,69,48,0.06)" stroke="#FF4530" stroke-width="1" stroke-opacity="0.4"/>
+    <text x="340" y="212" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="#FF4530" letter-spacing="1">SMS</text>
+    <text x="340" y="230" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#111111">Due tomorrow — clear your dues</text>
+
+    <rect x="328" y="256" width="216" height="82" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1.5"/>
+    <rect x="344" y="272" width="184" height="24" rx="6" fill="#FF4530"/>
+    <text x="356" y="288" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">₹9,750 due tomorrow</text>
+    <text x="344" y="322" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Pay now to avoid late fee</text>
+
+    <rect x="328" y="356" width="216" height="52" rx="6" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
+    <text x="340" y="376" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="#737373" letter-spacing="1">EMAIL</text>
+    <text x="340" y="394" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#111111">Payment due reminder</text>
+  </g>
+
+  <!-- Day 3 -->
+  <g>
+    <text x="576" y="150" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">DAY 3</text>
+    <text x="576" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="600" fill="#111111">Due date</text>
+
+    <rect x="576" y="192" width="176" height="52" rx="6" fill="#FF4530"/>
+    <text x="588" y="212" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="rgba(255,255,255,0.75)" letter-spacing="1">SMS</text>
+    <text x="588" y="230" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Outstanding due today — pay now</text>
+
+    <rect x="576" y="256" width="176" height="52" rx="6" fill="#FF4530"/>
+    <text x="588" y="276" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="rgba(255,255,255,0.75)" letter-spacing="1">SMS</text>
+    <text x="588" y="294" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Outstanding due today — pay now</text>
+
+    <rect x="576" y="320" width="176" height="52" rx="6" fill="#111111"/>
+    <text x="588" y="340" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="9.5" fill="rgba(255,255,255,0.5)" letter-spacing="1">EMAIL</text>
+    <text x="588" y="358" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#FFFFFF">Last chance to pay without penalty</text>
+
+    <text x="576" y="404" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">Frequency and tone escalate as</text>
+    <text x="576" y="420" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11" fill="#737373">urgency increases.</text>
+  </g>
+</svg>

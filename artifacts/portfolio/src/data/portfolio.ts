@@ -491,6 +491,15 @@ export const projects: Project[] = [
         }
       },
       {
+        heading: "User Journey",
+        content: "A typical repayment journey for a LazyPay user spans three days of escalating touchpoints — from a routine statement email to same-day SMS blasts — across WhatsApp, SMS, email, and the in-app notification itself.",
+        image: {
+          src: "/images/projects/repayments/05_user-journey_full-width.svg",
+          alt: "Three-day repayment journey: Day 1 statement generated (email, WhatsApp, in-app card), Day 2 day before due date (SMS, in-app card, email), Day 3 due date (repeated SMS, last-chance email)",
+          display: "full-width"
+        }
+      },
+      {
         heading: "Solution Strategy",
         content: "I reviewed the existing UI screens and notifications, then designed a three-pronged strategy covering all touch-points in the user's repayment journey.",
         image: {
@@ -505,6 +514,24 @@ export const projects: Project[] = [
         image: {
           src: "/images/projects/repayments/04_content-hierarchy_full-width.svg",
           alt: "Prioritised table of notification content: Amount (essential), Due date (essential), Due status (essential), Penalties, Count, Product name — with example text and purpose for each",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Before & After: The Redesign",
+        content: "The old inline notification blended into the rest of the homescreen with no urgency cues. The new component leads with amount and due date, adds quick access to core products, and introduces a dedicated bottom sheet once a due date is breached — spelling out the late fee, credit score impact, and blocked transactions if the user still doesn't pay.",
+        image: {
+          src: "/images/projects/repayments/06_notification-redesign_full-width.svg",
+          alt: "Before and after comparison: old dark inline notification buried in the homescreen versus new component with due-by badge and amount, plus a red bottom sheet showing overdue amount, penalty, credit score, and blocked transaction warnings with a Pay Now button",
+          display: "full-width"
+        }
+      },
+      {
+        heading: "Better Navigation",
+        content: "Users also struggled to find where their dues lived in the app. Renaming the ambiguous \"Activity\" tab to \"Dues\" — paired with a one-time coach mark — closed a simple but high-impact discoverability gap.",
+        image: {
+          src: "/images/projects/repayments/07_navigation-update_inline.svg",
+          alt: "Bottom navigation bar with a coach mark bubble reading 'Activity is now Dues — track and pay dues and EMIs here', pointing to the renamed Dues tab between Home and Profile",
           display: "full-width"
         }
       }
