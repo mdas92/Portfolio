@@ -1,47 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 700" width="380" height="700">
-  <rect width="380" height="700" fill="#FFFCF0"/>
-  <circle cx="330" cy="60" r="90" fill="#C5F135" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 700" width="340" height="700">
+  <rect width="340" height="700" fill="#FFFCF0"/>
 
-  <g transform="translate(40,30)">
-    <rect x="0" y="0" width="300" height="640" rx="32" fill="none" stroke="#0D3B2E" stroke-width="3"/>
-    <rect x="116" y="18" width="68" height="8" rx="4" fill="none" stroke="#0D3B2E" stroke-width="1.5" opacity="0.4"/>
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="300" height="620" rx="36" fill="#0D3B2E"/>
+    <rect x="10" y="10" width="280" height="600" rx="26" fill="#FFFCF0"/>
+    <rect x="122" y="22" width="56" height="7" rx="3.5" fill="#0D3B2E" opacity="0.25"/>
 
     <g font-family="'Space Grotesk', sans-serif" fill="#0D3B2E">
-      <rect x="24" y="44" width="252" height="52" rx="10" fill="#C45C26"/>
-      <text x="40" y="66" font-size="11" font-weight="700" fill="#FFFCF0">DUE BY 3 AUG · ₹7,540.00</text>
-      <text x="40" y="82" font-size="9" fill="#FFFCF0" opacity="0.85">Avoid ₹150 late fee. Repay now!</text>
-      <path d="M250 60 L262 68 L250 76" stroke="#FFFCF0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="24" y="46" width="252" height="54" rx="10" fill="#C45C26"/>
+      <text x="40" y="68" font-size="11.5" font-weight="700" fill="#FFFCF0">DUE BY 3 AUG · ₹7,540.00</text>
+      <text x="40" y="85" font-size="9.5" fill="#FFFCF0" opacity="0.85">Avoid ₹150 late fee. Repay now!</text>
 
-      <rect x="24" y="112" width="76" height="76" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
-      <text x="62" y="160" text-anchor="middle" font-size="8">PayLater</text>
-      <rect x="112" y="112" width="76" height="76" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
-      <text x="150" y="160" text-anchor="middle" font-size="8">XpressLoan</text>
-      <rect x="200" y="112" width="76" height="76" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
-      <text x="238" y="160" text-anchor="middle" font-size="8">BillPay</text>
+      <rect x="24" y="116" width="76" height="76" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
+      <text x="62" y="163" text-anchor="middle" font-size="8.5">PayLater</text>
+      <rect x="112" y="116" width="76" height="76" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
+      <text x="150" y="163" text-anchor="middle" font-size="8.5">XpressLoan</text>
+      <rect x="200" y="116" width="76" height="76" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
+      <text x="238" y="163" text-anchor="middle" font-size="8.5">BillPay</text>
 
-      <text x="24" y="222" font-size="12" font-weight="700">Track your progress</text>
-      <rect x="24" y="236" width="252" height="86" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <text x="40" y="266" font-size="9" opacity="0.6">XPRESSLOAN</text>
-      <text x="40" y="286" font-size="12">₹45,000 is waiting</text>
-      <circle cx="248" cy="278" r="24" fill="none" stroke="#C5F135" stroke-width="5"/>
-      <text x="248" y="282" text-anchor="middle" font-size="9">1 left</text>
+      <text x="24" y="226" font-size="12.5" font-weight="700">Track your progress</text>
+      <rect x="24" y="240" width="252" height="88" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="40" y="270" font-size="9.5" opacity="0.55">XPRESSLOAN</text>
+      <text x="40" y="292" font-size="13">₹45,000 is waiting</text>
+      <circle cx="248" cy="284" r="24" fill="none" stroke="#C5F135" stroke-width="5"/>
+      <text x="248" y="288" text-anchor="middle" font-size="9.5">1 left</text>
 
-      <rect x="24" y="580" width="252" height="46" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <text x="40" y="600" font-size="9" fill="#C45C26" font-weight="700">LAST DATE: 5 AUG</text>
-      <text x="40" y="616" font-size="9">Your KYC details will expire</text>
+      <rect x="24" y="500" width="252" height="52" rx="10" fill="none" stroke="#0D3B2E" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="40" y="522" font-size="9.5" fill="#C45C26" font-weight="700">LAST DATE: 5 AUG</text>
+      <text x="40" y="539" font-size="10.5">Your KYC details will expire</text>
     </g>
 
-    <!-- bottom nav: Home / Dues / Profile -->
-    <g transform="translate(28,614)" font-family="'Space Grotesk', sans-serif" fill="#0D3B2E">
-      <circle cx="30" cy="10" r="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
-      <text x="30" y="34" text-anchor="middle" font-size="8" font-weight="700">Home</text>
-
-      <circle cx="122" cy="10" r="10" fill="none" stroke="#C45C26" stroke-width="1.5"/>
-      <circle cx="130" cy="4" r="3" fill="#C45C26"/>
-      <text x="122" y="34" text-anchor="middle" font-size="8" font-weight="700" fill="#C45C26">Dues</text>
-
-      <circle cx="214" cy="10" r="10" fill="none" stroke="#0D3B2E" stroke-width="1.2" opacity="0.6"/>
-      <text x="214" y="34" text-anchor="middle" font-size="8" opacity="0.6">Profile</text>
+    <g transform="translate(28,566)" font-family="'Space Grotesk', sans-serif" fill="#0D3B2E">
+      <circle cx="26" cy="10" r="10" fill="none" stroke="#0D3B2E" stroke-width="1.5"/>
+      <text x="26" y="32" text-anchor="middle" font-size="8" font-weight="700">Home</text>
+      <circle cx="112" cy="10" r="10" fill="none" stroke="#C45C26" stroke-width="1.5"/>
+      <circle cx="120" cy="4" r="3" fill="#C45C26"/>
+      <text x="112" y="32" text-anchor="middle" font-size="8" font-weight="700" fill="#C45C26">Dues</text>
+      <circle cx="198" cy="10" r="10" fill="none" stroke="#0D3B2E" stroke-width="1.2" opacity="0.5"/>
+      <text x="198" y="32" text-anchor="middle" font-size="8" opacity="0.5">Profile</text>
     </g>
+  </g>
+
+  <g transform="translate(20,656)" font-family="'Space Grotesk', sans-serif">
+    <text x="150" y="20" text-anchor="middle" font-size="10" fill="#C45C26" font-weight="700" letter-spacing="1">AFTER — CLEAR, URGENT, ACTIONABLE</text>
   </g>
 </svg>
