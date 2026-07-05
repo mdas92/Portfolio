@@ -29,8 +29,9 @@ export default function Journey() {
             transition={{ duration: 0.6, delay: i * 0.1 }}
             className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
           >
-            <div className="md:col-span-4">
-              <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">
+            <div className="md:col-span-4 relative">
+              <div className="hidden md:block absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-background border-2 border-foreground z-10" />
+              <div className="text-foreground font-sans font-bold text-xs uppercase tracking-[0.2em]">
                 {item.date}
               </div>
             </div>

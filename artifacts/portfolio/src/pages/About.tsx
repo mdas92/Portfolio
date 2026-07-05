@@ -15,14 +15,24 @@ export default function About() {
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="flex-1 flex flex-col px-6 md:px-16 lg:px-24 py-12 md:py-24 max-w-7xl mx-auto w-full"
     >
-      <div className="flex items-center gap-3 mb-8 md:mb-12">
-        <div className="w-8 h-[2px] bg-primary" />
-        <span className="text-[11px] uppercase tracking-[0.2em] font-medium text-foreground">
-          hi, i'm mohana 👋
-        </span>
+      <div className="mb-8 md:mb-12">
+        <div 
+          className="inline-block px-4 py-2 border-2 border-foreground mb-8 w-fit rotate-[-2deg] bg-background font-sans"
+        >
+          <span className="font-bold uppercase tracking-wider text-xs md:text-sm">
+            hi, i'm mohana 👋
+          </span>
+        </div>
       </div>
-      <h1 className="text-[2rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4.5rem] leading-[0.9] tracking-[-0.03em] font-serif mb-12">
-        writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> product thinker<span className="text-primary">.</span>
+      <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[6rem] leading-[0.9] tracking-[-0.03em] font-serif mb-12">
+        writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> 
+        <span className="relative inline-block">
+          <span className="relative z-10 italic">product thinker.</span>
+          <span 
+            className="absolute inset-0 bg-[#C5F135] -z-10 mix-blend-multiply" 
+            style={{ transform: 'rotate(1deg) scale(1.05) translateY(10%)' }}
+          ></span>
+        </span>
       </h1>
       {/* Hero grid */}
       <div className="grid md:grid-cols-12 gap-12 md:gap-24 items-start mt-8 mb-24">
@@ -36,7 +46,7 @@ export default function About() {
           <div>
             <a
               href="#"
-              className="inline-block text-foreground border-b border-foreground pb-0.5 hover:text-primary hover:border-primary transition-colors text-lg"
+              className="group relative inline-flex items-center gap-4 bg-primary text-background px-8 py-4 text-lg w-fit transition-transform hover:-translate-y-1 hover:shadow-[8px_8px_0px_#0D3B2E] border-2 border-foreground font-sans font-bold"
             >
               Download Resume ↗
             </a>
@@ -68,7 +78,7 @@ export default function About() {
         className="border-t border-border/50 pt-16 mb-24 grid md:grid-cols-12 gap-8 md:gap-16"
       >
         <div className="md:col-span-3">
-          <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
+          <span className="inline-block px-2 py-1 border border-foreground/20 text-[10px] uppercase tracking-[0.2em] font-bold text-foreground bg-background">
             What I do
           </span>
         </div>
@@ -90,7 +100,7 @@ export default function About() {
         transition={{ duration: 0.6 }}
         className="border-t border-border/50 pt-16"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground block mb-12">
+        <span className="inline-block px-2 py-1 border border-foreground/20 text-[10px] uppercase tracking-[0.2em] font-bold text-foreground bg-background mb-12">
           Career
         </span>
         <div className="flex flex-col border-t border-border/50">

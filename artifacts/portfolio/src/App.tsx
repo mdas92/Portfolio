@@ -1,6 +1,7 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import { RisoBackground } from "./components/RisoBackground";
 import About from "./pages/About";
 import Journey from "./pages/Journey";
 import Work from "./pages/Work";
@@ -25,13 +26,16 @@ function Router() {
 
 function App() {
   return (
-    <div className="min-h-[100dvh] flex flex-col bg-background text-foreground">
+    <div className="min-h-[100dvh] flex flex-col bg-background text-foreground relative">
+      <RisoBackground />
       <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-        <Navbar />
-        <main className="flex-1 flex flex-col w-full">
-          <Router />
-        </main>
-        <Footer />
+        <div className="relative z-10 flex-1 flex flex-col w-full">
+          <Navbar />
+          <main className="flex-1 flex flex-col w-full">
+            <Router />
+          </main>
+          <Footer />
+        </div>
       </WouterRouter>
     </div>
   );

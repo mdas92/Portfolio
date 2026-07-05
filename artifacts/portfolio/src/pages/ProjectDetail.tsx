@@ -2,6 +2,26 @@ import { motion } from "framer-motion";
 import { Link, useParams } from "wouter";
 import { projects } from "../data/portfolio";
 
+import {
+  FintechVisual,
+  SportsVisual,
+  TaxVisual,
+  SuperappVisual,
+  ContentMapsVisual,
+  ProductTaxonomyVisual,
+  PlaybookVisual
+} from "../components/ProjectCardVisuals";
+
+const heroVisuals: Record<string, React.ReactNode> = {
+  "fintech-overhaul": <FintechVisual />,
+  "sports-training": <SportsVisual />,
+  "tax-onboarding": <TaxVisual />,
+  "superapp-l10n": <SuperappVisual />,
+  "content-maps": <ContentMapsVisual />,
+  "product-taxonomy": <ProductTaxonomyVisual />,
+  "playbook": <PlaybookVisual />,
+};
+
 export default function ProjectDetail() {
   const params = useParams();
   const project = projects.find((p) => p.slug === params.slug);
@@ -26,7 +46,7 @@ export default function ProjectDetail() {
     >
       {/* Hero Section */}
       <div className="px-6 md:px-16 lg:px-24 py-8 md:py-16 max-w-5xl mx-auto w-full">
-        <Link href="/work" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
+        <Link href="/work" className="inline-flex items-center text-sm font-sans font-semibold uppercase tracking-wider px-4 py-2 border-2 border-foreground bg-background transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] mb-12">
           ← Back to Work
         </Link>
 
@@ -52,16 +72,18 @@ export default function ProjectDetail() {
         </div>
       </div>
 
-      {/* Hero Image */}
+      {/* Hero Image / Visual */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-16 md:mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full overflow-hidden"
+          className="w-full overflow-hidden border border-border/10"
           style={{ maxHeight: 480 }}
         >
-          {project.image && (
+          {heroVisuals[project.slug] ? (
+            heroVisuals[project.slug]
+          ) : project.image && (
             <img
               src={project.image}
               alt={project.title}

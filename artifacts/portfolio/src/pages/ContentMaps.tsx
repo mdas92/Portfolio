@@ -55,7 +55,7 @@ export default function ContentMaps() {
     >
       {/* Hero */}
       <div className="px-6 md:px-16 lg:px-24 py-8 md:py-16 max-w-5xl mx-auto w-full">
-        <Link href="/work" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
+        <Link href="/work" className="inline-flex items-center text-sm font-sans font-semibold uppercase tracking-wider px-4 py-2 border-2 border-foreground bg-background transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] mb-12">
           ← Back to Work
         </Link>
 
@@ -276,9 +276,9 @@ export default function ContentMaps() {
                   <p className="text-sm text-foreground/70 leading-relaxed font-light m-0">{body}</p>
                   {chips.length > 0 && (
                     <div className="flex flex-wrap gap-2 mt-1">
-                      {chips.map(({ label, sub }) => (
-                        <span key={label} className="bg-foreground/8 border border-border/50 rounded-full px-3 py-1 text-xs font-semibold text-foreground/80">
-                          {label}{sub ? <span className="font-normal text-muted-foreground ml-1">— {sub}</span> : null}
+                      {chips.map(({ label, sub }, idx) => (
+                        <span key={label} className={`bg-background border-2 border-foreground rounded-md px-3 py-1 text-[10px] font-sans font-semibold uppercase tracking-wide text-foreground ${idx === 0 ? "rotate-1" : idx === 3 ? "-rotate-1" : ""}`}>
+                          {label}{sub ? <span className="font-normal text-muted-foreground ml-1 normal-case tracking-normal">— {sub}</span> : null}
                         </span>
                       ))}
                     </div>
