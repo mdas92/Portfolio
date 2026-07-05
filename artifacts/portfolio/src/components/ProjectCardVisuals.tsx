@@ -213,6 +213,40 @@ export function ContentMapsVisual() {
   );
 }
 
+export function ProductTaxonomyVisual() {
+  const chain = ['Formulas', 'Message Groups', 'Messages', 'Alt. Messages', 'Combinations'];
+  return (
+    <div style={{ background: C.green, height: 192, position: 'relative', overflow: 'hidden', width: '100%' }}>
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '0 20px' }}>
+        {chain.map((label, i) => (
+          <div key={label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <span style={{
+              background: i === 0 ? C.sienna : 'transparent',
+              color: i === 0 ? C.cream : C.cream,
+              border: i === 0 ? 'none' : `1px solid ${C.cream}33`,
+              borderRadius: 5,
+              padding: '4px 10px',
+              fontSize: 10.5,
+              fontWeight: 600,
+              opacity: i === 0 ? 1 : 0.55,
+              fontFamily: 'Space Grotesk, sans-serif',
+              whiteSpace: 'nowrap',
+            }}>
+              {label}
+            </span>
+            {i < chain.length - 1 && (
+              <span style={{ color: C.lime, fontSize: 11, opacity: 0.6 }}>↕</span>
+            )}
+          </div>
+        ))}
+      </div>
+      <div style={{ position: 'absolute', bottom: 14, left: 16, fontSize: 10, color: C.lime, letterSpacing: '0.14em', fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500, opacity: 0.8 }}>
+        9 ENTITIES RATIFIED · GLOSSARY SHIPPED
+      </div>
+    </div>
+  );
+}
+
 export function PlaybookVisual() {
   const slides = [
     { rotate: -8, opacity: 0.18, offsetX: -30 },

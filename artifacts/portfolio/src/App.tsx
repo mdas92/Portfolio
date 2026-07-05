@@ -6,6 +6,7 @@ import Journey from "./pages/Journey";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import ContentMaps from "./pages/ContentMaps";
+import ProductTaxonomy from "./pages/ProductTaxonomy";
 import NotFound from "./pages/not-found";
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path="/journey" component={Journey} />
       <Route path="/work" component={Work} />
       <Route path="/work/content-maps" component={ContentMaps} />
+      <Route path="/work/product-taxonomy" component={ProductTaxonomy} />
       <Route path="/work/:slug" component={ProjectDetail} />
       <Route component={NotFound} />
     </Switch>

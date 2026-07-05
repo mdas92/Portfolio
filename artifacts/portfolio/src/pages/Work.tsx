@@ -8,9 +8,11 @@ import {
   TaxVisual,
   SuperappVisual,
   PlaybookVisual,
+  ProductTaxonomyVisual,
 } from "../components/ProjectCardVisuals";
 
 const cardVisuals: Record<string, React.ReactNode> = {
+  "product-taxonomy": <ProductTaxonomyVisual />,
   "content-maps":     <ContentMapsVisual />,
   "fintech-overhaul": <FintechVisual />,
   "sports-training":  <SportsVisual />,
@@ -67,7 +69,7 @@ export default function Work() {
       {/* Featured Work */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground/10 border border-foreground/10 mb-24">
         {featuredProjects.map((project, i) => {
-          const isFullWidth = project.slug === "playbook" || project.slug === "content-maps";
+          const isFullWidth = project.slug === "playbook" || project.slug === "content-maps" || project.slug === "product-taxonomy";
           const classes = `bg-background p-8 md:p-12 flex flex-col justify-between group hover:bg-muted/30 transition-colors ${
             isFullWidth ? "md:col-span-2" : ""
           }`;

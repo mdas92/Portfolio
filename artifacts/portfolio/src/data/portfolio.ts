@@ -36,6 +36,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "product-taxonomy",
+    tag: "Information Architecture · Product Language",
+    title: "Product Taxonomy: Renaming an AI Product While It Runs",
+    summary: "Drove the evidence, framework, and decision session that ratified nine renamed product entities — then shipped the glossary and rollout plan for a product that never stops running.",
+    role: "Field-side driver, with product design and data science",
+    context: "Aampe — AI-powered lifecycle marketing platform",
+    year: "2025",
+    featured: true,
+    challenge: "Aampe's product objects grew their names ad hoc — one object answered to five names in circulation, familiar-sounding words pulled customers back into campaign thinking, and new words lacked consistent definitions across UI, docs, KB, and sales decks.",
+    whatIDid: [
+      "Authored the Terminology & Taxonomy framework: three candidate terms per entity with recorded reasoning, naming principles, voting rules, and named tie-breakers.",
+      "Mined my own client session recordings into the audit's primary evidence — surfacing terms customers misread, like Offering-as-promotion and Label doing two jobs.",
+      "Argued the Topics feature onto a four-dimension model (feature, category, context, constraint) instead of a rigid topic/sub-topic hierarchy before it shipped.",
+      "Filed the cleanup ticket replacing Composer's default component definitions with the canonical ones.",
+      "Co-ran the Terminology Session at the Taiwan offsite — ten people including the CEO and a co-founder, live polls, and a sentence test for every entity.",
+      "Wrote the implementation plan: engineering scoping, old-to-new migration mapping, customer change management, and a six-step rollout.",
+    ],
+    result: "Nine entities ratified, including bold renames (Label → Tag, Message Group → Formula, Audience → Eligibility Criteria). Glossary and rollout plan shipped, with governance rules to prevent future terminology creep.",
+    quote: "Customers understand the mental model — messages, parts, variants, labels — but not the vocabulary.",
+    image: "/images/projects/product-taxonomy/glossary-preview.png",
+  },
+  {
     slug: "content-maps",
     tag: "Content Strategy · Methodology",
     title: "Content Maps: Building the Shared Language for Agentic Content Strategy",
