@@ -141,6 +141,23 @@ export default function ProjectDetail() {
               </p>
             )}
 
+            {section.images && section.images.length > 0 && (
+              <div className={`mb-8 grid gap-4 ${section.images.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
+                {section.images.map((img, k) => (
+                  <div key={k} className="flex flex-col gap-2">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="w-full h-auto rounded-lg border border-border/40 bg-background"
+                    />
+                    {img.caption && (
+                      <p className="text-xs text-center text-muted-foreground font-sans leading-snug">{img.caption}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
             {section.image && (
               <div className={`mb-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
                 <img
@@ -148,6 +165,9 @@ export default function ProjectDetail() {
                   alt={section.image.alt}
                   className="w-full h-auto rounded-lg border border-border/40 bg-background"
                 />
+                {section.image.caption && (
+                  <p className="mt-2 text-xs text-center text-muted-foreground font-sans">{section.image.caption}</p>
+                )}
               </div>
             )}
 
