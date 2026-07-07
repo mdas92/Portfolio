@@ -158,19 +158,6 @@ export default function ProjectDetail() {
               </div>
             )}
 
-            {section.image && (
-              <div className={`mb-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
-                <img
-                  src={section.image.src}
-                  alt={section.image.alt}
-                  className="w-full h-auto rounded-lg border border-border/40 bg-background"
-                />
-                {section.image.caption && (
-                  <p className="mt-2 text-xs text-center text-muted-foreground font-sans">{section.image.caption}</p>
-                )}
-              </div>
-            )}
-
             {section.bullets && section.bullets.length > 0 && (
               <ul className="flex flex-col gap-3 text-lg text-foreground/95 leading-relaxed font-normal list-disc pl-5 marker:text-primary">
                 {section.bullets.map((b, j) => (
@@ -183,6 +170,19 @@ export default function ProjectDetail() {
               <p className="mt-6 text-sm text-muted-foreground italic border-l-2 border-border pl-4">
                 <RichText text={section.note} />
               </p>
+            )}
+
+            {section.image && (
+              <div className={`mt-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
+                <img
+                  src={section.image.src}
+                  alt={section.image.alt}
+                  className="w-full h-auto rounded-lg border border-border/40 bg-background"
+                />
+                {section.image.caption && (
+                  <p className="mt-2 text-xs text-center text-muted-foreground font-sans">{section.image.caption}</p>
+                )}
+              </div>
             )}
           </section>
         ))}
