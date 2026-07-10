@@ -3,6 +3,7 @@ export interface ProjectImage {
   alt: string;
   display: "inline" | "full-width" | "group";
   caption?: string;
+  phoneFrame?: boolean;
 }
 
 export interface ProjectSection {
@@ -12,6 +13,7 @@ export interface ProjectSection {
   image?: ProjectImage;
   images?: ProjectImage[];
   note?: string;
+  imagePlacement?: "beside";
 }
 
 export interface Project {
@@ -520,10 +522,12 @@ export const projects: Project[] = [
       {
         heading: "A Content-First Design Approach",
         content: "First, we had to rethink the notification displayed on our homescreen. I applied a content design approach to determine what information users actually need, and in what order. The key change was surfacing consequences plainly once a due date was breached: the **late fee** amount, the **credit score impact**, and that **transactions get blocked** until the user repays.",
+        imagePlacement: "beside",
         image: {
           src: "/images/projects/repayments/bottom-sheet.avif",
           alt: "New overdue bottom sheet showing: ₹2,464.7 is overdue, Please repay immediately to avoid more penalties — with three consequences listed: late fee of ₹150, credit score impact, transactions blocked — and a Pay Now button",
-          display: "inline"
+          display: "inline",
+          phoneFrame: true
         }
       },
       {

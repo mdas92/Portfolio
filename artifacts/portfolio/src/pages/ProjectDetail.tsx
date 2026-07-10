@@ -135,54 +135,103 @@ export default function ProjectDetail() {
               {section.heading}
             </h2>
 
-            {section.content && (
-              <p className="text-lg md:text-xl text-foreground/95 leading-relaxed font-normal mb-8">
-                <RichText text={section.content} />
-              </p>
-            )}
-
-            {section.images && section.images.length > 0 && (
-              <div className={`mb-8 grid gap-4 ${section.images.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
-                {section.images.map((img, k) => (
-                  <div key={k} className="flex flex-col gap-2">
+            {section.imagePlacement === "beside" && section.image ? (
+              <div className="flex gap-8 items-start">
+                <div className="flex-1 min-w-0">
+                  {section.content && (
+                    <p className="text-lg md:text-xl text-foreground/95 leading-relaxed font-normal mb-8">
+                      <RichText text={section.content} />
+                    </p>
+                  )}
+                  {section.bullets && section.bullets.length > 0 && (
+                    <ul className="flex flex-col gap-3 text-lg text-foreground/95 leading-relaxed font-normal list-disc pl-5 marker:text-primary">
+                      {section.bullets.map((b, j) => (
+                        <li key={j}><RichText text={b} /></li>
+                      ))}
+                    </ul>
+                  )}
+                  {section.note && (
+                    <p className="mt-6 text-sm text-muted-foreground italic border-l-2 border-border pl-4">
+                      <RichText text={section.note} />
+                    </p>
+                  )}
+                </div>
+                <div className="flex-shrink-0 w-44">
+                  {section.image.phoneFrame ? (
+                    <div className="relative bg-neutral-900 rounded-[2.2rem] p-[5px] shadow-2xl ring-1 ring-white/10">
+                      <div className="absolute top-[8px] left-1/2 -translate-x-1/2 w-[52px] h-[14px] bg-black rounded-full z-10" />
+                      <div className="overflow-hidden rounded-[1.9rem]">
+                        <img
+                          src={section.image.src}
+                          alt={section.image.alt}
+                          className="w-full h-auto block"
+                        />
+                      </div>
+                    </div>
+                  ) : (
                     <img
-                      src={img.src}
-                      alt={img.alt}
+                      src={section.image.src}
+                      alt={section.image.alt}
                       className="w-full h-auto rounded-lg border border-border/40 bg-background"
                     />
-                    {img.caption && (
-                      <p className="text-xs text-center text-muted-foreground font-sans leading-snug">{img.caption}</p>
+                  )}
+                  {section.image.caption && (
+                    <p className="mt-2 text-xs text-center text-muted-foreground font-sans">{section.image.caption}</p>
+                  )}
+                </div>
+              </div>
+            ) : (
+              <>
+                {section.content && (
+                  <p className="text-lg md:text-xl text-foreground/95 leading-relaxed font-normal mb-8">
+                    <RichText text={section.content} />
+                  </p>
+                )}
+
+                {section.images && section.images.length > 0 && (
+                  <div className={`mb-8 grid gap-4 ${section.images.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
+                    {section.images.map((img, k) => (
+                      <div key={k} className="flex flex-col gap-2">
+                        <img
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full h-auto rounded-lg border border-border/40 bg-background"
+                        />
+                        {img.caption && (
+                          <p className="text-xs text-center text-muted-foreground font-sans leading-snug">{img.caption}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {section.bullets && section.bullets.length > 0 && (
+                  <ul className="flex flex-col gap-3 text-lg text-foreground/95 leading-relaxed font-normal list-disc pl-5 marker:text-primary">
+                    {section.bullets.map((b, j) => (
+                      <li key={j}><RichText text={b} /></li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.note && (
+                  <p className="mt-6 text-sm text-muted-foreground italic border-l-2 border-border pl-4">
+                    <RichText text={section.note} />
+                  </p>
+                )}
+
+                {section.image && (
+                  <div className={`mt-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
+                    <img
+                      src={section.image.src}
+                      alt={section.image.alt}
+                      className="w-full h-auto rounded-lg border border-border/40 bg-background"
+                    />
+                    {section.image.caption && (
+                      <p className="mt-2 text-xs text-center text-muted-foreground font-sans">{section.image.caption}</p>
                     )}
                   </div>
-                ))}
-              </div>
-            )}
-
-            {section.bullets && section.bullets.length > 0 && (
-              <ul className="flex flex-col gap-3 text-lg text-foreground/95 leading-relaxed font-normal list-disc pl-5 marker:text-primary">
-                {section.bullets.map((b, j) => (
-                  <li key={j}><RichText text={b} /></li>
-                ))}
-              </ul>
-            )}
-
-            {section.note && (
-              <p className="mt-6 text-sm text-muted-foreground italic border-l-2 border-border pl-4">
-                <RichText text={section.note} />
-              </p>
-            )}
-
-            {section.image && (
-              <div className={`mt-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
-                <img
-                  src={section.image.src}
-                  alt={section.image.alt}
-                  className="w-full h-auto rounded-lg border border-border/40 bg-background"
-                />
-                {section.image.caption && (
-                  <p className="mt-2 text-xs text-center text-muted-foreground font-sans">{section.image.caption}</p>
                 )}
-              </div>
+              </>
             )}
           </section>
         ))}
