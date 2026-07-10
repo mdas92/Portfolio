@@ -158,13 +158,16 @@ export default function ProjectDetail() {
                 </div>
                 <div className="flex-shrink-0 w-44">
                   {section.image.phoneFrame ? (
-                    <div className="flex flex-col bg-black rounded-2xl overflow-hidden shadow-xl">
-                      <div className="min-h-[96px]" />
-                      <img
-                        src={section.image.src}
-                        alt={section.image.alt}
-                        className="w-full h-auto block"
-                      />
+                    <div className="relative bg-neutral-900 rounded-[2.2rem] p-[5px] shadow-2xl ring-1 ring-white/10">
+                      <div className="absolute top-[8px] left-1/2 -translate-x-1/2 w-[52px] h-[14px] bg-black rounded-full z-10" />
+                      <div className="flex flex-col bg-black overflow-hidden rounded-[1.9rem]">
+                        <div className="min-h-[96px]" />
+                        <img
+                          src={section.image.src}
+                          alt={section.image.alt}
+                          className="w-full h-auto block"
+                        />
+                      </div>
                     </div>
                   ) : (
                     <img
