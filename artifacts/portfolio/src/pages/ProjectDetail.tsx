@@ -193,11 +193,12 @@ export default function ProjectDetail() {
                   <div className={`mb-8 grid gap-4 items-end ${section.images.length === 2 ? "grid-cols-2" : "grid-cols-3"}`}>
                     {section.images.map((img, k) => (
                       <div key={k} className="flex flex-col gap-2">
-                        <div className="w-full aspect-[9/19] rounded-lg border border-border/40 bg-background overflow-hidden">
+                        <div className="w-full aspect-[9/19] rounded-lg border border-border/40 bg-background overflow-hidden flex items-center justify-center">
                           <img
                             src={img.src}
                             alt={img.alt}
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-contain origin-center"
+                            style={img.scale ? { transform: `scale(${img.scale})` } : undefined}
                           />
                         </div>
                         {img.caption && (

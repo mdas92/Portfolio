@@ -4,6 +4,7 @@ export interface ProjectImage {
   display: "inline" | "full-width" | "group";
   caption?: string;
   phoneFrame?: boolean;
+  scale?: number;
 }
 
 export interface ProjectSection {
@@ -544,7 +545,8 @@ export const projects: Project[] = [
             src: "/images/projects/repayments/nav-new.avif",
             alt: "New LazyPay homescreen: light theme, prominent due-date inline notification at the top, showing before-due and after-due states side by side",
             display: "group",
-            caption: "After"
+            caption: "After",
+            scale: 1.3
           }
         ]
       },
