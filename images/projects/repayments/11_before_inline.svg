@@ -1,42 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 700" width="380" height="700">
-  <rect width="380" height="700" fill="#FFFCF0"/>
-  <circle cx="330" cy="60" r="90" fill="#C45C26" opacity="0.15"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 700" width="340" height="700">
+  <rect width="340" height="700" fill="#FFFCF0"/>
 
-  <g transform="translate(40,30)">
-    <rect x="0" y="0" width="300" height="640" rx="32" fill="none" stroke="#0D3B2E" stroke-width="3"/>
-    <rect x="12" y="12" width="276" height="616" rx="20" fill="#0D3B2E" opacity="0.92"/>
-    <rect x="116" y="22" width="68" height="8" rx="4" fill="none" stroke="#FFFCF0" stroke-width="1.5" opacity="0.4"/>
+  <g transform="translate(20,20)">
+    <rect x="0" y="0" width="300" height="620" rx="36" fill="#0D3B2E"/>
+    <rect x="10" y="10" width="280" height="600" rx="26" fill="#12332A"/>
+    <rect x="122" y="22" width="56" height="7" rx="3.5" fill="#FFFCF0" opacity="0.2"/>
 
     <g font-family="'Space Grotesk', sans-serif" fill="#FFFCF0">
-      <rect x="34" y="52" width="120" height="40" rx="8" fill="none" stroke="#C5F135" stroke-width="1.5"/>
-      <text x="94" y="76" text-anchor="middle" font-size="9" opacity="0.85">PayLater</text>
+      <rect x="28" y="50" width="112" height="34" rx="8" fill="none" stroke="#C5F135" stroke-width="1.2" opacity="0.7"/>
+      <text x="84" y="71" text-anchor="middle" font-size="9" opacity="0.8">PayLater</text>
 
-      <text x="34" y="118" font-size="20" font-weight="700">₹9,750</text>
-      <text x="34" y="136" font-size="9" opacity="0.55">Available credit limit</text>
+      <text x="28" y="126" font-size="24" font-weight="700">₹9,750</text>
+      <text x="28" y="146" font-size="9.5" opacity="0.5">Available credit limit</text>
 
-      <rect x="34" y="164" width="228" height="120" rx="10" fill="none" stroke="#FFFCF0" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"/>
-      <text x="148" y="200" text-anchor="middle" font-size="12" opacity="0.85">Now pay utility bills</text>
-      <text x="148" y="216" text-anchor="middle" font-size="12" opacity="0.85">with your limit!</text>
-      <circle cx="234" cy="184" r="16" fill="none" stroke="#C5F135" stroke-width="1.5"/>
-      <text x="234" y="188" text-anchor="middle" font-size="8" fill="#C5F135">₹0</text>
+      <rect x="28" y="168" width="224" height="96" rx="10" fill="none" stroke="#FFFCF0" stroke-width="1" opacity="0.35" stroke-dasharray="4 3"/>
+      <text x="140" y="206" text-anchor="middle" font-size="11" opacity="0.8">Now pay utility bills</text>
+      <text x="140" y="222" text-anchor="middle" font-size="11" opacity="0.8">with your limit!</text>
+      <circle cx="140" cy="242" r="4" fill="#C5F135" opacity="0.6"/>
 
-      <!-- low-contrast dues reminder, easy to miss -->
-      <rect x="34" y="560" width="228" height="46" rx="10" fill="none" stroke="#FFFCF0" stroke-width="1" opacity="0.3"/>
-      <text x="46" y="580" font-size="9" opacity="0.45">₹5,500 is due</text>
-      <text x="46" y="594" font-size="8" opacity="0.35">Clear your dues to avoid penalty</text>
+      <rect x="28" y="500" width="224" height="52" rx="10" fill="none" stroke="#FFFCF0" stroke-width="0.75" opacity="0.22"/>
+      <text x="42" y="522" font-size="9.5" opacity="0.4">₹5,500 is due</text>
+      <text x="42" y="538" font-size="8.5" opacity="0.3">Clear your dues to avoid penalty</text>
     </g>
 
-    <!-- bottom nav: Home / Activity / Rewards -->
-    <g transform="translate(28,614)" font-family="'Space Grotesk', sans-serif" fill="#FFFCF0">
-      <rect x="0" y="0" width="244" height="4" opacity="0"/>
-      <circle cx="30" cy="10" r="10" fill="none" stroke="#C5F135" stroke-width="1.5"/>
-      <text x="30" y="34" text-anchor="middle" font-size="8">Home</text>
-
-      <circle cx="122" cy="10" r="10" fill="none" stroke="#FFFCF0" stroke-width="1.2" opacity="0.6"/>
-      <text x="122" y="34" text-anchor="middle" font-size="8" opacity="0.6">Activity</text>
-
-      <circle cx="214" cy="10" r="10" fill="none" stroke="#FFFCF0" stroke-width="1.2" opacity="0.6"/>
-      <text x="214" y="34" text-anchor="middle" font-size="8" opacity="0.6">Rewards</text>
+    <g transform="translate(28,566)" font-family="'Space Grotesk', sans-serif" fill="#FFFCF0">
+      <circle cx="26" cy="10" r="10" fill="none" stroke="#C5F135" stroke-width="1.2"/>
+      <text x="26" y="32" text-anchor="middle" font-size="8">Home</text>
+      <circle cx="112" cy="10" r="10" fill="none" stroke="#FFFCF0" stroke-width="1" opacity="0.5"/>
+      <text x="112" y="32" text-anchor="middle" font-size="8" opacity="0.5">Activity</text>
+      <circle cx="198" cy="10" r="10" fill="none" stroke="#FFFCF0" stroke-width="1" opacity="0.5"/>
+      <text x="198" y="32" text-anchor="middle" font-size="8" opacity="0.5">Rewards</text>
     </g>
+  </g>
+
+  <g transform="translate(20,656)" font-family="'Space Grotesk', sans-serif">
+    <text x="150" y="20" text-anchor="middle" font-size="10" fill="#0D3B2E" opacity="0.6" letter-spacing="1">BEFORE — LOW-CONTRAST, EASY TO MISS</text>
   </g>
 </svg>

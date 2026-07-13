@@ -1,30 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440">
-  <rect width="800" height="440" fill="#FFFCF0"/>
-  <circle cx="700" cy="60" r="120" fill="#C5F135" opacity="0.25"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="800" height="380">
+  <rect width="800" height="380" fill="#FFFCF0"/>
 
   <g font-family="'Space Grotesk', sans-serif" fill="#0D3B2E">
-    <rect x="48" y="36" width="8" height="2" fill="#C45C26"/>
-    <text x="64" y="40" font-size="10" fill="#0D3B2E" opacity="0.6" letter-spacing="3">DEFINING THE PROBLEM</text>
+    <rect x="48" y="30" width="8" height="2" fill="#C45C26"/>
+    <text x="64" y="34" font-size="10" opacity="0.6" letter-spacing="3">DEFINING THE PROBLEM</text>
   </g>
 
-  <g transform="translate(400,240)">
-    <rect x="-90" y="-40" width="180" height="80" rx="12" fill="none" stroke="#0D3B2E" stroke-width="3"/>
-    <rect x="-90" y="-40" width="60" height="80" rx="0" fill="none" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="4 3"/>
-    <text x="-60" y="6" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="11" fill="#C45C26" font-weight="700">DATE</text>
-    <text x="10" y="-6" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#0D3B2E">AMOUNT</text>
-    <text x="10" y="12" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#0D3B2E">DUE STATUS</text>
-    <text x="10" y="30" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="12" fill="#0D3B2E">PENALTIES</text>
+  <g transform="translate(400,220)">
+    <rect x="-84" y="-36" width="168" height="72" rx="10" fill="#0D3B2E"/>
+    <text x="0" y="-8" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#FFFCF0">AMOUNT</text>
+    <text x="0" y="8" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#FFFCF0">DUE STATUS</text>
+    <text x="0" y="24" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="11" font-weight="700" fill="#FFFCF0">PENALTIES</text>
 
-    <path d="M0 -40 L0 -110" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4"/>
-    <text x="0" y="-124" text-anchor="middle" font-family="'DM Serif Display', serif" font-style="italic" font-size="18" fill="#0D3B2E">how much to pay?</text>
+    <path d="M0 -36 L0 -84" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4" opacity="0.5"/>
+    <circle cx="0" cy="-96" r="3" fill="#0D3B2E"/>
+    <text x="0" y="-108" text-anchor="middle" font-family="'DM Serif Display', serif" font-style="italic" font-size="17" fill="#0D3B2E">how much to pay?</text>
 
-    <path d="M-90 0 C-160 0 -190 40 -230 40" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
-    <text x="-236" y="30" text-anchor="end" font-family="'DM Serif Display', serif" font-style="italic" font-size="18" fill="#0D3B2E">when to pay?</text>
+    <path d="M-84 -10 C-140 -10 -160 -78 -200 -78" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4" fill="none" opacity="0.5"/>
+    <circle cx="-204" cy="-78" r="3" fill="#0D3B2E"/>
+    <text x="-208" y="-90" text-anchor="end" font-family="'DM Serif Display', serif" font-style="italic" font-size="17" fill="#0D3B2E">when to pay?</text>
 
-    <path d="M90 -20 C160 -20 190 -70 230 -70" stroke="#C45C26" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
-    <text x="236" y="-62" text-anchor="start" font-family="'DM Serif Display', serif" font-style="italic" font-size="18" fill="#C45C26">level of urgency</text>
+    <path d="M84 -18 C150 -18 170 -60 216 -60" stroke="#C45C26" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+    <circle cx="220" cy="-60" r="3" fill="#C45C26"/>
+    <text x="228" y="-52" text-anchor="start" font-family="'DM Serif Display', serif" font-style="italic" font-size="17" fill="#C45C26">level of urgency</text>
 
-    <path d="M0 40 C0 90 30 100 60 130" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
-    <text x="68" y="150" text-anchor="start" font-family="'DM Serif Display', serif" font-style="italic" font-size="18" fill="#0D3B2E">why pay?</text>
+    <path d="M-84 18 C-150 18 -170 66 -216 66" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4" fill="none" opacity="0.5"/>
+    <circle cx="-220" cy="66" r="3" fill="#0D3B2E"/>
+    <text x="-224" y="82" text-anchor="end" font-family="'DM Serif Display', serif" font-style="italic" font-size="17" fill="#0D3B2E">why pay?</text>
+
+    <path d="M84 26 C150 26 170 68 210 68" stroke="#0D3B2E" stroke-width="2" stroke-dasharray="5 4" fill="none" opacity="0.5"/>
+    <circle cx="214" cy="68" r="3" fill="#0D3B2E"/>
+    <text x="222" y="84" text-anchor="start" font-family="'DM Serif Display', serif" font-style="italic" font-size="17" fill="#0D3B2E">who is asking?</text>
   </g>
 </svg>

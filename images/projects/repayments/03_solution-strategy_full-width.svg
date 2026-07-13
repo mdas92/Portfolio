@@ -1,53 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" width="800" height="440">
-  <rect width="800" height="440" fill="#FAFAFA"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <rect width="800" height="400" fill="#FFFCF0"/>
 
-  <rect x="48" y="36" width="8" height="2" fill="#FF4530"/>
-  <text x="64" y="40" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="3">SOLUTION STRATEGY</text>
-  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="600" fill="#111111" letter-spacing="-0.5">Three-Pronged Approach</text>
+  <g font-family="'Space Grotesk', sans-serif" fill="#0D3B2E">
+    <rect x="48" y="30" width="8" height="2" fill="#C45C26"/>
+    <text x="64" y="34" font-size="10" opacity="0.6" letter-spacing="3">SOLUTION STRATEGY</text>
+  </g>
 
-  <rect x="48" y="108" width="224" height="310" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="48" y="108" width="224" height="4" rx="2" fill="#FF4530" opacity="1.00"/>
-  <text x="66" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FF4530" opacity="0.2">01</text>
-  <text x="66" y="176" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="15" font-weight="600" fill="#111111">Discoverability</text>
+  <g font-family="'Space Grotesk', sans-serif">
+    <!-- Card 1 -->
+    <g transform="translate(48,58)">
+      <rect x="0" y="0" width="216" height="300" rx="12" fill="#FFFCF0" stroke="#0D3B2E" stroke-width="2"/>
+      <rect x="0" y="0" width="216" height="6" rx="3" fill="#C45C26"/>
+      <text x="20" y="52" font-family="'DM Serif Display', serif" font-size="30" fill="#C45C26" opacity="0.3">01</text>
+      <text x="20" y="82" font-size="15" font-weight="700" fill="#0D3B2E">Discoverability</text>
 
-  <text x="66" y="204" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">PROBLEM</text>
-  <text x="66" y="224" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Many users claimed to not</text>
-  <text x="66" y="242" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">know their due date. The</text>
-  <text x="66" y="260" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">notification blended into</text>
-  <text x="66" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">the background UI.</text>
-  <line x1="66" y1="312" x2="254" y2="312" stroke="#E0E0E0" stroke-width="1"/>
-  <text x="66" y="330" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">SOLUTION</text>
-  <text x="66" y="350" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">Redesigned component</text>
-  <text x="66" y="368" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">with clearer placement,</text>
-  <text x="66" y="386" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">better visual hierarchy</text>
-  <rect x="290" y="108" width="224" height="310" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="290" y="108" width="224" height="4" rx="2" fill="#FF4530" opacity="0.88"/>
-  <text x="308" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FF4530" opacity="0.2">02</text>
-  <text x="308" y="176" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="15" font-weight="600" fill="#111111">Urgency</text>
+      <text x="20" y="110" font-size="9.5" fill="#0D3B2E" opacity="0.55" letter-spacing="1.5">PROBLEM</text>
+      <text x="20" y="128" font-size="10.5" fill="#0D3B2E" opacity="0.7">Users didn't know their</text>
+      <text x="20" y="144" font-size="10.5" fill="#0D3B2E" opacity="0.7">due date — reminders</text>
+      <text x="20" y="160" font-size="10.5" fill="#0D3B2E" opacity="0.7">blended into the UI.</text>
 
-  <text x="308" y="204" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">PROBLEM</text>
-  <text x="308" y="224" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Some users saw reminders</text>
-  <text x="308" y="242" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">but still deferred. No</text>
-  <text x="308" y="260" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">visible state change after</text>
-  <text x="308" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">the due date passed.</text>
-  <line x1="308" y1="312" x2="496" y2="312" stroke="#E0E0E0" stroke-width="1"/>
-  <text x="308" y="330" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">SOLUTION</text>
-  <text x="308" y="350" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">New bottom sheet</text>
-  <text x="308" y="368" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">appears after breach,</text>
-  <text x="308" y="386" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">persists until cleared</text>
-  <rect x="532" y="108" width="224" height="310" rx="8" fill="#F2F2F2" stroke="#E0E0E0" stroke-width="1"/>
-  <rect x="532" y="108" width="224" height="4" rx="2" fill="#FF4530" opacity="0.76"/>
-  <text x="550" y="144" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#FF4530" opacity="0.2">03</text>
-  <text x="550" y="176" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="15" font-weight="600" fill="#111111">Transparency</text>
+      <line x1="20" y1="188" x2="196" y2="188" stroke="#0D3B2E" stroke-width="1" opacity="0.2"/>
+      <text x="20" y="208" font-size="9.5" fill="#C45C26" letter-spacing="1.5">SOLUTION</text>
+      <text x="20" y="228" font-size="10.5" fill="#0D3B2E">Redesigned card with</text>
+      <text x="20" y="244" font-size="10.5" fill="#0D3B2E">clearer placement and</text>
+      <text x="20" y="260" font-size="10.5" fill="#0D3B2E">stronger hierarchy.</text>
+    </g>
 
-  <text x="550" y="204" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#737373" letter-spacing="2">PROBLEM</text>
-  <text x="550" y="224" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">Late fees not communicated</text>
-  <text x="550" y="242" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">upfront. Repayment page</text>
-  <text x="550" y="260" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">had vague hierarchy and</text>
-  <text x="550" y="278" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#737373">no clear call to action.</text>
-  <line x1="550" y1="312" x2="738" y2="312" stroke="#E0E0E0" stroke-width="1"/>
-  <text x="550" y="330" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="10" fill="#FF4530" letter-spacing="2">SOLUTION</text>
-  <text x="550" y="350" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">Surfaced consequences,</text>
-  <text x="550" y="368" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">rebuilt info hierarchy,</text>
-  <text x="550" y="386" font-family="system-ui, -apple-system, 'DM Sans', sans-serif" font-size="11.5" fill="#111111">cleaner CTA</text>
+    <!-- Card 2 -->
+    <g transform="translate(292,58)">
+      <rect x="0" y="0" width="216" height="300" rx="12" fill="#FFFCF0" stroke="#0D3B2E" stroke-width="2"/>
+      <rect x="0" y="0" width="216" height="6" rx="3" fill="#0D3B2E"/>
+      <text x="20" y="52" font-family="'DM Serif Display', serif" font-size="30" fill="#0D3B2E" opacity="0.25">02</text>
+      <text x="20" y="82" font-size="15" font-weight="700" fill="#0D3B2E">Urgency</text>
+
+      <text x="20" y="110" font-size="9.5" fill="#0D3B2E" opacity="0.55" letter-spacing="1.5">PROBLEM</text>
+      <text x="20" y="128" font-size="10.5" fill="#0D3B2E" opacity="0.7">Reminders were seen but</text>
+      <text x="20" y="144" font-size="10.5" fill="#0D3B2E" opacity="0.7">deferred — no visible</text>
+      <text x="20" y="160" font-size="10.5" fill="#0D3B2E" opacity="0.7">change after due date.</text>
+
+      <line x1="20" y1="188" x2="196" y2="188" stroke="#0D3B2E" stroke-width="1" opacity="0.2"/>
+      <text x="20" y="208" font-size="9.5" fill="#C45C26" letter-spacing="1.5">SOLUTION</text>
+      <text x="20" y="228" font-size="10.5" fill="#0D3B2E">New bottom sheet after</text>
+      <text x="20" y="244" font-size="10.5" fill="#0D3B2E">breach, that persists</text>
+      <text x="20" y="260" font-size="10.5" fill="#0D3B2E">until dues are cleared.</text>
+    </g>
+
+    <!-- Card 3 -->
+    <g transform="translate(536,58)">
+      <rect x="0" y="0" width="216" height="300" rx="12" fill="#FFFCF0" stroke="#0D3B2E" stroke-width="2"/>
+      <rect x="0" y="0" width="216" height="6" rx="3" fill="#C5F135"/>
+      <text x="20" y="52" font-family="'DM Serif Display', serif" font-size="30" fill="#0D3B2E" opacity="0.2">03</text>
+      <text x="20" y="82" font-size="15" font-weight="700" fill="#0D3B2E">Transparency</text>
+
+      <text x="20" y="110" font-size="9.5" fill="#0D3B2E" opacity="0.55" letter-spacing="1.5">PROBLEM</text>
+      <text x="20" y="128" font-size="10.5" fill="#0D3B2E" opacity="0.7">Late fees weren't shown</text>
+      <text x="20" y="144" font-size="10.5" fill="#0D3B2E" opacity="0.7">upfront, and the CTA on</text>
+      <text x="20" y="160" font-size="10.5" fill="#0D3B2E" opacity="0.7">repayment was unclear.</text>
+
+      <line x1="20" y1="188" x2="196" y2="188" stroke="#0D3B2E" stroke-width="1" opacity="0.2"/>
+      <text x="20" y="208" font-size="9.5" fill="#C45C26" letter-spacing="1.5">SOLUTION</text>
+      <text x="20" y="228" font-size="10.5" fill="#0D3B2E">Surfaced consequences</text>
+      <text x="20" y="244" font-size="10.5" fill="#0D3B2E">plainly, rebuilt hierarchy,</text>
+      <text x="20" y="260" font-size="10.5" fill="#0D3B2E">cleaner call to action.</text>
+    </g>
+  </g>
 </svg>
