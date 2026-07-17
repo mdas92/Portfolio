@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { projects } from "../../data/portfolio";
+import type { ProjectImage } from "../../data/portfolio";
 
 const GRAY = "#d4d0c8";
 const DG = "#808080";
@@ -17,13 +18,55 @@ function RichText({ text }: { text: string }) {
   );
 }
 
+function DocImage({ img }: { img: ProjectImage }) {
+  const isFullWidth = img.display === "full-width";
+  const isInline = img.display === "inline";
+
+  const imgEl = (
+    <img
+      src={img.src}
+      alt={img.alt}
+      style={{
+        display: "block",
+        maxWidth: "100%",
+        width: isFullWidth ? "100%" : isInline ? "min(420px, 100%)" : "100%",
+        height: "auto",
+        margin: "0 auto",
+        borderRadius: 2,
+        border: "1px solid #e0e0e0",
+      }}
+    />
+  );
+
+  if (img.phoneFrame) {
+    return (
+      <div style={{ display: "inline-block", border: "6px solid #222", borderRadius: 18, padding: 4, background: "#111", boxShadow: "0 2px 12px rgba(0,0,0,0.3)" }}>
+        <div style={{ borderRadius: 12, overflow: "hidden", width: 200 }}>
+          <img src={img.src} alt={img.alt} style={{ display: "block", width: "100%", height: "auto" }} />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ margin: "12px 0", textAlign: "center" }}>
+      {imgEl}
+      {img.caption && (
+        <p style={{ margin: "6px 0 0", fontSize: 10, color: "#777", fontStyle: "italic", textAlign: "center", fontFamily: "Tahoma,sans-serif" }}>
+          {img.caption}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function DocSection({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div style={{ marginBottom: 24 }}>
-      <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", marginBottom: 8, borderBottom: "1px solid #ccd", paddingBottom: 4, margin: 0 }}>
+    <div style={{ marginBottom: 28 }}>
+      <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", borderBottom: "1px solid #ccd", paddingBottom: 4, marginBottom: 10, marginTop: 0 }}>
         {title}
       </h2>
-      <div style={{ marginTop: 10 }}>{children}</div>
+      {children}
     </div>
   );
 }
@@ -41,6 +84,7 @@ export function XPWord({ slug }: { slug: string }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", height: "100%", fontFamily: "Tahoma,sans-serif" }}>
+
       {/* Menu bar */}
       <div style={{ background: GRAY, borderBottom: `1px solid ${DG}`, height: 22, display: "flex", alignItems: "center", flexShrink: 0 }}>
         {["File","Edit","View","Insert","Format","Tools","Table","Window","Help"].map(m => (
@@ -99,7 +143,7 @@ export function XPWord({ slug }: { slug: string }) {
           </p>
 
           {/* Tag */}
-          <p style={{ fontSize: 10, color: "#666", fontFamily: "Tahoma,sans-serif", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+          <p style={{ fontSize: 10, color: "#666", fontFamily: "Tahoma,sans-serif", marginBottom: 6, textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 6px" }}>
             {project.tag}
           </p>
 
@@ -109,45 +153,112 @@ export function XPWord({ slug }: { slug: string }) {
           </h1>
 
           {/* Meta line */}
-          <p style={{ fontSize: 11, color: "#555", fontFamily: "Tahoma,sans-serif", borderBottom: "2px solid #0a246a", paddingBottom: 10, marginBottom: 20 }}>
+          <p style={{ fontSize: 11, color: "#555", fontFamily: "Tahoma,sans-serif", borderBottom: "2px solid #0a246a", paddingBottom: 10, marginBottom: 20, marginTop: 0 }}>
             {project.role} &nbsp;·&nbsp; {project.context} &nbsp;·&nbsp; {project.year}
             {project.duration ? ` · ${project.duration}` : ""}
           </p>
 
           {/* Summary callout */}
-          <div style={{ background: "#f0f4ff", border: "1px solid #b0c4de", borderLeft: "4px solid #0a246a", padding: "10px 14px", marginBottom: 28 }}>
+          <div style={{ background: "#f0f4ff", border: "1px solid #b0c4de", borderLeft: "4px solid #0a246a", padding: "10px 14px", marginBottom: 24 }}>
             <p style={{ margin: 0, fontStyle: "italic" }}>{project.summary}</p>
           </div>
 
+          {/* Cover image (if available) */}
+          {(project.thumbnail || project.image) && (
+            <div style={{ marginBottom: 28, textAlign: "center" }}>
+              <img
+                src={project.thumbnail || project.image}
+                alt={project.title}
+                style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", border: "1px solid #e0e0e0", borderRadius: 2 }}
+                onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
+              />
+            </div>
+          )}
+
           {/* Challenge */}
-          <DocSection title="The Challenge">
-            <p style={{ margin: 0 }}><RichText text={project.challenge} /></p>
-          </DocSection>
+          {project.challenge && (
+            <DocSection title="The Challenge">
+              <p style={{ margin: 0 }}><RichText text={project.challenge} /></p>
+            </DocSection>
+          )}
 
           {/* What I Did */}
-          <DocSection title="What I Did">
-            <ul style={{ paddingLeft: 22, margin: 0 }}>
-              {project.whatIDid.map((item, i) => (
-                <li key={i} style={{ marginBottom: 5 }}><RichText text={item} /></li>
-              ))}
-            </ul>
-          </DocSection>
+          {project.whatIDid.length > 0 && (
+            <DocSection title="What I Did">
+              <ul style={{ paddingLeft: 22, margin: 0 }}>
+                {project.whatIDid.map((item, i) => (
+                  <li key={i} style={{ marginBottom: 5 }}><RichText text={item} /></li>
+                ))}
+              </ul>
+            </DocSection>
+          )}
 
-          {/* Extra sections (rich case studies like Repayments) */}
+          {/* Rich sections (case studies) */}
           {project.sections?.map((sec, i) => (
             <DocSection key={i} title={sec.heading}>
-              {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
-              {sec.bullets && (
-                <ul style={{ paddingLeft: 22, margin: 0 }}>
-                  {sec.bullets.map((b, j) => (
-                    <li key={j} style={{ marginBottom: 4 }}><RichText text={b} /></li>
-                  ))}
-                </ul>
-              )}
-              {sec.note && (
-                <p style={{ fontStyle: "italic", color: "#555", fontSize: 11, marginTop: 8 }}>
-                  <RichText text={sec.note} />
-                </p>
+              {sec.imagePlacement === "beside" && sec.image ? (
+                <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                  <div style={{ flex: 1 }}>
+                    {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
+                    {sec.bullets && (
+                      <ul style={{ paddingLeft: 22, margin: 0 }}>
+                        {sec.bullets.map((b, j) => (
+                          <li key={j} style={{ marginBottom: 4 }}><RichText text={b} /></li>
+                        ))}
+                      </ul>
+                    )}
+                    {sec.note && (
+                      <p style={{ fontStyle: "italic", color: "#555", fontSize: 11, marginTop: 8 }}>
+                        <RichText text={sec.note} />
+                      </p>
+                    )}
+                  </div>
+                  <div style={{ flexShrink: 0 }}>
+                    <DocImage img={sec.image} />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
+                  {sec.image && <DocImage img={sec.image} />}
+                  {sec.bullets && (
+                    <ul style={{ paddingLeft: 22, margin: "8px 0 0" }}>
+                      {sec.bullets.map((b, j) => (
+                        <li key={j} style={{ marginBottom: 4 }}><RichText text={b} /></li>
+                      ))}
+                    </ul>
+                  )}
+                  {sec.images && (
+                    <div style={{ display: "flex", gap: 12, margin: "12px 0", justifyContent: "center", flexWrap: "wrap" }}>
+                      {sec.images.map((img, j) => (
+                        <div key={j} style={{ textAlign: "center" }}>
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            style={{
+                              display: "block",
+                              maxWidth: img.scale ? `${img.scale * 200}px` : 200,
+                              height: "auto",
+                              border: "1px solid #e0e0e0",
+                              borderRadius: 2,
+                            }}
+                            onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
+                          />
+                          {img.caption && (
+                            <p style={{ margin: "4px 0 0", fontSize: 10, color: "#777", fontStyle: "italic", fontFamily: "Tahoma,sans-serif" }}>
+                              {img.caption}
+                            </p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {sec.note && (
+                    <p style={{ fontStyle: "italic", color: "#555", fontSize: 11, marginTop: 8 }}>
+                      <RichText text={sec.note} />
+                    </p>
+                  )}
+                </>
               )}
             </DocSection>
           ))}
@@ -166,7 +277,7 @@ export function XPWord({ slug }: { slug: string }) {
             </div>
           )}
 
-          {/* Page footer */}
+          {/* Footer */}
           <div style={{ marginTop: 48, borderTop: "1px solid #eee", paddingTop: 10, textAlign: "center", fontSize: 10, color: "#bbb", fontFamily: "Tahoma,sans-serif" }}>
             — 1 — &nbsp;|&nbsp; Mohana Das Portfolio &nbsp;|&nbsp; Confidential
           </div>
