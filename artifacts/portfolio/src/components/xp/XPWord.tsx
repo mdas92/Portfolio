@@ -33,7 +33,6 @@ function DocImage({ img }: { img: ProjectImage }) {
         height: "auto",
         margin: "0 auto",
         borderRadius: 2,
-        border: "1px solid #e0e0e0",
       }}
     />
   );
@@ -291,7 +290,6 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                               display: "block",
                               maxWidth: img.scale ? `${img.scale * 200}px` : 200,
                               height: "auto",
-                              border: "1px solid #e0e0e0",
                               borderRadius: 2,
                             }}
                             onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
@@ -315,7 +313,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                       <img
                         src={project.thumbnail || project.image}
                         alt={project.title}
-                        style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", border: "1px solid #e0e0e0", borderRadius: 2 }}
+                        style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", borderRadius: 2 }}
                         onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
                       />
                     </div>
