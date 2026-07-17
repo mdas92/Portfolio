@@ -121,12 +121,14 @@ function DocImage({ img }: { img: ProjectImage }) {
   );
 }
 
-function DocSection({ title, children, noRule }: { title: string; children: ReactNode; noRule?: boolean }) {
+function DocSection({ title, children, noRule, hideTitle }: { title: string; children: ReactNode; noRule?: boolean; hideTitle?: boolean }) {
   return (
     <div style={{ marginBottom: 28 }}>
-      <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", borderBottom: noRule ? "none" : "1px solid #ccd", paddingBottom: noRule ? 0 : 4, marginBottom: 10, marginTop: 0 }}>
-        {title}
-      </h2>
+      {!hideTitle && (
+        <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", borderBottom: noRule ? "none" : "1px solid #ccd", paddingBottom: noRule ? 0 : 4, marginBottom: 10, marginTop: 0 }}>
+          {title}
+        </h2>
+      )}
       {children}
     </div>
   );
@@ -244,10 +246,11 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
 
           {/* Rich sections (case studies) */}
           {project.sections?.map((sec, i) => (
-            <DocSection key={i} title={sec.heading} noRule={sec.imagePlacement === "beside"}>
+            <DocSection key={i} title={sec.heading} noRule={sec.imagePlacement === "beside"} hideTitle={sec.imagePlacement === "beside"}>
               {sec.imagePlacement === "beside" && sec.image ? (
                 <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
                   <div style={{ flex: 1 }}>
+                    <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", marginTop: 0, marginBottom: 8 }}>{sec.heading}</h2>
                     {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
                     {sec.bullets && (
                       <ul style={{ paddingLeft: 22, margin: 0 }}>
