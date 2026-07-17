@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     slug: "product-taxonomy",
     tag: "Information Architecture · Product Language",
-    title: "Product Taxonomy: Renaming an AI Product While It Runs",
+    title: "What's in a Name? Defining Product Taxonomy for Aampe",
     summary: "Drove the evidence, framework, and decision session that ratified nine renamed product entities — then shipped the glossary and rollout plan for a product that never stops running.",
     role: "Field-side driver, with product design and data science",
     context: "Aampe — AI-powered lifecycle marketing platform",
