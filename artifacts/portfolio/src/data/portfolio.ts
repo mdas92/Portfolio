@@ -61,6 +61,127 @@ export const projects: Project[] = [
     result: "Nine entities ratified, including bold renames (Label → Tag, Message Group → Formula, Audience → Eligibility Criteria). Glossary and rollout plan shipped, with governance rules to prevent future terminology creep.",
     quote: "Customers understand the mental model — messages, parts, variants, labels — but not the vocabulary.",
     image: "/images/projects/product-taxonomy/glossary-preview.png",
+    sections: [
+      {
+        heading: "The alias problem",
+        content: "Formulas ↔ Message Groups ↔ Messages ↔ Alternate Messages ↔ Message Combinations. One product object, five names in circulation — multiply that across every object in the platform.",
+      },
+      {
+        heading: "Context: every term carries a mindset shift",
+        content: "Marketers arrive at Aampe fluent in campaigns, segments, and journeys. The product replaces that worldview with agentic objects that have no industry equivalent: formulas, components, tags, topics. But those terms were coined ad hoc by whoever shipped a feature first, so one object answered to five names, familiar-sounding words pulled customers back into campaign thinking, and new words lacked consistent definitions. The vocabulary is the interface to the mindset shift, and it needed to be designed.",
+        bullets: [
+          "**Component** — a slot inside one message that agents fill with variants (Greeting, Value Prop, Offering, Incentive, CTA). Misread as: global blocks the AI swaps across unrelated messages.",
+          "**Label** — a semantic tag stating what content expresses, so agents learn which expressions work per user. Misread as: category and value at once, with no clear hierarchy.",
+          "**Topic** — the organizing layer that groups related formulas under one use case or goal. Misread as: interchangeable with tags; one client used Topics and ignored Tags entirely.",
+        ],
+      },
+      {
+        heading: "The debate: does an early-stage startup even need strict taxonomy?",
+        content: "Fair question. Naming ceremonies can feel like enterprise theater when you ship weekly, and premature rigor freezes a product that is still finding its shape. We made the call deliberately — not sooner, not later.",
+        bullets: [
+          "**Too early would have been waste.** While the surface area was small, renaming was cheap and the concepts were still moving.",
+          "**By 2025 the cost had flipped.** Every alias was multiplied across 20+ live client programs, docs, AI prompts, and sales decks — and paid for in onboarding time and support threads.",
+          "**The next-gen product was a one-time window.** NX let us ship new names as part of a new experience instead of breaking live workflows.",
+          "**Later meant freezing confusion.** Some names are architecturally permanent, so every quarter of delay hardcoded more of the wrong ones.",
+        ],
+      },
+      {
+        heading: "Why it matters in an AI product",
+        bullets: [
+          "**Names configure the machine.** Tags and components are inputs to agent learning and generation prompts. A misread term becomes a mis-configured account.",
+          "**Names are the onboarding.** Every client and new hire must learn the object model first. Five aliases means five times the ramp-up.",
+          "**Names are credibility.** When the UI, docs, and sales deck disagree, the product feels more complicated than it is.",
+        ],
+      },
+      {
+        heading: "What I drove or built",
+        bullets: [
+          "**Taxonomy framework** — the \"Aampe Terminology & Taxonomy\" doc: entities, candidate terms with recorded reasoning, naming principles, voting rules, tie-breakers.",
+          "**Customer evidence catalog** — my client session recordings, mined term by term into the audit's primary evidence.",
+          "**Topics feature input** — the four-dimension model that replaced a rigid topic/sub-topic hierarchy before it shipped.",
+          "**Definition fixes in the product** — cleanup ticket replacing Composer's default component definitions with the canonical ones.",
+          "**The decision session** — co-ran the offsite Terminology Session that ratified the glossary.",
+          "**Glossary + rollout plan** — the two shipped assets, linked in deliverables below.",
+        ],
+      },
+      {
+        heading: "Naming principles I set down",
+        bullets: [
+          "**One name, one purpose.** No synonyms.",
+          "**Name for function, not format.** What it does, not what it looks like.",
+          "**No CRM legacy baggage.** No \"campaign\", no \"journey\". Prefer names that imply learning.",
+          "**Respect the hierarchy.** Atomic to modular to system: Alternate → Component → Message → Formula → Topic.",
+          "**Renames require justification.** Comprehension, clarity, or function — not preference.",
+          "Every candidate faces a five-second test (human-readable, describes what the system does, fits the hierarchy, one meaning, no baggage) and a sentence test: it must slot into the sentences teams say daily. If the word jars, it fails.",
+        ],
+      },
+      {
+        heading: "My role",
+        content: "Standardization was cross-functional: product design ran the internal survey, data science owned the ontology thinking. I was the field voice the product team looped into every naming decision, because I taught this object model to customers every week. Mine: the evidence, the Topics-feature argument, the definition fixes, the framework, the session I co-ran, and the implementation plan.",
+      },
+      {
+        heading: "Act I · 2025: The problem keeps introducing itself",
+        bullets: [
+          "A super-app's new PM, first week in the product: \"How do I add alternate / description to the body... how do we identify what type of sub-label works?\"",
+          "A travel client's own retro: campaign labelling is inconsistent, \"causing confusion and suboptimal AI performance\".",
+          "A tax-filing client's onsite copy meeting opens by addressing \"confusion around labels and message components driving agent learning\".",
+          "The same client's data lead, months later: \"is this multiple labels per message/variant and the UI is confusing me?\"",
+          "Even internal reporting threads stall on formula vs. message vs. alternate before the actual question can be answered.",
+        ],
+        note: "\"Customers understand the mental model (messages → parts → variants → labels), but not the vocabulary.\" — Notes mined from a client content session I ran, October 2025",
+      },
+      {
+        heading: "Act II · Oct–Dec 2025: Making it a product problem",
+        bullets: [
+          "Fed \"Terminology for NX\" onto the product design team's conceptual agenda.",
+          "Company-wide glossary survey launched in FigJam; the five-name alias chain was exhibit A.",
+          "My client session recording became the audit's primary evidence: \"Offering\" read as promotion, \"Label\" doing two jobs.",
+          "Argued the Topics feature onto a four-dimension model (feature, category, context, constraint) instead of a hard-coded topic/sub-topic hierarchy. The rigid version didn't ship.",
+          "Practised safe extension on a live account: two new custom components with label sets mirroring the client's own internal terminology, named right the first time because components can't be renamed.",
+        ],
+      },
+      {
+        heading: "Act III · Jan–Apr 2026: Decide, ratify, ship",
+        bullets: [
+          "Authored the Terminology & Taxonomy framework: three candidates per entity with recorded reasoning, naming principles, votes with mandatory rationale, named tie-breakers.",
+          "Co-ran the Terminology Session at the Taiwan offsite: ten people including the CEO and a co-founder, live polls, and a sentence test for every entity.",
+          "Filed the fix for Composer's default component definitions, folded into a health-check product pitch.",
+          "Nine entities ratified, including bold renames: **Label → Tag · Component Type → Tag Group · Message Group → Formula · Message Combination → Message · Audience → Eligibility Criteria.**",
+          "Governance ratified with it: modifying an agreed term now requires rationale and consensus.",
+          "Wrote the implementation plan: engineering scoping first, old-to-new migration mapping, customer change management, and a six-step rollout.",
+        ],
+      },
+      {
+        heading: "The deliverables",
+        content: "Two shipped assets capturing everything the session ratified:",
+        images: [
+          {
+            src: "/images/projects/product-taxonomy/glossary-preview.png",
+            alt: "Product Glossary preview",
+            display: "inline",
+            caption: "Product Glossary — nine ratified entities with definitions, examples, naming principles, and governance rules",
+          },
+          {
+            src: "/images/projects/product-taxonomy/plan-preview.png",
+            alt: "Implementation Plan preview",
+            display: "inline",
+            caption: "Implementation Plan — engineering scoping, migration mapping, change management, six-step rollout sequence",
+          },
+        ],
+      },
+      {
+        heading: "Challenges",
+        bullets: [
+          "**Familiarity vs. the mindset shift.** Familiar terms smuggled in campaign-era assumptions; novel terms raised the learning curve. Every name was a decision about how hard to challenge the customer's mental model.",
+          "**Renaming a product that never stops running.** Old names lived in the UI, KB, decks, AI prompts, and customer habits — and some are architecturally permanent. Hence a plan, not a find-and-replace.",
+          "**Everyone owns words, so no one does.** Strong opinions from engineering to the CEO. Surveys, votes, recorded counterpoints, and tie-breakers kept decisions on evidence instead of volume.",
+        ],
+      },
+      {
+        heading: "Skills",
+        content: "Product language · Information architecture · Evidence-driven naming · Ontology & conceptual modeling · Workshop design · Cross-functional facilitation · UX writing · Change management",
+      },
+    ],
   },
   {
     slug: "content-maps",
