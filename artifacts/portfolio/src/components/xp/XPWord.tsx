@@ -121,10 +121,10 @@ function DocImage({ img }: { img: ProjectImage }) {
   );
 }
 
-function DocSection({ title, children }: { title: string; children: ReactNode }) {
+function DocSection({ title, children, noRule }: { title: string; children: ReactNode; noRule?: boolean }) {
   return (
     <div style={{ marginBottom: 28 }}>
-      <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", borderBottom: "1px solid #ccd", paddingBottom: 4, marginBottom: 10, marginTop: 0 }}>
+      <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", borderBottom: noRule ? "none" : "1px solid #ccd", paddingBottom: noRule ? 0 : 4, marginBottom: 10, marginTop: 0 }}>
         {title}
       </h2>
       {children}
@@ -256,9 +256,9 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
 
           {/* Rich sections (case studies) */}
           {project.sections?.map((sec, i) => (
-            <DocSection key={i} title={sec.heading}>
+            <DocSection key={i} title={sec.heading} noRule={sec.imagePlacement === "beside"}>
               {sec.imagePlacement === "beside" && sec.image ? (
-                <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
                   <div style={{ flex: 1 }}>
                     {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
                     {sec.bullets && (
