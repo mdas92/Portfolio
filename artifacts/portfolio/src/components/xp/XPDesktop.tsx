@@ -153,10 +153,13 @@ const WIN_DEFAULTS: Record<WinType, Omit<WinState, "id" | "z" | "minimized" | "m
   welcome:  { type: "welcome",  title: "Welcome!",                            icon: "🪟", x: 380, y: 140, width: 440, height: 260 },
 };
 
-const WELCOME_WIN: WinState = { ...WIN_DEFAULTS.welcome, id: "welcome", z: ++Z, minimized: false, maximized: false };
-
 export function XPDesktop() {
-  const [windows, setWindows] = useState<WinState[]>([WELCOME_WIN]);
+  const [windows, setWindows] = useState<WinState[]>(() => {
+    const def = WIN_DEFAULTS.welcome;
+    const cx = Math.max(0, Math.round((window.innerWidth  - def.width)  / 2));
+    const cy = Math.max(0, Math.round((window.innerHeight - def.height) / 2));
+    return [{ ...def, id: "welcome", z: ++Z, minimized: false, maximized: false, x: cx, y: cy }];
+  });
   const [selIcon, setSelIcon] = useState<string | null>(null);
   const [startOpen, setStartOpen] = useState(false);
   const [clock, setClock] = useState(() => new Date());
@@ -294,6 +297,12 @@ export function XPDesktop() {
                   discovered the magic of technology and fell in love with it.
                   Click around, explore, and most importantly —
                   <strong> have fun!</strong>
+                  {isMobile && (
+                    <>
+                      <br /><br />
+                      <em>This site is best experienced on a Desktop screen, so if you're on mobile I highly recommend opening this on a larger screen :)</em>
+                    </>
+                  )}
                 </p>
               </div>
               <div style={{ borderTop: "1px solid #aca899", padding: "8px 16px", display: "flex", justifyContent: "center" }}>
