@@ -54,8 +54,6 @@ export const projects: Project[] = [
     whatIDid: [
       "Authored the Terminology & Taxonomy framework: three candidate terms per entity with recorded reasoning, naming principles, voting rules, and named tie-breakers.",
       "Mined my own client session recordings into the audit's primary evidence — surfacing terms customers misread, like Offering-as-promotion and Label doing two jobs.",
-      "Argued the Topics feature onto a four-dimension model (feature, category, context, constraint) instead of a rigid topic/sub-topic hierarchy before it shipped.",
-      "Filed the cleanup ticket replacing Composer's default component definitions with the canonical ones.",
       "Co-ran the Terminology Session at the Taiwan offsite — ten people including the CEO and a co-founder, live polls, and a sentence test for every entity.",
       "Wrote the implementation plan: engineering scoping, old-to-new migration mapping, customer change management, and a six-step rollout.",
     ],
