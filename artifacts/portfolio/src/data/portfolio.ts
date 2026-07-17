@@ -553,6 +553,7 @@ export const projects: Project[] = [
       {
         heading: "Escalating to Urgency",
         content: "Once a due date passed unpaid, a **dedicated overdue bottom sheet** surfaced automatically alongside the inline notification — making the stakes impossible to miss before the user could proceed in the app.",
+        imagePlacement: "beside",
         image: {
           src: "/images/projects/repayments/overdue.avif",
           alt: "Full phone frame showing new LazyPay homescreen after due date: inline overdue notification (DUE SINCE 3 AUG, ₹2,464.7 overdue) plus the bottom sheet (late fee, credit score impact, transactions blocked, Pay now button)",
