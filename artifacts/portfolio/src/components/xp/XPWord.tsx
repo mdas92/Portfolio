@@ -39,36 +39,72 @@ function DocImage({ img }: { img: ProjectImage }) {
   );
 
   if (img.phoneFrame) {
+    // iPhone 17 proportions: 71.5 × 156 mm body → ~2.18:1, screen 19.5:9
+    const PW = 230;           // phone body width
+    const SW = PW - 10;       // screen width (5 px bezel each side)
+    const SH = Math.round(SW * (19.5 / 9)); // screen height at 19.5:9
     return (
-      <div style={{ display: "inline-block", position: "relative" }}>
-        {/* Phone shell */}
-        <div style={{
-          position: "relative",
-          background: "linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 40%, #111 100%)",
-          borderRadius: 36,
-          padding: "14px 8px",
-          boxShadow: "0 0 0 1px #3a3a3a, 0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08)",
-          width: 220,
-        }}>
-          {/* Top bar: speaker + front camera */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8, paddingTop: 2 }}>
-            <div style={{ width: 36, height: 4, background: "#3a3a3a", borderRadius: 2 }} />
-            <div style={{ width: 8, height: 8, background: "#2a2a2a", borderRadius: "50%", border: "1px solid #444" }} />
+      <div style={{ display: "flex", justifyContent: "center", margin: "8px 0" }}>
+        <div style={{ position: "relative" }}>
+          {/* Phone body */}
+          <div style={{
+            position: "relative",
+            width: PW,
+            background: "linear-gradient(160deg, #3c3c3e 0%, #1c1c1e 55%, #2c2c2e 100%)",
+            borderRadius: 46,
+            padding: "10px 5px",
+            boxShadow:
+              "0 0 0 1px rgba(255,255,255,0.13)," +
+              "inset 0 0 0 1px rgba(0,0,0,0.6)," +
+              "0 24px 64px rgba(0,0,0,0.65)",
+          }}>
+            {/* Screen */}
+            <div style={{
+              width: SW,
+              height: SH,
+              background: "#000",
+              borderRadius: 38,
+              overflow: "hidden",
+              position: "relative",
+            }}>
+              {/* Dynamic Island */}
+              <div style={{
+                position: "absolute",
+                top: 13,
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: 88,
+                height: 30,
+                background: "#000",
+                borderRadius: 20,
+                zIndex: 2,
+                boxShadow: "0 0 0 3px #111",
+              }} />
+              {/* Content pushed to bottom, black fills the top */}
+              <div style={{
+                position: "absolute",
+                inset: 0,
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+              }}>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  style={{ display: "block", width: "100%", height: "auto" }}
+                />
+              </div>
+            </div>
           </div>
-          {/* Screen */}
-          <div style={{ borderRadius: 18, overflow: "hidden", background: "#000" }}>
-            <img src={img.src} alt={img.alt} style={{ display: "block", width: "100%", height: "auto" }} />
-          </div>
-          {/* Home indicator */}
-          <div style={{ display: "flex", justifyContent: "center", marginTop: 8, paddingBottom: 2 }}>
-            <div style={{ width: 48, height: 4, background: "#3a3a3a", borderRadius: 2 }} />
-          </div>
+          {/* Power button — right side */}
+          <div style={{ position: "absolute", right: -3, top: 108, width: 3, height: 62, background: "#3a3a3c", borderRadius: "0 2px 2px 0" }} />
+          {/* Silent switch — left */}
+          <div style={{ position: "absolute", left: -3, top: 84,  width: 3, height: 28, background: "#3a3a3c", borderRadius: "2px 0 0 2px" }} />
+          {/* Volume up — left */}
+          <div style={{ position: "absolute", left: -3, top: 124, width: 3, height: 48, background: "#3a3a3c", borderRadius: "2px 0 0 2px" }} />
+          {/* Volume down — left */}
+          <div style={{ position: "absolute", left: -3, top: 180, width: 3, height: 48, background: "#3a3a3c", borderRadius: "2px 0 0 2px" }} />
         </div>
-        {/* Side buttons */}
-        <div style={{ position: "absolute", right: -3, top: 72, width: 3, height: 32, background: "#2a2a2a", borderRadius: "0 2px 2px 0", boxShadow: "1px 0 0 #444" }} />
-        <div style={{ position: "absolute", left: -3, top: 60, width: 3, height: 20, background: "#2a2a2a", borderRadius: "2px 0 0 2px", boxShadow: "-1px 0 0 #444" }} />
-        <div style={{ position: "absolute", left: -3, top: 90, width: 3, height: 20, background: "#2a2a2a", borderRadius: "2px 0 0 2px", boxShadow: "-1px 0 0 #444" }} />
-        <div style={{ position: "absolute", left: -3, top: 118, width: 3, height: 20, background: "#2a2a2a", borderRadius: "2px 0 0 2px", boxShadow: "-1px 0 0 #444" }} />
       </div>
     );
   }
