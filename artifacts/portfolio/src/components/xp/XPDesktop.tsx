@@ -146,7 +146,7 @@ function StartMenu({
 }
 
 const WIN_DEFAULTS: Record<WinType, Omit<WinState, "id" | "z" | "minimized" | "maximized" | "slug">> = {
-  explorer: { type: "explorer", title: "Mohana Das\\Work — Windows Explorer", icon: "📁", x: 70,  y: 28, width: 940, height: 620 },
+  explorer: { type: "explorer", title: "Mohana Das\\Work — Windows Explorer", icon: "📁", x: 60,  y: 24, width: 780, height: 520 },
   about:    { type: "about",    title: "About Mohana.txt — Notepad",          icon: "📝", x: 180, y: 50, width: 700, height: 520 },
   contact:  { type: "contact",  title: "Contact.txt — Notepad",               icon: "📧", x: 260, y: 70, width: 500, height: 360 },
   word:     { type: "word",     title: "Project.doc — Microsoft Word",        icon: "📄", x: 140, y: 36, width: 880, height: 660 },
