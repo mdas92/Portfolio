@@ -1,382 +1,236 @@
+import { useState } from "react";
+
+const XP = {
+  titleBarGrad: "linear-gradient(180deg, #4e9de1 0%, #4e9de1 3%, #2c6fce 8%, #1a57bf 40%, #1248b0 60%, #0e3ea8 90%, #0a3494 100%)",
+  titleBarInactive: "linear-gradient(180deg, #9db5c8 0%, #7a96b0 8%, #6888a0 40%, #5f7c94 60%, #587088 90%, #506880 100%)",
+  taskbar: "linear-gradient(180deg, #245edb 0%, #1f5ad6 4%, #1a52ca 50%, #1248b8 95%, #0e3ea8 100%)",
+  startBtn: "linear-gradient(180deg, #5ec03e 0%, #4ab030 8%, #3aa020 50%, #2d9018 90%, #268012 100%)",
+  windowBorder: "#0a3494",
+  windowBody: "#ece9d8",
+  gray: "#d4d0c8",
+  darkGray: "#808080",
+  blissTop: "#3a8fd4",
+  blissMid: "#6ab8e8",
+};
+
+const projects = [
+  { name: "Product Taxonomy", year: "2025", context: "Aampe" },
+  { name: "Content Maps", year: "2025", context: "Aampe" },
+  { name: "Improving Repayment Rates", year: "2023", context: "LazyPay" },
+  { name: "Fintech Content Overhaul", year: "2025", context: "US Fintech" },
+  { name: "Sports League Training", year: "2025", context: "US Sports" },
+  { name: "Tax App Onboarding", year: "2025", context: "EU Fintech" },
+];
+
+const aboutText = `Mohana Das - About Me
+=====================
+
+Hi, I'm Mohana 👋
+
+writer. content strategist. product thinker.
+
+With 12 years of experience across engineering,
+design and writing, I help craft a holistic
+customer experience through content strategy,
+product positioning, and value frameworks.
+
+Based in Tokyo, JP (fully remote)
+
+---------------------------------------------
+
+WHAT I DO
+---------
+- Content Strategy
+- UX Writing & Product Copy
+- Product Positioning
+- Value Frameworks
+- Client Onboarding & Training
+
+EXPERIENCE
+----------
+Content Strategist @ Aampe (2024–present)
+Content Designer @ LazyPay/PayU (2022–2024)
+UI/UX Writer @ OYO (2021–2022)
+Senior Copywriter @ Mirum India (2019–2021)
+
+---------------------------------------------
+
+"Customers understand the mental model —
+messages, parts, variants, labels — but
+not the vocabulary."
+
+---------------------------------------------
+
+[Download Resume]        [Contact Me]
+`;
+
 export function WinXPPortfolio() {
-  const projects = [
-    {
-      title: "Product Taxonomy: Renaming an AI Product While It Runs",
-      tag: "Information Architecture · Product Language",
-      context: "Aampe — AI-powered lifecycle marketing platform",
-      year: "2025",
-      summary: "Drove the evidence, framework, and decision session that ratified nine renamed product entities — then shipped the glossary and rollout plan for a product that never stops running.",
-      icon: "📁",
-    },
-    {
-      title: "Content Maps: Building the Shared Language for Agentic Content Strategy",
-      tag: "Content Strategy · Methodology",
-      context: "Aampe — AI-powered lifecycle marketing platform",
-      year: "2025",
-      summary: "Turned a one-off planning habit into Aampe's standard strategic artifact — credited in a $90K closed-won deal and proposed as a 60-day certification for every new hire.",
-      icon: "📁",
-    },
-    {
-      title: "Improving Repayment Rates",
-      tag: "Content Strategy · Fintech · UX Writing",
-      context: "LazyPay (PayU Finance)",
-      year: "2023",
-      summary: "Redesigned in-app repayment notifications and navigation — content-first approach that made dues impossible to miss and measurably lifted click-through rates.",
-      icon: "📁",
-    },
-    {
-      title: "End-to-End Content Overhaul for a Major Fintech App",
-      tag: "Content Strategy · Fintech",
-      context: "Leading personal finance app (US)",
-      year: "2025",
-      summary: "Push notification overhaul — value props, 15 new message groups, legal review.",
-      icon: "📁",
-    },
-    {
-      title: "In-Person Training for a Major Sports League",
-      tag: "Training · Content Co-Creation",
-      context: "Premier professional sports league (US)",
-      year: "2025",
-      summary: "NYC-based content workshop — co-wrote 800+ message alternates in under 15 minutes.",
-      icon: "📁",
-    },
-  ];
+  const [activeWindow, setActiveWindow] = useState<"notepad" | "explorer" | null>("notepad");
 
   return (
     <div
-      className="min-h-screen w-full flex flex-col overflow-hidden select-none"
+      className="relative w-full overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, #1a6b3c 0%, #3a9a5c 30%, #5ab87a 60%, #7dd4a0 100%)",
-        fontFamily: "'Tahoma', 'MS Sans Serif', system-ui, sans-serif",
+        height: "100vh",
+        fontFamily: "'Tahoma', 'MS Sans Serif', sans-serif",
         fontSize: "11px",
+        userSelect: "none",
+        cursor: "default",
       }}
     >
-      {/* Desktop icons */}
-      <div className="flex-1 flex flex-col p-4 gap-6 pt-6 pr-6 items-end" style={{ pointerEvents: "none" }}>
-        <DesktopIcon label="My Computer" icon="🖥️" />
-        <DesktopIcon label="My Documents" icon="🗂️" />
-        <DesktopIcon label="Recycle Bin" icon="🗑️" />
-        <DesktopIcon label="Internet Explorer" icon="🌐" />
-      </div>
+      {/* Bliss wallpaper */}
+      <Bliss />
 
-      {/* Main window — centered on desktop */}
-      <div
-        className="absolute"
-        style={{ top: 20, left: 40, right: 40, bottom: 52 }}
-      >
-        {/* Window chrome */}
-        <div
-          className="flex flex-col h-full"
-          style={{
-            border: "2px solid #0a246a",
-            borderRadius: "8px 8px 0 0",
-            boxShadow: "2px 2px 8px rgba(0,0,0,0.5), inset 1px 1px 0 rgba(255,255,255,0.3)",
-          }}
-        >
-          {/* Title bar */}
-          <div
-            className="flex items-center justify-between px-2 py-1 rounded-t-md"
-            style={{
-              background: "linear-gradient(180deg, #2e6bce 0%, #1245a8 50%, #0a3a9a 100%)",
-              minHeight: 28,
-            }}
-          >
-            <div className="flex items-center gap-2">
-              <span style={{ fontSize: 14 }}>🗂️</span>
-              <span className="text-white font-bold" style={{ fontSize: 12, textShadow: "1px 1px 2px rgba(0,0,0,0.6)" }}>
-                Mohana Das — Portfolio — [Work]
-              </span>
-            </div>
-            <div className="flex gap-1">
-              <WinBtn label="—" color="#f8c400" hoverColor="#ffd700" />
-              <WinBtn label="❐" color="#1a8a1a" hoverColor="#22aa22" />
-              <WinBtn label="✕" color="#c0392b" hoverColor="#e74c3c" />
-            </div>
-          </div>
-
-          {/* Menu bar */}
-          <div
-            className="flex items-center gap-1 px-2 py-0.5"
-            style={{ background: "#d4d0c8", borderBottom: "1px solid #a0a0a0" }}
-          >
-            {["File", "Edit", "View", "Favorites", "Tools", "Help"].map((m) => (
-              <button
-                key={m}
-                className="px-2 py-0.5 hover:bg-blue-600 hover:text-white rounded-sm"
-                style={{ fontSize: 11, background: "none", border: "none", cursor: "default" }}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
-
-          {/* Toolbar */}
-          <div
-            className="flex items-center gap-2 px-2 py-1"
-            style={{ background: "#d4d0c8", borderBottom: "1px solid #a0a0a0" }}
-          >
-            <ToolbarBtn label="← Back" />
-            <ToolbarBtn label="→ Forward" />
-            <ToolbarBtn label="↑ Up" />
-            <div style={{ width: 1, height: 20, background: "#a0a0a0", margin: "0 4px" }} />
-            <ToolbarBtn label="🔍 Search" />
-            <ToolbarBtn label="📁 Folders" />
-            <div className="flex-1 ml-2">
-              <div
-                className="flex items-center px-2 py-0.5 rounded-sm"
-                style={{
-                  background: "white",
-                  border: "1px solid #7f9db9",
-                  fontSize: 11,
-                  color: "#333",
-                }}
-              >
-                <span style={{ color: "#888", marginRight: 4 }}>Address:</span>
-                <span>C:\Users\Visitor\Desktop\Mohana Das Portfolio\Work</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Main content area */}
-          <div className="flex flex-1 overflow-hidden" style={{ background: "white" }}>
-            {/* Sidebar */}
-            <div
-              className="flex flex-col gap-0 overflow-y-auto"
-              style={{
-                width: 180,
-                background: "linear-gradient(180deg, #7db3e3 0%, #5a9fd4 100%)",
-                borderRight: "1px solid #7f9db9",
-                flexShrink: 0,
-              }}
-            >
-              <SidebarSection title="File and Folder Tasks">
-                <SidebarLink icon="📄" label="Make a new folder" />
-                <SidebarLink icon="🌐" label="Publish this folder" />
-                <SidebarLink icon="📧" label="Share this folder" />
-              </SidebarSection>
-
-              <SidebarSection title="Other Places">
-                <SidebarLink icon="🖥️" label="My Computer" />
-                <SidebarLink icon="🗂️" label="My Documents" />
-                <SidebarLink icon="🌐" label="Network Places" />
-                <SidebarLink icon="🗑️" label="Recycle Bin" />
-              </SidebarSection>
-
-              <SidebarSection title="Details">
-                <div className="px-3 py-2 text-xs" style={{ color: "#003580", lineHeight: "1.6" }}>
-                  <div className="font-bold">Work</div>
-                  <div>File Folder</div>
-                  <div style={{ marginTop: 6, color: "#004080" }}>
-                    <span className="font-bold">Name: </span>Mohana Das
-                  </div>
-                  <div>
-                    <span className="font-bold">Role: </span>Content Strategist
-                  </div>
-                  <div style={{ marginTop: 6 }}>5 items</div>
-                </div>
-              </SidebarSection>
-            </div>
-
-            {/* File listing area */}
-            <div className="flex-1 overflow-y-auto p-4" style={{ background: "white" }}>
-              {/* Breadcrumb info bar */}
-              <div
-                className="mb-3 px-3 py-2 rounded"
-                style={{
-                  background: "#fffbe6",
-                  border: "1px solid #e6d87a",
-                  fontSize: 11,
-                  color: "#555",
-                }}
-              >
-                📂 <strong>Mohana Das\Work</strong> — 5 items
-              </div>
-
-              {/* View: Details list */}
-              <table className="w-full" style={{ borderCollapse: "collapse", fontSize: 11 }}>
-                <thead>
-                  <tr style={{ background: "#d4d0c8" }}>
-                    {["Name", "Type", "Context", "Year"].map((h) => (
-                      <th
-                        key={h}
-                        className="text-left px-3 py-1"
-                        style={{
-                          border: "1px solid #a0a0a0",
-                          fontWeight: "bold",
-                          cursor: "default",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {h} {h === "Name" ? "▲" : ""}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {projects.map((p, i) => (
-                    <ProjectRow key={i} project={p} index={i} />
-                  ))}
-                </tbody>
-              </table>
-
-              {/* Selected project detail pane */}
-              <div
-                className="mt-4 p-3 rounded"
-                style={{
-                  background: "#f0f4ff",
-                  border: "1px solid #bcd",
-                  fontSize: 11,
-                  lineHeight: 1.6,
-                }}
-              >
-                <div className="flex items-start gap-3">
-                  <span style={{ fontSize: 32 }}>📁</span>
-                  <div>
-                    <div className="font-bold" style={{ fontSize: 13, color: "#003580" }}>
-                      Product Taxonomy: Renaming an AI Product While It Runs
-                    </div>
-                    <div style={{ color: "#777", marginBottom: 6 }}>
-                      Information Architecture · Product Language · 2025
-                    </div>
-                    <div style={{ color: "#333", maxWidth: 600 }}>
-                      Drove the evidence, framework, and decision session that ratified nine renamed product entities — then shipped the glossary and rollout plan for a product that never stops running.
-                    </div>
-                    <div className="flex gap-2 mt-3">
-                      <XPButton label="Open" primary />
-                      <XPButton label="View Details" />
-                      <XPButton label="Add to Favorites" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Status bar info */}
-              <div
-                className="mt-4 px-2 py-1"
-                style={{ color: "#555", fontSize: 10, borderTop: "1px solid #ddd" }}
-              >
-                5 objects | 1 selected | Disk space free: ∞
-              </div>
-            </div>
-          </div>
-
-          {/* Status bar */}
-          <div
-            className="flex items-center gap-2 px-2 py-1"
-            style={{
-              background: "#d4d0c8",
-              borderTop: "1px solid #a0a0a0",
-              fontSize: 10,
-              color: "#333",
-            }}
-          >
-            <span>5 objects</span>
-            <span style={{ marginLeft: "auto" }}>🔒 Trusted site</span>
+      {/* Desktop icons — left side */}
+      <div className="absolute top-4 left-4 flex flex-col gap-5">
+        <DesktopIcon icon="💻" label="My Computer" />
+        <DesktopIcon icon="📁" label="My Documents" />
+        <DesktopIcon icon="🌐" label="Internet Explorer" />
+        <DesktopIcon icon="🗑️" label="Recycle Bin" />
+        <div style={{ marginTop: 16 }}>
+          <DesktopIcon icon="📄" label="about.txt" active />
+          <div style={{ marginTop: 20 }}>
+            <DesktopIcon icon="📂" label="Work" active />
           </div>
         </div>
       </div>
+
+      {/* Notepad window — About */}
+      <NotepadWindow
+        title="about.txt - Notepad"
+        content={aboutText}
+        style={{ top: 30, left: 180, width: 420, height: 500 }}
+        focused={activeWindow === "notepad"}
+        onFocus={() => setActiveWindow("notepad")}
+        onClose={() => setActiveWindow("explorer")}
+      />
+
+      {/* Explorer window — Work */}
+      <ExplorerWindow
+        style={{ top: 80, left: 440, width: 700, height: 480 }}
+        focused={activeWindow === "explorer"}
+        onFocus={() => setActiveWindow("explorer")}
+        onClose={() => setActiveWindow("notepad")}
+      />
 
       {/* Taskbar */}
-      <div
-        className="flex items-center px-1 gap-1"
-        style={{
-          height: 52,
-          background: "linear-gradient(180deg, #245edb 0%, #1a4fcc 5%, #1a4fcc 90%, #0d3da8 100%)",
-          boxShadow: "0 -1px 0 #0a2a8a, inset 0 1px 0 rgba(255,255,255,0.2)",
-          position: "relative",
-          zIndex: 50,
-          flexShrink: 0,
-        }}
-      >
-        {/* Start button */}
-        <button
-          className="flex items-center gap-1 px-3 font-bold rounded-sm"
-          style={{
-            height: 40,
-            background: "linear-gradient(180deg, #5aac34 0%, #3d8f18 50%, #2d7a0a 100%)",
-            border: "1px solid #1a5a00",
-            color: "white",
-            fontSize: 14,
-            boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.3), 1px 1px 3px rgba(0,0,0,0.4)",
-            cursor: "default",
-            borderRadius: 4,
-          }}
-        >
-          <span style={{ fontSize: 20 }}>⊞</span>
-          <span style={{ fontStyle: "italic", fontFamily: "Tahoma, sans-serif", letterSpacing: 0.5 }}>start</span>
-        </button>
-
-        {/* Quick launch */}
-        <div
-          className="flex items-center gap-1 px-2"
-          style={{ borderLeft: "1px solid rgba(255,255,255,0.2)", borderRight: "1px solid rgba(255,255,255,0.2)", height: 36 }}
-        >
-          <TaskbarIcon label="🌐" />
-          <TaskbarIcon label="📧" />
-          <TaskbarIcon label="🗂️" />
-        </div>
-
-        {/* Active windows */}
-        <div className="flex items-center gap-1 flex-1 px-2">
-          <button
-            className="flex items-center gap-1 px-2"
-            style={{
-              height: 36,
-              background: "linear-gradient(180deg, #1245a8 0%, #1a5fcc 100%)",
-              border: "1px solid rgba(255,255,255,0.3)",
-              color: "white",
-              fontSize: 11,
-              borderRadius: 3,
-              cursor: "default",
-              fontFamily: "Tahoma, sans-serif",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.15)",
-              maxWidth: 240,
-            }}
-          >
-            <span style={{ fontSize: 13 }}>🗂️</span>
-            <span className="truncate">Mohana Das — Portfolio</span>
-          </button>
-        </div>
-
-        {/* System tray */}
-        <div
-          className="flex items-center gap-2 px-3"
-          style={{
-            background: "linear-gradient(180deg, #0e3da8 0%, #1245c8 50%, #0e3da8 100%)",
-            border: "1px solid rgba(255,255,255,0.1)",
-            borderRadius: 3,
-            height: 36,
-            fontSize: 14,
-          }}
-        >
-          <span title="Volume">🔊</span>
-          <span title="Network">📶</span>
-          <span
-            className="text-white"
-            style={{ fontSize: 10, fontFamily: "Tahoma, sans-serif", marginLeft: 4 }}
-          >
-            {new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-          </span>
-        </div>
-      </div>
+      <Taskbar activeWindow={activeWindow} onSelectWindow={setActiveWindow} />
     </div>
   );
 }
 
-function DesktopIcon({ label, icon }: { label: string; icon: string }) {
+/* ────────────────────────────────────────────────────────── */
+/* Bliss wallpaper                                           */
+/* ────────────────────────────────────────────────────────── */
+function Bliss() {
   return (
-    <div
-      className="flex flex-col items-center gap-1 cursor-default p-1 rounded"
-      style={{ width: 64, textAlign: "center" }}
-    >
-      <span style={{ fontSize: 36, filter: "drop-shadow(1px 1px 2px rgba(0,0,0,0.5))" }}>{icon}</span>
-      <span
-        className="text-white text-center leading-tight"
+    <div className="absolute inset-0">
+      {/* Sky */}
+      <div
+        className="absolute inset-0"
         style={{
+          background: "linear-gradient(180deg, #2172c2 0%, #4a9fd8 35%, #74bde8 60%, #a8d8f0 80%, #c8eaf8 100%)",
+        }}
+      />
+      {/* Clouds */}
+      <div className="absolute" style={{ top: "8%", left: "15%", opacity: 0.9 }}>
+        <Cloud w={160} h={55} />
+      </div>
+      <div className="absolute" style={{ top: "5%", left: "60%", opacity: 0.85 }}>
+        <Cloud w={220} h={70} />
+      </div>
+      <div className="absolute" style={{ top: "18%", left: "40%", opacity: 0.75 }}>
+        <Cloud w={130} h={42} />
+      </div>
+      <div className="absolute" style={{ top: "12%", right: "8%", opacity: 0.8 }}>
+        <Cloud w={100} h={36} />
+      </div>
+
+      {/* Green hills */}
+      <svg
+        viewBox="0 0 1280 400"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        className="absolute bottom-0 w-full"
+        style={{ height: "55%" }}
+      >
+        <defs>
+          <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#6dbf4e" />
+            <stop offset="60%" stopColor="#4aa830" />
+            <stop offset="100%" stopColor="#3a9020" />
+          </linearGradient>
+          <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#82cc60" />
+            <stop offset="100%" stopColor="#52a838" />
+          </linearGradient>
+          <linearGradient id="hillBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#4aa830" />
+            <stop offset="100%" stopColor="#2a7818" />
+          </linearGradient>
+        </defs>
+        {/* Background fill */}
+        <rect x="0" y="0" width="1280" height="400" fill="url(#hillBg)" />
+        {/* Main rolling hill */}
+        <path
+          d="M0,240 C120,180 280,100 480,140 C640,170 720,90 900,120 C1060,145 1180,200 1280,180 L1280,400 L0,400 Z"
+          fill="url(#hill1)"
+        />
+        {/* Secondary hill highlight */}
+        <path
+          d="M0,280 C80,260 200,230 380,250 C520,265 620,220 780,240 C920,258 1060,270 1280,250 L1280,400 L0,400 Z"
+          fill="url(#hill2)"
+          opacity="0.6"
+        />
+        {/* Ground shadow at bottom */}
+        <path
+          d="M0,340 C200,320 500,310 800,325 C1000,335 1150,340 1280,330 L1280,400 L0,400 Z"
+          fill="#2a7818"
+          opacity="0.5"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function Cloud({ w, h }: { w: number; h: number }) {
+  return (
+    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`}>
+      <ellipse cx={w * 0.5} cy={h * 0.65} rx={w * 0.48} ry={h * 0.35} fill="white" opacity="0.95" />
+      <ellipse cx={w * 0.3} cy={h * 0.55} rx={w * 0.28} ry={h * 0.4} fill="white" opacity="0.95" />
+      <ellipse cx={w * 0.65} cy={h * 0.5} rx={w * 0.24} ry={h * 0.38} fill="white" opacity="0.95" />
+      <ellipse cx={w * 0.5} cy={h * 0.45} rx={w * 0.22} ry={h * 0.32} fill="white" opacity="0.9" />
+    </svg>
+  );
+}
+
+/* ────────────────────────────────────────────────────────── */
+/* Desktop icon                                              */
+/* ────────────────────────────────────────────────────────── */
+function DesktopIcon({ icon, label, active }: { icon: string; label: string; active?: boolean }) {
+  return (
+    <div className="flex flex-col items-center gap-1" style={{ width: 72, textAlign: "center" }}>
+      <div
+        style={{
+          fontSize: 36,
+          lineHeight: 1,
+          filter: "drop-shadow(1px 2px 3px rgba(0,0,0,0.45))",
+        }}
+      >
+        {icon}
+      </div>
+      <span
+        style={{
+          color: "white",
           fontSize: 11,
           fontFamily: "Tahoma, sans-serif",
-          textShadow: "1px 1px 2px rgba(0,0,0,0.8)",
-          wordBreak: "break-word",
+          textShadow: "1px 1px 2px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.6)",
+          lineHeight: 1.3,
+          padding: active ? "1px 3px" : 0,
+          background: active ? "rgba(50,100,200,0.5)" : "transparent",
+          border: active ? "1px dotted rgba(255,255,255,0.7)" : "1px solid transparent",
+          borderRadius: 1,
+          display: "inline-block",
         }}
       >
         {label}
@@ -385,159 +239,506 @@ function DesktopIcon({ label, icon }: { label: string; icon: string }) {
   );
 }
 
-function WinBtn({ label, color, hoverColor }: { label: string; color: string; hoverColor: string }) {
+/* ────────────────────────────────────────────────────────── */
+/* Window chrome wrapper                                     */
+/* ────────────────────────────────────────────────────────── */
+function Window({
+  title,
+  focused,
+  onFocus,
+  onClose,
+  style,
+  children,
+  iconEmoji = "🪟",
+}: {
+  title: string;
+  focused: boolean;
+  onFocus: () => void;
+  onClose: () => void;
+  style: React.CSSProperties;
+  children: React.ReactNode;
+  iconEmoji?: string;
+}) {
+  return (
+    <div
+      onClick={onFocus}
+      className="absolute flex flex-col"
+      style={{
+        ...style,
+        border: `3px solid ${focused ? XP.windowBorder : "#7a8ea0"}`,
+        borderRadius: "8px 8px 4px 4px",
+        boxShadow: focused
+          ? "4px 4px 12px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.15)"
+          : "2px 2px 6px rgba(0,0,0,0.3)",
+        zIndex: focused ? 20 : 10,
+        overflow: "hidden",
+        fontFamily: "Tahoma, sans-serif",
+        fontSize: 11,
+      }}
+    >
+      {/* Title bar */}
+      <div
+        className="flex items-center justify-between px-2"
+        style={{
+          background: focused ? XP.titleBarGrad : XP.titleBarInactive,
+          minHeight: 28,
+          flexShrink: 0,
+        }}
+      >
+        <div className="flex items-center gap-1.5">
+          <span style={{ fontSize: 14 }}>{iconEmoji}</span>
+          <span
+            className="font-bold text-white"
+            style={{ fontSize: 12, textShadow: "1px 1px 2px rgba(0,0,0,0.7)" }}
+          >
+            {title}
+          </span>
+        </div>
+        <div className="flex items-center gap-0.5">
+          <TitleBtn action="min" focused={focused} />
+          <TitleBtn action="max" focused={focused} />
+          <TitleBtn action="close" focused={focused} onClick={onClose} />
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function TitleBtn({ action, focused, onClick }: { action: "min" | "max" | "close"; focused: boolean; onClick?: () => void }) {
+  const configs = {
+    min: { bg: focused ? "linear-gradient(180deg,#4a9de8 0%,#2870cc 100%)" : "linear-gradient(180deg,#9ab 0%,#789 100%)", icon: "─", size: 12 },
+    max: { bg: focused ? "linear-gradient(180deg,#4a9de8 0%,#2870cc 100%)" : "linear-gradient(180deg,#9ab 0%,#789 100%)", icon: "□", size: 12 },
+    close: { bg: focused ? "linear-gradient(180deg,#d84040 0%,#b02020 100%)" : "linear-gradient(180deg,#9ab 0%,#789 100%)", icon: "✕", size: 12 },
+  };
+  const c = configs[action];
   return (
     <button
-      className="flex items-center justify-center font-bold text-white rounded-sm"
+      onClick={(e) => { e.stopPropagation(); onClick?.(); }}
+      className="flex items-center justify-center font-bold text-white"
       style={{
         width: 21,
         height: 21,
-        background: color,
-        border: "1px solid rgba(0,0,0,0.3)",
-        fontSize: 11,
-        boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.3)",
+        background: c.bg,
+        border: "1px solid rgba(0,0,0,0.4)",
+        borderRadius: 3,
+        fontSize: c.size,
         cursor: "default",
-        fontFamily: "Tahoma, sans-serif",
+        boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.4), inset -1px -1px 0 rgba(0,0,0,0.2)",
+        lineHeight: 1,
       }}
     >
-      {label}
+      {c.icon}
     </button>
   );
 }
 
-function ToolbarBtn({ label }: { label: string }) {
+/* ────────────────────────────────────────────────────────── */
+/* Notepad window                                            */
+/* ────────────────────────────────────────────────────────── */
+function NotepadWindow({ title, content, style, focused, onFocus, onClose }: any) {
   return (
-    <button
-      className="px-2 py-0.5 rounded-sm hover:bg-blue-100"
-      style={{
-        background: "none",
-        border: "1px solid transparent",
-        fontSize: 11,
-        cursor: "default",
-        fontFamily: "Tahoma, sans-serif",
-        color: "#003",
-        whiteSpace: "nowrap",
-      }}
-    >
-      {label}
-    </button>
-  );
-}
-
-function SidebarSection({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="mb-2">
+    <Window title={title} focused={focused} onFocus={onFocus} onClose={onClose} style={style} iconEmoji="📄">
+      {/* Menu bar */}
       <div
-        className="px-3 py-1 font-bold text-white"
+        className="flex items-center px-1"
+        style={{ background: XP.gray, borderBottom: `1px solid ${XP.darkGray}`, height: 22, flexShrink: 0 }}
+      >
+        {["File", "Edit", "Format", "View", "Help"].map((m) => (
+          <button
+            key={m}
+            style={{ padding: "1px 6px", background: "none", border: "none", cursor: "default", fontSize: 11, fontFamily: "Tahoma, sans-serif" }}
+          >
+            {m}
+          </button>
+        ))}
+      </div>
+      {/* Text area */}
+      <div
+        className="flex-1 overflow-auto"
+        style={{ background: "white", padding: "4px 6px" }}
+      >
+        <pre
+          style={{
+            fontFamily: "'Lucida Console', 'Courier New', monospace",
+            fontSize: 12,
+            lineHeight: 1.6,
+            color: "#000",
+            whiteSpace: "pre-wrap",
+            margin: 0,
+          }}
+        >
+          {content}
+        </pre>
+      </div>
+      {/* Status bar */}
+      <div
         style={{
-          background: "linear-gradient(180deg, #4a8fd4 0%, #3a7fca 100%)",
+          background: XP.gray,
+          borderTop: `1px solid ${XP.darkGray}`,
+          height: 20,
+          display: "flex",
+          alignItems: "center",
+          padding: "0 8px",
           fontSize: 11,
+          color: "#333",
+          flexShrink: 0,
+        }}
+      >
+        Ln 1, Col 1
+      </div>
+    </Window>
+  );
+}
+
+/* ────────────────────────────────────────────────────────── */
+/* Explorer window — Work folder                             */
+/* ────────────────────────────────────────────────────────── */
+function ExplorerWindow({ style, focused, onFocus, onClose }: any) {
+  const [selected, setSelected] = useState<number | null>(null);
+
+  return (
+    <Window title="Work - Mohana Das Portfolio" focused={focused} onFocus={onFocus} onClose={onClose} style={style} iconEmoji="📂">
+      {/* Menu bar */}
+      <div
+        className="flex items-center px-1"
+        style={{ background: XP.gray, borderBottom: `1px solid ${XP.darkGray}`, height: 22, flexShrink: 0 }}
+      >
+        {["File", "Edit", "View", "Favorites", "Tools", "Help"].map((m) => (
+          <button
+            key={m}
+            style={{ padding: "1px 6px", background: "none", border: "none", cursor: "default", fontSize: 11, fontFamily: "Tahoma, sans-serif" }}
+          >
+            {m}
+          </button>
+        ))}
+      </div>
+
+      {/* Toolbar */}
+      <div
+        className="flex items-center gap-1 px-2"
+        style={{ background: XP.gray, borderBottom: `1px solid ${XP.darkGray}`, height: 30, flexShrink: 0 }}
+      >
+        {["← Back", "→ Fwd", "↑ Up"].map((b) => (
+          <button
+            key={b}
+            style={{
+              padding: "2px 8px",
+              background: "linear-gradient(180deg,#f5f5f5 0%,#e0e0e0 100%)",
+              border: "1px solid #aaa",
+              borderRadius: 2,
+              cursor: "default",
+              fontSize: 11,
+              boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.8)",
+              fontFamily: "Tahoma, sans-serif",
+            }}
+          >
+            {b}
+          </button>
+        ))}
+        <div style={{ flex: 1, marginLeft: 8 }}>
+          <div
+            style={{
+              background: "white",
+              border: "1px solid #7f9db9",
+              borderRadius: 2,
+              padding: "1px 6px",
+              fontSize: 11,
+              color: "#333",
+              fontFamily: "Tahoma, sans-serif",
+            }}
+          >
+            📂 My Computer &gt; My Documents &gt; Work
+          </div>
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar */}
+        <div
+          style={{
+            width: 160,
+            background: "linear-gradient(180deg,#7db3e3 0%,#5a9fd4 100%)",
+            borderRight: "1px solid #5585b5",
+            flexShrink: 0,
+            overflowY: "auto",
+          }}
+        >
+          <XPSidebarSection title="File and Folder Tasks">
+            <XPSidebarLink label="📄 Make new folder" />
+            <XPSidebarLink label="🌐 Publish folder" />
+            <XPSidebarLink label="📧 Share folder" />
+          </XPSidebarSection>
+          <XPSidebarSection title="Other Places">
+            <XPSidebarLink label="🖥️ My Computer" />
+            <XPSidebarLink label="📁 My Documents" />
+            <XPSidebarLink label="🌐 My Network" />
+          </XPSidebarSection>
+          <XPSidebarSection title="Details">
+            <div style={{ padding: "4px 8px", fontSize: 11, color: "#003580", lineHeight: 1.7 }}>
+              <div style={{ fontWeight: "bold" }}>Work</div>
+              <div>File Folder</div>
+              <div style={{ marginTop: 6 }}>
+                <b>Items:</b> {projects.length}
+              </div>
+            </div>
+          </XPSidebarSection>
+        </div>
+
+        {/* Icon grid */}
+        <div
+          className="flex-1 overflow-auto"
+          style={{ background: "white", padding: 12 }}
+          onClick={() => setSelected(null)}
+        >
+          <div className="flex flex-wrap gap-4">
+            {projects.map((p, i) => (
+              <FolderIcon
+                key={i}
+                label={p.name}
+                selected={selected === i}
+                onClick={(e) => { e.stopPropagation(); setSelected(i); }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Status bar */}
+      <div
+        style={{
+          background: XP.gray,
+          borderTop: `1px solid ${XP.darkGray}`,
+          height: 20,
+          display: "flex",
+          alignItems: "center",
+          padding: "0 8px",
+          fontSize: 11,
+          color: "#333",
+          flexShrink: 0,
+          gap: 8,
+        }}
+      >
+        <div>{selected !== null ? `1 object selected — ${projects[selected].context}, ${projects[selected].year}` : `${projects.length} objects`}</div>
+        <div style={{ marginLeft: "auto" }}>🔒 Local intranet</div>
+      </div>
+    </Window>
+  );
+}
+
+function FolderIcon({ label, selected, onClick }: { label: string; selected: boolean; onClick: (e: React.MouseEvent) => void }) {
+  return (
+    <div
+      onClick={onClick}
+      className="flex flex-col items-center gap-1"
+      style={{ width: 80, textAlign: "center", cursor: "default", padding: 4, borderRadius: 2 }}
+    >
+      {/* Folder icon SVG — XP yellow folder */}
+      <svg width="48" height="42" viewBox="0 0 48 42" style={{ filter: selected ? "brightness(0.85)" : "none" }}>
+        <path d="M2,10 L18,10 L22,6 L44,6 L44,8 L46,8 L46,38 L2,38 Z" fill="#f0c040" stroke="#c89000" strokeWidth="1" />
+        <path d="M2,12 L46,12 L46,38 L2,38 Z" fill="#f8d04a" stroke="#c89000" strokeWidth="1" />
+        <path d="M2,12 L46,12" stroke="#ffea80" strokeWidth="1.5" />
+        <path d="M2,12 L2,38 L46,38 L46,12" fill="none" stroke="#c89000" strokeWidth="1" />
+        {selected && <rect x="2" y="6" width="44" height="32" fill="rgba(49,106,197,0.35)" rx="1" />}
+      </svg>
+      <span
+        style={{
+          fontSize: 11,
+          fontFamily: "Tahoma, sans-serif",
+          lineHeight: 1.3,
+          padding: selected ? "1px 3px" : "1px 3px",
+          background: selected ? "#316ac5" : "transparent",
+          color: selected ? "white" : "#000",
+          borderRadius: 1,
+          border: selected ? "none" : "1px solid transparent",
+          maxWidth: 78,
+          wordBreak: "break-word",
+          display: "inline-block",
+        }}
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function XPSidebarSection({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div style={{ marginBottom: 4 }}>
+      <div
+        style={{
+          background: "linear-gradient(180deg,#4a8fd4 0%,#3278c0 100%)",
+          padding: "3px 8px",
+          fontWeight: "bold",
+          fontSize: 11,
+          color: "white",
           textShadow: "0 1px 1px rgba(0,0,0,0.4)",
-          borderBottom: "1px solid #2a6ab0",
+          borderTop: "1px solid rgba(255,255,255,0.2)",
+          borderBottom: "1px solid rgba(0,0,0,0.15)",
         }}
       >
         {title}
       </div>
-      <div
-        className="py-1"
-        style={{ background: "rgba(255,255,255,0.15)" }}
-      >
+      <div style={{ background: "rgba(255,255,255,0.12)", padding: "3px 0" }}>
         {children}
       </div>
     </div>
   );
 }
 
-function SidebarLink({ icon, label }: { icon: string; label: string }) {
+function XPSidebarLink({ label }: { label: string }) {
   return (
     <button
-      className="flex items-center gap-2 px-3 py-1 w-full text-left hover:underline"
       style={{
+        display: "block",
+        width: "100%",
+        textAlign: "left",
+        padding: "2px 10px",
         background: "none",
         border: "none",
         cursor: "default",
+        fontSize: 11,
+        fontFamily: "Tahoma, sans-serif",
         color: "#003580",
-        fontSize: 11,
-        fontFamily: "Tahoma, sans-serif",
+        textDecoration: "none",
       }}
     >
-      <span>{icon}</span>
-      <span>{label}</span>
+      {label}
     </button>
   );
 }
 
-function ProjectRow({ project, index }: { project: any; index: number }) {
-  const selected = index === 0;
+/* ────────────────────────────────────────────────────────── */
+/* Taskbar                                                   */
+/* ────────────────────────────────────────────────────────── */
+function Taskbar({ activeWindow, onSelectWindow }: { activeWindow: string | null; onSelectWindow: (w: any) => void }) {
+  const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
   return (
-    <tr
+    <div
+      className="absolute bottom-0 left-0 right-0 flex items-center gap-1 px-1"
       style={{
-        background: selected ? "#316ac5" : index % 2 === 0 ? "white" : "#f5f5f5",
-        color: selected ? "white" : "#333",
-        cursor: "default",
+        height: 38,
+        background: XP.taskbar,
+        boxShadow: "0 -2px 0 #0a2a8a, inset 0 2px 0 rgba(255,255,255,0.18)",
+        zIndex: 100,
       }}
     >
-      <td className="px-3 py-1" style={{ border: "1px solid #e0e0e0", maxWidth: 340 }}>
-        <div className="flex items-center gap-2">
-          <span style={{ fontSize: 14 }}>{project.icon}</span>
-          <span
-            className="truncate"
-            style={{ maxWidth: 300, display: "block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+      {/* Start button */}
+      <button
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 5,
+          padding: "2px 12px 2px 8px",
+          height: 30,
+          background: XP.startBtn,
+          border: "1px solid #1a5a00",
+          borderRadius: "4px",
+          color: "white",
+          fontWeight: "bold",
+          fontStyle: "italic",
+          fontFamily: "Tahoma, sans-serif",
+          fontSize: 14,
+          cursor: "default",
+          boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.35), 1px 1px 4px rgba(0,0,0,0.4)",
+          letterSpacing: 0.3,
+          flexShrink: 0,
+        }}
+      >
+        <span style={{ fontSize: 18, fontStyle: "normal" }}>⊞</span>
+        start
+      </button>
+
+      {/* Divider */}
+      <div style={{ width: 1, height: 26, background: "rgba(255,255,255,0.15)", margin: "0 2px" }} />
+
+      {/* Quick launch */}
+      <div className="flex items-center gap-1 px-1" style={{ borderRight: "1px solid rgba(255,255,255,0.12)" }}>
+        {["🌐", "📁", "🎵"].map((ic) => (
+          <button
+            key={ic}
+            style={{ width: 22, height: 22, background: "none", border: "none", cursor: "default", fontSize: 16 }}
           >
-            {project.title}
-          </span>
-        </div>
-      </td>
-      <td className="px-3 py-1" style={{ border: "1px solid #e0e0e0", whiteSpace: "nowrap" }}>
-        File Folder
-      </td>
-      <td className="px-3 py-1" style={{ border: "1px solid #e0e0e0", whiteSpace: "nowrap", maxWidth: 180 }}>
-        <span className="truncate" style={{ display: "block", overflow: "hidden", textOverflow: "ellipsis" }}>
-          {project.context}
+            {ic}
+          </button>
+        ))}
+      </div>
+
+      {/* Active window buttons */}
+      <div className="flex items-center gap-1 flex-1 px-2">
+        <TaskbarWindowBtn
+          icon="📄"
+          label="about.txt - Notepad"
+          active={activeWindow === "notepad"}
+          onClick={() => onSelectWindow("notepad")}
+        />
+        <TaskbarWindowBtn
+          icon="📂"
+          label="Work - Mohana Das Portfolio"
+          active={activeWindow === "explorer"}
+          onClick={() => onSelectWindow("explorer")}
+        />
+      </div>
+
+      {/* System tray */}
+      <div
+        className="flex items-center gap-2"
+        style={{
+          background: "linear-gradient(180deg,#0e3ea8 0%,#1248c8 50%,#0e3ea8 100%)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: 2,
+          padding: "2px 8px",
+          height: 28,
+          fontSize: 14,
+          flexShrink: 0,
+        }}
+      >
+        <span title="Volume">🔊</span>
+        <span title="Network">📶</span>
+        <span
+          style={{
+            color: "white",
+            fontSize: 11,
+            fontFamily: "Tahoma, sans-serif",
+            marginLeft: 4,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {time}
         </span>
-      </td>
-      <td className="px-3 py-1" style={{ border: "1px solid #e0e0e0", whiteSpace: "nowrap" }}>
-        {project.year}
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 }
 
-function XPButton({ label, primary }: { label: string; primary?: boolean }) {
+function TaskbarWindowBtn({ icon, label, active, onClick }: { icon: string; label: string; active: boolean; onClick: () => void }) {
   return (
     <button
-      className="px-3 py-1 rounded-sm"
+      onClick={onClick}
+      className="flex items-center gap-1.5 truncate"
       style={{
-        background: primary
-          ? "linear-gradient(180deg, #e8f0ff 0%, #d0ddf0 100%)"
-          : "linear-gradient(180deg, #f5f5f5 0%, #e0e0e0 100%)",
-        border: primary ? "1px solid #3169c6" : "1px solid #aaa",
+        height: 26,
+        maxWidth: 200,
+        padding: "0 8px",
+        background: active
+          ? "linear-gradient(180deg,#1a52cc 0%,#1248b8 50%,#0e3ea8 100%)"
+          : "linear-gradient(180deg,#4a88dc 0%,#2e6ccc 100%)",
+        border: active ? "1px solid rgba(255,255,255,0.2)" : "1px solid rgba(0,0,0,0.25)",
+        borderRadius: 3,
+        color: "white",
         fontSize: 11,
         fontFamily: "Tahoma, sans-serif",
         cursor: "default",
-        boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.8), 1px 1px 2px rgba(0,0,0,0.15)",
-        color: "#003",
+        boxShadow: active
+          ? "inset 1px 1px 0 rgba(0,0,0,0.2)"
+          : "inset 1px 1px 0 rgba(255,255,255,0.2)",
+        textShadow: "0 1px 1px rgba(0,0,0,0.5)",
       }}
     >
-      {label}
-    </button>
-  );
-}
-
-function TaskbarIcon({ label }: { label: string }) {
-  return (
-    <button
-      className="flex items-center justify-center rounded"
-      style={{
-        width: 24,
-        height: 24,
-        background: "none",
-        border: "none",
-        cursor: "default",
-        fontSize: 16,
-      }}
-    >
-      {label}
+      <span style={{ fontSize: 13, flexShrink: 0 }}>{icon}</span>
+      <span className="truncate">{label}</span>
     </button>
   );
 }
