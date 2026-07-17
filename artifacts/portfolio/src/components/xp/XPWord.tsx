@@ -224,18 +224,6 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
             <p style={{ margin: 0, fontStyle: "italic" }}>{project.summary}</p>
           </div>
 
-          {/* Cover image (if available) */}
-          {(project.thumbnail || project.image) && (
-            <div style={{ marginBottom: 28, textAlign: "center" }}>
-              <img
-                src={project.thumbnail || project.image}
-                alt={project.title}
-                style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", border: "1px solid #e0e0e0", borderRadius: 2 }}
-                onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
-              />
-            </div>
-          )}
-
           {/* Challenge */}
           {project.challenge && (
             <DocSection title="The Challenge">
@@ -318,6 +306,16 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                     <p style={{ fontStyle: "italic", color: "#555", fontSize: 11, marginTop: 8 }}>
                       <RichText text={sec.note} />
                     </p>
+                  )}
+                  {sec.heading === "Solution Strategy" && (project.thumbnail || project.image) && (
+                    <div style={{ marginTop: 16, textAlign: "center" }}>
+                      <img
+                        src={project.thumbnail || project.image}
+                        alt={project.title}
+                        style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", border: "1px solid #e0e0e0", borderRadius: 2 }}
+                        onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
+                      />
+                    </div>
                   )}
                 </>
               )}
