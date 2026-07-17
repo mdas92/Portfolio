@@ -562,7 +562,11 @@ export const projects: Project[] = [
       },
       {
         heading: "Impact",
-        content: "Post-launch funnel data showed measurable gains on both fronts. The redesigned homescreen notification lifted repayment completion from **48.85% to 55.34%** on iOS (+6.5pp) and improved click-through from **67.96% to 72.85%** on Android (+4.9pp). Renaming the **\"Activity\"** tab to **\"Dues\"** had an even sharper effect on discoverability: the nav bar tap rate rose from **48.5% to 62.2%** across Android and iOS — a +13.7pp lift — confirming that the label change meaningfully lowered the barrier to users finding and acting on their dues."
+        content: "Post-launch funnel data showed measurable gains on both changes:",
+        bullets: [
+          "**Notification redesign** — Repayment completion rose from **48.85% → 55.34%** on iOS (+6.5pp). Click-through improved from **67.96% → 72.85%** on Android (+4.9pp).",
+          "**\"Activity\" → \"Dues\" rename** — Nav bar tap rate jumped from **48.5% → 62.2%** across Android + iOS, a **+13.7pp** lift in discoverability."
+        ]
       }
     ]
   },
