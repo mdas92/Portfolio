@@ -498,9 +498,9 @@ export const projects: Project[] = [
         image: {
           src: "/images/projects/repayments/inline-notification.avif",
           alt: "Hand-drawn sketch mapping four questions every repayment touchpoint needs to answer: how much to pay, when to pay, level of urgency, and why to pay — radiating from a central notification component",
-          display: "inline"
+          display: "inline",
+          caption: "I mapped the problem to four core questions any repayment touchpoint needed to answer: how much to pay, when to pay, why to pay, and the level of urgency."
         },
-        note: "I mapped the problem to four core questions any repayment touchpoint needed to answer: how much to pay, when to pay, why to pay, and the level of urgency.",
       },
       {
         heading: "User Journey",
