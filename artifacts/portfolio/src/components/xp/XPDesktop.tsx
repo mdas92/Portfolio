@@ -160,12 +160,20 @@ export function XPDesktop() {
   const [selIcon, setSelIcon] = useState<string | null>(null);
   const [startOpen, setStartOpen] = useState(false);
   const [clock, setClock] = useState(() => new Date());
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
   useEffect(() => {
     const t = setInterval(() => setClock(new Date()), 30_000);
     return () => clearInterval(t);
   }, []);
 
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
+
+  const taskbarH = isMobile ? 48 : 38;
   const maxZ = windows.reduce((m, w) => Math.max(m, w.z), 0);
 
   const openWin = useCallback((type: WinType, extra?: Partial<WinState>) => {
@@ -205,8 +213,8 @@ export function XPDesktop() {
 
   const ICONS = [
     { id: "work",    emoji: "📁", label: "My Work",           type: "explorer" as WinType },
-    { id: "about",   emoji: "📝", label: "About Mohana.txt",  type: "about" as WinType },
-    { id: "contact", emoji: "📧", label: "Contact.txt",       type: "contact" as WinType },
+    { id: "about",   emoji: "📝", label: "About Me",          type: "about" as WinType },
+    { id: "contact", emoji: "📧", label: "Contact",           type: "contact" as WinType },
     { id: "recycle", emoji: "🗑️", label: "Recycle Bin",       type: null },
   ];
 
@@ -217,8 +225,18 @@ export function XPDesktop() {
       onClick={() => { setSelIcon(null); setStartOpen(false); }}
     >
 
-      {/* Desktop icons */}
-      <div style={{ position: "absolute", top: 10, left: 10, display: "flex", flexDirection: "column", gap: 2, zIndex: 5 }}>
+      {/* Desktop icons — vertical column on desktop, horizontal row on mobile */}
+      <div style={{
+        position: "absolute",
+        top: isMobile ? "auto" : 10,
+        bottom: isMobile ? taskbarH + 8 : "auto",
+        left: isMobile ? "50%" : 10,
+        transform: isMobile ? "translateX(-50%)" : "none",
+        display: "flex",
+        flexDirection: isMobile ? "row" : "column",
+        gap: isMobile ? 8 : 2,
+        zIndex: 5,
+      }}>
         {ICONS.map(ic => (
           <DesktopIcon
             key={ic.id}
@@ -246,6 +264,8 @@ export function XPDesktop() {
           minimized={win.minimized}
           maximized={win.maximized}
           active={win.z === maxZ}
+          mobile={isMobile}
+          taskbarH={taskbarH}
           onFocus={() => focusWin(win.id)}
           onMove={(x, y) => moveWin(win.id, x, y)}
           onClose={() => win.id === "welcome" ? minWin(win.id) : closeWin(win.id)}
@@ -254,6 +274,7 @@ export function XPDesktop() {
         >
           {win.type === "explorer" && (
             <XPExplorer
+              mobile={isMobile}
               onOpenProject={(slug, title) =>
                 openWin("word", { slug, title: `${title}.doc — Microsoft Word`, icon: "📄" })
               }
@@ -261,7 +282,7 @@ export function XPDesktop() {
           )}
           {win.type === "about" && <XPNotepad type="about" />}
           {win.type === "contact" && <XPNotepad type="contact" />}
-          {win.type === "word" && win.slug && <XPWord slug={win.slug} />}
+          {win.type === "word" && win.slug && <XPWord slug={win.slug} mobile={isMobile} />}
           {win.type === "welcome" && (
             <div style={{ display: "flex", flexDirection: "column", height: "100%", fontFamily: "Tahoma,sans-serif", background: "#ece9d8" }}>
               <div style={{ display: "flex", gap: 16, padding: "20px 20px 16px", flex: 1, alignItems: "flex-start" }}>
@@ -305,7 +326,7 @@ export function XPDesktop() {
       {/* Taskbar */}
       <div
         style={{
-          position: "fixed", bottom: 0, left: 0, right: 0, height: 38,
+          position: "fixed", bottom: 0, left: 0, right: 0, height: taskbarH,
           background: TASKBAR_BG,
           boxShadow: "0 -2px 0 #0a2a8a, inset 0 2px 0 rgba(255,255,255,0.18)",
           zIndex: 9000, display: "flex", alignItems: "center", gap: 3, padding: "0 3px",

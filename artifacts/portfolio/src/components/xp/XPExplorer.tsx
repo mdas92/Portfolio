@@ -6,6 +6,7 @@ const DG = "#808080";
 
 interface Props {
   onOpenProject: (slug: string, title: string) => void;
+  mobile?: boolean;
 }
 
 function WordDocIcon({ selected }: { selected: boolean }) {
@@ -75,7 +76,7 @@ function SideLink({ icon, label }: { icon: string; label: string }) {
   );
 }
 
-export function XPExplorer({ onOpenProject }: Props) {
+export function XPExplorer({ onOpenProject, mobile = false }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
 
   const visible = projects
@@ -116,8 +117,8 @@ export function XPExplorer({ onOpenProject }: Props) {
       {/* Body */}
       <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
 
-        {/* Sidebar */}
-        <div style={{ width: 160, background: "#dfe9f5", borderRight: `1px solid ${DG}`, overflowY: "auto", flexShrink: 0 }}>
+        {/* Sidebar — hidden on mobile */}
+        {!mobile && <div style={{ width: 160, background: "#dfe9f5", borderRight: `1px solid ${DG}`, overflowY: "auto", flexShrink: 0 }}>
           <SidebarSection heading="Other Places">
             <SideLink icon="🖥️" label="My Computer" />
             <SideLink icon="📄" label="My Documents" />
@@ -150,7 +151,7 @@ export function XPExplorer({ onOpenProject }: Props) {
               </div>
             )}
           </SidebarSection>
-        </div>
+        </div>}
 
         {/* Icon grid */}
         <div

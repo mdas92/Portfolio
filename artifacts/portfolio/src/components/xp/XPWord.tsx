@@ -71,7 +71,7 @@ function DocSection({ title, children }: { title: string; children: ReactNode })
   );
 }
 
-export function XPWord({ slug }: { slug: string }) {
+export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolean }) {
   const project = projects.find(p => p.slug === slug);
 
   if (!project) {
@@ -124,14 +124,14 @@ export function XPWord({ slug }: { slug: string }) {
       </div>
 
       {/* Document area */}
-      <div style={{ flex: 1, overflow: "auto", background: "#808080", padding: "20px 0" }}>
+      <div style={{ flex: 1, overflow: "auto", background: "#808080", padding: mobile ? "0" : "20px 0" }}>
         <div style={{
-          width: 700,
-          minHeight: 990,
+          width: mobile ? "100%" : 700,
+          minHeight: mobile ? "100%" : 990,
           margin: "0 auto",
           background: "white",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.4)",
-          padding: "64px 72px",
+          boxShadow: mobile ? "none" : "0 2px 10px rgba(0,0,0,0.4)",
+          padding: mobile ? "24px 20px" : "64px 72px",
           fontFamily: "Times New Roman, serif",
           fontSize: 13,
           lineHeight: 1.75,
