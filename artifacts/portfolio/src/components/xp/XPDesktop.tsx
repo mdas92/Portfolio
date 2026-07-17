@@ -29,12 +29,7 @@ const START_BG = "linear-gradient(180deg,#5ec03e 0%,#4ab030 8%,#3aa020 50%,#2d90
 
 function XPLogo({ size = 18 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" style={{ flexShrink: 0 }}>
-      <path d="M4,2 C20,0 44,4 47,22 C44,28 28,32 4,28 Z" fill="#F25022" />
-      <path d="M53,20 C56,4 72,-2 96,2 L96,28 C72,32 56,28 53,20 Z" fill="#7FBA00" />
-      <path d="M4,72 C28,68 44,72 47,78 C44,96 20,100 4,98 Z" fill="#00A4EF" />
-      <path d="M53,80 C56,72 72,68 96,72 L96,98 C72,100 56,96 53,80 Z" fill="#FFB900" />
-    </svg>
+    <img src="/xp-logo.png" width={size} height={size} style={{ flexShrink: 0, display: "block" }} alt="" />
   );
 }
 
@@ -214,29 +209,10 @@ export function XPDesktop() {
 
   return (
     <div
-      style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative", background: SKY, userSelect: "none" }}
+      style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative", userSelect: "none",
+        backgroundImage: "url(/bliss.jpg)", backgroundSize: "cover", backgroundPosition: "center" }}
       onClick={() => { setSelIcon(null); setStartOpen(false); }}
     >
-      {/* Bliss-style hills */}
-      <svg
-        viewBox="0 0 1280 340"
-        preserveAspectRatio="none"
-        style={{ position: "absolute", bottom: 38, left: 0, width: "100%", height: "36%", pointerEvents: "none" }}
-      >
-        <defs>
-          <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#6dbf4a" />
-            <stop offset="100%" stopColor="#3a9018" />
-          </linearGradient>
-          <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#52b032" />
-            <stop offset="100%" stopColor="#2a7810" />
-          </linearGradient>
-        </defs>
-        <rect x="0" y="0" width="1280" height="340" fill="#3a9018" />
-        <path d="M0,200 C80,170 200,120 380,140 C520,155 600,90 760,108 C900,124 1040,170 1180,155 C1240,148 1265,145 1280,144 L1280,340 L0,340 Z" fill="url(#hill1)" />
-        <path d="M0,230 C100,210 260,170 420,188 C560,204 640,155 800,170 C920,182 1080,218 1220,205 L1280,200 L1280,340 L0,340 Z" fill="url(#hill2)" opacity="0.7" />
-      </svg>
 
       {/* Desktop icons */}
       <div style={{ position: "absolute", top: 10, left: 10, display: "flex", flexDirection: "column", gap: 2, zIndex: 5 }}>
