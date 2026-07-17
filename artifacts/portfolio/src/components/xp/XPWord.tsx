@@ -213,7 +213,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                       </p>
                     )}
                   </div>
-                  <div style={{ flexShrink: 0 }}>
+                  <div style={{ flex: 1, minWidth: 0 }}>
                     <DocImage img={sec.image} />
                   </div>
                 </div>
