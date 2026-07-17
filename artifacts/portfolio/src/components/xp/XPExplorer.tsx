@@ -11,7 +11,7 @@ interface Props {
 
 function WordDocIcon({ selected }: { selected: boolean }) {
   return (
-    <svg width="44" height="54" viewBox="0 0 44 54" style={{ display: "block", flexShrink: 0 }}>
+    <svg width="56" height="68" viewBox="0 0 44 54" style={{ display: "block", flexShrink: 0 }}>
       <defs>
         <linearGradient id="pageGrad" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stopColor="#ffffff" />
@@ -158,18 +158,17 @@ export function XPExplorer({ onOpenProject, mobile = false }: Props) {
           style={{ flex: 1, overflowY: "auto", background: "white", padding: "12px 8px" }}
           onClick={() => setSelected(null)}
         >
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 4px", alignContent: "flex-start" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "4px 4px", alignContent: "flex-start" }}>
             {visible.map(p => {
               const isSel = selected === p.slug;
               return (
                 <div
                   key={p.slug}
                   style={{
-                    width: 90,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    padding: "8px 4px 6px",
+                    padding: "10px 6px 8px",
                     cursor: "default",
                     borderRadius: 3,
                     background: isSel ? "#316ac5" : "transparent",
@@ -180,20 +179,15 @@ export function XPExplorer({ onOpenProject, mobile = false }: Props) {
                 >
                   <WordDocIcon selected={isSel} />
                   <span style={{
-                    marginTop: 5,
-                    fontSize: 11,
+                    marginTop: 6,
+                    fontSize: 12,
                     fontFamily: "Tahoma,sans-serif",
                     color: isSel ? "white" : "#000",
                     textAlign: "center",
-                    lineHeight: 1.3,
-                    display: "-webkit-box",
-                    WebkitLineClamp: 2,
-                    WebkitBoxOrient: "vertical",
-                    overflow: "hidden",
-                    maxWidth: 86,
+                    lineHeight: 1.35,
                     wordBreak: "break-word",
                   }}>
-                    {p.title.length > 40 ? p.title.slice(0, 40) + "…" : p.title}
+                    {p.title}
                   </span>
                 </div>
               );
