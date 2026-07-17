@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { ReactNode } from "react";
 import { projects } from "../../data/portfolio";
 import type { ProjectImage } from "../../data/portfolio";
@@ -18,7 +19,7 @@ function RichText({ text }: { text: string }) {
   );
 }
 
-function DocImage({ img }: { img: ProjectImage }) {
+function DocImage({ img, onZoom }: { img: ProjectImage; onZoom?: (src: string, alt: string) => void }) {
   const isFullWidth = img.display === "full-width";
   const isInline = img.display === "inline";
 
@@ -26,6 +27,7 @@ function DocImage({ img }: { img: ProjectImage }) {
     <img
       src={img.src}
       alt={img.alt}
+      onClick={() => onZoom?.(img.src, img.alt)}
       style={{
         display: "block",
         maxWidth: "100%",
@@ -33,19 +35,18 @@ function DocImage({ img }: { img: ProjectImage }) {
         height: "auto",
         margin: "0 auto",
         borderRadius: 2,
+        cursor: onZoom ? "zoom-in" : "default",
       }}
     />
   );
 
   if (img.phoneFrame) {
-    // iPhone 17 proportions: 71.5 × 156 mm body → ~2.18:1, screen 19.5:9
-    const PW = 230;           // phone body width
-    const SW = PW - 10;       // screen width (5 px bezel each side)
-    const SH = Math.round(SW * (19.5 / 9)); // screen height at 19.5:9
+    const PW = 230;
+    const SW = PW - 10;
+    const SH = Math.round(SW * (19.5 / 9));
     return (
       <div style={{ display: "flex", justifyContent: "center", margin: "8px 0" }}>
         <div style={{ position: "relative" }}>
-          {/* Phone body */}
           <div style={{
             position: "relative",
             width: PW,
@@ -56,8 +57,10 @@ function DocImage({ img }: { img: ProjectImage }) {
               "0 0 0 1px rgba(255,255,255,0.13)," +
               "inset 0 0 0 1px rgba(0,0,0,0.6)," +
               "0 24px 64px rgba(0,0,0,0.65)",
-          }}>
-            {/* Screen */}
+            cursor: onZoom ? "zoom-in" : "default",
+          }}
+            onClick={() => onZoom?.(img.src, img.alt)}
+          >
             <div style={{
               width: SW,
               height: SH,
@@ -66,7 +69,6 @@ function DocImage({ img }: { img: ProjectImage }) {
               overflow: "hidden",
               position: "relative",
             }}>
-              {/* Dynamic Island */}
               <div style={{
                 position: "absolute",
                 top: 13,
@@ -79,7 +81,6 @@ function DocImage({ img }: { img: ProjectImage }) {
                 zIndex: 2,
                 boxShadow: "0 0 0 3px #111",
               }} />
-              {/* Content pushed to bottom, black fills the top */}
               <div style={{
                 position: "absolute",
                 inset: 0,
@@ -95,13 +96,9 @@ function DocImage({ img }: { img: ProjectImage }) {
               </div>
             </div>
           </div>
-          {/* Power button — right side */}
           <div style={{ position: "absolute", right: -3, top: 108, width: 3, height: 62, background: "#3a3a3c", borderRadius: "0 2px 2px 0" }} />
-          {/* Silent switch — left */}
           <div style={{ position: "absolute", left: -3, top: 84,  width: 3, height: 28, background: "#3a3a3c", borderRadius: "2px 0 0 2px" }} />
-          {/* Volume up — left */}
           <div style={{ position: "absolute", left: -3, top: 124, width: 3, height: 48, background: "#3a3a3c", borderRadius: "2px 0 0 2px" }} />
-          {/* Volume down — left */}
           <div style={{ position: "absolute", left: -3, top: 180, width: 3, height: 48, background: "#3a3a3c", borderRadius: "2px 0 0 2px" }} />
         </div>
       </div>
@@ -135,6 +132,8 @@ function DocSection({ title, children, noRule, hideTitle }: { title: string; chi
 
 export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolean }) {
   const project = projects.find(p => p.slug === slug);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+  const zoom = (src: string, alt: string) => setLightbox({ src, alt });
 
   if (!project) {
     return (
@@ -145,7 +144,53 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
   }
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100%", fontFamily: "Tahoma,sans-serif" }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", fontFamily: "Tahoma,sans-serif", position: "relative" }}>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          onClick={() => setLightbox(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            background: "rgba(0,0,0,0.85)",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <button
+            onClick={() => setLightbox(null)}
+            style={{
+              position: "fixed",
+              top: 16,
+              right: 20,
+              background: "none",
+              border: "none",
+              color: "#fff",
+              fontSize: 28,
+              cursor: "pointer",
+              lineHeight: 1,
+              zIndex: 10000,
+            }}
+          >
+            ×
+          </button>
+          <img
+            src={lightbox.src}
+            alt={lightbox.alt}
+            onClick={e => e.stopPropagation()}
+            style={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              objectFit: "contain",
+              borderRadius: 4,
+              boxShadow: "0 8px 48px rgba(0,0,0,0.6)",
+            }}
+          />
+        </div>
+      )}
 
       {/* Menu bar */}
       <div style={{ background: GRAY, borderBottom: `1px solid ${DG}`, height: 22, display: "flex", alignItems: "center", flexShrink: 0 }}>
@@ -265,13 +310,13 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                     )}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <DocImage img={sec.image} />
+                    <DocImage img={sec.image} onZoom={zoom} />
                   </div>
                 </div>
               ) : (
                 <>
                   {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
-                  {sec.image && <DocImage img={sec.image} />}
+                  {sec.image && <DocImage img={sec.image} onZoom={zoom} />}
                   {sec.bullets && (
                     <ul style={{ paddingLeft: 22, margin: "8px 0 0" }}>
                       {sec.bullets.map((b, j) => (
@@ -286,11 +331,13 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                           <img
                             src={img.src}
                             alt={img.alt}
+                            onClick={() => zoom(img.src, img.alt)}
                             style={{
                               display: "block",
                               maxWidth: img.scale ? `${img.scale * 200}px` : 200,
                               height: "auto",
                               borderRadius: 2,
+                              cursor: "zoom-in",
                             }}
                             onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
                           />
@@ -313,7 +360,8 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                       <img
                         src={project.thumbnail || project.image}
                         alt={project.title}
-                        style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", borderRadius: 2 }}
+                        onClick={() => zoom(project.thumbnail || project.image || "", project.title)}
+                        style={{ maxWidth: "100%", maxHeight: 320, height: "auto", display: "block", margin: "0 auto", borderRadius: 2, cursor: "zoom-in" }}
                         onError={e => { (e.target as HTMLImageElement).style.display = "none"; }}
                       />
                     </div>
