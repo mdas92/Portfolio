@@ -4,6 +4,7 @@ export const modules: ModuleMap = {
   "./components/mockups/portfolio-concepts/ConceptA.tsx": () => import("../components/mockups/portfolio-concepts/ConceptA.tsx"),
   "./components/mockups/portfolio-concepts/ConceptB.tsx": () => import("../components/mockups/portfolio-concepts/ConceptB.tsx"),
   "./components/mockups/portfolio-concepts/ConceptC.tsx": () => import("../components/mockups/portfolio-concepts/ConceptC.tsx"),
+  "./components/mockups/winxp/WinXPPortfolio.tsx": () => import("../components/mockups/winxp/WinXPPortfolio.tsx"),
   "./components/mockups/portfolio-quirky/QuirkyA.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyA.tsx"),
   "./components/mockups/portfolio-quirky/QuirkyB.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyB.tsx"),
   "./components/mockups/portfolio-quirky/QuirkyC.tsx": () => import("../components/mockups/portfolio-quirky/QuirkyC.tsx"),
