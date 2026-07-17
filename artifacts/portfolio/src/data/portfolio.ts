@@ -50,26 +50,21 @@ export const projects: Project[] = [
     context: "Aampe — AI-powered lifecycle marketing platform",
     year: "2025",
     featured: true,
-    challenge: "Aampe's product objects grew their names ad hoc — one object answered to five names in circulation, familiar-sounding words pulled customers back into campaign thinking, and new words lacked consistent definitions across UI, docs, KB, and sales decks.",
-    whatIDid: [
-      "Authored the Terminology & Taxonomy framework: three candidate terms per entity with recorded reasoning, naming principles, voting rules, and named tie-breakers.",
-      "Mined my own client session recordings into the audit's primary evidence — surfacing terms customers misread, like Offering-as-promotion and Label doing two jobs.",
-      "Co-ran the Terminology Session at the Taiwan offsite — ten people including the CEO and a co-founder, live polls, and a sentence test for every entity.",
-      "Wrote the implementation plan: engineering scoping, old-to-new migration mapping, customer change management, and a six-step rollout.",
-    ],
+    challenge: "",
+    whatIDid: [],
     result: "Nine entities ratified, including bold renames (Label → Tag, Message Group → Formula, Audience → Eligibility Criteria). Glossary and rollout plan shipped, with governance rules to prevent future terminology creep.",
     quote: "Customers understand the mental model — messages, parts, variants, labels — but not the vocabulary.",
     image: "/images/projects/product-taxonomy/glossary-preview.png",
     sections: [
       {
-        heading: "The alias problem",
-        content: "Formulas ↔ Message Groups ↔ Messages ↔ Alternate Messages ↔ Message Combinations. One product object, five names in circulation — multiply that across every object in the platform.",
-        visual: "AliasChainVisual",
-      },
-      {
         heading: "Context: every term carries a mindset shift",
         content: "Marketers arrive at Aampe fluent in campaigns, segments, and journeys. The product replaces that worldview with agentic objects that have no industry equivalent: formulas, components, tags, topics. But those terms were coined ad hoc by whoever shipped a feature first, so one object answered to five names, familiar-sounding words pulled customers back into campaign thinking, and new words lacked consistent definitions. The vocabulary is the interface to the mindset shift, and it needed to be designed.",
         visual: "MisreadObjectsVisual",
+      },
+      {
+        heading: "The alias problem",
+        content: "Formulas ↔ Message Groups ↔ Messages ↔ Alternate Messages ↔ Message Combinations. One product object, five names in circulation — multiply that across every object in the platform.",
+        visual: "AliasChainVisual",
       },
       {
         heading: "The debate: does an early-stage startup even need strict taxonomy?",
@@ -90,14 +85,15 @@ export const projects: Project[] = [
         ],
       },
       {
-        heading: "What I drove or built",
+        heading: "My role & what I built",
+        content: "Standardization was cross-functional: product design ran the internal survey, data science owned the ontology thinking. I was the field voice the product team looped into every naming decision, because I taught this object model to customers every week.",
         bullets: [
           "**Taxonomy framework** — the \"Aampe Terminology & Taxonomy\" doc: entities, candidate terms with recorded reasoning, naming principles, voting rules, tie-breakers.",
           "**Customer evidence catalog** — my client session recordings, mined term by term into the audit's primary evidence.",
           "**Topics feature input** — the four-dimension model that replaced a rigid topic/sub-topic hierarchy before it shipped.",
           "**Definition fixes in the product** — cleanup ticket replacing Composer's default component definitions with the canonical ones.",
           "**The decision session** — co-ran the offsite Terminology Session that ratified the glossary.",
-          "**Glossary + rollout plan** — the two shipped assets, linked in deliverables below.",
+          "**Glossary + rollout plan** — the two shipped assets.",
         ],
       },
       {
@@ -111,10 +107,6 @@ export const projects: Project[] = [
           "Every candidate faces a five-second test (human-readable, describes what the system does, fits the hierarchy, one meaning, no baggage) and a sentence test: it must slot into the sentences teams say daily. If the word jars, it fails.",
         ],
         visual: "HierarchyVisual",
-      },
-      {
-        heading: "My role",
-        content: "Standardization was cross-functional: product design ran the internal survey, data science owned the ontology thinking. I was the field voice the product team looped into every naming decision, because I taught this object model to customers every week. Mine: the evidence, the Topics-feature argument, the definition fixes, the framework, the session I co-ran, and the implementation plan.",
       },
       {
         heading: "Three acts: from symptom to shipped taxonomy",
@@ -152,24 +144,6 @@ export const projects: Project[] = [
           "Wrote the implementation plan: engineering scoping first, old-to-new migration mapping, customer change management, and a six-step rollout.",
         ],
         visual: "TerminologySessionVisual",
-      },
-      {
-        heading: "The deliverables",
-        content: "Two shipped assets capturing everything the session ratified:",
-        images: [
-          {
-            src: "/images/projects/product-taxonomy/glossary-preview.png",
-            alt: "Product Glossary preview",
-            display: "inline",
-            caption: "Product Glossary — nine ratified entities with definitions, examples, naming principles, and governance rules",
-          },
-          {
-            src: "/images/projects/product-taxonomy/plan-preview.png",
-            alt: "Implementation Plan preview",
-            display: "inline",
-            caption: "Implementation Plan — engineering scoping, migration mapping, change management, six-step rollout sequence",
-          },
-        ],
       },
       {
         heading: "Challenges",
