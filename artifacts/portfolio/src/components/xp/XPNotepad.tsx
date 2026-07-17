@@ -17,7 +17,7 @@ const PRE: CSSProperties = {
 const bold: CSSProperties = { fontWeight: "bold", color: "#000" };
 const h1: CSSProperties = { fontWeight: "bold", fontSize: 15, color: "#000" };
 const h2: CSSProperties = { fontWeight: "bold", fontSize: 13, color: "#000", letterSpacing: "0.04em" };
-const dim: CSSProperties = { color: "#555" };
+const dim: CSSProperties = { color: "#333" };
 const accent: CSSProperties = { fontWeight: "bold", color: "#0a3494" };
 const rule: CSSProperties = { color: "#777" };
 
