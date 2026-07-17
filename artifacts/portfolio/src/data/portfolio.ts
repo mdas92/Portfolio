@@ -475,7 +475,7 @@ export const projects: Project[] = [
     slug: "repayments",
     tag: "Content Strategy · Fintech",
     title: "Improving Repayment Rates",
-    summary: "Content and design interventions to drive on-time repayments — a three-pronged strategy targeting discoverability, urgency, and transparency.",
+    summary: "LazyPay is a buy-now-pay-later product by PayU Finance. When data showed 45% of new users were missing repayments, I redesigned the content and touchpoints across the entire repayment journey — building a three-pronged strategy around discoverability, urgency, and transparency to nudge users to pay on time.",
     role: "Content Strategist — Problem Identification, Multi-level Solution Design, Content-First Design",
     context: "LazyPay (PayU Finance)",
     year: "2022",
