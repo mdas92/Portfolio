@@ -285,6 +285,16 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
             <p style={{ margin: 0, fontStyle: "italic" }}>{project.summary}</p>
           </div>
 
+          {/* Quote */}
+          {project.quote && (
+            <blockquote style={{ margin: "0 0 24px", padding: "12px 18px", borderLeft: "3px solid #0a246a", background: "#f9f9f9", fontFamily: "Times New Roman, serif", fontStyle: "italic", color: "#333", fontSize: 13 }}>
+              <p style={{ margin: "0 0 6px" }}>&ldquo;{project.quote}&rdquo;</p>
+              {project.quoteAttribution && (
+                <cite style={{ display: "block", fontStyle: "normal", fontSize: 11, color: "#888", fontFamily: "Tahoma,sans-serif" }}>— {project.quoteAttribution}</cite>
+              )}
+            </blockquote>
+          )}
+
           {/* Challenge */}
           {project.challenge && (
             <DocSection title="The Challenge">
@@ -386,13 +396,6 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
               )}
             </DocSection>
           ))}
-
-          {/* Quote */}
-          {project.quote && (
-            <div style={{ marginTop: 20, borderLeft: "3px solid #0a246a", paddingLeft: 14, fontStyle: "italic", color: "#444", fontSize: 13 }}>
-              &ldquo;{project.quote}&rdquo;
-            </div>
-          )}
 
           {/* Footer */}
           <div style={{ marginTop: 48, borderTop: "1px solid #eee", paddingTop: 10, textAlign: "center", fontSize: 10, color: "#bbb", fontFamily: "Tahoma,sans-serif" }}>

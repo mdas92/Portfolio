@@ -31,6 +31,7 @@ export interface Project {
   whatIDid: string[];
   result: string;
   quote?: string;
+  quoteAttribution?: string;
   image: string;
   thumbnail?: string;
   featured?: boolean;
@@ -54,6 +55,7 @@ export const projects: Project[] = [
     whatIDid: [],
     result: "Nine entities ratified, including bold renames (Label → Tag, Message Group → Formula, Audience → Eligibility Criteria). Glossary and rollout plan shipped, with governance rules to prevent future terminology creep.",
     quote: "Customers understand the mental model — messages, parts, variants, labels — but not the vocabulary.",
+    quoteAttribution: "Notes mined from a client content session I ran, October 2025",
     image: "/images/projects/product-taxonomy/glossary-preview.png",
     sections: [
       {
@@ -121,7 +123,6 @@ export const projects: Project[] = [
           "The same client's data lead, months later: \"is this multiple labels per message/variant and the UI is confusing me?\"",
           "Even internal reporting threads stall on formula vs. message vs. alternate before the actual question can be answered.",
         ],
-        note: "\"Customers understand the mental model (messages → parts → variants → labels), but not the vocabulary.\" — Notes mined from a client content session I ran, October 2025",
       },
       {
         heading: "Act II · Oct–Dec 2025: Making it a product problem",
