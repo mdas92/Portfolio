@@ -40,10 +40,35 @@ function DocImage({ img }: { img: ProjectImage }) {
 
   if (img.phoneFrame) {
     return (
-      <div style={{ display: "inline-block", border: "6px solid #222", borderRadius: 18, padding: 4, background: "#111", boxShadow: "0 2px 12px rgba(0,0,0,0.3)" }}>
-        <div style={{ borderRadius: 12, overflow: "hidden", width: 200 }}>
-          <img src={img.src} alt={img.alt} style={{ display: "block", width: "100%", height: "auto" }} />
+      <div style={{ display: "inline-block", position: "relative" }}>
+        {/* Phone shell */}
+        <div style={{
+          position: "relative",
+          background: "linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 40%, #111 100%)",
+          borderRadius: 36,
+          padding: "14px 8px",
+          boxShadow: "0 0 0 1px #3a3a3a, 0 8px 32px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.08)",
+          width: 220,
+        }}>
+          {/* Top bar: speaker + front camera */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, marginBottom: 8, paddingTop: 2 }}>
+            <div style={{ width: 36, height: 4, background: "#3a3a3a", borderRadius: 2 }} />
+            <div style={{ width: 8, height: 8, background: "#2a2a2a", borderRadius: "50%", border: "1px solid #444" }} />
+          </div>
+          {/* Screen */}
+          <div style={{ borderRadius: 18, overflow: "hidden", background: "#000" }}>
+            <img src={img.src} alt={img.alt} style={{ display: "block", width: "100%", height: "auto" }} />
+          </div>
+          {/* Home indicator */}
+          <div style={{ display: "flex", justifyContent: "center", marginTop: 8, paddingBottom: 2 }}>
+            <div style={{ width: 48, height: 4, background: "#3a3a3a", borderRadius: 2 }} />
+          </div>
         </div>
+        {/* Side buttons */}
+        <div style={{ position: "absolute", right: -3, top: 72, width: 3, height: 32, background: "#2a2a2a", borderRadius: "0 2px 2px 0", boxShadow: "1px 0 0 #444" }} />
+        <div style={{ position: "absolute", left: -3, top: 60, width: 3, height: 20, background: "#2a2a2a", borderRadius: "2px 0 0 2px", boxShadow: "-1px 0 0 #444" }} />
+        <div style={{ position: "absolute", left: -3, top: 90, width: 3, height: 20, background: "#2a2a2a", borderRadius: "2px 0 0 2px", boxShadow: "-1px 0 0 #444" }} />
+        <div style={{ position: "absolute", left: -3, top: 118, width: 3, height: 20, background: "#2a2a2a", borderRadius: "2px 0 0 2px", boxShadow: "-1px 0 0 #444" }} />
       </div>
     );
   }
