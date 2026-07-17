@@ -562,7 +562,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Impact",
-        content: "Post-launch funnel data confirmed both changes moved the needle. The redesigned homescreen notification — leading with consequences rather than a generic reminder — drove a significant lift in click-throughs to the repayment flow across Android and iOS. Renaming the **\"Activity\"** tab to **\"Dues\"**, paired with a one-time coach mark, closed a long-standing discoverability gap: more users who tapped the nav bar went on to complete repayment, with measurable conversion gains on both platforms."
+        content: "Post-launch funnel data showed measurable gains on both fronts. The redesigned homescreen notification lifted repayment completion from **48.85% to 55.34%** on iOS (+6.5pp) and improved click-through from **67.96% to 72.85%** on Android (+4.9pp). Renaming the **\"Activity\"** tab to **\"Dues\"** had an even sharper effect on discoverability: the nav bar tap rate rose from **48.5% to 62.2%** across Android and iOS — a +13.7pp lift — confirming that the label change meaningfully lowered the barrier to users finding and acting on their dues."
       }
     ]
   },
