@@ -4,7 +4,7 @@ import { XPExplorer } from "./XPExplorer";
 import { XPNotepad } from "./XPNotepad";
 import { XPWord } from "./XPWord";
 
-type WinType = "explorer" | "about" | "contact" | "word";
+type WinType = "explorer" | "about" | "contact" | "word" | "welcome";
 
 interface WinState {
   id: string;
@@ -146,14 +146,17 @@ function StartMenu({
 }
 
 const WIN_DEFAULTS: Record<WinType, Omit<WinState, "id" | "z" | "minimized" | "maximized" | "slug">> = {
-  explorer: { type: "explorer", title: "Mohana Das\\Work — Windows Explorer", icon: "📁", x: 70, y: 28, width: 940, height: 620 },
-  about:    { type: "about",    title: "About Mohana.txt — Notepad",         icon: "📝", x: 180, y: 50, width: 700, height: 520 },
-  contact:  { type: "contact",  title: "Contact.txt — Notepad",              icon: "📧", x: 260, y: 70, width: 500, height: 360 },
-  word:     { type: "word",     title: "Project.doc — Microsoft Word",       icon: "📄", x: 140, y: 36, width: 880, height: 660 },
+  explorer: { type: "explorer", title: "Mohana Das\\Work — Windows Explorer", icon: "📁", x: 70,  y: 28, width: 940, height: 620 },
+  about:    { type: "about",    title: "About Mohana.txt — Notepad",          icon: "📝", x: 180, y: 50, width: 700, height: 520 },
+  contact:  { type: "contact",  title: "Contact.txt — Notepad",               icon: "📧", x: 260, y: 70, width: 500, height: 360 },
+  word:     { type: "word",     title: "Project.doc — Microsoft Word",        icon: "📄", x: 140, y: 36, width: 880, height: 660 },
+  welcome:  { type: "welcome",  title: "Welcome!",                            icon: "🪟", x: 380, y: 140, width: 440, height: 260 },
 };
 
+const WELCOME_WIN: WinState = { ...WIN_DEFAULTS.welcome, id: "welcome", z: ++Z, minimized: false, maximized: false };
+
 export function XPDesktop() {
-  const [windows, setWindows] = useState<WinState[]>([]);
+  const [windows, setWindows] = useState<WinState[]>([WELCOME_WIN]);
   const [selIcon, setSelIcon] = useState<string | null>(null);
   const [startOpen, setStartOpen] = useState(false);
   const [clock, setClock] = useState(() => new Date());
@@ -245,7 +248,7 @@ export function XPDesktop() {
           active={win.z === maxZ}
           onFocus={() => focusWin(win.id)}
           onMove={(x, y) => moveWin(win.id, x, y)}
-          onClose={() => closeWin(win.id)}
+          onClose={() => win.id === "welcome" ? minWin(win.id) : closeWin(win.id)}
           onMinimize={() => minWin(win.id)}
           onToggleMaximize={() => maxWin(win.id)}
         >
@@ -259,6 +262,35 @@ export function XPDesktop() {
           {win.type === "about" && <XPNotepad type="about" />}
           {win.type === "contact" && <XPNotepad type="contact" />}
           {win.type === "word" && win.slug && <XPWord slug={win.slug} />}
+          {win.type === "welcome" && (
+            <div style={{ display: "flex", flexDirection: "column", height: "100%", fontFamily: "Tahoma,sans-serif", background: "#ece9d8" }}>
+              <div style={{ display: "flex", gap: 16, padding: "20px 20px 16px", flex: 1, alignItems: "flex-start" }}>
+                <img src="/xp-logo.png" width={52} height={52} alt="" style={{ flexShrink: 0, marginTop: 2 }} />
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.65, color: "#000" }}>
+                  No, you haven't gone back in time.{" "}
+                  <strong>I'm Mohana</strong>, and this is my portfolio!{" "}
+                  Enjoy a splash of nostalgia back from a time when I first
+                  discovered the magic of technology and fell in love with it.
+                  Click around, explore, and most importantly —
+                  <strong> have fun!</strong>
+                </p>
+              </div>
+              <div style={{ borderTop: "1px solid #aca899", padding: "8px 16px", display: "flex", justifyContent: "center" }}>
+                <button
+                  onClick={() => minWin("welcome")}
+                  style={{
+                    width: 80, height: 24, background: "#ece9d8",
+                    border: "2px solid #0a246a", borderRadius: 3,
+                    fontFamily: "Tahoma,sans-serif", fontSize: 11,
+                    cursor: "default", fontWeight: "bold",
+                    boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.8)",
+                  }}
+                >
+                  OK
+                </button>
+              </div>
+            </div>
+          )}
         </XPWindow>
       ))}
 
