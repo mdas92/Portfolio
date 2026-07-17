@@ -323,13 +323,6 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
             </DocSection>
           ))}
 
-          {/* Result */}
-          <DocSection title="Result">
-            <div style={{ background: "#f0fff4", border: "1px solid #b0d4b0", borderLeft: "4px solid #2e7d32", padding: "10px 14px" }}>
-              <p style={{ margin: 0 }}><RichText text={project.result} /></p>
-            </div>
-          </DocSection>
-
           {/* Quote */}
           {project.quote && (
             <div style={{ marginTop: 20, borderLeft: "3px solid #0a246a", paddingLeft: 14, fontStyle: "italic", color: "#444", fontSize: 13 }}>

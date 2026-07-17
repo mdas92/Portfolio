@@ -564,8 +564,8 @@ export const projects: Project[] = [
         heading: "Impact",
         content: "Post-launch funnel data showed measurable gains on both changes:",
         bullets: [
-          "**Notification redesign** — Repayment completion rose from **48.85% → 55.34%** on iOS (+6.5pp). Click-through improved from **67.96% → 72.85%** on Android (+4.9pp).",
-          "**\"Activity\" → \"Dues\" rename** — Nav bar tap rate jumped from **48.5% → 62.2%** across Android + iOS, a **+13.7pp** lift in discoverability."
+          "**Notification redesign** — Repayment completion rose from **48.85% → 55.34%** on iOS. Click-through improved from **67.96% → 72.85%** on Android.",
+          "**\"Activity\" → \"Dues\" rename** — Nav bar tap rate jumped from **48.5% → 62.2%** across Android + iOS, a 13.7 percentage point lift in discoverability."
         ]
       }
     ]
