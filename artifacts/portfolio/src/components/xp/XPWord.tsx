@@ -2,6 +2,21 @@ import { useState } from "react";
 import type { ReactNode } from "react";
 import { projects } from "../../data/portfolio";
 import type { ProjectImage } from "../../data/portfolio";
+import {
+  AliasChainVisual,
+  MisreadObjectsVisual,
+  HierarchyVisual,
+  TerminologySessionVisual,
+  ThreeActsVisual,
+} from "../ProductTaxonomyVisuals";
+
+const VISUALS: Record<string, () => React.ReactElement> = {
+  AliasChainVisual,
+  MisreadObjectsVisual,
+  HierarchyVisual,
+  TerminologySessionVisual,
+  ThreeActsVisual,
+};
 
 const GRAY = "#d4d0c8";
 const DG = "#808080";
@@ -317,6 +332,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                 <>
                   {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
                   {sec.image && <DocImage img={sec.image} onZoom={zoom} />}
+                  {sec.visual && (() => { const V = VISUALS[sec.visual!]; return V ? <div style={{ margin: "10px 0" }}><V /></div> : null; })()}
                   {sec.bullets && (
                     <ul style={{ paddingLeft: 22, margin: "8px 0 0" }}>
                       {sec.bullets.map((b, j) => (

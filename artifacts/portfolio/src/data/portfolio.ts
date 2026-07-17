@@ -15,6 +15,7 @@ export interface ProjectSection {
   images?: ProjectImage[];
   note?: string;
   imagePlacement?: "beside";
+  visual?: string;
 }
 
 export interface Project {
@@ -65,15 +66,12 @@ export const projects: Project[] = [
       {
         heading: "The alias problem",
         content: "Formulas ↔ Message Groups ↔ Messages ↔ Alternate Messages ↔ Message Combinations. One product object, five names in circulation — multiply that across every object in the platform.",
+        visual: "AliasChainVisual",
       },
       {
         heading: "Context: every term carries a mindset shift",
         content: "Marketers arrive at Aampe fluent in campaigns, segments, and journeys. The product replaces that worldview with agentic objects that have no industry equivalent: formulas, components, tags, topics. But those terms were coined ad hoc by whoever shipped a feature first, so one object answered to five names, familiar-sounding words pulled customers back into campaign thinking, and new words lacked consistent definitions. The vocabulary is the interface to the mindset shift, and it needed to be designed.",
-        bullets: [
-          "**Component** — a slot inside one message that agents fill with variants (Greeting, Value Prop, Offering, Incentive, CTA). Misread as: global blocks the AI swaps across unrelated messages.",
-          "**Label** — a semantic tag stating what content expresses, so agents learn which expressions work per user. Misread as: category and value at once, with no clear hierarchy.",
-          "**Topic** — the organizing layer that groups related formulas under one use case or goal. Misread as: interchangeable with tags; one client used Topics and ignored Tags entirely.",
-        ],
+        visual: "MisreadObjectsVisual",
       },
       {
         heading: "The debate: does an early-stage startup even need strict taxonomy?",
@@ -114,10 +112,15 @@ export const projects: Project[] = [
           "**Renames require justification.** Comprehension, clarity, or function — not preference.",
           "Every candidate faces a five-second test (human-readable, describes what the system does, fits the hierarchy, one meaning, no baggage) and a sentence test: it must slot into the sentences teams say daily. If the word jars, it fails.",
         ],
+        visual: "HierarchyVisual",
       },
       {
         heading: "My role",
         content: "Standardization was cross-functional: product design ran the internal survey, data science owned the ontology thinking. I was the field voice the product team looped into every naming decision, because I taught this object model to customers every week. Mine: the evidence, the Topics-feature argument, the definition fixes, the framework, the session I co-ran, and the implementation plan.",
+      },
+      {
+        heading: "Three acts: from symptom to shipped taxonomy",
+        visual: "ThreeActsVisual",
       },
       {
         heading: "Act I · 2025: The problem keeps introducing itself",
@@ -150,6 +153,7 @@ export const projects: Project[] = [
           "Governance ratified with it: modifying an agreed term now requires rationale and consensus.",
           "Wrote the implementation plan: engineering scoping first, old-to-new migration mapping, customer change management, and a six-step rollout.",
         ],
+        visual: "TerminologySessionVisual",
       },
       {
         heading: "The deliverables",
@@ -180,6 +184,11 @@ export const projects: Project[] = [
       {
         heading: "Skills",
         content: "Product language · Information architecture · Evidence-driven naming · Ontology & conceptual modeling · Workshop design · Cross-functional facilitation · UX writing · Change management",
+      },
+      {
+        heading: "Reflection",
+        content: "Naming a running AI product isn't a copywriting exercise — it's product work with a deadline problem: the longer you wait, the more the wrong words get load-bearing.",
+        note: "Being in every customer session gave me the evidence no internal survey could generate. The job wasn't picking better words — it was proving, with recordings and recurring confusion, exactly which words were costing the company time and trust, then building the process that could decide their replacements and make the decision stick.",
       },
     ],
   },
