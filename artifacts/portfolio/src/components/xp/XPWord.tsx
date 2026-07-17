@@ -295,7 +295,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
           {/* What I Did */}
           {project.whatIDid.length > 0 && (
             <DocSection title="What I Did">
-              <ul style={{ paddingLeft: 22, margin: 0 }}>
+              <ul style={{ paddingLeft: 22, margin: 0, listStyleType: "disc" }}>
                 {project.whatIDid.map((item, i) => (
                   <li key={i} style={{ marginBottom: 5 }}><RichText text={item} /></li>
                 ))}
@@ -312,7 +312,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                     <h2 style={{ fontSize: 14, fontWeight: "bold", fontFamily: "Arial,sans-serif", color: "#0a246a", marginTop: 0, marginBottom: 8 }}>{sec.heading}</h2>
                     {sec.content && <p style={{ margin: "0 0 8px" }}><RichText text={sec.content} /></p>}
                     {sec.bullets && (
-                      <ul style={{ paddingLeft: 22, margin: 0 }}>
+                      <ul style={{ paddingLeft: 22, margin: 0, listStyleType: "disc" }}>
                         {sec.bullets.map((b, j) => (
                           <li key={j} style={{ marginBottom: 4 }}><RichText text={b} /></li>
                         ))}
@@ -334,7 +334,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
                   {sec.image && <DocImage img={sec.image} onZoom={zoom} />}
                   {sec.visual && (() => { const V = VISUALS[sec.visual!]; return V ? <div style={{ margin: "10px 0" }}><V /></div> : null; })()}
                   {sec.bullets && (
-                    <ul style={{ paddingLeft: 22, margin: "8px 0 0" }}>
+                    <ul style={{ paddingLeft: 22, margin: "8px 0 0", listStyleType: "disc" }}>
                       {sec.bullets.map((b, j) => (
                         <li key={j} style={{ marginBottom: 4 }}><RichText text={b} /></li>
                       ))}
