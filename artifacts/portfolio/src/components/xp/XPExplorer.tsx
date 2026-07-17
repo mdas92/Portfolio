@@ -1,6 +1,21 @@
 import { useState } from "react";
 import { projects } from "../../data/portfolio";
 
+const GROUPS = [
+  {
+    label: "Content Design & UX Writing",
+    slugs: ["product-taxonomy", "expense-mgmt", "repayments", "lazycard"],
+  },
+  {
+    label: "Content Strategy & Enablement",
+    slugs: ["content-maps", "playbook"],
+  },
+  {
+    label: "Conversation Design",
+    slugs: ["chatbot"],
+  },
+];
+
 const GRAY = "#d4d0c8";
 const DG = "#808080";
 
@@ -79,9 +94,9 @@ function SideLink({ icon, label }: { icon: string; label: string }) {
 export function XPExplorer({ onOpenProject, mobile = false }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
 
-  const visible = projects
-    .filter(p => !p.archived)
-    .sort((a, b) => parseInt(b.year) - parseInt(a.year));
+  const allVisible = projects.filter(p => !p.archived);
+  const visible = allVisible; // kept for status bar / Details panel
+  const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
 
   const selProject = visible.find(p => p.slug === selected);
 
@@ -153,46 +168,83 @@ export function XPExplorer({ onOpenProject, mobile = false }: Props) {
           </SidebarSection>
         </div>}
 
-        {/* Icon grid */}
+        {/* Icon grid — grouped */}
         <div
-          style={{ flex: 1, overflowY: "auto", background: "white", padding: "12px 8px" }}
+          style={{ flex: 1, overflowY: "auto", background: "white", padding: "8px 8px 16px" }}
           onClick={() => setSelected(null)}
         >
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "4px 4px", alignContent: "flex-start" }}>
-            {visible.map(p => {
-              const isSel = selected === p.slug;
-              return (
+          {GROUPS.map(group => {
+            const groupProjects = group.slugs
+              .map(s => allVisible.find(p => p.slug === s))
+              .filter(Boolean) as typeof allVisible;
+            if (groupProjects.length === 0) return null;
+            const isCollapsed = collapsed[group.label];
+            return (
+              <div key={group.label} style={{ marginBottom: 12 }}>
+                {/* XP-style group header */}
                 <div
-                  key={p.slug}
+                  onClick={e => { e.stopPropagation(); setCollapsed(c => ({ ...c, [group.label]: !c[group.label] })); }}
                   style={{
                     display: "flex",
-                    flexDirection: "column",
                     alignItems: "center",
-                    padding: "10px 6px 8px",
-                    cursor: "default",
-                    borderRadius: 3,
-                    background: isSel ? "#316ac5" : "transparent",
-                    userSelect: "none",
-                  }}
-                  onClick={e => { e.stopPropagation(); setSelected(p.slug); }}
-                  onDoubleClick={() => onOpenProject(p.slug, p.title)}
-                >
-                  <WordDocIcon selected={isSel} />
-                  <span style={{
-                    marginTop: 6,
-                    fontSize: 12,
+                    justifyContent: "space-between",
+                    background: "linear-gradient(90deg, #3a6dc5 0%, #5b9bd5 50%, #3a6dc5 100%)",
+                    color: "white",
                     fontFamily: "Tahoma,sans-serif",
-                    color: isSel ? "white" : "#000",
-                    textAlign: "center",
-                    lineHeight: 1.35,
-                    wordBreak: "break-word",
-                  }}>
-                    {p.title}
-                  </span>
+                    fontSize: 11,
+                    fontWeight: "bold",
+                    padding: "3px 8px 3px 6px",
+                    cursor: "default",
+                    userSelect: "none",
+                    marginBottom: isCollapsed ? 0 : 4,
+                    borderRadius: 1,
+                  }}
+                >
+                  <span>{group.label}</span>
+                  <span style={{ fontSize: 9, opacity: 0.85 }}>{isCollapsed ? "▶" : "▼"}</span>
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Icons */}
+                {!isCollapsed && (
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "2px 4px", alignContent: "flex-start" }}>
+                    {groupProjects.map(p => {
+                      const isSel = selected === p.slug;
+                      return (
+                        <div
+                          key={p.slug}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            padding: "10px 6px 8px",
+                            cursor: "default",
+                            borderRadius: 3,
+                            background: isSel ? "#316ac5" : "transparent",
+                            userSelect: "none",
+                          }}
+                          onClick={e => { e.stopPropagation(); setSelected(p.slug); }}
+                          onDoubleClick={() => onOpenProject(p.slug, p.title)}
+                        >
+                          <WordDocIcon selected={isSel} />
+                          <span style={{
+                            marginTop: 6,
+                            fontSize: 12,
+                            fontFamily: "Tahoma,sans-serif",
+                            color: isSel ? "white" : "#000",
+                            textAlign: "center",
+                            lineHeight: 1.35,
+                            wordBreak: "break-word",
+                          }}>
+                            {p.title}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 

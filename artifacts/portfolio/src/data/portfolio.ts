@@ -582,6 +582,7 @@ export const projects: Project[] = [
     whatIDid: [],
     result: "",
     image: "",
+    archived: true,
     comingSoon: true
   }
 ];
