@@ -683,11 +683,6 @@ export default function ChatbotCaseStudy() {
             <strong className="font-semibold text-foreground">5 product lines</strong> with interconnected flows, and
             covers everything from transactions to repayments, and more (image shown to scale).
           </p>
-          {/* Sample conversation — animated single iPhone 17 */}
-          <div className="md:pt-8 flex justify-center">
-            <AnimatedChatPrototype />
-          </div>
-
           {/* App UI Gallery */}
           <div className="mt-24">
             <p className="text-center text-foreground/70 font-sans mb-12">
