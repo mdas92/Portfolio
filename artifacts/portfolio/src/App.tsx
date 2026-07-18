@@ -5,6 +5,7 @@ import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
 import ChatbotCaseStudy from "./pages/ChatbotCaseStudy";
 import AampeStrategy from "./pages/AampeStrategy";
+import ProductTaxonomy from "./pages/ProductTaxonomy";
 import NotFound from "./pages/not-found";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/work" component={Work} />
           <Route path="/work/aampe-strategy" component={AampeStrategy} />
           <Route path="/work/chatbot" component={ChatbotCaseStudy} />
+          <Route path="/work/product-taxonomy" component={ProductTaxonomy} />
           <Route path="/work/:slug" component={ProjectDetail} />
           <Route component={NotFound} />
         </Switch>
