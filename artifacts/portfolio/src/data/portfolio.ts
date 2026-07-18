@@ -390,6 +390,7 @@ export const projects: Project[] = [
   },
   {
     slug: "playbook",
+    archived: true,
     tag: "Internal · Company-Wide",
     title: "Content Playbook - Company-Wide Training Resource",
     summary: "Comprehensive Figma deck covering label strategy, message architecture, and best practices. Distributed to all active clients.",

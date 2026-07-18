@@ -471,19 +471,6 @@ export function AampeStrategyVisual({ compact }: { compact?: boolean }) {
           })
         )}
       </svg>
-      {/* Scale label - bottom right */}
-      <div style={{ position: 'absolute', bottom: compact ? 10 : 18, right: compact ? 12 : 18, textAlign: 'right' }}>
-        <div style={{ fontSize: compact ? 26 : 38, fontFamily: 'Londrina Solid, serif', color: C.dark, lineHeight: 1 }}>
-          1M+
-        </div>
-        <div style={{ fontSize: 8, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, color: C.muted, letterSpacing: '0.14em', textTransform: 'uppercase' as const, marginTop: 2 }}>
-          Agents
-        </div>
-      </div>
-      {/* Layer label - top left */}
-      <div style={{ position: 'absolute', top: compact ? 10 : 16, left: compact ? 10 : 16, fontSize: 8, fontFamily: 'DM Sans, sans-serif', fontWeight: 700, color: C.violet, letterSpacing: '0.14em', textTransform: 'uppercase' as const, opacity: 0.7 }}>
-        Semantic Layer
-      </div>
     </div>
   );
 }
