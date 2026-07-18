@@ -224,6 +224,125 @@ const AREA_TITLES = [
   "Content Generation at Scale",
 ];
 
+type Impact = "High" | "Med" | "Low";
+type Status = "In Progress" | "Not Started" | "Done" | "Blocked";
+type CMRow = { ct: string; topic: string; example: string; impact: Impact; status: Status };
+type CMGroup = { subfeature: string; rows: CMRow[] };
+
+const CM_DATA: CMGroup[] = [
+  {
+    subfeature: "Onboarding",
+    rows: [
+      { ct: "contextual-behavioural", topic: "Enable location sharing", example: "See what's hot near your location", impact: "Med", status: "In Progress" },
+      { ct: "contextual-attribute", topic: "Select your country", example: "Where are we delivering to?", impact: "Med", status: "In Progress" },
+      { ct: "contextual-attribute", topic: "Registration", example: "Why sign up", impact: "Med", status: "In Progress" },
+      { ct: "contextual-behavioural", topic: "Notifications opt-in", example: "Turn on notifications for real time updates", impact: "Med", status: "In Progress" },
+    ],
+  },
+  {
+    subfeature: "Account",
+    rows: [
+      { ct: "foundational-general", topic: "Take Control of Your Experience", example: "Update your addresses, preferences, and notifications anytime — you're in control.", impact: "High", status: "Not Started" },
+      { ct: "contextual-attribute", topic: "Subscribe to newsletter", example: "Never miss a deal — subscribe to our newsletter for offers, updates, and more.", impact: "Low", status: "Done" },
+      { ct: "contextual-lifecycle", topic: "Change country", example: "Moving or traveling? Here's how to switch your country and explore local offers.", impact: "Low", status: "Done" },
+    ],
+  },
+  {
+    subfeature: "Rewards",
+    rows: [
+      { ct: "foundational-general", topic: "Rewards explained", example: "The more you order, the more points you earn.", impact: "High", status: "Done" },
+      { ct: "foundational-feature-education", topic: "Rewards", example: "It awards points for every transaction on the platform, redeemable for discounts across various categories including restaurants, grocery stores, fashion, beauty, and travel.", impact: "High", status: "Done" },
+      { ct: "foundational-feature-education", topic: "Rewards", example: "You can participate in raffles to win prizes such as credits and all-expense-paid trips.", impact: "High", status: "Done" },
+      { ct: "contextual-attribute", topic: "Earned points", example: "See how many points you've earned so far.", impact: "High", status: "Done" },
+      { ct: "contextual-attribute", topic: "Spent points", example: "You got x order for free by spending your reward points.", impact: "High", status: "Done" },
+      { ct: "contextual-datafeed", topic: "Rewards — Earn Points as You Order", example: "Earn 100 points toward Silver with your next Order — every bite counts.", impact: "High", status: "In Progress" },
+    ],
+  },
+  {
+    subfeature: "Vouchers",
+    rows: [
+      { ct: "foundational-thematic", topic: "Your Vouchers, Ready to Use", example: "You've saved them — now's the time to use them. Tap to apply your voucher at checkout.", impact: "High", status: "Not Started" },
+      { ct: "foundational-feature-education", topic: "Get vouchers by redeeming points", example: "You can get vouchers by redeeming your rewards points.", impact: "Low", status: "Blocked" },
+    ],
+  },
+];
+
+const CT_COLORS: Record<string, string> = {
+  "contextual-behavioural": "bg-violet-100 text-violet-700",
+  "contextual-attribute": "bg-blue-100 text-blue-700",
+  "contextual-lifecycle": "bg-indigo-100 text-indigo-700",
+  "contextual-datafeed": "bg-sky-100 text-sky-800",
+  "foundational-general": "bg-emerald-100 text-emerald-700",
+  "foundational-feature-education": "bg-green-100 text-green-700",
+  "foundational-thematic": "bg-teal-100 text-teal-700",
+};
+
+const IMPACT_COLORS: Record<Impact, string> = {
+  High: "bg-orange-100 text-orange-700",
+  Med: "bg-amber-100 text-amber-700",
+  Low: "bg-green-100 text-green-700",
+};
+
+const STATUS_COLORS: Record<Status, string> = {
+  "In Progress": "bg-violet-100 text-violet-700",
+  "Not Started": "bg-orange-50 text-orange-600",
+  Done: "bg-emerald-100 text-emerald-700",
+  Blocked: "bg-red-100 text-red-700",
+};
+
+function Pill({ label, cls }: { label: string; cls: string }) {
+  return (
+    <span className={`text-[10px] font-sans font-medium px-2 py-0.5 rounded-sm whitespace-nowrap ${cls}`}>
+      {label}
+    </span>
+  );
+}
+
+function ContentMapVisual() {
+  return (
+    <div className="overflow-x-auto border border-border/40 rounded-sm">
+      <table className="w-full text-xs font-sans border-collapse min-w-[760px]">
+        <thead>
+          <tr className="bg-muted/20 border-b border-border/40">
+            {["Sub-feature", "Content Type", "Topic", "Example", "Impact", "Status"].map((h) => (
+              <th key={h} className="text-left px-3 py-2.5 text-[9px] uppercase tracking-[0.15em] font-semibold text-muted-foreground border-r border-border/20 last:border-r-0 whitespace-nowrap">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {CM_DATA.map((group, gi) =>
+            group.rows.map((row, ri) => (
+              <tr key={`${gi}-${ri}`} className={`border-b border-border/[0.15] ${ri === 0 && gi > 0 ? "border-t border-border/30" : ""}`}>
+                {ri === 0 && (
+                  <td
+                    rowSpan={group.rows.length}
+                    className="px-3 py-2.5 font-sans font-semibold text-foreground/75 align-top border-r border-border/20 whitespace-nowrap text-[11px]"
+                  >
+                    {group.subfeature}
+                  </td>
+                )}
+                <td className="px-3 py-2.5 border-r border-border/20">
+                  <Pill label={row.ct} cls={CT_COLORS[row.ct] ?? "bg-muted text-muted-foreground"} />
+                </td>
+                <td className="px-3 py-2.5 text-foreground/75 border-r border-border/20 whitespace-nowrap">{row.topic}</td>
+                <td className="px-3 py-2.5 text-foreground/55 border-r border-border/20 leading-relaxed">{row.example}</td>
+                <td className="px-3 py-2.5 border-r border-border/20">
+                  <Pill label={row.impact} cls={IMPACT_COLORS[row.impact]} />
+                </td>
+                <td className="px-3 py-2.5">
+                  <Pill label={row.status} cls={STATUS_COLORS[row.status]} />
+                </td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function PanelContentMap() {
   return (
     <div className="flex flex-col gap-14">
@@ -261,7 +380,7 @@ function PanelContentMap() {
         </div>
       </div>
 
-      <Placeholder label="Content map sample — coming soon" />
+      <ContentMapVisual />
 
       {/* Block 3 + 4 — Opportunity + Scaling (2-col) */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -288,6 +407,21 @@ function PanelContentMap() {
       </div>
 
       <Placeholder label="AI-assisted content map workflow — coming soon" />
+
+      {/* Blog link */}
+      <div className="border-t border-border/30 pt-8">
+        <p className="text-sm font-sans text-foreground/60">
+          To know more about content maps, check out{" "}
+          <a
+            href="https://aampe.com/blog/the-bigger-picture-how-aampe-s-content-maps-redefine-content-strategy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-medium underline underline-offset-4 hover:text-primary/70 transition-colors"
+          >
+            The Bigger Picture: How Aampe's Content Maps Redefine Content Strategy
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
