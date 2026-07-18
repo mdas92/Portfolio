@@ -313,64 +313,12 @@ function ContentMapVisual() {
 function PanelContentMap() {
   return (
     <div className="flex flex-col gap-14">
-      {/* Original card content */}
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What is it?</p>
-          <p className="text-foreground/70 font-sans leading-relaxed">Aampe needed a way to see content as a living portfolio, not a backlog of messages - so that marketers, product managers, and CRM leaders could reimagine the way they approach content
+      <p className="text-foreground/70 font-sans leading-relaxed max-w-2xl">
+        Content Maps were a way to break marketers out of campaign thinking and help them design for millions of individual journeys.
+      </p>
 
-          We introduced the Content Map - a living inventory of content - to connect features, goals, topics, contexts, messages, and agent decisions.
-
-</p>
-        </div>
-        <div>
-          <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What was done?</p>
-          <ul className="text-foreground/70 font-sans leading-relaxed flex flex-col gap-2 list-disc list-outside pl-4">
-            <li>Created the content map framework and prototype with Strategy, GTM, and Leadership.</li>
-            <li>Turned scattered inputs into a bird's-eye view teams could use to spot gaps, overlaps, and next bets.</li>
-            <li>Designed it as structured context for agents, so planning could feed creation, observation, and improvement.</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-border/30" />
-      {/* Slide content — Block 1 + 2 — Problem + Solution (2-col) */}
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <h4 className="font-serif text-2xl mb-4 leading-snug">Content strategy needed a bird's-eye view</h4>
-          <p className="text-foreground/70 font-sans leading-relaxed">
-            Aampe's agents could only learn from the content they were given, but teams had no shared way to see the full opportunity space. CRM, growth, product, and data teams were all looking at different parts of the customer journey. The work was to turn scattered product knowledge into one strategic surface.
-          </p>
-        </div>
-        <div>
-          <h4 className="font-serif text-2xl mb-4 leading-snug">A content map made the whole conversation visible</h4>
-          <p className="text-foreground/70 font-sans leading-relaxed">
-            A content map is a structured view of every place a brand can speak to a user. It connects product features, customer journeys, lifecycle moments, content topics, channels, triggers, audiences, and priority into one working artifact. This made content strategy easier to discuss, audit, and build.
-          </p>
-        </div>
-      </div>
       <ContentMapVisual />
-      {/* Block 3 + 4 — Opportunity + Scaling (2-col) */}
-      <div className="grid md:grid-cols-2 gap-10 items-start">
-        <div>
-          <h4 className="font-serif text-2xl mb-4 leading-snug">The map helped teams think beyond campaigns</h4>
-          <p className="text-foreground/70 font-sans leading-relaxed">
-            The bigger goal was not to document existing content. It was to help teams see what could exist: missing topics, underused features, new value propositions, cross-sell moments, lifecycle gaps, and places where agents needed more breadth to learn from. The map turned "what should we say?" into a strategic planning exercise.
-          </p>
-        </div>
-        <div>
-          <h4 className="font-serif text-2xl mb-4 leading-snug">I turned a personal method into a company capability</h4>
-          <p className="text-foreground/70 font-sans leading-relaxed">
-            I created the framework, built the first reusable templates, named and positioned the artifact, wrote the internal guide, and trained teams across the company. The method moved from my own strategy work into onboarding, QBRs, account resets, deal decks, and new-hire enablement.
-          </p>
-        </div>
-      </div>
-      {/* Block 5 — Agentic integration (full width) */}
-      <div className="border-l-2 border-primary/30 pl-6">
-        <h4 className="font-serif text-2xl mb-4 leading-snug">It became infrastructure for agentic content</h4>
-        <p className="text-foreground/70 font-sans leading-relaxed max-w-2xl">
-          The map was later paired with AI tools that could generate first-pass content maps from the methodology. That made the artifact more than a sheet. It became a repeatable input system for agents: helping teams plan content breadth, prioritise what to build, and create better conditions for continuous learning.
-        </p>
-      </div>
+
       <Placeholder label="AI-assisted content map workflow — coming soon" />
       {/* Impact */}
       <div className="flex flex-col gap-8">
