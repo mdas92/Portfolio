@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 
 function AssetPlaceholder({
@@ -45,6 +46,218 @@ function StepHeading({ emoji, title }: { emoji: string; title: string }) {
     <div className="text-center mb-12 md:mb-16">
       <div className="text-4xl mb-4">{emoji}</div>
       <h2 className="text-3xl md:text-4xl font-serif text-foreground">{title}</h2>
+    </div>
+  );
+}
+
+const LP_PINK = "#E5477D";
+const SF = "system-ui, -apple-system, sans-serif";
+
+function StatusBar() {
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px 0", height: 50, flexShrink: 0 }}>
+      <span style={{ fontSize: 11, fontWeight: 600, color: "black", fontFamily: SF }}>9:41</span>
+      <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 1.5 }}>
+          {[3,5,7,9].map(h => <div key={h} style={{ width: 2.5, height: h, background: "black", borderRadius: 1 }} />)}
+        </div>
+        <svg width="13" height="10" viewBox="0 0 14 11" fill="black">
+          <path d="M7 9a1.3 1.3 0 1 1 0 2.6A1.3 1.3 0 0 1 7 9zm-3-3.1a4.2 4.2 0 0 1 6 0l1.1-1.1a5.8 5.8 0 0 0-8.2 0zm-2.7-2.7A8 8 0 0 1 7 1.1a8 8 0 0 1 5.7 2.1L14 2A9.7 9.7 0 0 0 7-.1 9.7 9.7 0 0 0 0 2z" />
+        </svg>
+        <div style={{ width: 20, height: 10, borderRadius: 2.5, border: "1px solid rgba(0,0,0,0.45)", position: "relative", display: "flex", alignItems: "center", padding: 1.5 }}>
+          <div style={{ width: "80%", height: "100%", background: "black", borderRadius: 1.5 }} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AnimatedChatPrototype() {
+  const [loopKey, setLoopKey] = useState(0);
+  const [step, setStep] = useState(0);
+  const [tapping, setTapping] = useState<string | null>(null);
+  const [fading, setFading] = useState(false);
+  const chatRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const T: ReturnType<typeof setTimeout>[] = [];
+    const at = (ms: number, fn: () => void) => { T.push(setTimeout(fn, ms)); };
+    setStep(0); setTapping(null); setFading(false);
+    at(600,   () => setStep(1));
+    at(1600,  () => setStep(2));
+    at(3000,  () => setTapping("I need help with repayments"));
+    at(3600,  () => { setTapping(null); setStep(3); });
+    at(4200,  () => setStep(4));
+    at(5000,  () => setStep(5));
+    at(6300,  () => setTapping("Auto-payments"));
+    at(6900,  () => { setTapping(null); setStep(6); });
+    at(7500,  () => setStep(7));
+    at(8300,  () => setStep(8));
+    at(9600,  () => setTapping("How to set up auto-pay"));
+    at(10200, () => { setTapping(null); setStep(9); });
+    at(10800, () => setStep(10));
+    at(11800, () => setStep(11));
+    at(12100, () => setStep(12));
+    at(12400, () => setStep(13));
+    at(12700, () => setStep(14));
+    at(14500, () => setFading(true));
+    at(15500, () => setLoopKey(k => k + 1));
+    return () => T.forEach(clearTimeout);
+  }, [loopKey]);
+
+  useEffect(() => {
+    if (chatRef.current) {
+      chatRef.current.scrollTo({ top: chatRef.current.scrollHeight, behavior: "smooth" });
+    }
+  }, [step]);
+
+  const bub = { initial: { opacity: 0, y: 8 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.35 } } as const;
+  const PW = 300;
+  const PH = Math.round(PW * 852 / 393);
+
+  const renderOptions = (label: string, items: string[], visible: boolean) =>
+    visible ? (
+      <motion.div {...bub} style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <p style={{ fontSize: 8, textTransform: "uppercase" as const, letterSpacing: "0.12em", color: "#bbb", margin: 0, fontFamily: SF }}>{label}</p>
+        {items.map(opt => (
+          <div key={opt} style={{
+            fontSize: 10, padding: "7px 10px", borderRadius: 10, fontFamily: SF,
+            border: tapping === opt ? "none" : "1px solid #e8e8e8",
+            background: tapping === opt ? "#1C1C1E" : "white",
+            color: tapping === opt ? "white" : "#555",
+            position: "relative" as const,
+            transition: "background 0.25s, color 0.25s, border 0.25s",
+          }}>
+            {opt}
+            {tapping === opt && (
+              <motion.div
+                initial={{ opacity: 0.5 }} animate={{ opacity: 0 }} transition={{ duration: 0.5 }}
+                style={{ position: "absolute", inset: 0, borderRadius: 10, background: "rgba(255,255,255,0.25)" }}
+              />
+            )}
+          </div>
+        ))}
+      </motion.div>
+    ) : null;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+      <p style={{ fontSize: 10, textTransform: "uppercase" as const, letterSpacing: "0.2em", color: "var(--muted-foreground)", fontFamily: SF, margin: 0 }}>
+        Sample Conversation
+      </p>
+
+      {/* iPhone 17 frame */}
+      <div style={{
+        width: PW, height: PH, flexShrink: 0,
+        background: "linear-gradient(145deg, #3A3A3C, #2A2A2C)",
+        borderRadius: 52, padding: 3,
+        boxShadow: "0 30px 70px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1), 0 0 0 0.5px rgba(255,255,255,0.1)",
+        position: "relative" as const,
+      }}>
+        {/* Buttons */}
+        <div style={{ position: "absolute", left: -3, top: 98,  width: 3, height: 26, background: "#48484A", borderRadius: "2px 0 0 2px" }} />
+        <div style={{ position: "absolute", left: -3, top: 134, width: 3, height: 44, background: "#48484A", borderRadius: "2px 0 0 2px" }} />
+        <div style={{ position: "absolute", left: -3, top: 188, width: 3, height: 44, background: "#48484A", borderRadius: "2px 0 0 2px" }} />
+        <div style={{ position: "absolute", right: -3, top: 140, width: 3, height: 66, background: "#48484A", borderRadius: "0 2px 2px 0" }} />
+
+        {/* Screen */}
+        <div style={{ width: "100%", height: "100%", background: "white", borderRadius: 49, overflow: "hidden", display: "flex", flexDirection: "column", position: "relative" as const }}>
+          {/* Dynamic Island */}
+          <div style={{ position: "absolute", top: 12, left: "50%", transform: "translateX(-50%)", width: 98, height: 30, background: "black", borderRadius: 15, zIndex: 10 }} />
+
+          <StatusBar />
+
+          {/* Chat header */}
+          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "5px 14px 8px", borderBottom: "1px solid #f0f0f0", flexShrink: 0 }}>
+            <div style={{ width: 30, height: 30, borderRadius: "50%", background: LP_PINK, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <span style={{ fontSize: 9, color: "white", fontWeight: 700, fontFamily: SF }}>LP</span>
+            </div>
+            <span style={{ fontSize: 11, fontWeight: 600, color: "black", fontFamily: SF }}>LazyPay Assistant</span>
+            <div style={{ marginLeft: "auto", width: 7, height: 7, borderRadius: "50%", background: "#22c55e" }} />
+          </div>
+
+          {/* Chat scroll area */}
+          <div ref={chatRef} style={{
+            flex: 1, overflowY: "hidden" as const, background: "#F7F7F7",
+            padding: "10px 10px 8px", display: "flex", flexDirection: "column", gap: 8,
+            opacity: fading ? 0 : 1, transition: fading ? "opacity 0.8s ease" : "opacity 0.3s ease",
+          }}>
+            {/* Bot 1 */}
+            {step >= 1 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-start", maxWidth: "86%", background: `${LP_PINK}22`, borderRadius: "12px 12px 12px 3px", padding: "8px 10px" }}>
+                <p style={{ fontSize: 10, color: "#1a1a1a", lineHeight: 1.55, margin: 0, fontFamily: SF }}>
+                  Hey there! I'm your LazyPay Assistant, always ready to help.<br /><br />What can I help you with?
+                </p>
+              </motion.div>
+            )}
+            {renderOptions("Top Questions", ["What is the status of my XpressLoan?","How many EMIs left?","I need help with repayments","Unable to repay my dues","Unable to transact"], step >= 2 && step < 3)}
+            {step >= 3 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-end", background: "#1C1C1E", borderRadius: "12px 12px 3px 12px", padding: "8px 10px", maxWidth: "80%" }}>
+                <p style={{ fontSize: 10, color: "white", margin: 0, fontFamily: SF }}>I need help with repayments</p>
+              </motion.div>
+            )}
+            {/* Bot 2 */}
+            {step >= 4 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-start", maxWidth: "86%", background: `${LP_PINK}22`, borderRadius: "12px 12px 12px 3px", padding: "8px 10px" }}>
+                <p style={{ fontSize: 10, color: "#1a1a1a", lineHeight: 1.55, margin: 0, fontFamily: SF }}>Of course, we're happy to help. What do you need help with?</p>
+              </motion.div>
+            )}
+            {renderOptions("Choose an option", ["Repaying dues and EMIs","Auto-payments","Late fees and charges"], step >= 5 && step < 6)}
+            {step >= 6 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-end", background: "#1C1C1E", borderRadius: "12px 12px 3px 12px", padding: "8px 10px", maxWidth: "80%" }}>
+                <p style={{ fontSize: 10, color: "white", margin: 0, fontFamily: SF }}>Auto-payments</p>
+              </motion.div>
+            )}
+            {/* Bot 3 */}
+            {step >= 7 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-start", maxWidth: "86%", background: `${LP_PINK}22`, borderRadius: "12px 12px 12px 3px", padding: "8px 10px" }}>
+                <p style={{ fontSize: 10, color: "#1a1a1a", lineHeight: 1.55, margin: 0, fontFamily: SF }}>Understood. What would you like to know about auto-payments?</p>
+              </motion.div>
+            )}
+            {renderOptions("Choose an option", ["How to set up auto-pay","Check status of auto-pay","Cancel auto-pay setup"], step >= 8 && step < 9)}
+            {step >= 9 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-end", background: "#1C1C1E", borderRadius: "12px 12px 3px 12px", padding: "8px 10px", maxWidth: "80%" }}>
+                <p style={{ fontSize: 10, color: "white", margin: 0, fontFamily: SF }}>How to set up auto-pay</p>
+              </motion.div>
+            )}
+            {/* Bot 4 — resolution */}
+            {step >= 10 && (
+              <motion.div {...bub} style={{ alignSelf: "flex-start", maxWidth: "90%", background: `${LP_PINK}22`, borderRadius: "12px 12px 12px 3px", padding: "8px 10px" }}>
+                <p style={{ fontSize: 10, color: "#1a1a1a", lineHeight: 1.55, margin: 0, fontFamily: SF }}>Setting up auto-pay is super easy 🎉 Here's how:</p>
+              </motion.div>
+            )}
+            {step >= 11 && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 4, paddingLeft: 2 }}>
+                {([
+                  { text: "Go to Dues → Setup Auto-pay", s: 11 },
+                  { text: "Keep net-banking login handy", s: 12 },
+                  { text: "Sent to bank for verification", s: 13 },
+                  { text: "We'll notify you once approved", s: 14 },
+                ] as { text: string; s: number }[]).filter(({ s }) => step >= s).map(({ text }) => (
+                  <motion.div key={text}
+                    initial={{ opacity: 0, x: -4 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}
+                    style={{ display: "flex", gap: 6, fontSize: 10, color: "#444", fontFamily: SF, alignItems: "flex-start" }}>
+                    <span style={{ color: LP_PINK, flexShrink: 0 }}>✓</span>{text}
+                  </motion.div>
+                ))}
+              </div>
+            )}
+            {step >= 14 && (
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.35, delay: 0.3 }}
+                style={{ display: "flex", gap: 5, marginTop: 2, flexWrap: "wrap" as const }}>
+                <div style={{ fontSize: 9, background: LP_PINK, color: "white", borderRadius: 8, padding: "5px 10px", fontFamily: SF }}>Go to Dues</div>
+                <div style={{ fontSize: 9, border: "1px solid #e0e0e0", color: "#666", borderRadius: 8, padding: "5px 10px", fontFamily: SF }}>Done</div>
+                <div style={{ fontSize: 9, border: "1px solid #e0e0e0", color: "#666", borderRadius: 8, padding: "5px 10px", fontFamily: SF }}>Go back</div>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Home indicator */}
+          <div style={{ height: 24, display: "flex", alignItems: "center", justifyContent: "center", background: "white", flexShrink: 0 }}>
+            <div style={{ width: 90, height: 4, background: "black", borderRadius: 2, opacity: 0.12 }} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -515,216 +728,9 @@ export default function ChatbotCaseStudy() {
             </div>
           </div>
 
-          {/* Sample conversation — 4 iPhone screens */}
-          <div className="md:pt-8">
-            <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground text-center mb-10">
-              Sample Conversation
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-
-              {/* iPhone 1 — Greeting */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
-                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
-                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
-                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
-                      <span className="text-[9px] font-semibold text-black">9:41</span>
-                      <div className="flex items-center gap-1">
-                        <div className="flex items-end gap-[1.5px]">
-                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
-                        </div>
-                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
-                        <div className="flex items-center">
-                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
-                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
-                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
-                        <span className="text-[7px] text-white font-bold">LP</span>
-                      </div>
-                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
-                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
-                    </div>
-                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
-                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[85%]">
-                        <p className="text-[9px] text-gray-800 leading-relaxed">Hey there! I'm your LazyPay Assistant, always ready to help.<br/><br/>What can I help you with?</p>
-                      </div>
-                      <p className="text-[7.5px] uppercase tracking-wider text-gray-400 mt-1">Top Questions</p>
-                      <div className="flex flex-col gap-1">
-                        {["What is the status of my XpressLoan?","How many EMIs left?","I need help with repayments","Unable to repay my dues","Unable to transact"].map((opt) => (
-                          <div key={opt} className={`text-[8px] px-2 py-1.5 rounded-lg border leading-snug ${opt === "I need help with repayments" ? "bg-[#1C1C1E] text-white border-[#1C1C1E] font-medium" : "border-gray-200 text-gray-600 bg-white"}`}>
-                            {opt}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Greeting</span>
-              </div>
-
-              {/* iPhone 2 — Repayments */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
-                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
-                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
-                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
-                      <span className="text-[9px] font-semibold text-black">9:41</span>
-                      <div className="flex items-center gap-1">
-                        <div className="flex items-end gap-[1.5px]">
-                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
-                        </div>
-                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
-                        <div className="flex items-center">
-                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
-                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
-                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
-                        <span className="text-[7px] text-white font-bold">LP</span>
-                      </div>
-                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
-                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
-                    </div>
-                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
-                      <div className="self-end bg-[#1C1C1E] text-white rounded-xl rounded-tr-sm px-2.5 py-2 max-w-[85%]">
-                        <p className="text-[9px] leading-relaxed">I need help with repayments</p>
-                      </div>
-                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[85%]">
-                        <p className="text-[9px] text-gray-800 leading-relaxed">Of course, we're happy to help. What do you need help with?</p>
-                      </div>
-                      <p className="text-[7.5px] uppercase tracking-wider text-gray-400 mt-1">Choose an option</p>
-                      <div className="flex flex-col gap-1">
-                        {["Repaying dues and EMIs","Auto-payments","Late fees and charges"].map((opt) => (
-                          <div key={opt} className={`text-[8px] px-2 py-1.5 rounded-lg border leading-snug ${opt === "Auto-payments" ? "bg-[#1C1C1E] text-white border-[#1C1C1E] font-medium" : "border-gray-200 text-gray-600 bg-white"}`}>
-                            {opt}
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex gap-1 mt-auto pt-2 border-t border-gray-100">
-                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Go back</button>
-                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Start over</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Repayments</span>
-              </div>
-
-              {/* iPhone 3 — Auto-payments */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
-                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
-                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
-                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
-                      <span className="text-[9px] font-semibold text-black">9:41</span>
-                      <div className="flex items-center gap-1">
-                        <div className="flex items-end gap-[1.5px]">
-                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
-                        </div>
-                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
-                        <div className="flex items-center">
-                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
-                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
-                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
-                        <span className="text-[7px] text-white font-bold">LP</span>
-                      </div>
-                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
-                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
-                    </div>
-                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
-                      <div className="self-end bg-[#1C1C1E] text-white rounded-xl rounded-tr-sm px-2.5 py-2 max-w-[85%]">
-                        <p className="text-[9px] leading-relaxed">Auto-payments</p>
-                      </div>
-                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[85%]">
-                        <p className="text-[9px] text-gray-800 leading-relaxed">Understood. What would you like to know about auto-payments?</p>
-                      </div>
-                      <p className="text-[7.5px] uppercase tracking-wider text-gray-400 mt-1">Choose an option</p>
-                      <div className="flex flex-col gap-1">
-                        {["How to set up auto-pay","Check status of auto-pay","Cancel auto-pay setup"].map((opt) => (
-                          <div key={opt} className={`text-[8px] px-2 py-1.5 rounded-lg border leading-snug ${opt === "How to set up auto-pay" ? "bg-[#1C1C1E] text-white border-[#1C1C1E] font-medium" : "border-gray-200 text-gray-600 bg-white"}`}>
-                            {opt}
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex gap-1 mt-auto pt-2 border-t border-gray-100">
-                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Go back</button>
-                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Start over</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Auto-payments</span>
-              </div>
-
-              {/* iPhone 4 — Resolution */}
-              <div className="flex flex-col items-center gap-3">
-                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
-                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
-                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
-                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
-                      <span className="text-[9px] font-semibold text-black">9:41</span>
-                      <div className="flex items-center gap-1">
-                        <div className="flex items-end gap-[1.5px]">
-                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
-                        </div>
-                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
-                        <div className="flex items-center">
-                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
-                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
-                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
-                        <span className="text-[7px] text-white font-bold">LP</span>
-                      </div>
-                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
-                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
-                    </div>
-                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
-                      <div className="self-end bg-[#1C1C1E] text-white rounded-xl rounded-tr-sm px-2.5 py-2 max-w-[85%]">
-                        <p className="text-[9px] leading-relaxed">How to set up auto-pay</p>
-                      </div>
-                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[90%]">
-                        <p className="text-[9px] text-gray-800 leading-relaxed">Setting up auto-pay is super easy 🎉 Here's how:</p>
-                      </div>
-                      <ul className="flex flex-col gap-1.5">
-                        {[
-                          "Go to Dues → Setup Auto-pay",
-                          "Keep net-banking login handy",
-                          "Sent to your bank for verification",
-                          "We'll notify you once approved",
-                        ].map((item) => (
-                          <li key={item} className="flex gap-1.5 text-[8px] text-gray-600 leading-snug">
-                            <span className="text-[#E5477D] shrink-0">✓</span>{item}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex gap-1 mt-auto pt-2 border-t border-gray-100 flex-wrap">
-                        <button className="text-[8px] bg-[#E5477D] text-white rounded-md px-2 py-1">Go to Dues</button>
-                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Done</button>
-                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Go back</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Resolution</span>
-              </div>
-
-            </div>
+          {/* Sample conversation — animated single iPhone 17 */}
+          <div className="md:pt-8 flex justify-center">
+            <AnimatedChatPrototype />
           </div>
 
           {/* App UI Gallery */}
