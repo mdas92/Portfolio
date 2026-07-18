@@ -637,33 +637,9 @@ export default function ChatbotCaseStudy() {
                 ))}
               </div>
 
-              {/* Centre — Figma prototype clipped to phone only */}
-              <div className="hidden md:flex flex-col items-center gap-2">
-                <div
-                  style={{
-                    width: 275,
-                    height: 616,
-                    overflow: "hidden",
-                    position: "relative",
-                    borderRadius: 8,
-                    border: "1px solid rgba(0,0,0,0.08)",
-                  }}
-                >
-                  <iframe
-                    style={{
-                      border: "none",
-                      width: 800,
-                      height: 700,
-                      position: "absolute",
-                      left: -263,
-                      top: -5,
-                      pointerEvents: "auto",
-                    }}
-                    src="https://embed.figma.com/proto/G9TSv7GD9azB5LZ1Z9JFKZ/Chatbot?kind=proto&node-id=27-5401&page-id=0%3A1&scaling=min-zoom&starting-point-node-id=27%3A5401&type=design&viewport=-1562%2C1815%2C0.39&embed-host=share"
-                    allowFullScreen
-                  />
-                </div>
-                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Try the prototype</span>
+              {/* Centre — animated prototype */}
+              <div className="hidden md:flex flex-col items-center">
+                <AnimatedChatPrototype />
               </div>
 
               {/* Right findings: 2, 4, 6 */}
@@ -684,17 +660,9 @@ export default function ChatbotCaseStudy() {
               </div>
             </div>
 
-            {/* Mobile: full-width prototype embed */}
-            <div className="md:hidden mt-8">
-              <div className="w-full overflow-hidden border border-border/20 rounded-sm" style={{aspectRatio: "16/9"}}>
-                <iframe
-                  style={{border: "none"}}
-                  width="100%"
-                  height="100%"
-                  src="https://embed.figma.com/proto/G9TSv7GD9azB5LZ1Z9JFKZ/Chatbot?kind=proto&node-id=27-5401&page-id=0%3A1&scaling=min-zoom&starting-point-node-id=27%3A5401&type=design&viewport=-1562%2C1815%2C0.39&embed-host=share"
-                  allowFullScreen
-                />
-              </div>
+            {/* Mobile: animated prototype */}
+            <div className="md:hidden mt-8 flex justify-center">
+              <AnimatedChatPrototype />
             </div>
           </div>
         </div>
@@ -715,19 +683,6 @@ export default function ChatbotCaseStudy() {
             <strong className="font-semibold text-foreground">5 product lines</strong> with interconnected flows, and
             covers everything from transactions to repayments, and more (image shown to scale).
           </p>
-          <p className="text-center text-muted-foreground font-sans mb-14">A sample conversation is added below.</p>
-
-          {/* Decision tree */}
-          <div className="relative mb-20">
-            <div className="w-full overflow-hidden border border-border/10 rounded-sm">
-              <img
-                src="/chatbot-sample.avif"
-                alt="Decision tree spanning 5 product lines — LazyPay chatbot"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-
           {/* Sample conversation — animated single iPhone 17 */}
           <div className="md:pt-8 flex justify-center">
             <AnimatedChatPrototype />
