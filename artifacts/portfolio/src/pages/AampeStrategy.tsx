@@ -313,11 +313,67 @@ function ContentMapVisual() {
 function PanelContentMap() {
   return (
     <div className="flex flex-col gap-14">
-      <p className="text-foreground/70 font-sans leading-relaxed max-w-2xl">
-        Content Maps were a way to break marketers out of campaign thinking and help them design for millions of individual journeys.
-      </p>
+      {/* What is it / What was done — summary */}
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What is it?</p>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            Marketers were stuck in a one-campaign-one-topic mindset, while products had far richer stories to tell. I created the Content Map to help teams see the full product and journey landscape, then turn it into content opportunities agents could learn from.
+          </p>
+        </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What was done?</p>
+          <ul className="text-foreground/70 font-sans leading-relaxed flex flex-col gap-2 list-disc list-outside pl-4">
+            <li>Mapped product features, flows, lifecycle moments, channels, triggers, audiences, and priorities into one strategic artifact.</li>
+            <li>Helped teams move from campaign planning to journey planning: what users can do, where they are, and how the brand can meet them there.</li>
+            <li>Turned the map into an evolving roadmap, coverage report, and input system for agentic content generation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-border/30" />
+
+      {/* Slides 1 + 2 */}
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">Marketers were stuck in campaign thinking</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            Most CRM teams were used to starting with one campaign, one topic, one audience, and one intended path. But products are much richer than that. Every app has features, flows, user states, behaviors, moments, benefits, and contexts that could become meaningful communication. The problem was that marketing often sat disconnected from that full product inventory.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">The content map made the product speakable</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            I created the Content Map to help teams ask two simple but powerful questions: what are all the things a user can do in this product, and what are all the ways we could talk to them about it? The map translated product architecture into content opportunities: features, sub-features, journeys, topics, channels, triggers, audiences, and priorities.
+          </p>
+        </div>
+      </div>
 
       <ContentMapVisual />
+
+      {/* Slides 3 + 4 */}
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">It helped teams design for individual journeys</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            The goal was not to make a sheet of campaign ideas. The goal was to help teams imagine many possible user journeys at once: new users, active users, stuck users, curious users, price-sensitive users, power users, returning users. Instead of forcing everyone through the same message path, the map helped teams plan content that could meet people where they were.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">It became a roadmap and coverage system</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            Teams could use it to see what had been covered, what was missing, what could be repurposed, what needed new content, and what should be prioritized first. It turned content strategy into an evolving roadmap: part planning tool, part production tracker, part coverage report.
+          </p>
+        </div>
+      </div>
+
+      {/* Slide 5 — full width */}
+      <div className="border-l-2 border-primary/30 pl-6">
+        <h4 className="font-serif text-2xl mb-4 leading-snug">It gave agents better material to learn from</h4>
+        <p className="text-foreground/70 font-sans leading-relaxed max-w-2xl">
+          For Aampe, this mattered because agents can only explore from the content they are given. A richer map meant a richer content portfolio: more topics, more contexts, more value propositions, and more ways to test what resonates. The bigger achievement was creating a repeatable strategy system that helped humans plan more holistically and helped agents learn from better inputs.
+        </p>
+      </div>
 
       <Placeholder label="AI-assisted content map workflow — coming soon" />
       {/* Impact */}

@@ -1,0 +1,31 @@
+Content Maps were a way to break marketers out of campaign thinking and help them design for millions of individual journeys.
+Here’s the tighter version I’d use.
+Slide 1: Marketers were stuck in campaign thinking
+Most CRM teams were used to starting with one campaign, one topic, one audience, and one intended path.
+But products are much richer than that. Every app has features, flows, user states, behaviors, moments, benefits, and contexts that could become meaningful communication.
+The problem was that marketing often sat disconnected from that full product inventory.
+Slide 2: The content map made the product speakable
+I created the Content Map to help teams ask two simple but powerful questions:
+What are all the things a user can do in this product?
+And what are all the ways we could talk to them about it?
+The map translated product architecture into content opportunities: features, sub-features, journeys, topics, channels, triggers, audiences, and priorities.
+Slide 3: It helped teams design for individual journeys
+The goal was not to make a sheet of campaign ideas.
+The goal was to help teams imagine many possible user journeys at once: new users, active users, stuck users, curious users, price-sensitive users, power users, returning users.
+Instead of forcing everyone through the same message path, the map helped teams plan content that could meet people where they were.
+Slide 4: It became a roadmap and coverage system
+The Content Map was also operational.
+Teams could use it to see what had been covered, what was missing, what could be repurposed, what needed new content, and what should be prioritized first.
+It turned content strategy into an evolving roadmap: part planning tool, part production tracker, part coverage report.
+Slide 5: It gave agents better material to learn from
+For Aampe, this mattered because agents can only explore from the content they are given.
+A richer map meant a richer content portfolio: more topics, more contexts, more value propositions, and more ways to test what resonates.
+The bigger achievement was creating a repeatable strategy system that helped humans plan more holistically and helped agents learn from better inputs.
+Slide 8 Card Version
+Content Strategy for Agentic Systems
+WHAT IS IT?
+Marketers were stuck in a one-campaign-one-topic mindset, while products had far richer stories to tell. I created the Content Map to help teams see the full product and journey landscape, then turn it into content opportunities agents could learn from.
+WHAT WAS DONE?
+Mapped product features, flows, lifecycle moments, channels, triggers, audiences, and priorities into one strategic artifact.
+Helped teams move from campaign planning to journey planning: what users can do, where they are, and how the brand can meet them there.
+Turned the map into an evolving roadmap, coverage report, and input system for agentic content generation.
