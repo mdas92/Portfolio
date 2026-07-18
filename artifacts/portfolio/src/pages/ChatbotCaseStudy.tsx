@@ -405,11 +405,74 @@ export default function ChatbotCaseStudy() {
               <strong className="font-semibold text-foreground">10 user sessions</strong> were conducted.
             </p>
 
-            {/* Figma prototype embed */}
-            <div className="mb-12">
-              <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground text-center mb-4">
-                Try the Prototype
-              </p>
+            {/* Findings grid: 3 left | prototype phone | 3 right */}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_200px_1fr] lg:grid-cols-[1fr_220px_1fr] gap-6 items-start">
+              {/* Left findings: 1, 3, 5 */}
+              <div className="flex flex-col gap-5">
+                {[
+                  { n: "1", text: "Users found use case categorisation more intuitive", outcome: "Finalised this categorisation", positive: true },
+                  { n: "3", text: "Some users wanted the option to type freely (NLP)", outcome: "Added to Phase II scope", positive: false },
+                  { n: "5", text: "Some users wanted more visual cues along with text", outcome: "Added rich media like PDFs, images, videos to answers", positive: false },
+                ].map(({ n, text, outcome, positive }) => (
+                  <div key={n} className="border border-border/50 p-5 flex flex-col gap-3">
+                    <span className="text-2xl font-serif font-bold text-primary/25">{n}</span>
+                    <p className="text-sm text-foreground/80 font-sans leading-relaxed">{text}</p>
+                    <span className={`self-start text-xs font-medium px-3 py-1 ${positive ? "text-primary bg-primary/10" : "text-muted-foreground bg-foreground/5"}`}>
+                      {outcome}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Centre — Figma prototype clipped to phone only */}
+              <div className="hidden md:flex flex-col items-center gap-2">
+                <div
+                  style={{
+                    width: 220,
+                    height: 440,
+                    overflow: "hidden",
+                    position: "relative",
+                    borderRadius: 8,
+                    border: "1px solid rgba(0,0,0,0.08)",
+                  }}
+                >
+                  <iframe
+                    style={{
+                      border: "none",
+                      width: 800,
+                      height: 450,
+                      position: "absolute",
+                      left: -290,
+                      top: -5,
+                      pointerEvents: "auto",
+                    }}
+                    src="https://embed.figma.com/proto/G9TSv7GD9azB5LZ1Z9JFKZ/Chatbot?kind=proto&node-id=27-5401&page-id=0%3A1&scaling=min-zoom&starting-point-node-id=27%3A5401&type=design&viewport=-1562%2C1815%2C0.39&embed-host=share"
+                    allowFullScreen
+                  />
+                </div>
+                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Try the prototype</span>
+              </div>
+
+              {/* Right findings: 2, 4, 6 */}
+              <div className="flex flex-col gap-5">
+                {[
+                  { n: "2", text: 'Users like the "Top questions" section', outcome: "Positive feedback", positive: true },
+                  { n: "4", text: "Suggested an option to raise ticket within app instead of just sharing customer care no.", outcome: "Added to Phase II scope", positive: false },
+                  { n: "6", text: "Users were comfortable with the interface and format", outcome: "Positive feedback", positive: true },
+                ].map(({ n, text, outcome, positive }) => (
+                  <div key={n} className="border border-border/50 p-5 flex flex-col gap-3">
+                    <span className="text-2xl font-serif font-bold text-primary/25">{n}</span>
+                    <p className="text-sm text-foreground/80 font-sans leading-relaxed">{text}</p>
+                    <span className={`self-start text-xs font-medium px-3 py-1 ${positive ? "text-primary bg-primary/10" : "text-muted-foreground bg-foreground/5"}`}>
+                      {outcome}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile: full-width prototype embed */}
+            <div className="md:hidden mt-8">
               <div className="w-full overflow-hidden border border-border/20 rounded-sm" style={{aspectRatio: "16/9"}}>
                 <iframe
                   style={{border: "none"}}
@@ -419,26 +482,6 @@ export default function ChatbotCaseStudy() {
                   allowFullScreen
                 />
               </div>
-            </div>
-
-            {/* Findings grid: 2 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {[
-                { n: "1", text: "Users found use case categorisation more intuitive", outcome: "Finalised this categorisation", positive: true },
-                { n: "2", text: 'Users like the "Top questions" section', outcome: "Positive feedback", positive: true },
-                { n: "3", text: "Some users wanted the option to type freely (NLP)", outcome: "Added to Phase II scope", positive: false },
-                { n: "4", text: "Suggested an option to raise ticket within app instead of just sharing customer care no.", outcome: "Added to Phase II scope", positive: false },
-                { n: "5", text: "Some users wanted more visual cues along with text", outcome: "Added rich media like PDFs, images, videos to answers", positive: false },
-                { n: "6", text: "Users were comfortable with the interface and format", outcome: "Positive feedback", positive: true },
-              ].map(({ n, text, outcome, positive }) => (
-                <div key={n} className="border border-border/50 p-5 flex flex-col gap-3">
-                  <span className="text-2xl font-serif font-bold text-primary/25">{n}</span>
-                  <p className="text-sm text-foreground/80 font-sans leading-relaxed">{text}</p>
-                  <span className={`self-start text-xs font-medium px-3 py-1 ${positive ? "text-primary bg-primary/10" : "text-muted-foreground bg-foreground/5"}`}>
-                    {outcome}
-                  </span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
