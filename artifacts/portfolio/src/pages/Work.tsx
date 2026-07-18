@@ -54,7 +54,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.35, delay: Math.min(index * 0.05, 0.4) }}
-      className={`group flex flex-col rounded-xl border border-border bg-background transition-all overflow-hidden ${isSoon ? "cursor-default" : "hover:border-primary/40 hover:bg-muted/40 cursor-pointer"}`}
+      className={`group flex flex-col rounded-xl border border-border bg-background transition-all overflow-hidden min-h-[340px] ${isSoon ? "cursor-default" : "hover:border-primary/40 hover:bg-muted/40 cursor-pointer"}`}
     >
       {/* Visual thumbnail */}
       <div className={`w-full overflow-hidden border-b border-border relative ${isSoon ? "opacity-30 grayscale" : ""}`}>
@@ -78,7 +78,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           </span>
         </div>
 
-        <h2 className={`font-serif text-xl leading-tight transition-colors ${isSoon ? "text-foreground/30" : "group-hover:text-primary"}`}>
+        <h2 className={`font-serif text-xl leading-tight transition-colors line-clamp-2 ${isSoon ? "text-foreground/30" : "group-hover:text-primary"}`}>
           {project.title}
         </h2>
 
