@@ -129,32 +129,20 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: i * 0.08 }}
-                  className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
+                  className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10 py-10 md:py-12 border-b border-border/50 group"
                 >
-                  {/* Stacked dates */}
-                  <div className="md:col-span-3 flex flex-col justify-between">
+                  {/* Lead UX Writer — date (row 1, col 1-3) */}
+                  <div className="md:col-span-3">
                     <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{item.date}</div>
-                    {seniorEntry && (
-                      <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{seniorEntry.date}</div>
-                    )}
                   </div>
-                  {/* Stacked text — both PayU roles */}
-                  <div className="md:col-span-4 flex flex-col justify-between">
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">{item.role}</h3>
-                      <div className="text-muted-foreground font-medium mb-2">{item.company}</div>
-                      <p className="text-foreground/80 leading-relaxed font-light">{item.description}</p>
-                    </div>
-                    {seniorEntry && (
-                      <div className="flex flex-col gap-2">
-                        <h3 className="text-2xl font-serif text-foreground">{seniorEntry.role}</h3>
-                        <div className="text-muted-foreground font-medium mb-2">{seniorEntry.company}</div>
-                        <p className="text-foreground/80 leading-relaxed font-light">{seniorEntry.description}</p>
-                      </div>
-                    )}
+                  {/* Lead UX Writer — text (row 1, col 4-7) */}
+                  <div className="md:col-span-4 flex flex-col gap-2">
+                    <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">{item.role}</h3>
+                    <div className="text-muted-foreground font-medium mb-2">{item.company}</div>
+                    <p className="text-foreground/80 leading-relaxed font-light">{item.description}</p>
                   </div>
-                  {/* PayU photo spanning both roles */}
-                  <div className="md:col-span-4 flex items-start justify-end">
+                  {/* PayU photo — spans rows 1 & 2 (col 8-11) */}
+                  <div className="md:col-span-4 md:row-span-2 flex items-start justify-end">
                     <img
                       src="/payu-photo.jpg"
                       alt="Mohana at PayU"
@@ -162,6 +150,20 @@ export default function About() {
                       style={{ aspectRatio: "3/4", objectPosition: "center top" }}
                     />
                   </div>
+                  {/* Senior UX Writer — date (row 2, col 1-3) */}
+                  {seniorEntry && (
+                    <div className="md:col-span-3">
+                      <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{seniorEntry.date}</div>
+                    </div>
+                  )}
+                  {/* Senior UX Writer — text (row 2, col 4-7) */}
+                  {seniorEntry && (
+                    <div className="md:col-span-4 flex flex-col gap-2">
+                      <h3 className="text-2xl font-serif text-foreground">{seniorEntry.role}</h3>
+                      <div className="text-muted-foreground font-medium mb-2">{seniorEntry.company}</div>
+                      <p className="text-foreground/80 leading-relaxed font-light">{seniorEntry.description}</p>
+                    </div>
+                  )}
                 </motion.div>
               );
             }
