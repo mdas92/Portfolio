@@ -53,6 +53,168 @@ function StepHeading({ emoji, title }: { emoji: string; title: string }) {
 const LP_PINK = "#E5477D";
 const SF = "system-ui, -apple-system, sans-serif";
 
+function HeroVisual() {
+  const H = 480;
+  const W = 1400;
+  const V = "#6D28D9";
+
+  const levels = [
+    { x: 40,   count: 1,  nodeH: 20,  nodeW: 72  },
+    { x: 192,  count: 5,  nodeH: 16,  nodeW: 90  },
+    { x: 360,  count: 13, nodeH: 13,  nodeW: 78  },
+    { x: 510,  count: 28, nodeH: 10,  nodeW: 68  },
+    { x: 648,  count: 50, nodeH: 7,   nodeW: 58  },
+    { x: 776,  count: 75, nodeH: 5,   nodeW: 50  },
+    { x: 895,  count: 90, nodeH: 4,   nodeW: 44  },
+    { x: 1008, count: 95, nodeH: 4,   nodeW: 38  },
+    { x: 1116, count: 90, nodeH: 3.5, nodeW: 32  },
+    { x: 1220, count: 80, nodeH: 3,   nodeW: 26  },
+    { x: 1316, count: 68, nodeH: 3,   nodeW: 22  },
+  ];
+
+  const getYs = (count: number, nodeH: number): number[] => {
+    if (count === 1) return [H / 2 - nodeH / 2];
+    const gap = (H - count * nodeH) / (count - 1);
+    return Array.from({ length: count }, (_, i) => i * (nodeH + gap));
+  };
+
+  const opacities = [0.14, 0.12, 0.10, 0.085, 0.072, 0.058, 0.046, 0.036, 0.028, 0.022, 0.016];
+
+  const computed = levels.map((lvl, li) => ({
+    ...lvl,
+    ys: getYs(lvl.count, lvl.nodeH),
+    op: opacities[li] ?? 0.015,
+  }));
+
+  return (
+    <div style={{ position: "relative", width: "100%", height: H, background: "#ffffff", overflow: "hidden" }}>
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="xMidYMid slice"
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+      >
+        <defs>
+          <linearGradient id="hv-fl" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="12%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="hv-fr" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="88%" stopColor="white" stopOpacity="0" />
+            <stop offset="100%" stopColor="white" stopOpacity="1" />
+          </linearGradient>
+          <linearGradient id="hv-ft" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="white" stopOpacity="1" />
+            <stop offset="10%" stopColor="white" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="hv-fb" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="90%" stopColor="white" stopOpacity="0" />
+            <stop offset="100%" stopColor="white" stopOpacity="1" />
+          </linearGradient>
+        </defs>
+
+        {/* Lines: iterate children, draw back to proportional parent */}
+        {computed.slice(0, -1).map((lvl, li) => {
+          const next = computed[li + 1];
+          return next.ys.map((cy, ci) => {
+            const prop = next.count > 1 ? ci / (next.count - 1) : 0.5;
+            const pi = Math.round(prop * (lvl.count - 1));
+            const py = lvl.ys[pi];
+            return (
+              <line
+                key={`l${li}-${ci}`}
+                x1={lvl.x + lvl.nodeW}
+                y1={py + lvl.nodeH / 2}
+                x2={next.x}
+                y2={cy + next.nodeH / 2}
+                stroke={V}
+                strokeWidth={0.4}
+                opacity={lvl.op * 0.55}
+              />
+            );
+          });
+        })}
+
+        {/* Nodes */}
+        {computed.map((lvl, li) =>
+          lvl.ys.map((y, ni) => (
+            <rect
+              key={`n${li}-${ni}`}
+              x={lvl.x}
+              y={y}
+              width={lvl.nodeW}
+              height={lvl.nodeH}
+              rx={Math.max(1.5, lvl.nodeH * 0.35)}
+              fill={V}
+              opacity={lvl.op}
+            />
+          ))
+        )}
+
+        {/* Edge fades */}
+        <rect x="0" y="0" width={W} height={H} fill="url(#hv-fl)" />
+        <rect x="0" y="0" width={W} height={H} fill="url(#hv-fr)" />
+        <rect x="0" y="0" width={W} height={H} fill="url(#hv-ft)" />
+        <rect x="0" y="0" width={W} height={H} fill="url(#hv-fb)" />
+      </svg>
+
+      {/* Conversation card */}
+      <div style={{
+        position: "absolute",
+        left: "50%",
+        top: "50%",
+        transform: "translate(-50%, -50%)",
+        width: 288,
+        background: "white",
+        border: "1px solid rgba(0,0,0,0.08)",
+        borderRadius: 14,
+        boxShadow: "0 4px 32px rgba(0,0,0,0.11), 0 1px 4px rgba(0,0,0,0.05)",
+        overflow: "hidden",
+        fontFamily: SF,
+      }}>
+        {/* Header */}
+        <div style={{ padding: "10px 14px", borderBottom: "1px solid rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ width: 7, height: 7, borderRadius: "50%", background: LP_PINK, flexShrink: 0 }} />
+          <span style={{ fontSize: 10, fontWeight: 700, color: "#111", letterSpacing: "0.08em", textTransform: "uppercase" as const }}>LazyPay Assistant</span>
+        </div>
+
+        {/* Messages */}
+        <div style={{ padding: "14px", display: "flex", flexDirection: "column", gap: 8, background: "#FAFAFA" }}>
+          <div style={{ maxWidth: "84%", alignSelf: "flex-start" }}>
+            <div style={{ background: "white", border: "1px solid rgba(0,0,0,0.06)", padding: "8px 11px", borderRadius: "3px 10px 10px 10px", fontSize: 11.5, lineHeight: 1.5, color: "#222" }}>
+              Hey there! I'm your LazyPay Assistant, always ready to help.
+            </div>
+          </div>
+          <div style={{ maxWidth: "84%", alignSelf: "flex-start" }}>
+            <div style={{ background: "white", border: "1px solid rgba(0,0,0,0.06)", padding: "8px 11px", borderRadius: 10, fontSize: 11.5, lineHeight: 1.5, color: "#222" }}>
+              What can I help you with?
+            </div>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 5, paddingLeft: 1 }}>
+            {["Account", "Repayments", "Loans & EMIs", "Charges"].map(o => (
+              <span key={o} style={{ border: `1px solid ${LP_PINK}`, color: LP_PINK, padding: "3px 9px", borderRadius: 99, fontSize: 10, whiteSpace: "nowrap" as const }}>{o}</span>
+            ))}
+          </div>
+          <div style={{ maxWidth: "78%", alignSelf: "flex-end" }}>
+            <div style={{ background: LP_PINK, color: "white", padding: "8px 11px", borderRadius: "10px 3px 10px 10px", fontSize: 11.5, lineHeight: 1.5 }}>
+              I need help with repayments
+            </div>
+          </div>
+          <div style={{ maxWidth: "84%", alignSelf: "flex-start" }}>
+            <div style={{ background: "white", border: "1px solid rgba(0,0,0,0.06)", padding: "8px 11px", borderRadius: 10, fontSize: 11.5, lineHeight: 1.5, color: "#222" }}>
+              Of course! What do you need help with?
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" as const, gap: 4, paddingLeft: 1 }}>
+            {["Auto-payments", "Repayment history", "Failed repayment"].map(o => (
+              <span key={o} style={{ border: "1px solid rgba(0,0,0,0.10)", color: "#444", padding: "4px 10px", borderRadius: 6, fontSize: 10.5, display: "inline-block", width: "fit-content" }}>{o}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function StatusBar() {
   return (
     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "14px 20px 0", height: 50, flexShrink: 0 }}>
@@ -316,12 +478,7 @@ export default function ChatbotCaseStudy() {
           className="w-full overflow-hidden border border-border/10"
           style={{ maxHeight: 520 }}
         >
-          <img
-            src="/chatbot-hero.avif"
-            alt="Building an in-app Chat Assistant — LazyPay"
-            className="w-full object-cover"
-            style={{ maxHeight: 520 }}
-          />
+          <HeroVisual />
         </motion.div>
       </div>
 
