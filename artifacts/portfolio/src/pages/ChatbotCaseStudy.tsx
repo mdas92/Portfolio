@@ -58,33 +58,74 @@ function HeroVisual() {
   const W = 1400;
   const V = "#6D28D9";
 
+  // Each level: x position, node count, card height, card width
+  // cardH * count must stay < H to avoid overlap
   const levels = [
-    { x: 40,   count: 1,  nodeH: 20,  nodeW: 72  },
-    { x: 192,  count: 5,  nodeH: 16,  nodeW: 90  },
-    { x: 360,  count: 13, nodeH: 13,  nodeW: 78  },
-    { x: 510,  count: 28, nodeH: 10,  nodeW: 68  },
-    { x: 648,  count: 50, nodeH: 7,   nodeW: 58  },
-    { x: 776,  count: 75, nodeH: 5,   nodeW: 50  },
-    { x: 895,  count: 90, nodeH: 4,   nodeW: 44  },
-    { x: 1008, count: 95, nodeH: 4,   nodeW: 38  },
-    { x: 1116, count: 90, nodeH: 3.5, nodeW: 32  },
-    { x: 1220, count: 80, nodeH: 3,   nodeW: 26  },
-    { x: 1316, count: 68, nodeH: 3,   nodeW: 22  },
+    { x: 28,   count: 1,  cH: 78,  cW: 118 },
+    { x: 202,  count: 4,  cH: 62,  cW: 100 },
+    { x: 360,  count: 10, cH: 42,  cW: 84  },
+    { x: 502,  count: 20, cH: 22,  cW: 68  },
+    { x: 628,  count: 36, cH: 12,  cW: 55  },
+    { x: 741,  count: 56, cH: 8,   cW: 44  },
+    { x: 843,  count: 75, cH: 6,   cW: 36  },
+    { x: 937,  count: 90, cH: 5,   cW: 29  },
+    { x: 1024, count: 88, cH: 4,   cW: 23  },
+    { x: 1105, count: 82, cH: 3.5, cW: 19  },
+    { x: 1182, count: 74, cH: 3,   cW: 16  },
+    { x: 1255, count: 64, cH: 3,   cW: 13  },
+    { x: 1325, count: 53, cH: 3,   cW: 11  },
+    { x: 1392, count: 42, cH: 3,   cW: 9   },
   ];
 
-  const getYs = (count: number, nodeH: number): number[] => {
-    if (count === 1) return [H / 2 - nodeH / 2];
-    const gap = (H - count * nodeH) / (count - 1);
-    return Array.from({ length: count }, (_, i) => i * (nodeH + gap));
-  };
+  const opacities =    [0.40, 0.32, 0.26, 0.20, 0.15, 0.11, 0.08, 0.062, 0.047, 0.036, 0.027, 0.020, 0.015, 0.011];
+  const lineOpacities = [0.30, 0.24, 0.19, 0.15, 0.11, 0.08, 0.06, 0.047, 0.036, 0.027, 0.020, 0.015, 0.011, 0.008];
 
-  const opacities = [0.14, 0.12, 0.10, 0.085, 0.072, 0.058, 0.046, 0.036, 0.028, 0.022, 0.016];
+  const getYs = (count: number, cH: number): number[] => {
+    if (count === 1) return [H / 2 - cH / 2];
+    const gap = (H - count * cH) / (count - 1);
+    return Array.from({ length: count }, (_, i) => i * (cH + gap));
+  };
 
   const computed = levels.map((lvl, li) => ({
     ...lvl,
-    ys: getYs(lvl.count, lvl.nodeH),
-    op: opacities[li] ?? 0.015,
+    ys: getYs(lvl.count, lvl.cH),
+    op: opacities[li] ?? 0.009,
+    lop: lineOpacities[li] ?? 0.006,
   }));
+
+  // Draw chat-bubble anatomy inside each node:
+  // left-aligned "bot" lines + right-aligned "user" lines
+  const bubbleLines = (x: number, y: number, cW: number, cH: number) => {
+    if (cH >= 42) {
+      // Large: 2 bot + 1 user + shorter bot
+      return (<>
+        <rect x={x+4} y={y+9}         width={cW*0.58} height={3.5} rx={1.8} fill="white" opacity={0.7} />
+        <rect x={x+4} y={y+16}        width={cW*0.40} height={3.5} rx={1.8} fill="white" opacity={0.5} />
+        <rect x={x+cW-4-cW*0.44} y={y+cH*0.42} width={cW*0.44} height={3.5} rx={1.8} fill="white" opacity={0.6} />
+        <rect x={x+4} y={y+cH*0.62}   width={cW*0.62} height={3.5} rx={1.8} fill="white" opacity={0.7} />
+        {cH >= 62 && <rect x={x+cW-4-cW*0.36} y={y+cH*0.78} width={cW*0.36} height={3} rx={1.5} fill="white" opacity={0.5} />}
+      </>);
+    } else if (cH >= 20) {
+      // Medium: 1 bot + 1 user
+      return (<>
+        <rect x={x+3} y={y+cH*0.20} width={cW*0.56} height={Math.min(3, cH*0.22)} rx={1.5} fill="white" opacity={0.65} />
+        <rect x={x+cW-3-cW*0.42} y={y+cH*0.56} width={cW*0.42} height={Math.min(3, cH*0.22)} rx={1.5} fill="white" opacity={0.55} />
+      </>);
+    } else if (cH >= 10) {
+      // Small: just 2 offset lines so it reads as conversation
+      return (<>
+        <rect x={x+2} y={y+cH*0.22} width={cW*0.50} height={Math.min(2, cH*0.25)} rx={1} fill="white" opacity={0.6} />
+        <rect x={x+cW-2-cW*0.38} y={y+cH*0.60} width={cW*0.38} height={Math.min(2, cH*0.25)} rx={1} fill="white" opacity={0.5} />
+      </>);
+    } else if (cH >= 6) {
+      // Tiny: 1 left line + 1 right dot
+      return (<>
+        <rect x={x+2} y={y+cH*0.25} width={cW*0.44} height={Math.max(1, cH*0.28)} rx={0.8} fill="white" opacity={0.55} />
+        <rect x={x+cW-2-cW*0.32} y={y+cH*0.60} width={cW*0.32} height={Math.max(1, cH*0.25)} rx={0.8} fill="white" opacity={0.45} />
+      </>);
+    }
+    return null;
+  };
 
   return (
     <div style={{ position: "relative", width: "100%", height: H, background: "#ffffff", overflow: "hidden" }}>
@@ -95,24 +136,24 @@ function HeroVisual() {
       >
         <defs>
           <linearGradient id="hv-fl" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="white" stopOpacity="1" />
-            <stop offset="12%" stopColor="white" stopOpacity="0" />
+            <stop offset="0%"  stopColor="white" stopOpacity="1" />
+            <stop offset="10%" stopColor="white" stopOpacity="0" />
           </linearGradient>
           <linearGradient id="hv-fr" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="88%" stopColor="white" stopOpacity="0" />
+            <stop offset="88%"  stopColor="white" stopOpacity="0" />
             <stop offset="100%" stopColor="white" stopOpacity="1" />
           </linearGradient>
           <linearGradient id="hv-ft" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="white" stopOpacity="1" />
-            <stop offset="10%" stopColor="white" stopOpacity="0" />
+            <stop offset="0%"  stopColor="white" stopOpacity="1" />
+            <stop offset="8%"  stopColor="white" stopOpacity="0" />
           </linearGradient>
           <linearGradient id="hv-fb" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="90%" stopColor="white" stopOpacity="0" />
+            <stop offset="92%"  stopColor="white" stopOpacity="0" />
             <stop offset="100%" stopColor="white" stopOpacity="1" />
           </linearGradient>
         </defs>
 
-        {/* Lines: iterate children, draw back to proportional parent */}
+        {/* Connecting lines — children fan back to proportional parent */}
         {computed.slice(0, -1).map((lvl, li) => {
           const next = computed[li + 1];
           return next.ys.map((cy, ci) => {
@@ -122,31 +163,33 @@ function HeroVisual() {
             return (
               <line
                 key={`l${li}-${ci}`}
-                x1={lvl.x + lvl.nodeW}
-                y1={py + lvl.nodeH / 2}
+                x1={lvl.x + lvl.cW}
+                y1={py + lvl.cH / 2}
                 x2={next.x}
-                y2={cy + next.nodeH / 2}
+                y2={cy + next.cH / 2}
                 stroke={V}
-                strokeWidth={0.4}
-                opacity={lvl.op * 0.55}
+                strokeWidth={Math.max(0.3, 1.2 - li * 0.1)}
+                opacity={lvl.lop}
               />
             );
           });
         })}
 
-        {/* Nodes */}
+        {/* Nodes with chat-bubble interior */}
         {computed.map((lvl, li) =>
           lvl.ys.map((y, ni) => (
-            <rect
-              key={`n${li}-${ni}`}
-              x={lvl.x}
-              y={y}
-              width={lvl.nodeW}
-              height={lvl.nodeH}
-              rx={Math.max(1.5, lvl.nodeH * 0.35)}
-              fill={V}
-              opacity={lvl.op}
-            />
+            <g key={`n${li}-${ni}`}>
+              <rect
+                x={lvl.x}
+                y={y}
+                width={lvl.cW}
+                height={lvl.cH}
+                rx={Math.min(6, lvl.cH * 0.32)}
+                fill={V}
+                opacity={lvl.op}
+              />
+              {bubbleLines(lvl.x, y, lvl.cW, lvl.cH)}
+            </g>
           ))
         )}
 
@@ -157,7 +200,7 @@ function HeroVisual() {
         <rect x="0" y="0" width={W} height={H} fill="url(#hv-fb)" />
       </svg>
 
-      {/* Conversation card */}
+      {/* Conversation card — readable snapshot in the foreground */}
       <div style={{
         position: "absolute",
         left: "50%",
@@ -167,17 +210,14 @@ function HeroVisual() {
         background: "white",
         border: "1px solid rgba(0,0,0,0.08)",
         borderRadius: 14,
-        boxShadow: "0 4px 32px rgba(0,0,0,0.11), 0 1px 4px rgba(0,0,0,0.05)",
+        boxShadow: "0 8px 48px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.06)",
         overflow: "hidden",
         fontFamily: SF,
       }}>
-        {/* Header */}
         <div style={{ padding: "10px 14px", borderBottom: "1px solid rgba(0,0,0,0.06)", display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ width: 7, height: 7, borderRadius: "50%", background: LP_PINK, flexShrink: 0 }} />
           <span style={{ fontSize: 10, fontWeight: 700, color: "#111", letterSpacing: "0.08em", textTransform: "uppercase" as const }}>LazyPay Assistant</span>
         </div>
-
-        {/* Messages */}
         <div style={{ padding: "14px", display: "flex", flexDirection: "column", gap: 8, background: "#FAFAFA" }}>
           <div style={{ maxWidth: "84%", alignSelf: "flex-start" }}>
             <div style={{ background: "white", border: "1px solid rgba(0,0,0,0.06)", padding: "8px 11px", borderRadius: "3px 10px 10px 10px", fontSize: 11.5, lineHeight: 1.5, color: "#222" }}>
