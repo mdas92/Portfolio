@@ -95,8 +95,8 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               Coming Soon
             </span>
           ) : (
-            <span className="ml-auto text-xs font-sans font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-              Read case study →
+            <span className="text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-primary border border-primary/40 px-2 py-1">
+              Live
             </span>
           )}
         </div>
