@@ -95,7 +95,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               Coming Soon
             </span>
           ) : (
-            <span className="ml-auto text-xs font-sans font-semibold text-primary">
+            <span className="text-xs font-sans font-semibold text-primary">
               Read case study →
             </span>
           )}
