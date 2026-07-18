@@ -87,7 +87,7 @@ function AgentScaleVisual() {
       </div>
 
       <p className="text-[11px] font-sans text-muted-foreground leading-relaxed border-t border-border/30 pt-5 mt-1">
-        Each user gets a dedicated agent. The agent determines the optimal message, timing, and content — for that individual, at scale.
+        Each user gets a dedicated agent. The agent determines the optimal message, timing, and content - for that individual, at scale.
       </p>
     </div>
   );
@@ -124,7 +124,7 @@ function MessageAnatomyVisual() {
           </div>
         </div>
         <p className="text-[11px] font-sans text-muted-foreground leading-relaxed">
-          Each highlighted block is a semantic label — the signal agents use to learn what resonates with each individual user over time.
+          Each highlighted block is a semantic label - the signal agents use to learn what resonates with each individual user over time.
         </p>
       </div>
     </div>
@@ -242,8 +242,8 @@ const CM_DATA: CMGroup[] = [
   {
     subfeature: "Account",
     rows: [
-      { ct: "foundational-general", topic: "Take Control of Your Experience", example: "Update your addresses, preferences, and notifications anytime — you're in control.", impact: "High", status: "Not Started" },
-      { ct: "contextual-attribute", topic: "Subscribe to newsletter", example: "Never miss a deal — subscribe to our newsletter for offers, updates, and more.", impact: "Low", status: "Done" },
+      { ct: "foundational-general", topic: "Take Control of Your Experience", example: "Update your addresses, preferences, and notifications anytime - you're in control.", impact: "High", status: "Not Started" },
+      { ct: "contextual-attribute", topic: "Subscribe to newsletter", example: "Never miss a deal - subscribe to our newsletter for offers, updates, and more.", impact: "Low", status: "Done" },
       { ct: "contextual-lifecycle", topic: "Change country", example: "Moving or traveling? Here's how to switch your country and explore local offers.", impact: "Low", status: "Done" },
     ],
   },
@@ -255,13 +255,13 @@ const CM_DATA: CMGroup[] = [
       { ct: "foundational-feature-education", topic: "Rewards", example: "You can participate in raffles to win prizes such as credits and all-expense-paid trips.", impact: "High", status: "Done" },
       { ct: "contextual-attribute", topic: "Earned points", example: "See how many points you've earned so far.", impact: "High", status: "Done" },
       { ct: "contextual-attribute", topic: "Spent points", example: "You got x order for free by spending your reward points.", impact: "High", status: "Done" },
-      { ct: "contextual-datafeed", topic: "Rewards — Earn Points as You Order", example: "Earn 100 points toward Silver with your next Order — every bite counts.", impact: "High", status: "In Progress" },
+      { ct: "contextual-datafeed", topic: "Rewards - Earn Points as You Order", example: "Earn 100 points toward Silver with your next Order - every bite counts.", impact: "High", status: "In Progress" },
     ],
   },
   {
     subfeature: "Vouchers",
     rows: [
-      { ct: "foundational-thematic", topic: "Your Vouchers, Ready to Use", example: "You've saved them — now's the time to use them. Tap to apply your voucher at checkout.", impact: "High", status: "Not Started" },
+      { ct: "foundational-thematic", topic: "Your Vouchers, Ready to Use", example: "You've saved them - now's the time to use them. Tap to apply your voucher at checkout.", impact: "High", status: "Not Started" },
       { ct: "foundational-feature-education", topic: "Get vouchers by redeeming points", example: "You can get vouchers by redeeming your rewards points.", impact: "Low", status: "Blocked" },
     ],
   },
@@ -319,7 +319,7 @@ function ContentMapFlowchart() {
       kind: "step" as const,
       step: "Step 2",
       label: "Add Global Touchpoints",
-      desc: "Zoom out and capture platform-wide flows that sit across all features — subscriptions, onboarding, navigation, support.",
+      desc: "Zoom out and capture platform-wide flows that sit across all features - subscriptions, onboarding, navigation, support.",
       tags: [
         { label: "Onboarding", cls: "bg-muted/40 text-foreground/60 border-border/30" },
         { label: "Account", cls: "bg-muted/40 text-foreground/60 border-border/30" },
@@ -333,7 +333,7 @@ function ContentMapFlowchart() {
       kind: "step" as const,
       step: "Step 3",
       label: "Define Topics using Content Types",
-      desc: "Translate product architecture into content opportunities. Use content types as creative lenses — one feature can generate many topics.",
+      desc: "Translate product architecture into content opportunities. Use content types as creative lenses - one feature can generate many topics.",
       tags: [
         { label: "Foundational", cls: "bg-blue-50 text-blue-700 border-blue-200" },
         { label: "Contextual", cls: "bg-violet-50 text-violet-700 border-violet-200" },
@@ -361,14 +361,14 @@ function ContentMapFlowchart() {
       label: "Assign Impact & Prioritize",
       desc: "Decide which topics should go first to accelerate agent learning in the first 3 months.",
       tags: [
-        { label: "High — wide reach, fast to implement", cls: "bg-emerald-50 text-emerald-700 border-emerald-200" },
-        { label: "Med — narrower but valuable", cls: "bg-amber-50 text-amber-700 border-amber-200" },
-        { label: "Low — technical lift or tiny audience", cls: "bg-muted/30 text-foreground/50 border-border/20" },
+        { label: "High - wide reach, fast to implement", cls: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+        { label: "Med - narrower but valuable", cls: "bg-amber-50 text-amber-700 border-amber-200" },
+        { label: "Low - technical lift or tiny audience", cls: "bg-muted/30 text-foreground/50 border-border/20" },
       ],
     },
     {
       kind: "end" as const,
-      label: "Content Map ready — agents can learn",
+      label: "Content Map ready - agents can learn",
     },
   ];
 
@@ -423,7 +423,7 @@ function ContentMapVisual() {
     <div className="border border-border/10 overflow-hidden">
       <img
         src="/content-map.png"
-        alt="Content map sample — feature, content type, topic, example, impact, and status columns"
+        alt="Content map sample - feature, content type, topic, example, impact, and status columns"
         className="w-full h-auto"
       />
     </div>
@@ -433,7 +433,7 @@ function ContentMapVisual() {
 function PanelContentMap() {
   return (
     <div className="flex flex-col gap-14">
-      {/* What is it / What was done — summary */}
+      {/* What is it / What was done - summary */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
           <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What is it?</p>
@@ -487,7 +487,7 @@ function PanelContentMap() {
         </div>
       </div>
 
-      {/* Slide 5 — full width */}
+      {/* Slide 5 - full width */}
       <div className="border-l-2 border-primary/30 pl-6">
         <h4 className="font-serif text-2xl mb-4 leading-snug">It gave agents better material to learn from</h4>
         <p className="text-foreground/70 font-sans leading-relaxed max-w-2xl">
@@ -567,7 +567,7 @@ function PanelLabelFramework() {
         <div>
           <h4 className="font-serif text-2xl mb-4 leading-snug">Labels were not just tags</h4>
           <p className="text-foreground/70 font-sans leading-relaxed">
-            They were the meaning layer that helped brands define what to say, how it should vary, and how AI should judge relevance. Every message in the system carried labels that agents could learn from — and bad labels compounded into bad learning at scale.
+            They were the meaning layer that helped brands define what to say, how it should vary, and how AI should judge relevance. Every message in the system carried labels that agents could learn from - and bad labels compounded into bad learning at scale.
           </p>
         </div>
         <div>
@@ -579,7 +579,7 @@ function PanelLabelFramework() {
           </ul>
         </div>
       </div>
-      <Placeholder label="Label framework diagram — coming soon" />
+      <Placeholder label="Label framework diagram - coming soon" />
     </div>
   );
 }
@@ -603,7 +603,7 @@ function PanelGenerationScale() {
           </ul>
         </div>
       </div>
-      <Placeholder label="Tool walkthrough — coming soon" />
+      <Placeholder label="Tool walkthrough - coming soon" />
     </div>
   );
 }
@@ -644,7 +644,7 @@ export default function AampeStrategy() {
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Context</div>
-            <div className="font-medium text-foreground">Aampe — AI-powered lifecycle marketing platform</div>
+            <div className="font-medium text-foreground">Aampe - AI-powered lifecycle marketing platform</div>
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Year</div>
@@ -660,13 +660,13 @@ export default function AampeStrategy() {
           style={{ height: 320 }}
         >
           <span className="text-xs font-sans text-muted-foreground/40 uppercase tracking-widest">
-            Hero visual — coming soon
+            Hero visual - coming soon
           </span>
         </div>
       </div>
 
       {/* ──────────────────────────────────────────
-          Section 1 — About Aampe
+          Section 1 - About Aampe
       ────────────────────────────────────────── */}
       <motion.section {...sectionAnim} className="border-t border-border/50">
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
@@ -694,7 +694,7 @@ export default function AampeStrategy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 2 — How agents learn at scale
+          Section 2 - How agents learn at scale
       ────────────────────────────────────────── */}
       <motion.section {...sectionAnim} className="border-t border-border/50 bg-foreground/[0.02]">
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
@@ -704,7 +704,7 @@ export default function AampeStrategy() {
                 How can a million agents learn effectively at scale?
               </h2>
               <p className="text-foreground/70 font-sans leading-relaxed mb-5">
-                Agents don't learn directly from users; instead, they learn from labels — the taxonomy linked to each message variant in the system.
+                Agents don't learn directly from users; instead, they learn from labels - the taxonomy linked to each message variant in the system.
               </p>
               <p className="text-foreground/70 font-sans leading-relaxed mb-10">
                 To create and deliver content at scale, a machine learning product requires these labels.
@@ -723,7 +723,7 @@ export default function AampeStrategy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 3 — Push notification labeling
+          Section 3 - Push notification labeling
       ────────────────────────────────────────── */}
       <motion.section {...sectionAnim} className="border-t border-border/50">
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
@@ -733,7 +733,7 @@ export default function AampeStrategy() {
                 In a push notification, content would be labeled this way
               </h2>
               <p className="text-foreground/70 font-sans leading-relaxed mb-10">
-                Labels serve as the framework for every message — Greeting, Value Proposition, Call to Action, and Tone. Agents utilise these labels to understand what resonates with each user over time. The label acts as a crucial signal; if it's inaccurate, the learning process is flawed.
+                Labels serve as the framework for every message - Greeting, Value Proposition, Call to Action, and Tone. Agents utilise these labels to understand what resonates with each user over time. The label acts as a crucial signal; if it's inaccurate, the learning process is flawed.
               </p>
               <div className="flex items-center gap-3">
                 <IconUser />
@@ -749,7 +749,7 @@ export default function AampeStrategy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 4 — Effective labels
+          Section 4 - Effective labels
       ────────────────────────────────────────── */}
       <motion.section {...sectionAnim} className="border-t border-border/50 bg-foreground/[0.02]">
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
@@ -770,7 +770,7 @@ export default function AampeStrategy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 5 — 3 ways I shaped AI content strategy
+          Section 5 - 3 ways I shaped AI content strategy
       ────────────────────────────────────────── */}
       <motion.section {...sectionAnim} className="border-t border-border/50">
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
@@ -779,7 +779,7 @@ export default function AampeStrategy() {
           </h2>
           <p className="text-sm font-sans text-muted-foreground mb-10">Click each card for details</p>
 
-          {/* Tab triggers — 3-col card row */}
+          {/* Tab triggers - 3-col card row */}
           <div className="grid md:grid-cols-3 gap-4 mb-0">
             {AREA_TITLES.map((title, i) => {
               const active = activeArea === i;
@@ -810,7 +810,7 @@ export default function AampeStrategy() {
             })}
           </div>
 
-          {/* Content panel — fades on tab change */}
+          {/* Content panel - fades on tab change */}
           <div className="border border-t-0 border-border/30 p-8 md:p-12">
             <AnimatePresence mode="wait">
               <motion.div

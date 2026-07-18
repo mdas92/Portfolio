@@ -68,7 +68,7 @@ function TypeChip({ label }: { label: string }) {
   );
 }
 
-/* ─── 1. Hero Map — Full Grid Overview ─── */
+/* ─── 1. Hero Map - Full Grid Overview ─── */
 export function HeroMapVisual() {
   const headers = ['Feature', 'Sub-feature', 'Topic', 'Content type', 'Channels', 'Impact'];
   const rows: { cells: string[]; impact: 'High' | 'Med' | 'Low' }[] = [
@@ -81,7 +81,7 @@ export function HeroMapVisual() {
   ];
 
   return (
-    <Frame label="Content Map — Overview" note="6 of 28 topics shown">
+    <Frame label="Content Map - Overview" note="6 of 28 topics shown">
       <div style={{ background: P.cream, overflowX: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 640 }}>
           <thead>
@@ -134,7 +134,7 @@ export function HeroMapVisual() {
   );
 }
 
-/* ─── 2. First Map — Work in Progress ─── */
+/* ─── 2. First Map - Work in Progress ─── */
 export function FirstMapVisual() {
   const rows: { feature: string; sub: string; topic: string; channels: string; impact: 'High' | 'Med' | 'Low' | null; done: boolean }[] = [
     { feature: 'Core Feature', sub: 'Discovery',      topic: 'Getting started guide',  channels: 'Push, Email',  impact: 'High', done: true  },
@@ -153,7 +153,7 @@ export function FirstMapVisual() {
 
   let lastFeature = '';
   return (
-    <Frame label="Content Map — v1 draft" note={`${filled} of ${rows.length} topics mapped`}>
+    <Frame label="Content Map - v1 draft" note={`${filled} of ${rows.length} topics mapped`}>
       <div style={{ background: P.cream }}>
         {/* Progress bar */}
         <div style={{ padding: '10px 14px 8px', borderBottom: `1px solid ${P.border}`, display: 'flex', alignItems: 'center', gap: 12 }}>
@@ -190,11 +190,11 @@ export function FirstMapVisual() {
                     </td>
                     <td style={{ padding: '8px 12px', background: ri % 2 === 1 ? P.altRow : P.cream, color: P.green, whiteSpace: 'nowrap' as const }}>{row.sub}</td>
                     <td style={{ padding: '8px 12px', background: ri % 2 === 1 ? P.altRow : P.cream, color: empty ? P.muted : P.green, fontStyle: empty ? 'italic' as const : 'normal' as const }}>
-                      {empty ? '—' : row.topic}
+                      {empty ? '-' : row.topic}
                     </td>
-                    <td style={{ padding: '8px 12px', background: ri % 2 === 1 ? P.altRow : P.cream, color: P.muted, whiteSpace: 'nowrap' as const }}>{row.channels || '—'}</td>
+                    <td style={{ padding: '8px 12px', background: ri % 2 === 1 ? P.altRow : P.cream, color: P.muted, whiteSpace: 'nowrap' as const }}>{row.channels || '-'}</td>
                     <td style={{ padding: '8px 12px', background: ri % 2 === 1 ? P.altRow : P.cream, whiteSpace: 'nowrap' as const }}>
-                      {row.impact ? <ImpactBadge level={row.impact} /> : <span style={{ color: P.border, fontSize: 10 }}>—</span>}
+                      {row.impact ? <ImpactBadge level={row.impact} /> : <span style={{ color: P.border, fontSize: 10 }}>-</span>}
                     </td>
                     <td style={{ padding: '8px 12px', background: ri % 2 === 1 ? P.altRow : P.cream, textAlign: 'center' as const }}>
                       {row.done
@@ -212,7 +212,7 @@ export function FirstMapVisual() {
   );
 }
 
-/* ─── 3. Challenge — Constellation of Verticals ─── */
+/* ─── 3. Challenge - Constellation of Verticals ─── */
 export function ChallengeConstellationVisual() {
   const cx = 300;
   const cy = 178;
@@ -242,7 +242,7 @@ export function ChallengeConstellationVisual() {
   const pos   = (a: number) => ({ x: cx + r * Math.cos(toRad(a)), y: cy + r * Math.sin(toRad(a)) });
 
   return (
-    <Frame label="Content Map Challenge — verticals covered">
+    <Frame label="Content Map Challenge - verticals covered">
       <div style={{ background: P.cream, padding: '8px 4px 12px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 16px 6px', alignItems: 'center' }}>
           <span style={{ fontSize: 10, color: P.muted, fontFamily: 'Space Grotesk, sans-serif', letterSpacing: '0.06em' }}>
@@ -293,7 +293,7 @@ export function ChallengeConstellationVisual() {
   );
 }
 
-/* ─── 4. Closed-Won — Slack message mockup ─── */
+/* ─── 4. Closed-Won - Slack message mockup ─── */
 export function ClosedWonVisual() {
   return (
     <Frame label="#team-wins">
@@ -329,7 +329,7 @@ export function ClosedWonVisual() {
             </div>
 
             <p style={{ margin: '0 0 10px', color: '#3a3530', fontSize: 13.5, lineHeight: 1.55 }}>
-              🎉 <strong>Key Account — Closed Won!</strong> The Content Map session on-site was the turning point — the team walked away with a clear roadmap and the confidence to sign.
+              🎉 <strong>Key Account - Closed Won!</strong> The Content Map session on-site was the turning point - the team walked away with a clear roadmap and the confidence to sign.
             </p>
             <p style={{ margin: '0 0 14px', color: '#3a3530', fontSize: 13.5, lineHeight: 1.55 }}>
               "Thank you for all of your work on the content map!! This was a key session."

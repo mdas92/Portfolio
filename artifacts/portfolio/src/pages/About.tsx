@@ -111,10 +111,10 @@ export default function About() {
         </div>
         <div className="md:col-span-8 flex flex-col gap-6">
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-            I work at an AI-powered lifecycle marketing platform, building content strategy for consumer apps across fintech, sports, travel, food delivery, and fitness. My work spans designing label architectures, value proposition frameworks, and thousands of message variants — helping brands unlock the full potential of agentic optimisation.
+            I work at an AI-powered lifecycle marketing platform, building content strategy for consumer apps across fintech, sports, travel, food delivery, and fitness. My work spans designing label architectures, value proposition frameworks, and thousands of message variants - helping brands unlock the full potential of agentic optimisation.
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-            Alongside client work, I build internal tools, create training resources, and translate practitioner insights into formal product pitches. Before this, I was the first and only UX Writer at LazyPay (PayU Finance), where I built the content design practice from the ground up — owning conversation design, information architecture, and microcopy across a fintech product reaching millions of users across India.
+            Alongside client work, I build internal tools, create training resources, and translate practitioner insights into formal product pitches. Before this, I was the first and only UX Writer at LazyPay (PayU Finance), where I built the content design practice from the ground up - owning conversation design, information architecture, and microcopy across a fintech product reaching millions of users across India.
           </p>
         </div>
       </motion.div>
@@ -135,7 +135,7 @@ export default function About() {
             // Senior UX Writer (id:2) is rendered inside the Lead UX Writer (id:1) grouped block
             if (item.id === 2) return null;
 
-            // Lead UX Writer — group with Senior UX Writer + shared PayU photo
+            // Lead UX Writer - group with Senior UX Writer + shared PayU photo
             if (item.id === 1) {
               const seniorEntry = journey.find(e => e.id === 2);
               return (
@@ -147,17 +147,17 @@ export default function About() {
                   transition={{ duration: 0.6, delay: i * 0.08 }}
                   className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10 py-10 md:py-12 border-b border-border/50 group"
                 >
-                  {/* Lead UX Writer — date (row 1, col 1-3) */}
+                  {/* Lead UX Writer - date (row 1, col 1-3) */}
                   <div className="md:col-span-3">
                     <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{item.date}</div>
                   </div>
-                  {/* Lead UX Writer — text (row 1, col 4-7) */}
+                  {/* Lead UX Writer - text (row 1, col 4-7) */}
                   <div className="md:col-span-4 flex flex-col gap-2">
                     <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">{item.role}</h3>
                     <div className="text-muted-foreground font-medium mb-2">{item.company}</div>
                     <p className="text-foreground/80 leading-relaxed font-light">{item.description}</p>
                   </div>
-                  {/* PayU photo — spans rows 1 & 2 (col 8-11) */}
+                  {/* PayU photo - spans rows 1 & 2 (col 8-11) */}
                   <div className="md:col-span-4 md:row-span-2 flex items-start justify-end">
                     <img
                       src="/payu-photo.jpg"
@@ -166,13 +166,13 @@ export default function About() {
                       style={{ aspectRatio: "3/4", objectPosition: "center top" }}
                     />
                   </div>
-                  {/* Senior UX Writer — date (row 2, col 1-3) */}
+                  {/* Senior UX Writer - date (row 2, col 1-3) */}
                   {seniorEntry && (
                     <div className="md:col-span-3">
                       <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{seniorEntry.date}</div>
                     </div>
                   )}
-                  {/* Senior UX Writer — text (row 2, col 4-7) */}
+                  {/* Senior UX Writer - text (row 2, col 4-7) */}
                   {seniorEntry && (
                     <div className="md:col-span-4 flex flex-col gap-2">
                       <h3 className="text-2xl font-serif text-foreground">{seniorEntry.role}</h3>
@@ -184,7 +184,7 @@ export default function About() {
               );
             }
 
-            // All other entries — standard layout
+            // All other entries - standard layout
             return (
               <motion.div
                 key={item.id}

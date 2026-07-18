@@ -261,7 +261,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
         }}>
           {/* Running head */}
           <p style={{ fontSize: 10, color: "#999", fontFamily: "Tahoma,sans-serif", marginBottom: 24, borderBottom: "1px solid #eee", paddingBottom: 8 }}>
-            Mohana Das — Portfolio Case Study &nbsp;|&nbsp; {project.context} &nbsp;|&nbsp; {project.year}
+            Mohana Das - Portfolio Case Study &nbsp;|&nbsp; {project.context} &nbsp;|&nbsp; {project.year}
           </p>
 
           {/* Tag */}
@@ -290,7 +290,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
             <blockquote style={{ margin: "0 0 24px", padding: "12px 18px", borderLeft: "3px solid #0a246a", background: "#f9f9f9", fontFamily: "Times New Roman, serif", fontStyle: "italic", color: "#333", fontSize: 13 }}>
               <p style={{ margin: "0 0 6px" }}>&ldquo;{project.quote}&rdquo;</p>
               {project.quoteAttribution && (
-                <cite style={{ display: "block", fontStyle: "normal", fontSize: 11, color: "#888", fontFamily: "Tahoma,sans-serif" }}>— {project.quoteAttribution}</cite>
+                <cite style={{ display: "block", fontStyle: "normal", fontSize: 11, color: "#888", fontFamily: "Tahoma,sans-serif" }}>- {project.quoteAttribution}</cite>
               )}
             </blockquote>
           )}
@@ -399,7 +399,7 @@ export function XPWord({ slug, mobile = false }: { slug: string; mobile?: boolea
 
           {/* Footer */}
           <div style={{ marginTop: 48, borderTop: "1px solid #eee", paddingTop: 10, textAlign: "center", fontSize: 10, color: "#bbb", fontFamily: "Tahoma,sans-serif" }}>
-            — 1 — &nbsp;|&nbsp; Mohana Das Portfolio &nbsp;|&nbsp; Confidential
+            - 1 - &nbsp;|&nbsp; Mohana Das Portfolio &nbsp;|&nbsp; Confidential
           </div>
         </div>
       </div>

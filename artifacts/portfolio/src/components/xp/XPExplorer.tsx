@@ -132,7 +132,7 @@ export function XPExplorer({ onOpenProject, mobile = false }: Props) {
       {/* Body */}
       <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
 
-        {/* Sidebar — hidden on mobile */}
+        {/* Sidebar - hidden on mobile */}
         {!mobile && <div style={{ width: 160, background: "#dfe9f5", borderRight: `1px solid ${DG}`, overflowY: "auto", flexShrink: 0 }}>
           <SidebarSection heading="Other Places">
             <SideLink icon="🖥️" label="My Computer" />
@@ -168,7 +168,7 @@ export function XPExplorer({ onOpenProject, mobile = false }: Props) {
           </SidebarSection>
         </div>}
 
-        {/* Icon grid — grouped */}
+        {/* Icon grid - grouped */}
         <div
           style={{ flex: 1, overflowY: "auto", background: "white", padding: "8px 8px 16px" }}
           onClick={() => setSelected(null)}

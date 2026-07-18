@@ -275,7 +275,7 @@ export default function ProductTaxonomy() {
 
           <ThreeActsVisual />
 
-          <Act time="Act I · 2025 — The problem keeps introducing itself" heading="Confusion showed up everywhere, independently">
+          <Act time="Act I · 2025 - The problem keeps introducing itself" heading="Confusion showed up everywhere, independently">
             <ul className="flex flex-col gap-2 text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary mb-4 text-base">
               <li>A super-app's new PM, first week in the product: "How do I add alternate / description to the body... how do we identify what type of sub-label works?"</li>
               <li>A travel client's own retro: campaign labelling is inconsistent, "causing confusion and suboptimal AI performance".</li>
@@ -288,7 +288,7 @@ export default function ProductTaxonomy() {
             </PullQuote>
           </Act>
 
-          <Act time="Act II · Oct–Dec 2025 — Making it a product problem" heading="Turned recurring confusion into an evidence-backed audit">
+          <Act time="Act II · Oct–Dec 2025 - Making it a product problem" heading="Turned recurring confusion into an evidence-backed audit">
             <ul className="flex flex-col gap-2 text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary mb-0 text-base">
               <li>Fed "Terminology for NX" onto the product design team's conceptual agenda.</li>
               <li>Company-wide glossary survey launched in FigJam; the five-name alias chain was exhibit A.</li>
@@ -298,12 +298,12 @@ export default function ProductTaxonomy() {
             </ul>
           </Act>
 
-          <Act time="Act III · Jan–Apr 2026 — Decide, ratify, ship" heading="From framework to nine ratified entities">
+          <Act time="Act III · Jan–Apr 2026 - Decide, ratify, ship" heading="From framework to nine ratified entities">
             <ul className="flex flex-col gap-2 text-foreground/80 leading-relaxed font-light list-disc pl-5 marker:text-primary mb-4 text-base">
               <li>Authored the Terminology & Taxonomy framework: three candidates per entity with recorded reasoning, naming principles, votes with mandatory rationale, named tie-breakers.</li>
               <li>Co-ran the Terminology Session at the Taiwan offsite: ten people including the CEO and a co-founder, live polls, and a sentence test for every entity.</li>
               <li>Filed the fix for Composer's default component definitions, folded into a health-check product pitch.</li>
-              <li>Governance ratified with it: modifying an agreed term now requires rationale and consensus — "prevent terminology creep by using the accepted term over the one you prefer."</li>
+              <li>Governance ratified with it: modifying an agreed term now requires rationale and consensus - "prevent terminology creep by using the accepted term over the one you prefer."</li>
               <li>Wrote the implementation plan: engineering scoping first, old-to-new migration mapping, customer change management, and a six-step rollout.</li>
             </ul>
             <TerminologySessionVisual />
@@ -331,7 +331,7 @@ export default function ProductTaxonomy() {
             >
               <img
                 src="/images/projects/product-taxonomy/glossary-preview.png"
-                alt="Product Glossary preview — nine ratified entities with definitions, examples, and decisions"
+                alt="Product Glossary preview - nine ratified entities with definitions, examples, and decisions"
                 className="w-full object-cover border-b border-border/50"
               />
               <div className="p-4 flex items-center justify-between">
@@ -347,7 +347,7 @@ export default function ProductTaxonomy() {
             >
               <img
                 src="/images/projects/product-taxonomy/plan-preview.png"
-                alt="Implementation Plan preview — scoping, migration mapping, change management, rollout sequence"
+                alt="Implementation Plan preview - scoping, migration mapping, change management, rollout sequence"
                 className="w-full object-cover border-b border-border/50"
               />
               <div className="p-4 flex items-center justify-between">
@@ -417,12 +417,12 @@ export default function ProductTaxonomy() {
             Reflection
           </h2>
           <p className="text-lg text-foreground/80 leading-relaxed font-light mb-4">
-            Naming a running AI product isn't a copywriting exercise — it's product work with a
+            Naming a running AI product isn't a copywriting exercise - it's product work with a
             deadline problem: the longer you wait, the more the wrong words get load-bearing.
           </p>
           <p className="text-lg text-foreground/80 leading-relaxed font-light">
             Being in every customer session gave me the evidence no internal survey could
-            generate. The job wasn't picking better words — it was proving, with recordings and
+            generate. The job wasn't picking better words - it was proving, with recordings and
             recurring confusion, exactly which words were costing the company time and trust,
             then building the process that could decide their replacements and make the decision
             stick.

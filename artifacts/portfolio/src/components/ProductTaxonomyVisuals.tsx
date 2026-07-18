@@ -45,11 +45,11 @@ function Frame({ children, label, note }: { children: React.ReactNode; label?: s
   );
 }
 
-/* ─── 1. Hero — The alias problem: one object, five names ─── */
+/* ─── 1. Hero - The alias problem: one object, five names ─── */
 export function AliasChainVisual() {
   const names = ['Formulas', 'Message Groups', 'Messages', 'Alternate Messages', 'Message Combinations'];
   return (
-    <Frame label="One object — five names in circulation" note="Aliasing audit, 2025">
+    <Frame label="One object - five names in circulation" note="Aliasing audit, 2025">
       <div style={{ background: P.cream, padding: '28px 20px 24px' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap' as const, alignItems: 'center', justifyContent: 'center', gap: 10 }}>
           {names.map((n, i) => (
@@ -151,7 +151,7 @@ export function HierarchyVisual() {
   );
 }
 
-/* ─── 4. Terminology Session — Taiwan offsite ─── */
+/* ─── 4. Terminology Session - Taiwan offsite ─── */
 export function TerminologySessionVisual() {
   const entities = [
     { before: 'Label', after: 'Tag' },
@@ -161,7 +161,7 @@ export function TerminologySessionVisual() {
     { before: 'Audience', after: 'Eligibility Criteria' },
   ];
   return (
-    <Frame label="Terminology Session — Taiwan offsite" note="10 people incl. CEO & co-founder · live polls">
+    <Frame label="Terminology Session - Taiwan offsite" note="10 people incl. CEO & co-founder · live polls">
       <div style={{ background: P.cream, padding: '18px 18px 20px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {entities.map(({ before, after }) => (

@@ -146,10 +146,10 @@ function StartMenu({
 }
 
 const WIN_DEFAULTS: Record<WinType, Omit<WinState, "id" | "z" | "minimized" | "maximized" | "slug">> = {
-  explorer: { type: "explorer", title: "Mohana Das\\Work — Windows Explorer", icon: "📁", x: 60,  y: 24, width: 780, height: 520 },
-  about:    { type: "about",    title: "About Mohana.txt — Notepad",          icon: "📝", x: 180, y: 50, width: 700, height: 520 },
-  contact:  { type: "contact",  title: "Contact.txt — Notepad",               icon: "📧", x: 260, y: 70, width: 500, height: 360 },
-  word:     { type: "word",     title: "Project.doc — Microsoft Word",        icon: "📄", x: 140, y: 36, width: 880, height: 660 },
+  explorer: { type: "explorer", title: "Mohana Das\\Work - Windows Explorer", icon: "📁", x: 60,  y: 24, width: 780, height: 520 },
+  about:    { type: "about",    title: "About Mohana.txt - Notepad",          icon: "📝", x: 180, y: 50, width: 700, height: 520 },
+  contact:  { type: "contact",  title: "Contact.txt - Notepad",               icon: "📧", x: 260, y: 70, width: 500, height: 360 },
+  word:     { type: "word",     title: "Project.doc - Microsoft Word",        icon: "📄", x: 140, y: 36, width: 880, height: 660 },
   welcome:  { type: "welcome",  title: "Welcome!",                            icon: "🪟", x: 380, y: 140, width: 440, height: 260 },
 };
 
@@ -188,7 +188,7 @@ export function XPDesktop() {
       }
       const def = WIN_DEFAULTS[type];
       const title = type === "word" && extra?.slug
-        ? `${(extra.slug || "Project").replace(/-/g, " ")}.doc — Microsoft Word`
+        ? `${(extra.slug || "Project").replace(/-/g, " ")}.doc - Microsoft Word`
         : def.title;
       return [...ws, { ...def, id, z: ++Z, minimized: false, maximized: false, title, ...extra }];
     });
@@ -228,7 +228,7 @@ export function XPDesktop() {
       onClick={() => { setSelIcon(null); setStartOpen(false); }}
     >
 
-      {/* Desktop icons — vertical column on desktop, horizontal row on mobile */}
+      {/* Desktop icons - vertical column on desktop, horizontal row on mobile */}
       <div style={{
         position: "absolute",
         top: isMobile ? "auto" : 10,
@@ -279,7 +279,7 @@ export function XPDesktop() {
             <XPExplorer
               mobile={isMobile}
               onOpenProject={(slug, title) =>
-                openWin("word", { slug, title: `${title}.doc — Microsoft Word`, icon: "📄" })
+                openWin("word", { slug, title: `${title}.doc - Microsoft Word`, icon: "📄" })
               }
             />
           )}
@@ -295,7 +295,7 @@ export function XPDesktop() {
                   <strong>I'm Mohana</strong>, and this is my portfolio!{" "}
                   Enjoy a splash of nostalgia back from a time when I first
                   discovered the magic of technology and fell in love with it.
-                  Click around, explore, and most importantly —
+                  Click around, explore, and most importantly -
                   <strong> have fun!</strong>
                   {isMobile && (
                     <>
@@ -393,7 +393,7 @@ export function XPDesktop() {
               >
                 <span style={{ flexShrink: 0 }}>{win.icon}</span>
                 <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                  {win.title.split(" — ")[0]}
+                  {win.title.split(" - ")[0]}
                 </span>
               </button>
             );

@@ -153,7 +153,7 @@ function HeroVisual() {
           </linearGradient>
         </defs>
 
-        {/* Connecting lines — children fan back to proportional parent */}
+        {/* Connecting lines - children fan back to proportional parent */}
         {computed.slice(0, -1).map((lvl, li) => {
           const next = computed[li + 1];
           return next.ys.map((cy, ci) => {
@@ -200,7 +200,7 @@ function HeroVisual() {
         <rect x="0" y="0" width={W} height={H} fill="url(#hv-fb)" />
       </svg>
 
-      {/* Conversation card — readable snapshot in the foreground */}
+      {/* Conversation card - readable snapshot in the foreground */}
       <div style={{
         position: "absolute",
         left: "50%",
@@ -422,7 +422,7 @@ function AnimatedChatPrototype() {
                 <p style={{ fontSize: 10, color: "white", margin: 0, fontFamily: SF }}>How to set up auto-pay</p>
               </motion.div>
             )}
-            {/* Bot 4 — resolution */}
+            {/* Bot 4 - resolution */}
             {step >= 10 && (
               <motion.div {...bub} style={{ alignSelf: "flex-start", maxWidth: "90%", background: `${LP_PINK}22`, borderRadius: "12px 12px 12px 3px", padding: "8px 10px" }}>
                 <p style={{ fontSize: 10, color: "#1a1a1a", lineHeight: 1.55, margin: 0, fontFamily: SF }}>Setting up auto-pay is super easy 🎉 Here's how:</p>
@@ -480,7 +480,7 @@ export default function ChatbotCaseStudy() {
       transition={{ duration: 0.6 }}
       className="flex-1 flex flex-col pb-24 w-full"
     >
-      {/* ── Header — matches ProjectDetail standard ── */}
+      {/* ── Header - matches ProjectDetail standard ── */}
       <div className="px-6 md:px-16 lg:px-24 py-8 md:py-16 max-w-5xl mx-auto w-full">
         <Link
           href="/work"
@@ -496,7 +496,7 @@ export default function ChatbotCaseStudy() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-border/50 text-sm">
           <div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Role</div>
-            <div className="font-medium text-foreground">Sole Content Owner — IA, Content Strategy, Conversation Design</div>
+            <div className="font-medium text-foreground">Sole Content Owner - IA, Content Strategy, Conversation Design</div>
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Context</div>
@@ -509,7 +509,7 @@ export default function ChatbotCaseStudy() {
         </div>
       </div>
 
-      {/* ── Hero image — full width, matches ProjectDetail ── */}
+      {/* ── Hero image - full width, matches ProjectDetail ── */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-16 md:mb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -523,7 +523,7 @@ export default function ChatbotCaseStudy() {
       </div>
 
       {/* ──────────────────────────────────────────
-          Section 2 — Problem, Impact, Rationale
+          Section 2 - Problem, Impact, Rationale
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -575,7 +575,7 @@ export default function ChatbotCaseStudy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 3 — Constraints for Phase I
+          Section 3 - Constraints for Phase I
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -605,7 +605,7 @@ export default function ChatbotCaseStudy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 4 — The Process
+          Section 4 - The Process
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -646,7 +646,7 @@ export default function ChatbotCaseStudy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 5 — Step 1: Research & Data
+          Section 5 - Step 1: Research & Data
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -668,7 +668,7 @@ export default function ChatbotCaseStudy() {
               "Mapping the user journey and creating **mind maps** with the designer and PM",
             ].map((item, i) => (
               <li key={i} className="flex gap-3 text-foreground/80 font-sans leading-relaxed">
-                <span className="text-primary shrink-0 mt-1">—</span>
+                <span className="text-primary shrink-0 mt-1">-</span>
                 <RichText text={item} />
               </li>
             ))}
@@ -717,7 +717,7 @@ export default function ChatbotCaseStudy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 6 — Step 2: Guidelines & Framework
+          Section 6 - Step 2: Guidelines & Framework
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -766,7 +766,7 @@ export default function ChatbotCaseStudy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 7 — Step 3: Prototype & Test
+          Section 7 - Step 3: Prototype & Test
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -787,7 +787,7 @@ export default function ChatbotCaseStudy() {
               <div className="overflow-hidden border border-border/10">
                 <img
                   src="/chatbot-ia.avif"
-                  alt="Information Architecture prototype test — chatbot"
+                  alt="Information Architecture prototype test - chatbot"
                   className="w-full h-auto"
                 />
               </div>
@@ -848,7 +848,7 @@ export default function ChatbotCaseStudy() {
                 ))}
               </div>
 
-              {/* Centre — animated prototype */}
+              {/* Centre - animated prototype */}
               <div className="hidden md:flex flex-col items-center">
                 <AnimatedChatPrototype />
               </div>
@@ -880,7 +880,7 @@ export default function ChatbotCaseStudy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 8 — Step 4: Final Tree & Designs
+          Section 8 - Step 4: Final Tree & Designs
       ────────────────────────────────────────── */}
       <motion.section
         {...sectionAnim}
@@ -904,7 +904,7 @@ export default function ChatbotCaseStudy() {
             <div className="w-full overflow-hidden border border-border/10 rounded-sm">
               <img
                 src="/chatbot-screens.avif"
-                alt="LazyPay chatbot app UI screens — entry point, Help & Support, chat screens"
+                alt="LazyPay chatbot app UI screens - entry point, Help & Support, chat screens"
                 className="w-full h-auto"
               />
             </div>

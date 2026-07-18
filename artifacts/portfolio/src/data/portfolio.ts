@@ -46,9 +46,9 @@ export const projects: Project[] = [
     slug: "aampe-strategy",
     tag: "Content Strategy · Infrastructure",
     title: "Content Strategy for a Million Agents",
-    summary: "How I turned content strategy into infrastructure — building the semantic layer powering agentic personalisation at scale.",
+    summary: "How I turned content strategy into infrastructure - building the semantic layer powering agentic personalisation at scale.",
     role: "Content Strategist & Methodology Owner",
-    context: "Aampe — AI-powered lifecycle marketing platform",
+    context: "Aampe - AI-powered lifecycle marketing platform",
     year: "2025",
     featured: true,
     challenge: "",
@@ -60,15 +60,15 @@ export const projects: Project[] = [
     slug: "product-taxonomy",
     tag: "Information Architecture · Product Language",
     title: "What's in a Name? Defining Product Taxonomy for Aampe",
-    summary: "Drove the evidence, framework, and decision session that ratified nine renamed product entities — then shipped the glossary and rollout plan for a product that never stops running.",
+    summary: "Drove the evidence, framework, and decision session that ratified nine renamed product entities - then shipped the glossary and rollout plan for a product that never stops running.",
     role: "Field-side driver, with product design and data science",
-    context: "Aampe — AI-powered lifecycle marketing platform",
+    context: "Aampe - AI-powered lifecycle marketing platform",
     year: "2025",
     featured: true,
     challenge: "",
     whatIDid: [],
     result: "Nine entities ratified, including bold renames (Label → Tag, Message Group → Formula, Audience → Eligibility Criteria). Glossary and rollout plan shipped, with governance rules to prevent future terminology creep.",
-    quote: "Customers understand the mental model — messages, parts, variants, labels — but not the vocabulary.",
+    quote: "Customers understand the mental model - messages, parts, variants, labels - but not the vocabulary.",
     quoteAttribution: "Notes mined from a client content session I ran, October 2025",
     image: "/images/projects/product-taxonomy/glossary-preview.png",
     sections: [
@@ -79,15 +79,15 @@ export const projects: Project[] = [
       },
       {
         heading: "The alias problem",
-        content: "Formulas ↔ Message Groups ↔ Messages ↔ Alternate Messages ↔ Message Combinations. One product object, five names in circulation — multiply that across every object in the platform.",
+        content: "Formulas ↔ Message Groups ↔ Messages ↔ Alternate Messages ↔ Message Combinations. One product object, five names in circulation - multiply that across every object in the platform.",
         visual: "AliasChainVisual",
       },
       {
         heading: "The debate: does an early-stage startup even need strict taxonomy?",
-        content: "Fair question. Naming ceremonies can feel like enterprise theater when you ship weekly, and premature rigor freezes a product that is still finding its shape. We made the call deliberately — not sooner, not later.",
+        content: "Fair question. Naming ceremonies can feel like enterprise theater when you ship weekly, and premature rigor freezes a product that is still finding its shape. We made the call deliberately - not sooner, not later.",
         bullets: [
           "**Too early would have been waste.** While the surface area was small, renaming was cheap and the concepts were still moving.",
-          "**By 2025 the cost had flipped.** Every alias was multiplied across 20+ live client programs, docs, AI prompts, and sales decks — and paid for in onboarding time and support threads.",
+          "**By 2025 the cost had flipped.** Every alias was multiplied across 20+ live client programs, docs, AI prompts, and sales decks - and paid for in onboarding time and support threads.",
           "**The next-gen product was a one-time window.** NX let us ship new names as part of a new experience instead of breaking live workflows.",
           "**Later meant freezing confusion.** Some names are architecturally permanent, so every quarter of delay hardcoded more of the wrong ones.",
         ],
@@ -104,12 +104,12 @@ export const projects: Project[] = [
         heading: "My role & what I built",
         content: "Standardization was cross-functional: product design ran the internal survey, data science owned the ontology thinking. I was the field voice the product team looped into every naming decision, because I taught this object model to customers every week.",
         bullets: [
-          "**Taxonomy framework** — the \"Aampe Terminology & Taxonomy\" doc: entities, candidate terms with recorded reasoning, naming principles, voting rules, tie-breakers.",
-          "**Customer evidence catalog** — my client session recordings, mined term by term into the audit's primary evidence.",
-          "**Topics feature input** — the four-dimension model that replaced a rigid topic/sub-topic hierarchy before it shipped.",
-          "**Definition fixes in the product** — cleanup ticket replacing Composer's default component definitions with the canonical ones.",
-          "**The decision session** — co-ran the offsite Terminology Session that ratified the glossary.",
-          "**Glossary + rollout plan** — the two shipped assets.",
+          "**Taxonomy framework** - the \"Aampe Terminology & Taxonomy\" doc: entities, candidate terms with recorded reasoning, naming principles, voting rules, tie-breakers.",
+          "**Customer evidence catalog** - my client session recordings, mined term by term into the audit's primary evidence.",
+          "**Topics feature input** - the four-dimension model that replaced a rigid topic/sub-topic hierarchy before it shipped.",
+          "**Definition fixes in the product** - cleanup ticket replacing Composer's default component definitions with the canonical ones.",
+          "**The decision session** - co-ran the offsite Terminology Session that ratified the glossary.",
+          "**Glossary + rollout plan** - the two shipped assets.",
         ],
       },
       {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
           "**Name for function, not format.** What it does, not what it looks like.",
           "**No CRM legacy baggage.** No \"campaign\", no \"journey\". Prefer names that imply learning.",
           "**Respect the hierarchy.** Atomic to modular to system: Alternate → Component → Message → Formula → Topic.",
-          "**Renames require justification.** Comprehension, clarity, or function — not preference.",
+          "**Renames require justification.** Comprehension, clarity, or function - not preference.",
           "Every candidate faces a five-second test (human-readable, describes what the system does, fits the hierarchy, one meaning, no baggage) and a sentence test: it must slot into the sentences teams say daily. If the word jars, it fails.",
         ],
         visual: "HierarchyVisual",
@@ -164,7 +164,7 @@ export const projects: Project[] = [
         heading: "Challenges",
         bullets: [
           "**Familiarity vs. the mindset shift.** Familiar terms smuggled in campaign-era assumptions; novel terms raised the learning curve. Every name was a decision about how hard to challenge the customer's mental model.",
-          "**Renaming a product that never stops running.** Old names lived in the UI, KB, decks, AI prompts, and customer habits — and some are architecturally permanent. Hence a plan, not a find-and-replace.",
+          "**Renaming a product that never stops running.** Old names lived in the UI, KB, decks, AI prompts, and customer habits - and some are architecturally permanent. Hence a plan, not a find-and-replace.",
           "**Everyone owns words, so no one does.** Strong opinions from engineering to the CEO. Surveys, votes, recorded counterpoints, and tie-breakers kept decisions on evidence instead of volume.",
         ],
       },
@@ -174,8 +174,8 @@ export const projects: Project[] = [
       },
       {
         heading: "Reflection",
-        content: "Naming a running AI product isn't a copywriting exercise — it's product work with a deadline problem: the longer you wait, the more the wrong words get load-bearing.",
-        note: "Being in every customer session gave me the evidence no internal survey could generate. The job wasn't picking better words — it was proving, with recordings and recurring confusion, exactly which words were costing the company time and trust, then building the process that could decide their replacements and make the decision stick.",
+        content: "Naming a running AI product isn't a copywriting exercise - it's product work with a deadline problem: the longer you wait, the more the wrong words get load-bearing.",
+        note: "Being in every customer session gave me the evidence no internal survey could generate. The job wasn't picking better words - it was proving, with recordings and recurring confusion, exactly which words were costing the company time and trust, then building the process that could decide their replacements and make the decision stick.",
       },
     ],
   },
@@ -184,9 +184,9 @@ export const projects: Project[] = [
     archived: true,
     tag: "Content Strategy · Methodology",
     title: "Content Maps: Building the Shared Language for Agentic Content Strategy",
-    summary: "Turned a one-off planning habit into Aampe's standard strategic artifact — defined, templated, named, taught, paired with AI tooling, and credited in closed-won deals.",
+    summary: "Turned a one-off planning habit into Aampe's standard strategic artifact - defined, templated, named, taught, paired with AI tooling, and credited in closed-won deals.",
     role: "Originator & owner of the methodology",
-    context: "Aampe — AI-powered lifecycle marketing platform",
+    context: "Aampe - AI-powered lifecycle marketing platform",
     year: "2025",
     featured: true,
     challenge: "",
@@ -198,30 +198,30 @@ export const projects: Project[] = [
     sections: [
       {
         heading: "Context: no shared way to see the whole conversation",
-        content: "Aampe replaces campaign-based messaging with agentic AI — one agent per user, learning what to say, when, and where. But agents can only learn from the content they're given, and in 2025 there was no shared, repeatable way to answer the most basic strategic question on any account: what should we be saying to whom, and where are the gaps? Every account team improvised its own version. Accounts a full year into their relationship — Taxfix, MyPostcard — had no map of their content at all. CRM, growth, and product functions optimized in silos, and strategy conversations ran on tribal knowledge instead of a common artifact. The result: uneven onboarding, slow ramp-up, and agents stuck learning from a small cluster of topics.",
+        content: "Aampe replaces campaign-based messaging with agentic AI - one agent per user, learning what to say, when, and where. But agents can only learn from the content they're given, and in 2025 there was no shared, repeatable way to answer the most basic strategic question on any account: what should we be saying to whom, and where are the gaps? Every account team improvised its own version. Accounts a full year into their relationship - Taxfix, MyPostcard - had no map of their content at all. CRM, growth, and product functions optimized in silos, and strategy conversations ran on tribal knowledge instead of a common artifact. The result: uneven onboarding, slow ramp-up, and agents stuck learning from a small cluster of topics.",
       },
       {
         heading: "What a content map is",
-        content: "A content map is a bird's-eye view of all possible touchpoints across a product's architecture, journeys, flows, customer experience, and lifecycle. A touchpoint is any opportunity where an agent can act as a medium of interaction between a user and the brand — a push notification, an onboarding screen, an email, an in-app banner, even a blog or FAQ that could be repurposed. The craft is capturing all of those touchpoints and organizing them into a structured hierarchy: features break into sub-features, sub-features generate topics (the content idea an agent can speak to — in Aampe, a topic maps to a message group), and each topic carries the operational metadata that makes it buildable: channels, trigger events, audience, and priority.",
+        content: "A content map is a bird's-eye view of all possible touchpoints across a product's architecture, journeys, flows, customer experience, and lifecycle. A touchpoint is any opportunity where an agent can act as a medium of interaction between a user and the brand - a push notification, an onboarding screen, an email, an in-app banner, even a blog or FAQ that could be repurposed. The craft is capturing all of those touchpoints and organizing them into a structured hierarchy: features break into sub-features, sub-features generate topics (the content idea an agent can speak to - in Aampe, a topic maps to a message group), and each topic carries the operational metadata that makes it buildable: channels, trigger events, audience, and priority.",
         note: "Sample rows (Uber): Rides → Reserve → Advance booking education (High) · Eats → Food → Rainy-day comfort food (Med) · Rides → Cabs → Add dinner to your ride home (Med)",
       },
       {
         heading: "Why we build one",
         bullets: [
-          "**Coverage for agent learning.** Agents need breadth — many topics, tones, and contexts — to find what resonates with each user. The map makes the full opportunity space visible, so content gets created for every moment of value, not just the loudest campaign idea.",
-          "**Seeing what could exist, not just what does.** Most teams unknowingly operate inside a small fraction of their opportunity space. The map doesn't just catalog existing content — it exposes the openings: features never messaged, intents never connected, tones never tried.",
+          "**Coverage for agent learning.** Agents need breadth - many topics, tones, and contexts - to find what resonates with each user. The map makes the full opportunity space visible, so content gets created for every moment of value, not just the loudest campaign idea.",
+          "**Seeing what could exist, not just what does.** Most teams unknowingly operate inside a small fraction of their opportunity space. The map doesn't just catalog existing content - it exposes the openings: features never messaged, intents never connected, tones never tried.",
           "**A shared canvas across silos.** CRM, growth, product, and data teams each see their piece of the user journey. The map puts every touchpoint on one strategic surface, so alignment happens on evidence instead of tribal knowledge.",
-          "**Prioritization you can defend.** The Impact column (High / Med / Low) sequences which topics accelerate agentic learning in the first three months — turning \"what should we build first?\" into a recommendation, not a debate.",
+          "**Prioritization you can defend.** The Impact column (High / Med / Low) sequences which topics accelerate agentic learning in the first three months - turning \"what should we build first?\" into a recommendation, not a debate.",
         ],
       },
       {
         heading: "How one gets built",
-        content: "I codified the build process into a step-by-step guide for internal teams — written so that someone who has never made one can go from a blank sheet to a working map.",
+        content: "I codified the build process into a step-by-step guide for internal teams - written so that someone who has never made one can go from a blank sheet to a working map.",
         bullets: [
-          "**1. Inventory features & sub-features.** Walk the entire product exhaustively — every screen, every flow, app and web — and list every feature and sub-feature into a hierarchy. Keep going until the feature space is genuinely exhausted.",
-          "**2. Add global touchpoints.** Capture the feature-agnostic layer: subscription tiers, onboarding flows, platform surfaces, and supporting content beyond the app — FAQs, help articles, blogs, app reviews.",
+          "**1. Inventory features & sub-features.** Walk the entire product exhaustively - every screen, every flow, app and web - and list every feature and sub-feature into a hierarchy. Keep going until the feature space is genuinely exhausted.",
+          "**2. Add global touchpoints.** Capture the feature-agnostic layer: subscription tiers, onboarding flows, platform surfaces, and supporting content beyond the app - FAQs, help articles, blogs, app reviews.",
           "**3. Generate topics through content-type lenses.** For each touchpoint, ideate topics using a taxonomy I defined: Foundational (repurpose, feature-education, thematic), Contextual (event-driven, lifecycle, datafeed, cross-sell), Recommender, Seasonal, and Transactional.",
-          "**4. Make it operational.** Add channels, entry events, audience type, and the Impact rating — plus deeplinks, status, and owners so the map doubles as the content-production tracker for the whole engagement.",
+          "**4. Make it operational.** Add channels, entry events, audience type, and the Impact rating - plus deeplinks, status, and owners so the map doubles as the content-production tracker for the whole engagement.",
         ],
       },
       {
@@ -230,22 +230,22 @@ export const projects: Project[] = [
       },
       {
         heading: "Phase 1 · July 2025: The proposal",
-        content: "On the Deezer account, I proposed that every customer get a content map before post-sales handoff, and defined the artifact for the team: \"a strategic outline of the key features, user actions, message topics and surfaces that should be covered over the course of partnership — it helps ensure we've got the right breadth of content for agent learning.\"",
-        note: "\"I'm confident we don't have that for Deezer. Please kick it off Mohana. Thank you!\" — Paul Meinshausen, CEO — same day, with four teammates asking to join the working session",
+        content: "On the Deezer account, I proposed that every customer get a content map before post-sales handoff, and defined the artifact for the team: \"a strategic outline of the key features, user actions, message topics and surfaces that should be covered over the course of partnership - it helps ensure we've got the right breadth of content for agent learning.\"",
+        note: "\"I'm confident we don't have that for Deezer. Please kick it off Mohana. Thank you!\" - Paul Meinshausen, CEO - same day, with four teammates asking to join the working session",
       },
       {
         heading: "Phase 2 · Jul–Sep 2025: Templates that traveled",
-        content: "I built the Taxfix content map as a reusable template — and watched it travel without me in the room. A colleague ported it directly into theCut's Q3 strategy session (fintech → barbershop marketplace), and I went on to build maps for Deezer, Carousell, NBA, Traveloka, and Swiggy. The Carousell map's channel-aware structure was adopted as the team template for cross-channel mapping.",
-        note: "\"The content map you prepared for Taxfix was an incredible resource. I was able to map out theCut based on how you built that doc out.\" — Derek Geryol, CSM · \"Every time Mohana pulls another one of these out, I feel like I'm watching a magician at work.\" — Schaun Wheeler, Co-founder",
+        content: "I built the Taxfix content map as a reusable template - and watched it travel without me in the room. A colleague ported it directly into theCut's Q3 strategy session (fintech → barbershop marketplace), and I went on to build maps for Deezer, Carousell, NBA, Traveloka, and Swiggy. The Carousell map's channel-aware structure was adopted as the team template for cross-channel mapping.",
+        note: "\"The content map you prepared for Taxfix was an incredible resource. I was able to map out theCut based on how you built that doc out.\" - Derek Geryol, CSM · \"Every time Mohana pulls another one of these out, I feel like I'm watching a magician at work.\" - Schaun Wheeler, Co-founder",
       },
       {
         heading: "Phase 3 · Aug 2025: Pairing the map with AI",
-        content: "When the team built ContentMaPT — a custom GPT that generates first-pass content maps in about ten minutes — it was trained on my map templates. The map became one half of a repeatable onboarding workflow (\"Content Map + aamPT\"), demoed to the whole CS team. I later built MapPT, a custom GPT for building maps, and rolled it out across the GTM org.",
-        note: "\"Thank you for your stellar templates — they set the bar so high for GPT to follow.\" — Amaan Kulatunga, Solutions Consultant",
+        content: "When the team built ContentMaPT - a custom GPT that generates first-pass content maps in about ten minutes - it was trained on my map templates. The map became one half of a repeatable onboarding workflow (\"Content Map + aamPT\"), demoed to the whole CS team. I later built MapPT, a custom GPT for building maps, and rolled it out across the GTM org.",
+        note: "\"Thank you for your stellar templates - they set the bar so high for GPT to follow.\" - Amaan Kulatunga, Solutions Consultant",
       },
       {
         heading: "Phase 4 · Aug–Sep 2025: Naming & positioning",
-        content: "A tool this central needed language that could hold up in sales rooms. I opened the naming debate, facilitated input across CS, marketing, product, and the CEO, and closed it with a company-wide vote (29 votes): Agentic Personalization Map. It was in a live deal deck the same day. When the CEO pushed to put \"process and roadmap over any specific sheet,\" that shaped the map's role inside a standardized onboarding methodology — the four-session structure other strategists now use.",
+        content: "A tool this central needed language that could hold up in sales rooms. I opened the naming debate, facilitated input across CS, marketing, product, and the CEO, and closed it with a company-wide vote (29 votes): Agentic Personalization Map. It was in a live deal deck the same day. When the CEO pushed to put \"process and roadmap over any specific sheet,\" that shaped the map's role inside a standardized onboarding methodology - the four-session structure other strategists now use.",
       },
       {
         heading: "Phase 5 · Oct–Nov 2025: Teaching it at scale",
@@ -253,13 +253,13 @@ export const projects: Project[] = [
         bullets: [
           "The winning map (Whatnot) was built by a new hire who credited the exercise for nailing a live ThredUp demo weeks later.",
           "Insights from all submissions were folded back into evolving the map format itself.",
-          "Leadership proposed it as a 60-day certification for all new hires — \"a great onboarding requirement for future new hires\" (Zach Dorner).",
+          "Leadership proposed it as a 60-day certification for all new hires - \"a great onboarding requirement for future new hires\" (Zach Dorner).",
         ],
       },
       {
         heading: "Phase 6 · Oct 2025–Apr 2026: The map becomes infrastructure",
         content: "Published the public positioning piece (Oct 2025) framing maps as the connective tissue of agentic personalization. Inside the company, the map started driving product thinking: topic-coverage metrics and progressive unlock analytics. Maps now anchor account resets (Runna's 2026 reset produced a 40–50 message-group launch plan), renewals (Traveloka's map moved to client-facing format), and closed deals.",
-        note: "\"Mohana — thank you for all of your work on the content map!! This was a key session ran on-site in Berlin.\" — Sam McGill, Sales — Mintos closed-won announcement, $90K TCV, October 2025",
+        note: "\"Mohana - thank you for all of your work on the content map!! This was a key session ran on-site in Berlin.\" - Sam McGill, Sales - Mintos closed-won announcement, $90K TCV, October 2025",
       },
       {
         heading: "Outcomes",
@@ -274,26 +274,26 @@ export const projects: Project[] = [
       {
         heading: "Challenges",
         bullets: [
-          "**The format wasn't right on the first try.** The early Personalisation Map missed the value-proposition dimension — and a live prospect (Monday.com) flagged the gap the moment they tried to use it. The core design had to be reworked in front of the people it was meant to win over.",
+          "**The format wasn't right on the first try.** The early Personalisation Map missed the value-proposition dimension - and a live prospect (Monday.com) flagged the gap the moment they tried to use it. The core design had to be reworked in front of the people it was meant to win over.",
           "**Standardizing across wildly different products.** A format that worked for a fintech app had to survive a barbershop marketplace, a greeting-card service, a music platform, and a super-app. Every new vertical surfaced edge cases the previous version hadn't anticipated.",
-          "**Scaling a personal skill into a company capability.** The map lived in my head before it lived in a guide. Turning it into something teachable meant building the whole apparatus from scratch — the written guide, a graded company-wide contest, individualized feedback on ~15 submissions.",
+          "**Scaling a personal skill into a company capability.** The map lived in my head before it lived in a guide. Turning it into something teachable meant building the whole apparatus from scratch - the written guide, a graded company-wide contest, individualized feedback on ~15 submissions.",
         ],
       },
       {
         heading: "Skills",
         bullets: [
-          "**0→1 framework design.** Saw a structural gap, defined the artifact, and iterated the format against real prospect friction — including reworking a core dimension after a live session exposed it.",
-          "**Systems thinking.** Designed the map to connect strategy to execution: audiences to value props to labels to agent learning — one artifact legible to CRM, growth, product, and data teams.",
-          "**Cross-functional leadership.** Aligned CS, sales, product, marketing, and the CEO around one artifact — through facilitation and a company vote, not mandate.",
+          "**0→1 framework design.** Saw a structural gap, defined the artifact, and iterated the format against real prospect friction - including reworking a core dimension after a live session exposed it.",
+          "**Systems thinking.** Designed the map to connect strategy to execution: audiences to value props to labels to agent learning - one artifact legible to CRM, growth, product, and data teams.",
+          "**Cross-functional leadership.** Aligned CS, sales, product, marketing, and the CEO around one artifact - through facilitation and a company vote, not mandate.",
           "**AI-native workflows.** Turned the methodology into GPT training material and paired it with custom AI tooling so a 4-hour expert task became a 10-minute first pass.",
           "**Enablement & teaching.** Authored the guide, designed the contest, gave individualized feedback on every submission, and built the channel and library that keep it alive.",
-          "**Commercial instinct.** Positioned an internal planning tool as a sales asset — credited in a closed-won deal and called \"the selling point\" by a prospect executive.",
+          "**Commercial instinct.** Positioned an internal planning tool as a sales asset - credited in a closed-won deal and called \"the selling point\" by a prospect executive.",
         ],
       },
       {
         heading: "Reflection",
         content: "A genuinely good internal tool doesn't stay internal. It gets requested by name, ported across verticals, paired with AI tooling, turned into a curriculum, and eventually proposed as a hiring bar.",
-        note: "Every major improvement to the map came from watching someone else try to use it — the missing value-proposition dimension, the pitch refinements, the Challenge's \"wait, this part's confusing\" moments. The bar for a framework that scales isn't \"people liked it\"; it's showing up in someone else's client win.",
+        note: "Every major improvement to the map came from watching someone else try to use it - the missing value-proposition dimension, the pitch refinements, the Challenge's \"wait, this part's confusing\" moments. The bar for a framework that scales isn't \"people liked it\"; it's showing up in someone else's client win.",
       },
     ],
   },
@@ -302,20 +302,20 @@ export const projects: Project[] = [
     archived: true,
     tag: "Content Strategy · Fintech",
     title: "End-to-End Content Overhaul for a Major Fintech App",
-    summary: "Push notification overhaul — value props, 15 new message groups, legal review.",
+    summary: "Push notification overhaul - value props, 15 new message groups, legal review.",
     role: "Content Strategist & Project Manager",
     context: "Leading personal finance / budgeting app (US consumer)",
     year: "2025",
     featured: true,
     challenge: "Push notification content had grown stale and unstructured. Messages lacked a coherent value proposition framework, labels were inconsistently applied, and the account needed a full reset before agent learning could resume cleanly.",
     whatIDid: [
-      "Ran a Values Thinking exercise — mapping 10–11 distinct, user-centric value propositions from the product's core offerings.",
+      "Ran a Values Thinking exercise - mapping 10–11 distinct, user-centric value propositions from the product's core offerings.",
       "Created 15 new message groups combining evergreen fintech content with renewed engagement and retention messaging.",
       "Coordinated a cross-functional working group, delegating message writing with detailed briefs and reviewing all output.",
       "Managed the legal review cycle, incorporating compliance feedback and prioritising launch sequencing.",
       "Oversaw archiving of legacy campaigns and restructured the label library for clean agent learning."
     ],
-    result: "Completed on schedule — all 15 new message groups entered legal review within the first week of February, and the first campaigns went live shortly after.",
+    result: "Completed on schedule - all 15 new message groups entered legal review within the first week of February, and the first campaigns went live shortly after.",
     quote: "Copywriting support has been really helpful",
     image: "/fintech-overhaul.png"
   },
@@ -324,18 +324,18 @@ export const projects: Project[] = [
     archived: true,
     tag: "Training · Content Co-Creation",
     title: "In-Person Training for a Major Sports League",
-    summary: "NYC-based content workshop — co-wrote 800+ message alternates in under 15 minutes.",
+    summary: "NYC-based content workshop - co-wrote 800+ message alternates in under 15 minutes.",
     role: "Content Strategist",
     context: "Premier professional sports league (US)",
     year: "2025",
     featured: true,
-    challenge: "A newly onboarded sports league needed their internal marketing team to become confident and self-sufficient with the Composer tool — building campaigns, understanding label strategy, and producing content at scale.",
+    challenge: "A newly onboarded sports league needed their internal marketing team to become confident and self-sufficient with the Composer tool - building campaigns, understanding label strategy, and producing content at scale.",
     whatIDid: [
       "Travelled to the client's New York City headquarters for an in-person working session.",
       "Delivered a hands-on training covering the Composer, label system, and spreadsheet-based campaign building.",
-      "Co-wrote a live \"Standings\" push notification — producing 800+ message alternates in roughly 10–15 minutes.",
+      "Co-wrote a live \"Standings\" push notification - producing 800+ message alternates in roughly 10–15 minutes.",
       "Defined a prioritised roadmap of 8 new campaign categories.",
-      "Ran a content and label performance working session in March — walked through agent learnings and introduced the Content Personalisation Map.",
+      "Ran a content and label performance working session in March - walked through agent learnings and introduced the Content Personalisation Map.",
       "Presented semantic label analysis in April with re-labelling recommendations going into the playoffs.",
       "Became the internal expert on Custom Components, recording a how-to Loom demo for the client team."
     ],
@@ -348,22 +348,22 @@ export const projects: Project[] = [
     archived: true,
     tag: "Client Onboarding · Europe",
     title: "New-Client Kick-Off for a European Tax Filing App",
-    summary: "Solo-led onboarding from scratch — Values Thinking, label framework, rapid launch.",
+    summary: "Solo-led onboarding from scratch - Values Thinking, label framework, rapid launch.",
     role: "Content Strategist",
     context: "Fast-growing European consumer tax app · $102K deal value",
     year: "2025",
     featured: true,
-    challenge: "A newly closed account with a highly seasonal user base needed onboarding onto the platform's content methodology from scratch — the first solo content kick-off of its kind.",
+    challenge: "A newly closed account with a highly seasonal user base needed onboarding onto the platform's content methodology from scratch - the first solo content kick-off of its kind.",
     whatIDid: [
       "Led a pre-sync with internal stakeholders to tailor the methodology to a tax product context.",
       "Facilitated the first live content kick-off using Values Thinking and Inner Monologue frameworks.",
       "Created and shared a collaborative Label Worksheet for the client's ongoing reference.",
       "Ran a follow-up Labels & Messaging Workshop, narrowing the library to 6 core value propositions.",
       "Built a detailed email component guide with a Loom recording for structuring Aampe components within email templates.",
-      "Prepared copy for a DIY onboarding demo, coordinating directly with the CEO — delivered same-day.",
+      "Prepared copy for a DIY onboarding demo, coordinating directly with the CEO - delivered same-day.",
       "Reviewed the client's first independently-built push campaigns weeks after kick-off."
     ],
-    result: "The client was reviewing self-created campaigns in the Composer within weeks of their first session — the fastest any client had moved from onboarding to independent content creation. The interactive Figma personalisation demo was built and delivered same-day.",
+    result: "The client was reviewing self-created campaigns in the Composer within weeks of their first session - the fastest any client had moved from onboarding to independent content creation. The interactive Figma personalisation demo was built and delivered same-day.",
     quote: "That was FAST. I wonder if any other partner created messages this fast.",
     image: "/tax-onboarding.png"
   },
@@ -377,7 +377,7 @@ export const projects: Project[] = [
     context: "Major Southeast Asian ride-hailing and delivery super app",
     year: "2025",
     featured: true,
-    challenge: "A super app operating across multiple Southeast Asian markets needed personalised push notifications in multiple languages — with copy written by their internal PMM team. The challenge was both technical (word-order differences across languages) and strategic (multiple value props per message slowing agent learning).",
+    challenge: "A super app operating across multiple Southeast Asian markets needed personalised push notifications in multiple languages - with copy written by their internal PMM team. The challenge was both technical (word-order differences across languages) and strategic (multiple value props per message slowing agent learning).",
     whatIDid: [
       "Designed a localisation template with a Loom walkthrough for structuring messages across languages.",
       "Identified a word-order problem in translated components (SVO vs SOV language structures) and proposed a platform-level fix to engineering.",
@@ -385,13 +385,13 @@ export const projects: Project[] = [
       "Covered for the account manager to personally coordinate and launch campaigns in early March, including the Family Account push across all target markets.",
       "Led content review for Use Case 3 (CRM team content) as a third expansion of the engagement in March."
     ],
-    result: "Use Case 2 launched in early March — Dineout Deals, Advanced Booking, Group Order, and Family Account campaigns live across six Southeast Asian markets. A third use case kicked off by end of March. The localisation template became a reusable asset company-wide.",
+    result: "Use Case 2 launched in early March - Dineout Deals, Advanced Booking, Group Order, and Family Account campaigns live across six Southeast Asian markets. A third use case kicked off by end of March. The localisation template became a reusable asset company-wide.",
     image: "/superapp-l10n.png"
   },
   {
     slug: "playbook",
     tag: "Internal · Company-Wide",
-    title: "Content Playbook — Company-Wide Training Resource",
+    title: "Content Playbook - Company-Wide Training Resource",
     summary: "Comprehensive Figma deck covering label strategy, message architecture, and best practices. Distributed to all active clients.",
     role: "Content Strategist & Author",
     context: "Internal deliverable distributed to all active clients",
@@ -405,32 +405,32 @@ export const projects: Project[] = [
     sections: [
       {
         heading: "The problem: no shared resource for content methodology",
-        content: "As the client portfolio at Aampe grew, onboarding new clients onto the platform's content methodology was inconsistent and time-consuming. There was no single resource that covered label strategy, message architecture, creative best practices, and how to think about content maturity — leaving account teams to reinvent the wheel for each new engagement. Every kick-off relied on tribal knowledge, and clients at different maturity stages received uneven guidance.",
+        content: "As the client portfolio at Aampe grew, onboarding new clients onto the platform's content methodology was inconsistent and time-consuming. There was no single resource that covered label strategy, message architecture, creative best practices, and how to think about content maturity - leaving account teams to reinvent the wheel for each new engagement. Every kick-off relied on tribal knowledge, and clients at different maturity stages received uneven guidance.",
       },
       {
         heading: "What the Playbook covers",
-        content: "I built the Content Playbook — a comprehensive Figma deck covering everything a client or account manager needs to create effective agentic content.",
+        content: "I built the Content Playbook - a comprehensive Figma deck covering everything a client or account manager needs to create effective agentic content.",
         bullets: [
-          "**Labels and content strategies.** How to structure a label library, what makes a good value proposition, and common mistakes to avoid — including how to think about mutual exclusivity and how many labels is too many.",
+          "**Labels and content strategies.** How to structure a label library, what makes a good value proposition, and common mistakes to avoid - including how to think about mutual exclusivity and how many labels is too many.",
           "**Step-by-step message creation guide.** From brief to published campaign: how to write for agent learning, not just for clicks.",
-          "**Best practices.** Writing copy that supports agent learning, not just copy that sounds good — the difference between what performs and what teaches the agent something useful.",
+          "**Best practices.** Writing copy that supports agent learning, not just copy that sounds good - the difference between what performs and what teaches the agent something useful.",
           "**Beyond the basics.** Advanced creative strategies for high-maturity accounts: when to experiment, how to structure creative variety, and how to push past evergreen content.",
-          "**Content Personalisation Map.** A visual framework for identifying gaps in an account's message coverage across audiences and use cases — an early version of the content mapping methodology I later scaled company-wide.",
-          "**Content Scorecard.** A maturity model for evaluating how far along a client is and what to focus on next — giving account teams a shared language for client progression.",
+          "**Content Personalisation Map.** A visual framework for identifying gaps in an account's message coverage across audiences and use cases - an early version of the content mapping methodology I later scaled company-wide.",
+          "**Content Scorecard.** A maturity model for evaluating how far along a client is and what to focus on next - giving account teams a shared language for client progression.",
         ],
       },
       {
         heading: "Distribution and reach",
-        content: "The Playbook was shared across the entire client base from March 2025 onwards — used as a live reference in onboarding sessions, working visits, and sales demos. Clients who received it included a major sports league, a fintech rewards app, a barbershop booking platform, a Southeast Asian super app, a travel accommodation platform, a food delivery app, and a tax filing service.",
+        content: "The Playbook was shared across the entire client base from March 2025 onwards - used as a live reference in onboarding sessions, working visits, and sales demos. Clients who received it included a major sports league, a fintech rewards app, a barbershop booking platform, a Southeast Asian super app, a travel accommodation platform, a food delivery app, and a tax filing service.",
         note: "\"This deck is on fire… Components never were so clear.\"",
       },
       {
         heading: "Outcomes",
         bullets: [
-          "Adopted company-wide within days of its internal launch — passed from account team to account team without prompting.",
+          "Adopted company-wide within days of its internal launch - passed from account team to account team without prompting.",
           "Became the standard reference for client onboarding sessions and working visits throughout April and beyond.",
           "Used in sales demos to communicate the methodology's depth and structure to prospective clients.",
-          "The Content Personalisation Map concept inside it later evolved into the full Content Maps methodology — credited in a $90K closed-won deal.",
+          "The Content Personalisation Map concept inside it later evolved into the full Content Maps methodology - credited in a $90K closed-won deal.",
         ],
       },
     ],
@@ -440,7 +440,7 @@ export const projects: Project[] = [
     archived: true,
     tag: "Content Strategy · Marketplace",
     title: "Barbershop Booking App",
-    summary: "Full label audit and 6 new message groups — drove the account's first-ever active user messaging milestone.",
+    summary: "Full label audit and 6 new message groups - drove the account's first-ever active user messaging milestone.",
     role: "Content Strategist",
     context: "US consumer app for barbershop discovery and booking",
     year: "2025",
@@ -450,7 +450,7 @@ export const projects: Project[] = [
       "Designed and built 6 new message groups: payments (casual and professional tones), scheduling, barbershop tips for barbers and clients, and barber facts.",
       "Pitched a creative Affirmation push notification campaign concept with referral-linked action buttons."
     ],
-    result: "In March, the account broke into active user messaging for the first time — a milestone directly attributed to the new message groups.",
+    result: "In March, the account broke into active user messaging for the first time - a milestone directly attributed to the new message groups.",
     image: "/barbershop-booking.png"
   },
   {
@@ -458,19 +458,19 @@ export const projects: Project[] = [
     archived: true,
     tag: "Content Strategy · Travel",
     title: "Travel & Accommodation Super App",
-    summary: "Full-day Jakarta onsite across 5 sessions — content audit, label strategy, and promo optimisation. Account renewed at $172K ACV.",
+    summary: "Full-day Jakarta onsite across 5 sessions - content audit, label strategy, and promo optimisation. Account renewed at $172K ACV.",
     role: "Content Strategist",
     context: "Major Southeast Asian travel booking platform · $172K ACV renewal (+15% expansion)",
     year: "2025",
-    challenge: "A high-value account needed a structured content strategy review to unlock growth and justify renewal — requiring an in-person engagement to build momentum.",
+    challenge: "A high-value account needed a structured content strategy review to unlock growth and justify renewal - requiring an in-person engagement to build momentum.",
     whatIDid: [
       "Provided structured guidance on message formatting in February, unlocking 15 new campaigns without writing from scratch.",
-      "Attended a full-day onsite at the client's Jakarta offices — a 7-hour workshop across 5 sessions covering performance review, content audit, content strategy, promo/blockbuster optimisation, and product roadmap.",
+      "Attended a full-day onsite at the client's Jakarta offices - a 7-hour workshop across 5 sessions covering performance review, content audit, content strategy, promo/blockbuster optimisation, and product roadmap.",
       "Co-led content and label strategy sessions and demonstrated ChatGPT-assisted content generation.",
       "Left with a detailed action item list and followed up with written summaries and Loom recordings."
     ],
     result: "Account renewed at $172K ACV with a 15% expansion. The onsite was cited as a key factor in the renewal outcome.",
-    quote: "Mohana, Madhuri, Patty — your two-day onsite workshop marathon laid the groundwork for this milestone.",
+    quote: "Mohana, Madhuri, Patty - your two-day onsite workshop marathon laid the groundwork for this milestone.",
     image: "/travel-superapp.png"
   },
   {
@@ -502,10 +502,10 @@ export const projects: Project[] = [
     role: "Content Strategist",
     context: "European music streaming service with 27 active languages",
     year: "2025",
-    challenge: "Push notification components broke when translated into languages with different sentence structures — a technical problem that also affected content quality across the entire account.",
+    challenge: "Push notification components broke when translated into languages with different sentence structures - a technical problem that also affected content quality across the entire account.",
     whatIDid: [
       "Prepared and presented a content deep dive for the client's change management call.",
-      "Identified a structural problem with translated components — different languages reorder subject, verb, and object when only part of a sentence is dynamic, breaking the rendered message.",
+      "Identified a structural problem with translated components - different languages reorder subject, verb, and object when only part of a sentence is dynamic, breaking the rendered message.",
       "Created an examples sheet documenting the issue across multiple language families.",
       "Coordinated a joint solution call between the client and engineering."
     ],
@@ -517,7 +517,7 @@ export const projects: Project[] = [
     archived: true,
     tag: "Content Strategy · Fintech",
     title: "Financial Rewards App",
-    summary: "Full account optimisation review — 15 new message group proposals and two working sessions with the client's content team.",
+    summary: "Full account optimisation review - 15 new message group proposals and two working sessions with the client's content team.",
     role: "Content Strategist",
     context: "US consumer cashback and rewards platform",
     year: "2025",
@@ -528,7 +528,7 @@ export const projects: Project[] = [
       "Ran two working sessions with the client's internal copywriter and content lead.",
       "Onboarded the client's copywriter onto the label and campaign-building process."
     ],
-    result: "By April, six message groups were marked ready for launch — labelled, structured in the Composer, and ready for the client's team to publish independently.",
+    result: "By April, six message groups were marked ready for launch - labelled, structured in the Composer, and ready for the client's team to publish independently.",
     image: "/financial-rewards.png"
   },
   {
@@ -536,18 +536,18 @@ export const projects: Project[] = [
     archived: true,
     tag: "Content Strategy · Consumer",
     title: "Personalised Greeting Card App",
-    summary: "Built a full Content Roadmap strategy deck and Custom Components implementation plan — delivered independently, without a live session.",
+    summary: "Built a full Content Roadmap strategy deck and Custom Components implementation plan - delivered independently, without a live session.",
     role: "Content Strategist",
     context: "European consumer app for custom postcards and greeting cards",
     year: "2025",
-    challenge: "A self-sufficient client needed strategic direction for the next phase of their content programme — delivered without the usual live workshop format.",
+    challenge: "A self-sufficient client needed strategic direction for the next phase of their content programme - delivered without the usual live workshop format.",
     whatIDid: [
       "Reviewed the client's self-built label library and prepared messages for launch.",
       "Proactively wrote Easter-themed value-based messages as inspiration.",
       "Independently reviewed the client's Miro board and built a Content Roadmap strategy deck covering the next few months.",
       "Built a Custom Components implementation plan to give the client a clear development path."
     ],
-    result: "Delivered a full content strategy and implementation roadmap entirely asynchronously — no live session required.",
+    result: "Delivered a full content strategy and implementation roadmap entirely asynchronously - no live session required.",
     image: "/greeting-card-app.png"
   },
   {
@@ -572,20 +572,20 @@ export const projects: Project[] = [
     slug: "chatbot",
     tag: "Conversation Design · Fintech",
     title: "Building an In-App Chat Assistant",
-    summary: "End-to-end conversation design for a support bot resolving 50,000+ monthly queries — from research to a 5-product decision tree.",
-    role: "Sole Content Owner — IA, Content Strategy, Conversation Design",
+    summary: "End-to-end conversation design for a support bot resolving 50,000+ monthly queries - from research to a 5-product decision tree.",
+    role: "Sole Content Owner - IA, Content Strategy, Conversation Design",
     context: "LazyPay (PayU Finance)",
     year: "2022",
     duration: "2 months · XL project",
-    challenge: "82% of queries received by the call centre — over 50,000 per month — could be resolved with factual information. The business needed to reduce incoming calls and improve CSAT with a faster, more satisfying support experience. The existing support experience was phone-first and offered no automated path to resolution.",
+    challenge: "82% of queries received by the call centre - over 50,000 per month - could be resolved with factual information. The business needed to reduce incoming calls and improve CSAT with a faster, more satisfying support experience. The existing support experience was phone-first and offered no automated path to resolution.",
     whatIDid: [],
-    result: "Delivered a full decision tree spanning 5 product lines — one of the most structurally complex content projects I have led. Phase I covered Help & Support with simple decision-tree logic; Phase II scope included NLP and in-app ticket raising, informed directly by prototype findings.",
+    result: "Delivered a full decision tree spanning 5 product lines - one of the most structurally complex content projects I have led. Phase I covered Help & Support with simple decision-tree logic; Phase II scope included NLP and in-app ticket raising, informed directly by prototype findings.",
     image: "/images/projects/chatbot/01_cover_thumbnail.svg",
     thumbnail: "/images/projects/chatbot/01_cover_thumbnail.svg",
     sections: [
       {
         heading: "Research & Data",
-        content: "I collated all available data from UX research and customer care teams — reviewing user interviews, call centre recordings, transcripts, and monthly reports. I also ran a competitor analysis of other fintech apps and conducted journey mapping sessions with the designer and PM.",
+        content: "I collated all available data from UX research and customer care teams - reviewing user interviews, call centre recordings, transcripts, and monthly reports. I also ran a competitor analysis of other fintech apps and conducted journey mapping sessions with the designer and PM.",
         image: {
           src: "/images/projects/chatbot/02_research-data_inline.svg",
           alt: "Horizontal bar chart showing top call centre query categories: Account Related 21.1%, Loans and EMIs 14.6%, Charges and Fees 6.1%",
@@ -594,7 +594,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Content Guidelines & Framework",
-        content: "Working with stakeholders, I established four governing principles for the chatbot's content — covering tone, information relevance, decision architecture, and user control.",
+        content: "Working with stakeholders, I established four governing principles for the chatbot's content - covering tone, information relevance, decision architecture, and user control.",
         image: {
           src: "/images/projects/chatbot/03_content-framework_inline.svg",
           alt: "Four framework principles: Empathetic tone, Co-operative, At most 3 options per node, User stays in control",
@@ -603,7 +603,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Prototype & Test",
-        content: "Before building the full tree, I tested two prototypes — one using Use Case categories, one using Product categories — across 10 user sessions.",
+        content: "Before building the full tree, I tested two prototypes - one using Use Case categories, one using Product categories - across 10 user sessions.",
         image: {
           src: "/images/projects/chatbot/04_prototype-findings_inline.svg",
           alt: "Six findings from 10 user prototype sessions, including preference for use-case categorisation and requests for NLP and in-app ticket raising",
@@ -627,20 +627,20 @@ export const projects: Project[] = [
     slug: "lazycard",
     tag: "UX Writing · Fintech",
     title: "UX Writing Review for LazyCard",
-    summary: "Full content audit and rewrite for a new physical and digital credit card — first project as LazyPay's first UX Writer.",
-    role: "Sole Content Owner — IA, Content Strategy, Copy Review",
+    summary: "Full content audit and rewrite for a new physical and digital credit card - first project as LazyPay's first UX Writer.",
+    role: "Sole Content Owner - IA, Content Strategy, Copy Review",
     context: "LazyPay (PayU Finance)",
     year: "2021",
     duration: "4 days · M project",
-    challenge: "LazyCard was a credit offering launched by LazyPay near the end of 2021, available as both a physical and digital card. As a newly joined UX Writer — the first at the company — my first project was to review the existing copy across the entire LazyCard app flow and bring it up to standard.",
+    challenge: "LazyCard was a credit offering launched by LazyPay near the end of 2021, available as both a physical and digital card. As a newly joined UX Writer - the first at the company - my first project was to review the existing copy across the entire LazyCard app flow and bring it up to standard.",
     whatIDid: [],
-    result: "Delivered a full copy review with concrete, implemented recommendations — restructured value propositions, removed a misleading approval claim, standardised casing, and replaced jargon throughout.",
+    result: "Delivered a full copy review with concrete, implemented recommendations - restructured value propositions, removed a misleading approval claim, standardised casing, and replaced jargon throughout.",
     image: "/images/projects/lazycard/01_cover_thumbnail.svg",
     thumbnail: "/images/projects/lazycard/01_cover_thumbnail.svg",
     sections: [
       {
         heading: "Understanding the Users",
-        content: "An earlier persona study (March 2020) identified three major persona types for young Indian users. Hedonists and Attackers were the primary target group for LazyCard — they are more likely to opt for credit products and are already comfortable with the concept of credit.",
+        content: "An earlier persona study (March 2020) identified three major persona types for young Indian users. Hedonists and Attackers were the primary target group for LazyCard - they are more likely to opt for credit products and are already comfortable with the concept of credit.",
         image: {
           src: "/images/projects/lazycard/02_user-personas_inline.svg",
           alt: "Three user persona cards: Defender (save for future), Hedonist (earn to enjoy, target), and Attacker (earn for future, target). Hedonist and Attacker are highlighted as LazyCard target groups.",
@@ -649,16 +649,16 @@ export const projects: Project[] = [
       },
       {
         heading: "Mapping the User Journey",
-        content: "I mapped the end-to-end journey across four stages — from first awareness of LazyCard through to activation — to identify where copy problems were most impactful.",
+        content: "I mapped the end-to-end journey across four stages - from first awareness of LazyCard through to activation - to identify where copy problems were most impactful.",
         image: {
           src: "/images/projects/lazycard/03_user-journey_full-width.svg",
-          alt: "Four-stage user journey map for LazyCard: Awareness, Consideration, Onboarding, Activation — with descriptions and emotional states at each stage",
+          alt: "Four-stage user journey map for LazyCard: Awareness, Consideration, Onboarding, Activation - with descriptions and emotional states at each stage",
           display: "full-width"
         }
       },
       {
         heading: "Designs and Copy Review",
-        content: "I conducted a full IA, content strategy, and copy review across the finished designs — covering the entry point on the homescreen, the LazyCard landing screen, and the onboarding and KYC flow.",
+        content: "I conducted a full IA, content strategy, and copy review across the finished designs - covering the entry point on the homescreen, the LazyCard landing screen, and the onboarding and KYC flow.",
         image: {
           src: "/images/projects/lazycard/04_copy-review_full-width.svg",
           alt: "Before and after copy comparison table showing improvements to the LazyCard landing screen: headline, value props list, acceptance copy, and CTA button",
@@ -671,25 +671,25 @@ export const projects: Project[] = [
     slug: "expense-mgmt",
     tag: "Content Strategy · Fintech",
     title: "Exploring Expense Management",
-    summary: "Research-driven IA, content strategy, and terminology framework for a new expense tracking feature — built before a single screen was designed.",
-    role: "Sole UX Writer — IA, Content Strategy, Terminology Framework",
+    summary: "Research-driven IA, content strategy, and terminology framework for a new expense tracking feature - built before a single screen was designed.",
+    role: "Sole UX Writer - IA, Content Strategy, Terminology Framework",
     context: "LazyPay (PayU Finance)",
     year: "2022",
     duration: "2 weeks · L project",
     challenge: "LazyPay wanted to build a new expense tracking feature. As the sole UX Writer, I was tasked with defining the terminology, information architecture, and overall content strategy before a single screen was designed.",
     whatIDid: [],
-    result: "Delivered a complete content strategy and IA framework that defined how the product would communicate its core concept — \"Manage your money\" — and how every type of expense, spend, and transaction would be categorised and named.",
+    result: "Delivered a complete content strategy and IA framework that defined how the product would communicate its core concept - \"Manage your money\" - and how every type of expense, spend, and transaction would be categorised and named.",
     image: "/images/projects/expense-mgmt/01_cover_thumbnail.svg",
     thumbnail: "/images/projects/expense-mgmt/01_cover_thumbnail.svg",
     confidential: true,
     sections: [
       {
         heading: "Analysing the Competition",
-        content: "I researched 12–15 apps in the current market to understand how they structure their products and what terminology they use — specifically to understand whether Indian users, whose first language is often not English, were already exposed to terms like 'expense', 'transactions', or 'budget'."
+        content: "I researched 12–15 apps in the current market to understand how they structure their products and what terminology they use - specifically to understand whether Indian users, whose first language is often not English, were already exposed to terms like 'expense', 'transactions', or 'budget'."
       },
       {
         heading: "Researching User Needs",
-        content: "The designer and I conducted internal and external user interviews alongside a demographic study. Sessions revealed that the primary motivation was to save and manage money — not to automate tracking. Most users preferred a physical diary. Users were comfortable with terms like 'expense tracking' and 'categories'.",
+        content: "The designer and I conducted internal and external user interviews alongside a demographic study. Sessions revealed that the primary motivation was to save and manage money - not to automate tracking. Most users preferred a physical diary. Users were comfortable with terms like 'expense tracking' and 'categories'.",
         image: {
           src: "/images/projects/expense-mgmt/02_user-research-stats_inline.svg",
           alt: "Five statistics from user research: 40% want to save more, 33% struggle with saving, 30% don't track expenses, 26% use a physical diary, 14% use an app",
@@ -698,7 +698,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Information Architecture",
-        content: "Based on user mental models, I defined a clear IA framework that separated credit and debit as distinct entities, treated any immediate loss of money as an expense, and organised everyday transactions as 'Spends' — a subset of expenses — grouped by categories like travel and food.",
+        content: "Based on user mental models, I defined a clear IA framework that separated credit and debit as distinct entities, treated any immediate loss of money as an expense, and organised everyday transactions as 'Spends' - a subset of expenses - grouped by categories like travel and food.",
         image: {
           src: "/images/projects/expense-mgmt/03_ia-framework_full-width.svg",
           alt: "Expense information architecture tree: Expenses branches into Spends (everyday transactions), Bills and Subscriptions, and Upcoming Payments. Spends further splits into category types like Food and Travel.",
@@ -712,12 +712,12 @@ export const projects: Project[] = [
     slug: "repayments",
     tag: "Content Strategy · Fintech",
     title: "Boosting Repayment Rates for LazyPay",
-    summary: "LazyPay is a buy-now-pay-later product by PayU Finance. When data showed 45% of new users were missing repayments, I redesigned the content and touchpoints across the entire repayment journey — building a three-pronged strategy around discoverability, urgency, and transparency to nudge users to pay on time.",
-    role: "Content Strategist — Problem Identification, Multi-level Solution Design, Content-First Design",
+    summary: "LazyPay is a buy-now-pay-later product by PayU Finance. When data showed 45% of new users were missing repayments, I redesigned the content and touchpoints across the entire repayment journey - building a three-pronged strategy around discoverability, urgency, and transparency to nudge users to pay on time.",
+    role: "Content Strategist - Problem Identification, Multi-level Solution Design, Content-First Design",
     context: "LazyPay (PayU Finance)",
     year: "2022",
     duration: "1 month · L project",
-    challenge: "High repayment rates signal user trust and reduce risk for the business. The rate was especially poor among **new users — 45% were not repaying on time**. Of these, 23% were opening the app during the repayment window but still not paying, while the rest were not opening the app at all.",
+    challenge: "High repayment rates signal user trust and reduce risk for the business. The rate was especially poor among **new users - 45% were not repaying on time**. Of these, 23% were opening the app during the repayment window but still not paying, while the rest were not opening the app at all.",
     whatIDid: [],
     result: "Delivered a full three-strategy solution across all repayment touchpoints, with a primary success target of a **10% improvement in on-time repayment rate** based on analyst modelling.",
     image: "/images/projects/repayments/cover.avif",
@@ -727,21 +727,21 @@ export const projects: Project[] = [
         heading: "Defining the Problem",
         content: "Through research and data analysis, the team identified several root causes behind late repayment:",
         bullets: [
-          "Users **lacked awareness of late fees** — the cost of not paying wasn't visible upfront.",
+          "Users **lacked awareness of late fees** - the cost of not paying wasn't visible upfront.",
           "They knew repayment was important, but **it never felt urgent**.",
           "Reminders were perceived as **boring and robotic**, easy to tune out.",
           "**New users had the same experience as mature users**, despite being unfamiliar with the process."
         ],
         image: {
           src: "/images/projects/repayments/inline-notification.avif",
-          alt: "Hand-drawn sketch mapping four questions every repayment touchpoint needs to answer: how much to pay, when to pay, level of urgency, and why to pay — radiating from a central notification component",
+          alt: "Hand-drawn sketch mapping four questions every repayment touchpoint needs to answer: how much to pay, when to pay, level of urgency, and why to pay - radiating from a central notification component",
           display: "inline",
           caption: "I mapped the problem to four core questions any repayment touchpoint needed to answer: how much to pay, when to pay, why to pay, and the level of urgency."
         },
       },
       {
         heading: "User Journey",
-        content: "A typical repayment journey for a LazyPay user spans **three days of escalating touchpoints** — from a routine statement email to same-day SMS blasts — across WhatsApp, SMS, email, and the in-app notification itself.",
+        content: "A typical repayment journey for a LazyPay user spans **three days of escalating touchpoints** - from a routine statement email to same-day SMS blasts - across WhatsApp, SMS, email, and the in-app notification itself.",
         image: {
           src: "/images/projects/repayments/user-journey.avif",
           alt: "Three-day repayment journey map: Day 1 statement generated, Day 2 reminder before due date, Day 3 due date with escalating SMS and emails",
@@ -752,9 +752,9 @@ export const projects: Project[] = [
         heading: "Solution Strategy",
         content: "I reviewed the existing UI screens and notifications, then designed a three-pronged strategy covering every touch-point in the user's repayment journey:",
         bullets: [
-          "**Discoverability** — Many users claimed not to be aware of their dues and due dates. The current in-app notification was very missable, blending into the rest of the UI.",
-          "**Urgency** — Some users reported having seen reminders, yet ignored them or put them off for later. There was also no noticeable difference in UI after missing the due date.",
-          "**Transparency** — Late fees and consequences of not repaying were not given upfront. The information hierarchy on the repayment page was vague, with no clear call to action."
+          "**Discoverability** - Many users claimed not to be aware of their dues and due dates. The current in-app notification was very missable, blending into the rest of the UI.",
+          "**Urgency** - Some users reported having seen reminders, yet ignored them or put them off for later. There was also no noticeable difference in UI after missing the due date.",
+          "**Transparency** - Late fees and consequences of not repaying were not given upfront. The information hierarchy on the repayment page was vague, with no clear call to action."
         ]
       },
       {
@@ -763,7 +763,7 @@ export const projects: Project[] = [
         imagePlacement: "beside",
         image: {
           src: "/images/projects/repayments/bottom-sheet.avif",
-          alt: "New overdue bottom sheet showing: ₹2,464.7 is overdue, Please repay immediately to avoid more penalties — with three consequences listed: late fee of ₹150, credit score impact, transactions blocked — and a Pay Now button",
+          alt: "New overdue bottom sheet showing: ₹2,464.7 is overdue, Please repay immediately to avoid more penalties - with three consequences listed: late fee of ₹150, credit score impact, transactions blocked - and a Pay Now button",
           display: "inline",
           phoneFrame: true
         }
@@ -789,7 +789,7 @@ export const projects: Project[] = [
       },
       {
         heading: "Escalating to Urgency",
-        content: "Once a due date passed unpaid, a **dedicated overdue bottom sheet** surfaced automatically alongside the inline notification — making the stakes impossible to miss before the user could proceed in the app.",
+        content: "Once a due date passed unpaid, a **dedicated overdue bottom sheet** surfaced automatically alongside the inline notification - making the stakes impossible to miss before the user could proceed in the app.",
         imagePlacement: "beside",
         image: {
           src: "/images/projects/repayments/overdue.avif",
@@ -801,8 +801,8 @@ export const projects: Project[] = [
         heading: "Impact",
         content: "Post-launch funnel data showed measurable gains on both changes:",
         bullets: [
-          "**Notification redesign** — Repayment completion rose from **48.85% → 55.34%** on iOS. Click-through improved from **67.96% → 72.85%** on Android.",
-          "**\"Activity\" → \"Dues\" rename** — Nav bar tap rate jumped from **48.5% → 62.2%** across Android + iOS, a 13.7 percentage point lift in discoverability."
+          "**Notification redesign** - Repayment completion rose from **48.85% → 55.34%** on iOS. Click-through improved from **67.96% → 72.85%** on Android.",
+          "**\"Activity\" → \"Dues\" rename** - Nav bar tap rate jumped from **48.5% → 62.2%** across Android + iOS, a 13.7 percentage point lift in discoverability."
         ]
       }
     ]
@@ -830,7 +830,7 @@ export const journey = [
     date: "Nov 2024 – Present",
     role: "Content Strategist",
     company: "Aampe",
-    description: "Building message content for consumer apps across fintech, sports, travel, food delivery, and fitness — designing label architectures, value proposition frameworks, and message variants to help clients unlock agentic optimisation. Alongside client work, translating practitioner insight into formal product pitches and UX feedback: a systematic bridge between what customers need and what the product becomes."
+    description: "Building message content for consumer apps across fintech, sports, travel, food delivery, and fitness - designing label architectures, value proposition frameworks, and message variants to help clients unlock agentic optimisation. Alongside client work, translating practitioner insight into formal product pitches and UX feedback: a systematic bridge between what customers need and what the product becomes."
   },
   {
     id: 1,
@@ -865,6 +865,6 @@ export const journey = [
     date: "Jul 2014 – Jul 2019 · 5 years",
     role: "Software Engineer → UX Designer",
     company: "Adobe",
-    description: "Started as a Quality Engineer straight out of college. Owned product quality and customer support across multiple release cycles. After 3.5 years, moved laterally into a UX Design role — singlehandedly taking over design for a new B2B e-learning product."
+    description: "Started as a Quality Engineer straight out of college. Owned product quality and customer support across multiple release cycles. After 3.5 years, moved laterally into a UX Design role - singlehandedly taking over design for a new B2B e-learning product."
   }
 ];

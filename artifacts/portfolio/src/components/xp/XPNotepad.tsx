@@ -50,7 +50,7 @@ export function XPNotepad({ type }: { type: "about" | "contact" }) {
   if (type === "contact") {
     return (
       <NotepadChrome>
-        <span style={h1}>{"Contact — Mohana Das\n"}</span>
+        <span style={h1}>{"Contact - Mohana Das\n"}</span>
         <span style={rule}>{"══════════════════════════════\n"}</span>
         {"\n"}
         {"📧  "}<A>hello@mohanadascontent.com</A>{"\n"}
@@ -85,17 +85,17 @@ export function XPNotepad({ type }: { type: "about" | "contact" }) {
       {"experience through content strategy, product\n"}
       {"positioning, and value frameworks.\n"}
       {"\n"}
-      {"Currently at "}<A>Aampe</A>{" — an AI-powered lifecycle marketing\n"}
-      {"platform — building content strategy for consumer apps\n"}
+      {"Currently at "}<A>Aampe</A>{" - an AI-powered lifecycle marketing\n"}
+      {"platform - building content strategy for consumer apps\n"}
       {"across fintech, sports, travel, food delivery, and\n"}
       {"fitness. My work spans designing label architectures,\n"}
       {"value proposition frameworks, and thousands of message\n"}
-      {"variants — helping brands unlock the full potential of\n"}
+      {"variants - helping brands unlock the full potential of\n"}
       {"agentic optimisation.\n"}
       {"\n"}
       {"Before this, I was the first and only UX Writer at\n"}
       <A>LazyPay (PayU Finance)</A>{", where I built the content\n"}
-      {"design practice from the ground up — owning conversation\n"}
+      {"design practice from the ground up - owning conversation\n"}
       {"design, information architecture, and microcopy across\n"}
       {"a fintech product reaching millions of users across India.\n"}
       {"\n"}
