@@ -46,7 +46,9 @@ export default function About() {
           </p>
           <div>
             <a
-              href="#"
+              href="/Resume_Mohana_Das_2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-4 bg-primary text-background px-8 py-4 text-lg w-fit transition-transform hover:-translate-y-1 hover:shadow-[8px_8px_0px_#0D3B2E] border-2 border-foreground font-sans font-bold"
             >
               Download Resume ↗
