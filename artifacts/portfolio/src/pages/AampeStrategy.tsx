@@ -317,7 +317,11 @@ function PanelContentMap() {
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
           <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What is it?</p>
-          <p className="text-foreground/70 font-sans leading-relaxed">Aampe needed a way to see content as a living portfolio, not a backlog of messages. The content map connected goals, topics, contexts, brand inputs, and agent decisions.</p>
+          <p className="text-foreground/70 font-sans leading-relaxed">Aampe needed a way to see content as a living portfolio, not a backlog of messages - so that marketers, product managers, and CRM leaders could reimagine the way they approach content
+
+          We introduced the Content Map - a living inventory of content - to connect features, goals, topics, contexts, messages, and agent decisions.
+
+</p>
         </div>
         <div>
           <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What was done?</p>
@@ -328,9 +332,7 @@ function PanelContentMap() {
           </ul>
         </div>
       </div>
-
       <div className="border-t border-border/30" />
-
       {/* Slide content — Block 1 + 2 — Problem + Solution (2-col) */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
@@ -346,9 +348,7 @@ function PanelContentMap() {
           </p>
         </div>
       </div>
-
       <ContentMapVisual />
-
       {/* Block 3 + 4 — Opportunity + Scaling (2-col) */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
@@ -364,7 +364,6 @@ function PanelContentMap() {
           </p>
         </div>
       </div>
-
       {/* Block 5 — Agentic integration (full width) */}
       <div className="border-l-2 border-primary/30 pl-6">
         <h4 className="font-serif text-2xl mb-4 leading-snug">It became infrastructure for agentic content</h4>
@@ -372,9 +371,7 @@ function PanelContentMap() {
           The map was later paired with AI tools that could generate first-pass content maps from the methodology. That made the artifact more than a sheet. It became a repeatable input system for agents: helping teams plan content breadth, prioritise what to build, and create better conditions for continuous learning.
         </p>
       </div>
-
       <Placeholder label="AI-assisted content map workflow — coming soon" />
-
       {/* Impact */}
       <div className="flex flex-col gap-8">
         <div>
@@ -421,7 +418,6 @@ function PanelContentMap() {
           </div>
         </div>
       </div>
-
       {/* Blog link */}
       <div className="border-t border-border/30 pt-8">
         <p className="text-sm font-sans text-foreground/60">
