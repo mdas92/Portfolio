@@ -406,7 +406,7 @@ export default function ChatbotCaseStudy() {
             </p>
 
             {/* Findings grid: 3 left | prototype phone | 3 right */}
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_200px_1fr] lg:grid-cols-[1fr_220px_1fr] gap-6 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_275px_1fr] gap-6 items-start">
               {/* Left findings: 1, 3, 5 */}
               <div className="flex flex-col gap-5">
                 {[
@@ -428,8 +428,8 @@ export default function ChatbotCaseStudy() {
               <div className="hidden md:flex flex-col items-center gap-2">
                 <div
                   style={{
-                    width: 220,
-                    height: 440,
+                    width: 275,
+                    height: 616,
                     overflow: "hidden",
                     position: "relative",
                     borderRadius: 8,
@@ -440,9 +440,9 @@ export default function ChatbotCaseStudy() {
                     style={{
                       border: "none",
                       width: 800,
-                      height: 450,
+                      height: 700,
                       position: "absolute",
-                      left: -290,
+                      left: -263,
                       top: -5,
                       pointerEvents: "auto",
                     }}
