@@ -227,7 +227,25 @@ const AREA_TITLES = [
 function PanelContentMap() {
   return (
     <div className="flex flex-col gap-14">
-      {/* Block 1 + 2 — Problem + Solution (2-col) */}
+      {/* Original card content */}
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What is it?</p>
+          <p className="text-foreground/70 font-sans leading-relaxed">Aampe needed a way to see content as a living portfolio, not a backlog of messages. The content map connected goals, topics, contexts, brand inputs, and agent decisions.</p>
+        </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-3">What was done?</p>
+          <ul className="text-foreground/70 font-sans leading-relaxed flex flex-col gap-2 list-disc list-outside pl-4">
+            <li>Created the content map framework and prototype with Strategy, GTM, and Leadership.</li>
+            <li>Turned scattered inputs into a bird's-eye view teams could use to spot gaps, overlaps, and next bets.</li>
+            <li>Designed it as structured context for agents, so planning could feed creation, observation, and improvement.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-border/30" />
+
+      {/* Slide content — Block 1 + 2 — Problem + Solution (2-col) */}
       <div className="grid md:grid-cols-2 gap-10 items-start">
         <div>
           <h4 className="font-serif text-2xl mb-4 leading-snug">Content strategy needed a bird's-eye view</h4>
