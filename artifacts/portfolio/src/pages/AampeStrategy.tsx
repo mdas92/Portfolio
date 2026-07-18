@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 
 const sectionAnim = {
@@ -181,7 +182,151 @@ function LabelChain({ items, variant }: { items: string[]; variant: "good" | "ba
   );
 }
 
+function Placeholder({ label }: { label: string }) {
+  return (
+    <div
+      className="w-full border border-dashed border-border/40 bg-muted/10 flex items-center justify-center"
+      style={{ height: 280 }}
+    >
+      <span className="text-xs font-sans text-muted-foreground/40 uppercase tracking-widest">{label}</span>
+    </div>
+  );
+}
+
+const AREA_ICONS = [
+  <svg key="a" width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M24 5c4 6 4 12 0 19-4-7-4-13 0-19Z" />
+    <path d="M43 24c-6 4-12 4-19 0 7-4 13-4 19 0Z" />
+    <path d="M24 43c-4-6-4-12 0-19 4 7 4 13 0 19Z" />
+    <path d="M5 24c6-4 12-4 19 0-7 4-13 4-19 0Z" />
+    <path d="M37.5 10.5c-1 7-5 11.5-13.5 13.5 2-8.5 6.5-12.5 13.5-13.5Z" />
+    <path d="M10.5 37.5c1-7 5-11.5 13.5-13.5-2 8.5-6.5 12.5-13.5 13.5Z" />
+  </svg>,
+  <svg key="b" width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M24 6 41 16v16L24 42 7 32V16L24 6Z" />
+    <path d="M24 6v13" /><path d="M41 16 24 26 7 16" /><path d="M24 26v16" />
+    <circle cx="24" cy="6" r="2.5" fill="currentColor" stroke="none" />
+    <circle cx="41" cy="16" r="2.5" fill="currentColor" stroke="none" />
+    <circle cx="7" cy="16" r="2.5" fill="currentColor" stroke="none" />
+    <circle cx="24" cy="42" r="2.5" fill="currentColor" stroke="none" />
+  </svg>,
+  <svg key="c" width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M9 17h20a8 8 0 0 1 8 8v0a8 8 0 0 1-8 8H9z" />
+    <path d="M9 17V9h19a11 11 0 0 1 11 11" />
+    <path d="M9 33v6h20a14 14 0 0 0 14-14" />
+    <path d="M16 24h16" /><path d="M24 16v16" />
+  </svg>,
+];
+
+const AREA_TITLES = [
+  "Content Strategy for Agentic Systems",
+  "Label Frameworks for Semantic Strategy",
+  "Content Generation at Scale",
+];
+
+function PanelContentMap() {
+  return (
+    <div className="flex flex-col gap-14">
+      {/* Block 1 + 2 — Problem + Solution (2-col) */}
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">Content strategy needed a bird's-eye view</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            Aampe's agents could only learn from the content they were given, but teams had no shared way to see the full opportunity space. CRM, growth, product, and data teams were all looking at different parts of the customer journey. The work was to turn scattered product knowledge into one strategic surface.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">A content map made the whole conversation visible</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            A content map is a structured view of every place a brand can speak to a user. It connects product features, customer journeys, lifecycle moments, content topics, channels, triggers, audiences, and priority into one working artifact. This made content strategy easier to discuss, audit, and build.
+          </p>
+        </div>
+      </div>
+
+      <Placeholder label="Content map sample — coming soon" />
+
+      {/* Block 3 + 4 — Opportunity + Scaling (2-col) */}
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">The map helped teams think beyond campaigns</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            The bigger goal was not to document existing content. It was to help teams see what could exist: missing topics, underused features, new value propositions, cross-sell moments, lifecycle gaps, and places where agents needed more breadth to learn from. The map turned "what should we say?" into a strategic planning exercise.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">I turned a personal method into a company capability</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            I created the framework, built the first reusable templates, named and positioned the artifact, wrote the internal guide, and trained teams across the company. The method moved from my own strategy work into onboarding, QBRs, account resets, deal decks, and new-hire enablement.
+          </p>
+        </div>
+      </div>
+
+      {/* Block 5 — Agentic integration (full width) */}
+      <div className="border-l-2 border-primary/30 pl-6">
+        <h4 className="font-serif text-2xl mb-4 leading-snug">It became infrastructure for agentic content</h4>
+        <p className="text-foreground/70 font-sans leading-relaxed max-w-2xl">
+          The map was later paired with AI tools that could generate first-pass content maps from the methodology. That made the artifact more than a sheet. It became a repeatable input system for agents: helping teams plan content breadth, prioritise what to build, and create better conditions for continuous learning.
+        </p>
+      </div>
+
+      <Placeholder label="AI-assisted content map workflow — coming soon" />
+    </div>
+  );
+}
+
+function PanelLabelFramework() {
+  return (
+    <div className="flex flex-col gap-14">
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">Labels were not just tags</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            They were the meaning layer that helped brands define what to say, how it should vary, and how AI should judge relevance. Every message in the system carried labels that agents could learn from — and bad labels compounded into bad learning at scale.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">What was done</h4>
+          <ul className="text-foreground/70 font-sans leading-relaxed flex flex-col gap-2 list-disc list-outside pl-4">
+            <li>Built a framework for labels around intent, value propositions, tone, context, and decision moments.</li>
+            <li>Moved teams from ad hoc taxonomy work to a semantic strategy brands could understand and extend.</li>
+            <li>Made labels usable across generation, validation, analysis, and agent learning loops.</li>
+          </ul>
+        </div>
+      </div>
+      <Placeholder label="Label framework diagram — coming soon" />
+    </div>
+  );
+}
+
+function PanelGenerationScale() {
+  return (
+    <div className="flex flex-col gap-14">
+      <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">The bottleneck shifted from writing to orchestration</h4>
+          <p className="text-foreground/70 font-sans leading-relaxed">
+            As generation expanded to thousands of copy lines, teams needed fast tools to generate, modify, review, and validate content safely. Manual strategy work couldn't keep up with the pace agents required.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-serif text-2xl mb-4 leading-snug">What was done</h4>
+          <ul className="text-foreground/70 font-sans leading-relaxed flex flex-col gap-2 list-disc list-outside pl-4">
+            <li>Shaped and vibe-coded AI tools like Relay and Label Buddy to accelerate production.</li>
+            <li>Designed flows for components, context profiles, modifiers, semantic checks, and review queues.</li>
+            <li>Turned manual strategy work into repeatable systems teams could test with customers live.</li>
+          </ul>
+        </div>
+      </div>
+      <Placeholder label="Tool walkthrough — coming soon" />
+    </div>
+  );
+}
+
+const PANELS = [<PanelContentMap key={0} />, <PanelLabelFramework key={1} />, <PanelGenerationScale key={2} />];
+
 export default function AampeStrategy() {
+  const [activeArea, setActiveArea] = useState(0);
+
   return (
     <motion.article
       initial={{ opacity: 0 }}
@@ -339,103 +484,59 @@ export default function AampeStrategy() {
       </motion.section>
 
       {/* ──────────────────────────────────────────
-          Section 5 — 3 Areas where I shaped AI work
+          Section 5 — 3 ways I shaped AI content strategy
       ────────────────────────────────────────── */}
       <motion.section {...sectionAnim} className="border-t border-border/50">
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
-          <h2 className="text-3xl md:text-4xl font-serif mb-12 leading-snug">
-            3 Areas where I shaped AI work
+          <h2 className="text-3xl md:text-4xl font-serif mb-2 leading-snug">
+            3 ways I shaped AI content strategy for Aampe
           </h2>
-          <div className="grid md:grid-cols-3 gap-5">
+          <p className="text-sm font-sans text-muted-foreground mb-10">Click each card for details</p>
 
-            {/* Card 1 — Content Strategy for Agentic Systems */}
-            <div className="border border-border/40 flex flex-col overflow-hidden">
-              <div className="border-b border-border/40 p-5 flex gap-4 items-start" style={{ minHeight: 110 }}>
-                <svg className="shrink-0 mt-0.5" width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: V }}>
-                  <path d="M24 5c4 6 4 12 0 19-4-7-4-13 0-19Z" />
-                  <path d="M43 24c-6 4-12 4-19 0 7-4 13-4 19 0Z" />
-                  <path d="M24 43c-4-6-4-12 0-19 4 7 4 13 0 19Z" />
-                  <path d="M5 24c6-4 12-4 19 0-7 4-13 4-19 0Z" />
-                  <path d="M37.5 10.5c-1 7-5 11.5-13.5 13.5 2-8.5 6.5-12.5 13.5-13.5Z" />
-                  <path d="M10.5 37.5c1-7 5-11.5 13.5-13.5-2 8.5-6.5 12.5-13.5 13.5Z" />
-                </svg>
-                <h3 className="font-serif text-xl leading-snug">Content Strategy for Agentic Systems</h3>
-              </div>
-              <div className="p-5 flex flex-col gap-5 flex-1">
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-2">What is it?</p>
-                  <p className="text-sm font-sans text-foreground/70 leading-relaxed">Aampe needed a way to see content as a living portfolio, not a backlog of messages. The content map connected goals, topics, contexts, brand inputs, and agent decisions.</p>
-                </div>
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-2">What was done?</p>
-                  <ul className="text-sm font-sans text-foreground/70 leading-relaxed flex flex-col gap-1.5 list-disc list-outside pl-4">
-                    <li>Created the content map framework and prototype with Strategy, GTM, and Leadership.</li>
-                    <li>Turned scattered inputs into a bird's-eye view teams could use to spot gaps, overlaps, and next bets.</li>
-                    <li>Designed it as structured context for agents, so planning could feed creation, observation, and improvement.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          {/* Tab triggers — 3-col card row */}
+          <div className="grid md:grid-cols-3 gap-4 mb-0">
+            {AREA_TITLES.map((title, i) => {
+              const active = activeArea === i;
+              return (
+                <button
+                  key={i}
+                  onClick={() => setActiveArea(i)}
+                  className={[
+                    "text-left border flex flex-col gap-4 p-5 transition-all duration-200 cursor-pointer",
+                    active
+                      ? "border-primary bg-primary/5 shadow-[0_2px_0_0_rgb(109,40,217)]"
+                      : "border-border/40 hover:border-border/70 bg-transparent",
+                  ].join(" ")}
+                >
+                  <span style={{ color: active ? V : "rgba(0,0,0,0.3)" }} className="transition-colors duration-200">
+                    {AREA_ICONS[i]}
+                  </span>
+                  <span
+                    className={[
+                      "font-serif text-lg leading-snug",
+                      active ? "text-foreground" : "text-foreground/50",
+                    ].join(" ")}
+                  >
+                    {title}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-            {/* Card 2 — Label Frameworks for Semantic Strategy */}
-            <div className="border border-border/40 flex flex-col overflow-hidden">
-              <div className="border-b border-border/40 p-5 flex gap-4 items-start" style={{ minHeight: 110 }}>
-                <svg className="shrink-0 mt-0.5" width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: V }}>
-                  <path d="M24 6 41 16v16L24 42 7 32V16L24 6Z" />
-                  <path d="M24 6v13" />
-                  <path d="M41 16 24 26 7 16" />
-                  <path d="M24 26v16" />
-                  <circle cx="24" cy="6" r="2.5" fill="currentColor" stroke="none" />
-                  <circle cx="41" cy="16" r="2.5" fill="currentColor" stroke="none" />
-                  <circle cx="7" cy="16" r="2.5" fill="currentColor" stroke="none" />
-                  <circle cx="24" cy="42" r="2.5" fill="currentColor" stroke="none" />
-                </svg>
-                <h3 className="font-serif text-xl leading-snug">Label Frameworks for Semantic Strategy</h3>
-              </div>
-              <div className="p-5 flex flex-col gap-5 flex-1">
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-2">What is it?</p>
-                  <p className="text-sm font-sans text-foreground/70 leading-relaxed">Labels were not just tags. They were the meaning layer that helped brands define what to say, how it should vary, and how AI should judge relevance.</p>
-                </div>
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-2">What was done?</p>
-                  <ul className="text-sm font-sans text-foreground/70 leading-relaxed flex flex-col gap-1.5 list-disc list-outside pl-4">
-                    <li>Built a framework for labels around intent, value propositions, tone, context, and decision moments.</li>
-                    <li>Moved teams from ad hoc taxonomy work to a semantic strategy brands could understand and extend.</li>
-                    <li>Made labels usable across generation, validation, analysis, and agent learning loops.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 — Content Generation at Scale */}
-            <div className="border border-border/40 flex flex-col overflow-hidden">
-              <div className="border-b border-border/40 p-5 flex gap-4 items-start" style={{ minHeight: 110 }}>
-                <svg className="shrink-0 mt-0.5" width="36" height="36" viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" style={{ color: V }}>
-                  <path d="M9 17h20a8 8 0 0 1 8 8v0a8 8 0 0 1-8 8H9z" />
-                  <path d="M9 17V9h19a11 11 0 0 1 11 11" />
-                  <path d="M9 33v6h20a14 14 0 0 0 14-14" />
-                  <path d="M16 24h16" />
-                  <path d="M24 16v16" />
-                </svg>
-                <h3 className="font-serif text-xl leading-snug">Content Generation at Scale</h3>
-              </div>
-              <div className="p-5 flex flex-col gap-5 flex-1">
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-2">What is it?</p>
-                  <p className="text-sm font-sans text-foreground/70 leading-relaxed">As generation expanded to thousands of copy lines, the bottleneck shifted from writing to orchestration and QA. Teams needed fast tools to generate, modify, review, and validate content safely.</p>
-                </div>
-                <div>
-                  <p className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/50 mb-2">What was done?</p>
-                  <ul className="text-sm font-sans text-foreground/70 leading-relaxed flex flex-col gap-1.5 list-disc list-outside pl-4">
-                    <li>Shaped and vibe-coded AI tools like Relay and Label Buddy to accelerate production.</li>
-                    <li>Designed flows for components, context profiles, modifiers, semantic checks, and review queues.</li>
-                    <li>Turned manual strategy work into repeatable systems teams could test with customers live.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
+          {/* Content panel — fades on tab change */}
+          <div className="border border-t-0 border-border/30 p-8 md:p-12">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeArea}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.22 }}
+              >
+                {PANELS[activeArea]}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </motion.section>

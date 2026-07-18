@@ -1,0 +1,34 @@
+Slide 1
+Content strategy needed a bird’s-eye view
+Aampe’s agents could only learn from the content they were given, but teams had no shared way to see the full opportunity space.
+CRM, growth, product, and data teams were all looking at different parts of the customer journey. The work was to turn scattered product knowledge into one strategic surface.
+Slide 2
+A content map made the whole conversation visible
+A content map is a structured view of every place a brand can speak to a user.
+It connects product features, customer journeys, lifecycle moments, content topics, channels, triggers, audiences, and priority into one working artifact.
+This made content strategy easier to discuss, audit, and build.
+Slide 3
+The map helped teams think beyond campaigns
+The bigger goal was not to document existing content.
+It was to help teams see what could exist: missing topics, underused features, new value propositions, cross-sell moments, lifecycle gaps, and places where agents needed more breadth to learn from.
+The map turned “what should we say?” into a strategic planning exercise.
+Slide 4
+I turned a personal method into a company capability
+I created the framework, built the first reusable templates, named and positioned the artifact, wrote the internal guide, and trained teams across the company.
+The method moved from my own strategy work into onboarding, QBRs, account resets, deal decks, and new-hire enablement.
+Slide 5
+It became infrastructure for agentic content
+The map was later paired with AI tools that could generate first-pass content maps from the methodology.
+That made the artifact more than a sheet. It became a repeatable input system for agents: helping teams plan content breadth, prioritize what to build, and create better conditions for continuous learning.
+Shorter 4-slide version
+Content strategy needed a bird’s-eye view
+Aampe had agentic learning, but teams lacked a shared way to see what content should exist across a customer journey.
+
+The content map became the shared strategy layer
+It connected features, journeys, topics, channels, audiences, triggers, and priorities into one artifact teams could align around.
+
+The real work was exposing the opportunity space
+The map helped teams move beyond existing campaigns and spot missing value props, untouched lifecycle moments, and content gaps agents needed to learn from.
+
+I scaled it into a company-wide method
+I created the framework, templates, guide, training challenge, and AI-assisted workflow, turning a personal strategy practice into repeatable infrastructure for agentic content.
