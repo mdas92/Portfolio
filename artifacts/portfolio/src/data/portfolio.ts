@@ -58,6 +58,7 @@ export const projects: Project[] = [
   },
   {
     slug: "product-taxonomy",
+    comingSoon: true,
     tag: "Information Architecture · Product Language",
     title: "What's in a Name? Defining Product Taxonomy for Aampe",
     summary: "Drove the evidence, framework, and decision session that ratified nine renamed product entities - then shipped the glossary and rollout plan for a product that never stops running.",
