@@ -298,6 +298,126 @@ function Pill({ label, cls }: { label: string; cls: string }) {
   );
 }
 
+function ContentMapFlowchart() {
+  const STEPS = [
+    {
+      kind: "start" as const,
+      label: "Build a Content Map for Brand XYZ",
+    },
+    {
+      kind: "step" as const,
+      step: "Step 1",
+      label: "Map out all Features & Sub-features",
+      desc: "Go through the product or app exhaustively. List every feature, sub-feature, and optional touchpoint you encounter.",
+      tags: [
+        { label: "Feature", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Sub-feature", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Touchpoint (optional)", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+      ],
+    },
+    {
+      kind: "step" as const,
+      step: "Step 2",
+      label: "Add Global Touchpoints",
+      desc: "Zoom out and capture platform-wide flows that sit across all features — subscriptions, onboarding, navigation, support.",
+      tags: [
+        { label: "Onboarding", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Account", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Activity", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Blogs", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Help Center", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "FAQs", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+      ],
+    },
+    {
+      kind: "step" as const,
+      step: "Step 3",
+      label: "Define Topics using Content Types",
+      desc: "Translate product architecture into content opportunities. Use content types as creative lenses — one feature can generate many topics.",
+      tags: [
+        { label: "Foundational", cls: "bg-blue-50 text-blue-700 border-blue-200" },
+        { label: "Contextual", cls: "bg-violet-50 text-violet-700 border-violet-200" },
+        { label: "Seasonal", cls: "bg-orange-50 text-orange-700 border-orange-200" },
+        { label: "Recommender", cls: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+        { label: "Transactional", cls: "bg-slate-100 text-slate-600 border-slate-200" },
+      ],
+    },
+    {
+      kind: "step" as const,
+      step: "Step 4",
+      label: "Add Channels, Events & Audience",
+      desc: "Map each topic to its delivery channel, entry/exit events that trigger it, and a rough audience type.",
+      tags: [
+        { label: "Push", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "Email", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "SMS", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "In-App", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+        { label: "WhatsApp", cls: "bg-muted/40 text-foreground/60 border-border/30" },
+      ],
+    },
+    {
+      kind: "step" as const,
+      step: "Step 5",
+      label: "Assign Impact & Prioritize",
+      desc: "Decide which topics should go first to accelerate agent learning in the first 3 months.",
+      tags: [
+        { label: "High — wide reach, fast to implement", cls: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+        { label: "Med — narrower but valuable", cls: "bg-amber-50 text-amber-700 border-amber-200" },
+        { label: "Low — technical lift or tiny audience", cls: "bg-muted/30 text-foreground/50 border-border/20" },
+      ],
+    },
+    {
+      kind: "end" as const,
+      label: "Content Map ready — agents can learn",
+    },
+  ];
+
+  return (
+    <div className="flex flex-col items-center w-full max-w-2xl mx-auto">
+      {STEPS.map((s, i) => (
+        <div key={i} className="flex flex-col items-center w-full">
+          {/* Node */}
+          {s.kind === "start" && (
+            <div className="w-full bg-primary px-8 py-5 text-center">
+              <span className="font-serif text-xl text-white">{s.label}</span>
+            </div>
+          )}
+          {s.kind === "end" && (
+            <div className="w-full bg-foreground px-8 py-5 text-center">
+              <span className="font-serif text-xl text-background">{s.label}</span>
+            </div>
+          )}
+          {s.kind === "step" && (
+            <div className="w-full border border-border/40 bg-background px-7 py-6">
+              <div className="flex items-start gap-6">
+                <span className="text-[9px] uppercase tracking-[0.2em] font-sans font-bold text-primary/50 whitespace-nowrap mt-0.5 min-w-[44px]">{s.step}</span>
+                <div className="flex-1">
+                  <p className="font-serif text-lg leading-snug mb-2 text-foreground">{s.label}</p>
+                  <p className="text-xs font-sans text-foreground/55 leading-relaxed mb-4">{s.desc}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {s.tags.map((t) => (
+                      <span key={t.label} className={`text-[10px] font-sans px-2.5 py-1 border leading-none ${t.cls}`}>{t.label}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {/* Connector */}
+          {i < STEPS.length - 1 && (
+            <div className="flex flex-col items-center">
+              <div className="w-px h-5 bg-border/60" />
+              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" className="opacity-40">
+                <path d="M5 6L0 0h10L5 6z" fill="currentColor" />
+              </svg>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function ContentMapVisual() {
   return (
     <div className="border border-border/10 overflow-hidden">
@@ -375,7 +495,7 @@ function PanelContentMap() {
         </p>
       </div>
 
-      <Placeholder label="AI-assisted content map workflow — coming soon" />
+      <ContentMapFlowchart />
       {/* Impact */}
       <div className="flex flex-col gap-8">
         <div>
