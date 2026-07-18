@@ -57,17 +57,17 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       className={`group flex flex-col rounded-xl border border-border bg-background transition-all overflow-hidden ${isSoon ? "opacity-50 cursor-default grayscale" : "hover:border-primary/40 hover:bg-muted/40 cursor-pointer"}`}
     >
       {/* Visual thumbnail */}
-      <div className="w-full aspect-[16/9] overflow-hidden border-b border-border bg-muted flex items-center justify-center relative">
+      <div className="w-full overflow-hidden border-b border-border relative">
         {cardVisuals[project.slug] || (
-          <div className="w-full h-full bg-muted flex items-center justify-center">
+          <div className="w-full h-[110px] bg-muted flex items-center justify-center">
             <span className="font-serif text-4xl text-muted-foreground/30">
               {project.title.substring(0, 1)}
             </span>
           </div>
         )}
         {isSoon && (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-foreground bg-background border border-border px-3 py-1.5">
+          <div className="absolute inset-0 bg-background/60 flex items-center justify-center">
+            <span className="text-[9px] font-sans font-bold uppercase tracking-[0.25em] text-background bg-foreground px-3 py-1.5">
               Coming Soon
             </span>
           </div>
