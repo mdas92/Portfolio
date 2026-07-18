@@ -129,7 +129,7 @@ export default function About() {
                   {item.date}
                 </div>
               </div>
-              <div className={`flex flex-col gap-2 ${item.id === 5 ? "md:col-span-5" : "md:col-span-8"}`}>
+              <div className={`flex flex-col gap-2 ${item.id === 5 || item.id === 4 ? "md:col-span-4" : "md:col-span-8"}`}>
                 <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">
                   {item.role}
                 </h3>
@@ -141,11 +141,21 @@ export default function About() {
                 </p>
               </div>
               {item.id === 5 && (
-                <div className="md:col-span-3 flex items-start justify-end">
+                <div className="md:col-span-4 flex items-start justify-end">
                   <img
                     src="/adobe-photo.jpg"
                     alt="Mohana at Adobe"
-                    className="w-full max-w-[180px] md:max-w-none object-cover border border-border/30"
+                    className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
+                    style={{ aspectRatio: "3/4", objectPosition: "center top" }}
+                  />
+                </div>
+              )}
+              {item.id === 4 && (
+                <div className="md:col-span-4 flex items-start justify-end">
+                  <img
+                    src="/goibibo-photo.jpg"
+                    alt="Designers of GoIbibo 2020 Batch"
+                    className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
                     style={{ aspectRatio: "3/4", objectPosition: "center top" }}
                   />
                 </div>
