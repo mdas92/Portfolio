@@ -21,7 +21,7 @@ export default function About() {
           initial="rest"
           whileHover="hover"
           animate="rest"
-          className="inline-block px-4 py-2 border-2 border-foreground mb-8 w-fit rotate-[-2deg] bg-background font-sans cursor-default"
+          className="inline-block px-4 py-2 border-2 border-foreground mb-8 w-fit rotate-[-2deg] bg-background font-sans cursor-default transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[8px_8px_0px_#0D3B2E]"
         >
           <span className="font-bold uppercase tracking-wider text-xs md:text-sm">
             hi, i'm mohana{" "}
