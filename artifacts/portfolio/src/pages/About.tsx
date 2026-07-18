@@ -43,13 +43,7 @@ export default function About() {
       </div>
       <h1 className="text-[2.25rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.75rem] leading-[0.95] tracking-[-0.03em] font-serif mb-10">
         writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> 
-        <span className="relative inline-block">
-          <span className="relative z-10 italic">product thinker.</span>
-          <span 
-            className="absolute inset-0 bg-[#C5F135] -z-10 mix-blend-multiply" 
-            style={{ transform: 'rotate(1deg) scale(1.05) translateY(10%)' }}
-          ></span>
-        </span>
+        <span className="italic">product thinker.</span>
       </h1>
       {/* Hero grid */}
       <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center mt-8 mb-24">
