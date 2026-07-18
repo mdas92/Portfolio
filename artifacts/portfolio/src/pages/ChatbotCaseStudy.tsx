@@ -782,13 +782,23 @@ export default function ChatbotCaseStudy() {
 
           {/* Prototype image + IA card + common components */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {/* Left: IA image at natural ratio */}
-            <div className="overflow-hidden border border-border/10">
-              <img
-                src="/chatbot-ia.avif"
-                alt="Information Architecture prototype test — chatbot"
-                className="w-full h-auto"
-              />
+            {/* Left: IA image + Common Components card */}
+            <div className="flex flex-col gap-5">
+              <div className="overflow-hidden border border-border/10">
+                <img
+                  src="/chatbot-ia.avif"
+                  alt="Information Architecture prototype test — chatbot"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="border border-border/50 p-8 flex flex-col gap-4">
+                <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
+                  Common Components
+                </h3>
+                <p className="text-foreground/80 font-sans leading-relaxed">
+                  Reusable conversational elements like greetings, ending, questions, timeouts and CSAT scale.
+                </p>
+              </div>
             </div>
             {/* Right: IA card stacked above common.avif */}
             <div className="flex flex-col gap-5">
