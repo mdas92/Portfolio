@@ -49,33 +49,29 @@ export default function ProductTaxonomy() {
           ← Back to Work
         </Link>
 
-        <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-primary mb-5">
-          Case study · Aampe · 2025 – Apr 2026
-        </p>
-
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-8 tracking-tight leading-tight max-w-4xl">
-          Product Taxonomy: renaming an AI product while it runs
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 tracking-tight leading-tight">
+          What's in a Name? Defining Product Taxonomy for Aampe
         </h1>
 
-        <p className="text-xl md:text-2xl text-foreground/70 font-light leading-relaxed max-w-3xl mb-12">
+        <p className="text-lg md:text-xl font-sans text-muted-foreground mb-12 max-w-3xl leading-relaxed">
           Aampe's product objects grew their names ad hoc, and customers were paying the tax. I
-          helped drive the standardization of the product's taxonomy: the evidence, the
+          helped drive the standardization of the product's taxonomy - the evidence, the
           framework, the decision session, the ratified glossary, and the implementation plan.
         </p>
 
-        {/* At a glance */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-foreground/10 border border-foreground/10 mb-12">
-          {[
-            { label: "Role", value: "Field-side driver, with product design and data science" },
-            { label: "Scope", value: "Core object names across UI, docs, KB, and sales decks" },
-            { label: "Method", value: "Evidence → structured debate → glossary → implementation" },
-            { label: "Result", value: "Nine entities ratified; glossary and rollout plan shipped" },
-          ].map(({ label, value }) => (
-            <div key={label} className="bg-background p-6 flex flex-col gap-2">
-              <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">{label}</span>
-              <strong className="text-foreground font-medium leading-snug">{value}</strong>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-border/50 text-sm">
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Role</div>
+            <div className="font-medium text-foreground">Field-side driver, with product design and data science</div>
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Context</div>
+            <div className="font-medium text-foreground">Aampe - AI-powered lifecycle marketing platform</div>
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Year</div>
+            <div className="font-medium text-foreground">2025</div>
+          </div>
         </div>
       </div>
 
