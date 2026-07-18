@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import ProjectDetail from "./pages/ProjectDetail";
+import ChatbotCaseStudy from "./pages/ChatbotCaseStudy";
 import NotFound from "./pages/not-found";
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Switch>
           <Route path="/" component={About} />
           <Route path="/work" component={Work} />
+          <Route path="/work/chatbot" component={ChatbotCaseStudy} />
           <Route path="/work/:slug" component={ProjectDetail} />
           <Route component={NotFound} />
         </Switch>
