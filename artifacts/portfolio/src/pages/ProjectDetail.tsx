@@ -10,6 +10,21 @@ import {
   ProductTaxonomyVisual,
   PlaybookVisual
 } from "../components/ProjectCardVisuals";
+import {
+  AliasChainVisual,
+  MisreadObjectsVisual,
+  HierarchyVisual,
+  TerminologySessionVisual,
+  ThreeActsVisual,
+} from "../components/ProductTaxonomyVisuals";
+
+const SECTION_VISUALS: Record<string, () => React.ReactElement> = {
+  AliasChainVisual,
+  MisreadObjectsVisual,
+  HierarchyVisual,
+  TerminologySessionVisual,
+  ThreeActsVisual,
+};
 
 // Renders **bold** markdown-style emphasis as themed highlights so key
 // phrases stand out from body copy instead of one long grey wall of text.
@@ -222,6 +237,11 @@ export default function ProjectDetail() {
                     <RichText text={section.note} />
                   </p>
                 )}
+
+                {section.visual && (() => {
+                  const V = SECTION_VISUALS[section.visual!];
+                  return V ? <div className="my-8"><V /></div> : null;
+                })()}
 
                 {section.image && (
                   <div className={`mt-8 ${section.image.display === "inline" ? "max-w-2xl" : "w-full"}`}>
