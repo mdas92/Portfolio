@@ -1,177 +1,70 @@
 import React from "react";
 
+const ACCENT = "#E05C2F";
+const INK = "#0E0E0E";
+const MUTED = "#666666";
+const BORDER = "#EBEBEB";
+
+const Nav = () => (
+  <nav style={{ padding: "28px 56px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${BORDER}` }}>
+    <span style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: "-0.02em", color: INK }}>MD</span>
+    <div style={{ display: "flex", gap: 36 }}>
+      {["Work", "About", "Contact"].map(item => (
+        <span key={item} style={{ fontSize: 13, fontWeight: 500, color: item === "Work" ? ACCENT : MUTED, cursor: "pointer", letterSpacing: "0.01em" }}>{item}</span>
+      ))}
+    </div>
+  </nav>
+);
+
 export function MinimalistA() {
+  const projects = [
+    { tag: "UX Writing · Fintech", title: "Boosting Repayment Rates for LazyPay", year: "2023" },
+    { tag: "Content Strategy · Methodology", title: "Content Maps", year: "2025" },
+    { tag: "Taxonomy · Systems", title: "Product Taxonomy & Terminology", year: "2025" },
+    { tag: "Internal · Company-Wide", title: "Content Playbook", year: "2025" },
+    { tag: "UX Writing · Fintech", title: "UX Writing for LazyCard", year: "2022" },
+    { tag: "UX Writing · Fintech", title: "Expense Management", year: "2022" },
+  ];
+
   return (
     <>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Inter:wght@300;400;500&display=swap"
-      />
-      <div
-        style={{
-          minHeight: "100vh",
-          width: "100%",
-          backgroundColor: "#FFFFFF",
-          fontFamily: "'Inter', sans-serif",
-          color: "#111111",
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        {/* Nav */}
-        <nav
-          style={{
-            width: "100%",
-            padding: "32px 56px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            boxSizing: "border-box",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'Playfair Display', serif",
-              fontWeight: 900,
-              fontSize: 18,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            MD
-          </span>
-          <div style={{ display: "flex", gap: 40 }}>
-            {["Work", "About", "Contact"].map((item) => (
-              <span
-                key={item}
-                style={{
-                  fontSize: 12,
-                  fontWeight: 500,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: "#666",
-                  cursor: "pointer",
-                }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </nav>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,700;12..96,800&display=swap" />
+      <div style={{ minHeight: "100vh", width: "100%", backgroundColor: "#fff", fontFamily: "'Bricolage Grotesque', sans-serif", color: INK, display: "flex", flexDirection: "column" }}>
+        <Nav />
 
         {/* Hero */}
-        <main
-          style={{
-            flex: 1,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            padding: "0 56px 80px",
-          }}
-        >
-          <div style={{ maxWidth: 900 }}>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 16,
-                marginBottom: 48,
-              }}
-            >
-              <div
-                style={{
-                  width: 40,
-                  height: 2,
-                  backgroundColor: "#1A6B4A",
-                }}
-              />
-              <span
-                style={{
-                  fontSize: 11,
-                  fontWeight: 500,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#1A6B4A",
-                }}
-              >
-                Content Strategist
-              </span>
-            </div>
-
-            <h1
-              style={{
-                fontFamily: "'Playfair Display', serif",
-                fontWeight: 900,
-                fontSize: 104,
-                lineHeight: 0.9,
-                letterSpacing: "-0.03em",
-                margin: 0,
-                marginBottom: 56,
-              }}
-            >
-              <span style={{ display: "block" }}>Mohana</span>
-              <span style={{ display: "block", fontStyle: "italic", fontWeight: 700 }}>
-                Das.
-              </span>
-            </h1>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: 48,
-                alignItems: "end",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 17,
-                  fontWeight: 300,
-                  lineHeight: 1.7,
-                  color: "#444",
-                  margin: 0,
-                }}
-              >
-                I make complex ideas clear — through content strategy,
-                UX writing, and the kind of words that actually move people.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "flex-end" }}>
-                <button
-                  style={{
-                    backgroundColor: "#1A6B4A",
-                    color: "#fff",
-                    border: "none",
-                    padding: "14px 32px",
-                    fontSize: 13,
-                    fontWeight: 500,
-                    letterSpacing: "0.06em",
-                    cursor: "pointer",
-                    borderRadius: 2,
-                  }}
-                >
-                  View my work →
-                </button>
-              </div>
-            </div>
+        <section style={{ padding: "64px 56px 56px", borderBottom: `1px solid ${BORDER}` }}>
+          <p style={{ fontSize: 12, fontWeight: 500, letterSpacing: "0.16em", textTransform: "uppercase", color: ACCENT, marginBottom: 24 }}>
+            Content Strategist & UX Writer
+          </p>
+          <h1 style={{ fontWeight: 800, fontSize: 80, lineHeight: 0.92, letterSpacing: "-0.04em", margin: "0 0 36px", maxWidth: 780 }}>
+            Words that make systems work.
+          </h1>
+          <p style={{ fontSize: 17, fontWeight: 300, lineHeight: 1.65, color: MUTED, maxWidth: 520, marginBottom: 40 }}>
+            I'm Mohana Das — I build content systems for AI, fintech, and product teams. 8 years of turning complexity into clarity.
+          </p>
+          <div style={{ display: "flex", gap: 14 }}>
+            <button style={{ backgroundColor: ACCENT, color: "#fff", border: "none", padding: "13px 30px", fontSize: 13, fontWeight: 600, borderRadius: 4, cursor: "pointer", letterSpacing: "0.02em" }}>See my work</button>
+            <button style={{ backgroundColor: "transparent", color: INK, border: `1.5px solid ${BORDER}`, padding: "13px 30px", fontSize: 13, fontWeight: 500, borderRadius: 4, cursor: "pointer" }}>Get in touch</button>
           </div>
-        </main>
+        </section>
 
-        {/* Footer strip */}
-        <div
-          style={{
-            padding: "24px 56px",
-            borderTop: "1px solid #E8E8E8",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
-          <span style={{ fontSize: 11, color: "#aaa", letterSpacing: "0.06em" }}>
-            AAMPE · LAZYPAY · GOIBIBO
-          </span>
-          <span style={{ fontSize: 11, color: "#1A6B4A", fontWeight: 500 }}>
-            Open to new opportunities
-          </span>
-        </div>
+        {/* Selected work */}
+        <section style={{ padding: "40px 56px 48px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 28 }}>
+            <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED }}>Selected work</span>
+            <span style={{ fontSize: 12, color: ACCENT, fontWeight: 500, cursor: "pointer" }}>View all →</span>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 1, backgroundColor: BORDER }}>
+            {projects.slice(0, 3).map(p => (
+              <div key={p.title} style={{ backgroundColor: "#fff", padding: "24px 24px 28px" }}>
+                <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: ACCENT, marginBottom: 10 }}>{p.tag}</p>
+                <p style={{ fontSize: 14, fontWeight: 700, lineHeight: 1.35, color: INK, margin: 0, letterSpacing: "-0.01em" }}>{p.title}</p>
+                <p style={{ fontSize: 11, color: MUTED, marginTop: 10, fontWeight: 400 }}>{p.year}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </>
   );
