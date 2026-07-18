@@ -96,7 +96,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             </span>
           ) : (
             <span className="text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-primary border border-primary/40 px-2 py-1">
-              Live
+              Read case study
             </span>
           )}
         </div>
