@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        --ink: #17211d;
+        --body: #5f625e;
+        --line: #b9b9b4;
+        --paper: #f6f5f2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #000;
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+
+      .slide {
+        width: 1547px;
+        height: 784px;
+        margin: 0;
+        background: var(--paper);
+        padding: 112px 174px 72px 174px;
+        color: var(--ink);
+      }
+
+      h1 {
+        margin: 0 0 34px 0;
+        font-size: 62px;
+        line-height: 1.05;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        width: 100%;
+      }
+
+      .card {
+        border: 1.25px solid var(--line);
+        border-radius: 7px;
+        background: rgba(255, 255, 255, 0.18);
+        overflow: hidden;
+        min-height: 495px;
+      }
+
+      .card-head {
+        height: 126px;
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        column-gap: 18px;
+        align-items: start;
+        padding: 25px 18px 18px 18px;
+        border-bottom: 1.25px solid var(--line);
+      }
+
+      .icon {
+        width: 42px;
+        height: 42px;
+        color: #1d2521;
+      }
+
+      .card h2 {
+        margin: -1px 0 0 0;
+        font-size: 27px;
+        line-height: 1.1;
+        font-weight: 520;
+        letter-spacing: 0;
+      }
+
+      .card-body {
+        padding: 18px 17px 18px 17px;
+      }
+
+      .label {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 760;
+        text-transform: uppercase;
+        color: #343935;
+      }
+
+      p {
+        margin: 0 0 18px 0;
+        font-size: 17px;
+        line-height: 1.34;
+        color: var(--body);
+        font-weight: 400;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 21px;
+        color: var(--body);
+      }
+
+      li {
+        margin: 0 0 6px 0;
+        padding-left: 3px;
+        font-size: 17px;
+        line-height: 1.28;
+        color: var(--body);
+        font-weight: 400;
+      }
+
+      .tight li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="slide">
+      <h1>3 Areas where I shaped AI work</h1>
+
+      <section class="grid">
+        <article class="card">
+          <div class="card-head">
+            <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M24 5c4 6 4 12 0 19-4-7-4-13 0-19Z" />
+              <path d="M43 24c-6 4-12 4-19 0 7-4 13-4 19 0Z" />
+              <path d="M24 43c-4-6-4-12 0-19 4 7 4 13 0 19Z" />
+              <path d="M5 24c6-4 12-4 19 0-7 4-13 4-19 0Z" />
+              <path d="M37.5 10.5c-1 7-5 11.5-13.5 13.5 2-8.5 6.5-12.5 13.5-13.5Z" />
+              <path d="M10.5 37.5c1-7 5-11.5 13.5-13.5-2 8.5-6.5 12.5-13.5 13.5Z" />
+            </svg>
+            <h2>Content Strategy for Agentic Systems</h2>
+          </div>
+          <div class="card-body">
+            <p class="label">What is it?</p>
+            <p>Aampe needed a way to see content as a living portfolio, not a backlog of messages. The content map connected goals, topics, contexts, brand inputs, and agent decisions.</p>
+
+            <p class="label">What was done?</p>
+            <ul>
+              <li>Created the content map framework and prototype with Strategy, GTM, and Leadership.</li>
+              <li>Turned scattered inputs into a bird's-eye view teams could use to spot gaps, overlaps, and next bets.</li>
+              <li>Designed it as structured context for agents, so planning could feed creation, observation, and improvement.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M24 6 41 16v16L24 42 7 32V16L24 6Z" />
+              <path d="M24 6v13" />
+              <path d="M41 16 24 26 7 16" />
+              <path d="M24 26v16" />
+              <circle cx="24" cy="6" r="2.5" fill="currentColor" stroke="none" />
+              <circle cx="41" cy="16" r="2.5" fill="currentColor" stroke="none" />
+              <circle cx="7" cy="16" r="2.5" fill="currentColor" stroke="none" />
+              <circle cx="24" cy="42" r="2.5" fill="currentColor" stroke="none" />
+            </svg>
+            <h2>Label Frameworks for Semantic Strategy</h2>
+          </div>
+          <div class="card-body">
+            <p class="label">What is it?</p>
+            <p>Labels were not just tags. They were the meaning layer that helped brands define what to say, how it should vary, and how AI should judge relevance.</p>
+
+            <p class="label">What was done?</p>
+            <ul class="tight">
+              <li>Built a framework for labels around intent, value propositions, tone, context, and decision moments.</li>
+              <li>Moved teams from ad hoc taxonomy work to a semantic strategy brands could understand and extend.</li>
+              <li>Made labels usable across generation, validation, analysis, and agent learning loops.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 17h20a8 8 0 0 1 8 8v0a8 8 0 0 1-8 8H9z" />
+              <path d="M9 17V9h19a11 11 0 0 1 11 11" />
+              <path d="M9 33v6h20a14 14 0 0 0 14-14" />
+              <path d="M16 24h16" />
+              <path d="M24 16v16" />
+            </svg>
+            <h2>Content Generation at Scale</h2>
+          </div>
+          <div class="card-body">
+            <p class="label">What is it?</p>
+            <p>As generation expanded to thousands of copy lines, the bottleneck shifted from writing to orchestration and QA. Teams needed fast tools to generate, modify, review, and validate content safely.</p>
+
+            <p class="label">What was done?</p>
+            <ul>
+              <li>Shaped and vibe-coded AI tools like Relay and Label Buddy to accelerate production.</li>
+              <li>Designed flows for components, context profiles, modifiers, semantic checks, and review queues.</li>
+              <li>Turned manual strategy work into repeatable systems teams could test with customers live.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
