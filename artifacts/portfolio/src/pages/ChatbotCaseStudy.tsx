@@ -62,75 +62,55 @@ export default function ChatbotCaseStudy() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
-      className="flex-1 bg-background"
+      transition={{ duration: 0.6 }}
+      className="flex-1 flex flex-col pb-24 w-full"
     >
-      {/* ── Back link ── */}
-      <div className="px-6 md:px-16 lg:px-24 pt-10 max-w-6xl mx-auto">
+      {/* ── Header — matches ProjectDetail standard ── */}
+      <div className="px-6 md:px-16 lg:px-24 py-8 md:py-16 max-w-5xl mx-auto w-full">
         <Link
           href="/work"
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-muted-foreground hover:text-foreground transition-colors border border-border/50 px-4 py-2"
+          className="inline-flex items-center text-sm font-sans font-semibold uppercase tracking-wider px-4 py-2 border-2 border-foreground bg-background transition-transform hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_hsl(var(--foreground))] mb-12"
         >
           ← Back to Work
         </Link>
+
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-12 tracking-tight leading-tight">
+          Building an in-app Chat Assistant
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-border/50 text-sm">
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Role</div>
+            <div className="font-medium text-foreground">Sole Content Owner — IA, Content Strategy, Conversation Design</div>
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Context</div>
+            <div className="font-medium text-foreground">LazyPay (PayU Finance)</div>
+          </div>
+          <div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Duration</div>
+            <div className="font-medium text-foreground">2 months · XL project</div>
+          </div>
+        </div>
       </div>
 
-      {/* ──────────────────────────────────────────
-          Section 1 — Hero
-      ────────────────────────────────────────── */}
-      <motion.section {...sectionAnim} className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 pt-12 pb-20">
-        {/* Two-layer hero: image right, card left overlapping */}
-        <div className="relative flex flex-col md:block">
-          {/* Hero image — right 65% on desktop */}
-          <div className="md:absolute md:right-0 md:top-0 md:w-[65%] w-full">
-            <AssetPlaceholder
-              id="IMG-HERO-3D"
-              aspectRatio="4/3"
-              description="3D chatbot robot illustration on dark background, ~1200×900px"
-            />
-          </div>
-
-          {/* Content card — left 55% overlapping image edge */}
-          <div className="relative z-10 md:w-[55%] bg-background border-2 border-foreground p-8 md:p-10 mt-6 md:mt-8 md:mb-8 flex flex-col gap-6">
-            <div className="w-28">
-              <AssetPlaceholder id="LOGO-LAZYPAY" aspectRatio="5/1" description="LazyPay logo" />
-            </div>
-            <h1 className="text-4xl md:text-5xl font-serif leading-tight">
-              Building an in-app Chat Assistant
-            </h1>
-            <p className="text-foreground/70 leading-relaxed font-sans text-lg">
-              Conversation Design and IA for an in-app automated Help and Support bot that can
-              provide quicker factual resolutions for users and increase customer satisfaction
-            </p>
-          </div>
-
-          {/* Spacer so the section has height for the absolute image on desktop */}
-          <div className="hidden md:block" style={{ paddingTop: "calc(65% * 3/4 * 0.5)" }} />
-        </div>
-
-        {/* Meta row — 3 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border/50 pt-10 mt-2">
-          {[
-            {
-              emoji: "📓",
-              label: "Project Brief",
-              text: "Design the entire end-to-end conversation flow, information architecture, and category tree for an in-app support chatbot",
-            },
-            { emoji: "⏳", label: "Duration / Size", text: "2 months / XL" },
-            {
-              emoji: "👩‍🔧",
-              label: "My Role",
-              text: "Took ownership of formulating the information architecture, content strategy, and end-to-end conversation design, with support from the designer and PM",
-            },
-          ].map(({ emoji, label, text }) => (
-            <div key={label} className="flex flex-col gap-3">
-              <span className="text-3xl">{emoji}</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-muted-foreground">{label}</span>
-              <p className="text-sm text-foreground/80 leading-relaxed font-sans">{text}</p>
-            </div>
-          ))}
-        </div>
-      </motion.section>
+      {/* ── Hero image — full width, matches ProjectDetail ── */}
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 mb-16 md:mb-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full overflow-hidden border border-border/10"
+          style={{ maxHeight: 520 }}
+        >
+          <img
+            src="/chatbot-hero.avif"
+            alt="Building an in-app Chat Assistant — LazyPay"
+            className="w-full object-cover"
+            style={{ maxHeight: 520 }}
+          />
+        </motion.div>
+      </div>
 
       {/* ──────────────────────────────────────────
           Section 2 — Problem, Impact, Rationale
@@ -335,6 +315,14 @@ export default function ChatbotCaseStudy() {
       >
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
           <StepHeading emoji="2️⃣" title="Guidelines and Framework" />
+          <div className="w-full overflow-hidden border border-border/10 rounded-sm mb-12">
+            <img
+              src="/chatbot-common.avif"
+              alt="Common chatbot UI components and framework"
+              className="w-full h-auto"
+            />
+          </div>
+
           <div className="flex flex-col divide-y divide-border/50">
             {[
               {
@@ -391,11 +379,13 @@ export default function ChatbotCaseStudy() {
 
           {/* Prototype image + IA card */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            <AssetPlaceholder
-              id="IMG-PROTOTYPE-TEST"
-              aspectRatio="4/3"
-              description="Prototype screenshot of the test chatbot — portrait, ~800×600px"
-            />
+            <div className="overflow-hidden border border-border/10 rounded-sm">
+              <img
+                src="/chatbot-ia.avif"
+                alt="Information Architecture prototype test — chatbot"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="border border-border/50 p-8 flex flex-col justify-center gap-4">
               <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
                 Information Architecture
@@ -486,144 +476,226 @@ export default function ChatbotCaseStudy() {
           </p>
           <p className="text-center text-muted-foreground font-sans mb-14">A sample conversation is added below.</p>
 
-          {/* Decision tree + zoom overlay */}
+          {/* Decision tree */}
           <div className="relative mb-20">
-            <AssetPlaceholder
-              id="IMG-DECISION-TREE"
-              aspectRatio="8/3"
-              description="Full decision tree flowchart — very wide landscape, ~2400×900px"
-            />
-            <div className="md:absolute md:bottom-[-28px] md:left-6 md:w-72 mt-4 md:mt-0 bg-background border border-border/50 shadow-lg overflow-hidden">
-              <AssetPlaceholder
-                id="IMG-TREE-ZOOM"
-                aspectRatio="7/5"
-                description="Zoomed-in branch of the decision tree, ~700×500px"
+            <div className="w-full overflow-hidden border border-border/10 rounded-sm">
+              <img
+                src="/chatbot-sample.avif"
+                alt="Decision tree spanning 5 product lines — LazyPay chatbot"
+                className="w-full h-auto"
               />
             </div>
           </div>
 
-          {/* Sample conversation — 4 chat cards */}
+          {/* Sample conversation — 4 iPhone screens */}
           <div className="md:pt-8">
-            <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground text-center mb-8">
+            <p className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground text-center mb-10">
               Sample Conversation
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-              {/* Card 1 — Greeting */}
-              <div className="border border-border/50 bg-background flex flex-col text-sm font-sans">
-                <div className="bg-foreground/5 border-b border-border/50 px-4 py-2">
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Greeting</span>
-                </div>
-                <div className="p-4 flex flex-col gap-3 flex-1">
-                  <p className="bg-primary/10 text-foreground/90 p-3 text-xs leading-relaxed">
-                    Hey there! I'm your LazyPay Assistant, always ready to assist you with anything.
-                    <br /><br />What can I help you with?
-                  </p>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-[9px] uppercase tracking-wider text-muted-foreground">Top Questions</span>
-                    {[
-                      "What is the status of my XpressLoan application?",
-                      "How many EMIs left for my loan?",
-                      "I need help with repayments",
-                      "Unable to repay my dues",
-                      "Unable to transact with LazyPay limit",
-                    ].map((opt) => (
-                      <div
-                        key={opt}
-                        className={`text-[11px] px-2.5 py-1.5 border rounded-sm leading-snug ${opt === "I need help with repayments" ? "bg-foreground text-background border-foreground font-medium" : "border-border/50 text-foreground/55"}`}
-                      >
-                        {opt}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+
+              {/* iPhone 1 — Greeting */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
+                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
+                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
+                      <span className="text-[9px] font-semibold text-black">9:41</span>
+                      <div className="flex items-center gap-1">
+                        <div className="flex items-end gap-[1.5px]">
+                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
+                        </div>
+                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
+                        <div className="flex items-center">
+                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
+                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
+                          </div>
+                        </div>
                       </div>
-                    ))}
+                    </div>
+                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
+                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
+                        <span className="text-[7px] text-white font-bold">LP</span>
+                      </div>
+                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
+                    </div>
+                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
+                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[85%]">
+                        <p className="text-[9px] text-gray-800 leading-relaxed">Hey there! I'm your LazyPay Assistant, always ready to help.<br/><br/>What can I help you with?</p>
+                      </div>
+                      <p className="text-[7.5px] uppercase tracking-wider text-gray-400 mt-1">Top Questions</p>
+                      <div className="flex flex-col gap-1">
+                        {["What is the status of my XpressLoan?","How many EMIs left?","I need help with repayments","Unable to repay my dues","Unable to transact"].map((opt) => (
+                          <div key={opt} className={`text-[8px] px-2 py-1.5 rounded-lg border leading-snug ${opt === "I need help with repayments" ? "bg-[#1C1C1E] text-white border-[#1C1C1E] font-medium" : "border-gray-200 text-gray-600 bg-white"}`}>
+                            {opt}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
+                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Greeting</span>
               </div>
 
-              {/* Card 2 — Repayments */}
-              <div className="border border-border/50 bg-background flex flex-col text-sm font-sans">
-                <div className="bg-foreground/5 border-b border-border/50 px-4 py-2">
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Repayments</span>
-                </div>
-                <div className="p-4 flex flex-col gap-3 flex-1">
-                  <p className="bg-primary/10 text-foreground/90 p-3 text-xs leading-relaxed">
-                    Of course, we're happy to help. What do you need help with?
-                  </p>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-[9px] uppercase tracking-wider text-muted-foreground">Choose an option</span>
-                    {["Repaying dues and EMIs", "Auto-payments", "Late fees and charges"].map((opt) => (
-                      <div
-                        key={opt}
-                        className={`text-[11px] px-2.5 py-1.5 border rounded-sm ${opt === "Auto-payments" ? "bg-foreground text-background border-foreground font-medium" : "border-border/50 text-foreground/55"}`}
-                      >
-                        {opt}
+              {/* iPhone 2 — Repayments */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
+                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
+                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
+                      <span className="text-[9px] font-semibold text-black">9:41</span>
+                      <div className="flex items-center gap-1">
+                        <div className="flex items-end gap-[1.5px]">
+                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
+                        </div>
+                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
+                        <div className="flex items-center">
+                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
+                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
+                          </div>
+                        </div>
                       </div>
-                    ))}
+                    </div>
+                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
+                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
+                        <span className="text-[7px] text-white font-bold">LP</span>
+                      </div>
+                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
+                    </div>
+                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
+                      <div className="self-end bg-[#1C1C1E] text-white rounded-xl rounded-tr-sm px-2.5 py-2 max-w-[85%]">
+                        <p className="text-[9px] leading-relaxed">I need help with repayments</p>
+                      </div>
+                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[85%]">
+                        <p className="text-[9px] text-gray-800 leading-relaxed">Of course, we're happy to help. What do you need help with?</p>
+                      </div>
+                      <p className="text-[7.5px] uppercase tracking-wider text-gray-400 mt-1">Choose an option</p>
+                      <div className="flex flex-col gap-1">
+                        {["Repaying dues and EMIs","Auto-payments","Late fees and charges"].map((opt) => (
+                          <div key={opt} className={`text-[8px] px-2 py-1.5 rounded-lg border leading-snug ${opt === "Auto-payments" ? "bg-[#1C1C1E] text-white border-[#1C1C1E] font-medium" : "border-gray-200 text-gray-600 bg-white"}`}>
+                            {opt}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex gap-1 mt-auto pt-2 border-t border-gray-100">
+                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Go back</button>
+                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Start over</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="border-t border-border/50 px-4 py-2 flex gap-2">
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Go back</span>
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Start over</span>
-                </div>
+                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Repayments</span>
               </div>
 
-              {/* Card 3 — Auto-payments */}
-              <div className="border border-border/50 bg-background flex flex-col text-sm font-sans">
-                <div className="bg-foreground/5 border-b border-border/50 px-4 py-2">
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Auto-payments</span>
-                </div>
-                <div className="p-4 flex flex-col gap-3 flex-1">
-                  <p className="bg-primary/10 text-foreground/90 p-3 text-xs leading-relaxed">
-                    Understood. What would you like to know about auto-payments?
-                  </p>
-                  <div className="flex flex-col gap-1.5">
-                    <span className="text-[9px] uppercase tracking-wider text-muted-foreground">Choose an option</span>
-                    {["How to set up auto-pay", "Check status of auto-pay setup", "Cancel auto-pay setup"].map((opt) => (
-                      <div
-                        key={opt}
-                        className={`text-[11px] px-2.5 py-1.5 border rounded-sm ${opt === "How to set up auto-pay" ? "bg-foreground text-background border-foreground font-medium" : "border-border/50 text-foreground/55"}`}
-                      >
-                        {opt}
+              {/* iPhone 3 — Auto-payments */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
+                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
+                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
+                      <span className="text-[9px] font-semibold text-black">9:41</span>
+                      <div className="flex items-center gap-1">
+                        <div className="flex items-end gap-[1.5px]">
+                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
+                        </div>
+                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
+                        <div className="flex items-center">
+                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
+                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
+                          </div>
+                        </div>
                       </div>
-                    ))}
+                    </div>
+                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
+                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
+                        <span className="text-[7px] text-white font-bold">LP</span>
+                      </div>
+                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
+                    </div>
+                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
+                      <div className="self-end bg-[#1C1C1E] text-white rounded-xl rounded-tr-sm px-2.5 py-2 max-w-[85%]">
+                        <p className="text-[9px] leading-relaxed">Auto-payments</p>
+                      </div>
+                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[85%]">
+                        <p className="text-[9px] text-gray-800 leading-relaxed">Understood. What would you like to know about auto-payments?</p>
+                      </div>
+                      <p className="text-[7.5px] uppercase tracking-wider text-gray-400 mt-1">Choose an option</p>
+                      <div className="flex flex-col gap-1">
+                        {["How to set up auto-pay","Check status of auto-pay","Cancel auto-pay setup"].map((opt) => (
+                          <div key={opt} className={`text-[8px] px-2 py-1.5 rounded-lg border leading-snug ${opt === "How to set up auto-pay" ? "bg-[#1C1C1E] text-white border-[#1C1C1E] font-medium" : "border-gray-200 text-gray-600 bg-white"}`}>
+                            {opt}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="flex gap-1 mt-auto pt-2 border-t border-gray-100">
+                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Go back</button>
+                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Start over</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="border-t border-border/50 px-4 py-2 flex gap-2">
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Go back</span>
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Start over</span>
-                </div>
+                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Auto-payments</span>
               </div>
 
-              {/* Card 4 — Resolution */}
-              <div className="border border-border/50 bg-background flex flex-col text-sm font-sans">
-                <div className="bg-foreground/5 border-b border-border/50 px-4 py-2">
-                  <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Resolution</span>
+              {/* iPhone 4 — Resolution */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative w-full bg-[#1C1C1E] rounded-[2.2rem] p-[3px] shadow-2xl ring-1 ring-white/10">
+                  <div className="absolute top-[10px] left-1/2 -translate-x-1/2 w-[80px] h-[22px] bg-black rounded-full z-10" />
+                  <div className="bg-white rounded-[2rem] overflow-hidden flex flex-col">
+                    <div className="flex items-center justify-between px-5 pt-4 pb-1">
+                      <span className="text-[9px] font-semibold text-black">9:41</span>
+                      <div className="flex items-center gap-1">
+                        <div className="flex items-end gap-[1.5px]">
+                          {[3,5,7,9].map(h => <div key={h} className="w-[2.5px] bg-black rounded-[1px]" style={{height: h}} />)}
+                        </div>
+                        <svg width="11" height="8" viewBox="0 0 12 9" fill="black"><path d="M6 6.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-3.54-1.96a5 5 0 0 1 7.08 0l1.06-1.06a6.5 6.5 0 0 0-9.2 0zm-1.42-1.42A7.5 7.5 0 0 1 11.96 3.12l1.04-1.04A9 9 0 0 0 .04 2.08z"/></svg>
+                        <div className="flex items-center">
+                          <div className="w-[16px] h-[8px] rounded-[2px] border border-black/60 relative flex items-center px-[1.5px]">
+                            <div className="w-[80%] h-[5px] bg-black rounded-[1px]" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="px-3 py-1.5 border-b border-gray-100 flex items-center gap-2 bg-white">
+                      <div className="w-5 h-5 rounded-full bg-[#E5477D] flex items-center justify-center">
+                        <span className="text-[7px] text-white font-bold">LP</span>
+                      </div>
+                      <span className="text-[9px] font-semibold text-black">LazyPay Assistant</span>
+                      <div className="ml-auto w-1.5 h-1.5 rounded-full bg-green-500" />
+                    </div>
+                    <div className="flex-1 bg-gray-50 px-2.5 py-2.5 flex flex-col gap-2 min-h-[240px]">
+                      <div className="self-end bg-[#1C1C1E] text-white rounded-xl rounded-tr-sm px-2.5 py-2 max-w-[85%]">
+                        <p className="text-[9px] leading-relaxed">How to set up auto-pay</p>
+                      </div>
+                      <div className="bg-[#E5477D]/15 rounded-xl rounded-tl-sm px-2.5 py-2 self-start max-w-[90%]">
+                        <p className="text-[9px] text-gray-800 leading-relaxed">Setting up auto-pay is super easy 🎉 Here's how:</p>
+                      </div>
+                      <ul className="flex flex-col gap-1.5">
+                        {[
+                          "Go to Dues → Setup Auto-pay",
+                          "Keep net-banking login handy",
+                          "Sent to your bank for verification",
+                          "We'll notify you once approved",
+                        ].map((item) => (
+                          <li key={item} className="flex gap-1.5 text-[8px] text-gray-600 leading-snug">
+                            <span className="text-[#E5477D] shrink-0">✓</span>{item}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex gap-1 mt-auto pt-2 border-t border-gray-100 flex-wrap">
+                        <button className="text-[8px] bg-[#E5477D] text-white rounded-md px-2 py-1">Go to Dues</button>
+                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Done</button>
+                        <button className="text-[8px] border border-gray-300 rounded-md px-2 py-1 text-gray-500">Go back</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-4 flex flex-col gap-3 flex-1">
-                  <p className="bg-primary/10 text-foreground/90 p-3 text-xs leading-relaxed">
-                    Setting up auto-pay for your dues and EMIs is super easy 🎉 Here's how:
-                  </p>
-                  <ul className="flex flex-col gap-2">
-                    {[
-                      "Go to Dues → Setup Auto-pay and follow the instructions",
-                      "You'll need a bank account with net-banking enabled. Keep the login details handy",
-                      "Once the setup is complete, it is sent to your bank for verification",
-                      "We'll notify you once your setup is approved by your bank. It is usually done in a few minutes.",
-                    ].map((item, i) => (
-                      <li key={i} className="flex gap-2 text-[11px] text-foreground/70 leading-snug">
-                        <span className="text-primary shrink-0">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-[11px] text-foreground/70">Here's a quick demo 👇</p>
-                  <AssetPlaceholder id="VID-AUTOPAY-DEMO" aspectRatio="16/9" description="Auto-pay setup demo video" />
-                </div>
-                <div className="border-t border-border/50 px-4 py-2 flex gap-2 flex-wrap">
-                  <span className="text-[10px] border border-primary/40 px-2 py-1 text-primary">Go to Dues</span>
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Thanks, I'm done</span>
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Go back</span>
-                  <span className="text-[10px] border border-border/50 px-2 py-1 text-muted-foreground">Start over</span>
-                </div>
+                <span className="text-[9px] uppercase tracking-widest text-muted-foreground">Resolution</span>
               </div>
+
             </div>
           </div>
 
@@ -634,40 +706,17 @@ export default function ChatbotCaseStudy() {
               <strong className="font-semibold text-foreground">discoverability</strong> and{" "}
               <strong className="font-semibold text-foreground">comprehension</strong>.
             </p>
-            {/* Contour background wrapper */}
-            <div className="relative">
-              <div className="absolute inset-0 border-2 border-dashed border-primary/10 bg-primary/[0.02] flex items-center justify-center">
-                <span className="text-[9px] font-mono text-primary/20 tracking-widest">BG-CONTOUR</span>
-              </div>
-              <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6 py-8 px-4">
-                {[
-                  { id: "IMG-APPUI-1", description: "Entry point — LazyPay home screen with chatbot tooltip" },
-                  { id: "IMG-APPUI-2", description: "Help & Support bottom sheet over home screen" },
-                  { id: "IMG-APPUI-3", description: "Chat screen with category list" },
-                  { id: "IMG-APPUI-4", description: "Chat screen showing EMI/repayment status" },
-                ].map(({ id, description }) => (
-                  <AssetPlaceholder key={id} id={id} aspectRatio="9/16" description={description} />
-                ))}
-              </div>
+            <div className="w-full overflow-hidden border border-border/10 rounded-sm">
+              <img
+                src="/chatbot-screens.avif"
+                alt="LazyPay chatbot app UI screens — entry point, Help & Support, chat screens"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>
       </motion.section>
 
-      {/* ──────────────────────────────────────────
-          Section 9 — Closing
-      ────────────────────────────────────────── */}
-      <section className="border-t border-border/50">
-        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-24 text-center">
-          <h2 className="text-4xl md:text-5xl font-serif mb-8">Thanks for reading!</h2>
-          <Link
-            href="/work"
-            className="text-muted-foreground hover:text-foreground transition-colors font-sans text-sm underline underline-offset-4"
-          >
-            ← Back to projects
-          </Link>
-        </div>
-      </section>
     </motion.article>
   );
 }
