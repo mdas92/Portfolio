@@ -562,7 +562,7 @@ export const projects: Project[] = [
     context: "LazyPay (PayU Finance)",
     year: "2022",
     duration: "2 months · XL project",
-    challenge: "82% of queries received by the call centre — over 50,000 per month — could be resolved with factual information. The business needed to reduce incoming calls and improve CSAT with a faster, more satisfying support experience. In-app, 45% of new users were not repaying on time. The existing support experience was phone-first and offered no automated path to resolution.",
+    challenge: "82% of queries received by the call centre — over 50,000 per month — could be resolved with factual information. The business needed to reduce incoming calls and improve CSAT with a faster, more satisfying support experience. The existing support experience was phone-first and offered no automated path to resolution.",
     whatIDid: [],
     result: "Delivered a full decision tree spanning 5 product lines — one of the most structurally complex content projects I have led. Phase I covered Help & Support with simple decision-tree logic; Phase II scope included NLP and in-app ticket raising, informed directly by prototype findings.",
     image: "/images/projects/chatbot/01_cover_thumbnail.svg",
