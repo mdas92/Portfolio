@@ -181,6 +181,7 @@ export const projects: Project[] = [
   },
   {
     slug: "content-maps",
+    archived: true,
     tag: "Content Strategy · Methodology",
     title: "Content Maps: Building the Shared Language for Agentic Content Strategy",
     summary: "Turned a one-off planning habit into Aampe's standard strategic artifact — defined, templated, named, taught, paired with AI tooling, and credited in closed-won deals.",
