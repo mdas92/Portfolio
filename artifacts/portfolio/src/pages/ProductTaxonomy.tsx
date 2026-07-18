@@ -50,7 +50,7 @@ export default function ProductTaxonomy() {
         </Link>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 tracking-tight leading-tight">
-          Product Taxonomy: renaming an AI product while it runs
+          What's in a Name? Defining Product Taxonomy for Aampe
         </h1>
 
         <p className="text-lg md:text-xl font-sans text-muted-foreground mb-12 max-w-3xl leading-relaxed">
@@ -306,53 +306,6 @@ export default function ProductTaxonomy() {
           </Act>
         </motion.section>
 
-        {/* Deliverables */}
-        <motion.section
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-14"
-        >
-          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
-            The deliverables
-          </h2>
-          <h3 className="text-2xl md:text-3xl font-serif mb-8">Glossary and rollout plan</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <a
-              href="/images/projects/product-taxonomy/Aampe_Product_Glossary.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="group block border border-border/50 rounded overflow-hidden hover:border-primary transition-colors"
-            >
-              <img
-                src="/images/projects/product-taxonomy/glossary-preview.png"
-                alt="Product Glossary preview - nine ratified entities with definitions, examples, and decisions"
-                className="w-full object-cover border-b border-border/50"
-              />
-              <div className="p-4 flex items-center justify-between">
-                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">Product Glossary (PDF)</span>
-                <span className="text-xs text-muted-foreground">↗</span>
-              </div>
-            </a>
-            <a
-              href="/images/projects/product-taxonomy/Terminology_Implementation_Plan.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="group block border border-border/50 rounded overflow-hidden hover:border-primary transition-colors"
-            >
-              <img
-                src="/images/projects/product-taxonomy/plan-preview.png"
-                alt="Implementation Plan preview - scoping, migration mapping, change management, rollout sequence"
-                className="w-full object-cover border-b border-border/50"
-              />
-              <div className="p-4 flex items-center justify-between">
-                <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">Implementation Plan (PDF)</span>
-                <span className="text-xs text-muted-foreground">↗</span>
-              </div>
-            </a>
-          </div>
-        </motion.section>
 
         {/* Challenges */}
         <motion.section
@@ -401,29 +354,6 @@ export default function ProductTaxonomy() {
           </div>
         </motion.section>
 
-        {/* Reflection */}
-        <motion.section
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-14"
-        >
-          <h2 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground border-b border-border/50 pb-4 mb-8">
-            Reflection
-          </h2>
-          <p className="text-lg text-foreground/80 leading-relaxed font-light mb-4">
-            Naming a running AI product isn't a copywriting exercise - it's product work with a
-            deadline problem: the longer you wait, the more the wrong words get load-bearing.
-          </p>
-          <p className="text-lg text-foreground/80 leading-relaxed font-light">
-            Being in every customer session gave me the evidence no internal survey could
-            generate. The job wasn't picking better words - it was proving, with recordings and
-            recurring confusion, exactly which words were costing the company time and trust,
-            then building the process that could decide their replacements and make the decision
-            stick.
-          </p>
-        </motion.section>
 
       </div>
     </motion.article>
