@@ -183,17 +183,27 @@ export default function About() {
                     {item.date}
                   </div>
                 </div>
-                <div className={`flex flex-col gap-2 ${item.id === 5 || item.id === 4 ? "md:col-span-4" : "md:col-span-8"}`}>
+                <div className={`flex flex-col gap-2 ${item.id === 5 || item.id === 4 || item.id === 0 ? "md:col-span-4" : "md:col-span-8"}`}>
                   <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">
                     {item.role}
                   </h3>
                   <div className="text-muted-foreground font-medium mb-2">
-                    {item.company}
+                    {item.id === 0 ? "Aampe (acquired by MoEngage)" : item.company}
                   </div>
                   <p className="text-foreground/80 leading-relaxed font-light">
                     {item.description}
                   </p>
                 </div>
+                {item.id === 0 && (
+                  <div className="md:col-span-4 flex items-start justify-end">
+                    <img
+                      src="/aampe-photo.jpg"
+                      alt="Aampe stickers"
+                      className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
+                      style={{ aspectRatio: "3/4", objectPosition: "center top" }}
+                    />
+                  </div>
+                )}
                 {item.id === 5 && (
                   <div className="md:col-span-4 flex items-start justify-end">
                     <img
