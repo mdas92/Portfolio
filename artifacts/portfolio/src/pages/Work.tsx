@@ -57,7 +57,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       className={`group flex flex-col rounded-xl border border-border bg-background transition-all overflow-hidden ${isSoon ? "cursor-default" : "hover:border-primary/40 hover:bg-muted/40 cursor-pointer"}`}
     >
       {/* Visual thumbnail */}
-      <div className={`w-full overflow-hidden border-b border-border relative ${isSoon ? "opacity-30 grayscale" : ""}`}>
+      <div className="w-full overflow-hidden border-b border-border relative">
         {cardVisuals[project.slug] || (
           <div className="w-full h-[110px] bg-muted flex items-center justify-center">
             <span className="font-serif text-4xl text-muted-foreground/30">
@@ -69,20 +69,25 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
       {/* Card body */}
       <div className="flex flex-col gap-3 p-5 flex-1">
+        {isSoon && (
+          <span className="self-start text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-black">
+            Coming Soon
+          </span>
+        )}
         <div className="flex items-start justify-between gap-3">
-          <span className={`text-[10px] font-sans font-semibold uppercase tracking-widest leading-tight ${isSoon ? "text-muted-foreground/40" : "text-primary"}`}>
+          <span className="text-[10px] font-sans font-semibold uppercase tracking-widest text-primary leading-tight">
             {project.tag}
           </span>
-          <span className={`flex-shrink-0 font-sans text-[11px] tabular-nums ${isSoon ? "text-muted-foreground/40" : "text-muted-foreground"}`}>
+          <span className="flex-shrink-0 font-sans text-[11px] text-muted-foreground tabular-nums">
             {project.year}
           </span>
         </div>
 
-        <h2 className={`font-serif text-xl leading-tight transition-colors ${isSoon ? "text-foreground/30" : "group-hover:text-primary"}`}>
+        <h2 className="font-serif text-xl leading-tight group-hover:text-primary transition-colors">
           {project.title}
         </h2>
 
-        <p className={`text-sm font-sans leading-relaxed line-clamp-2 flex-1 ${isSoon ? "text-foreground/20" : "text-foreground/60"}`}>
+        <p className="text-sm font-sans text-foreground/60 leading-relaxed line-clamp-2 flex-1">
           {project.summary}
         </p>
 
@@ -90,11 +95,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           {project.confidential && (
             <span className="text-[9px] uppercase tracking-wider font-bold text-muted-foreground/60">Confidential</span>
           )}
-          {isSoon ? (
-            <span className="text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-muted-foreground/50 border border-border/50 px-2 py-1">
-              Coming Soon
-            </span>
-          ) : (
+          {!isSoon && (
             <span className="ml-auto text-xs font-sans font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
               Read case study →
             </span>
