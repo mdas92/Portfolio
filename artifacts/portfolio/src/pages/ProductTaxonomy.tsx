@@ -279,9 +279,6 @@ export default function ProductTaxonomy() {
               <li>The same client's data lead, months later: "is this multiple labels per message/variant and the UI is confusing me?"</li>
               <li>Even internal reporting threads stall on formula vs. message vs. alternate before the actual question can be answered.</li>
             </ul>
-            <PullQuote cite="Notes mined from a client content session I ran, October 2025">
-              "Customers understand the mental model (messages → parts → variants → labels), but not the vocabulary."
-            </PullQuote>
           </Act>
 
           <Act time="Act II · Oct–Dec 2025 - Making it a product problem" heading="Turned recurring confusion into an evidence-backed audit">
@@ -354,6 +351,9 @@ export default function ProductTaxonomy() {
           </div>
         </motion.section>
 
+        <PullQuote cite="Notes mined from a client content session I ran, October 2025">
+          "Customers understand the mental model (messages → parts → variants → labels), but not the vocabulary."
+        </PullQuote>
 
       </div>
     </motion.article>
