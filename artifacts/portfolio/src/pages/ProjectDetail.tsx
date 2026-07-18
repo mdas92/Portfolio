@@ -7,7 +7,6 @@ import {
   TaxVisual,
   SuperappVisual,
   ContentMapsVisual,
-  ProductTaxonomyVisual,
   PlaybookVisual
 } from "../components/ProjectCardVisuals";
 import {
@@ -52,7 +51,6 @@ const heroVisuals: Record<string, React.ReactNode> = {
   "tax-onboarding": <TaxVisual />,
   "superapp-l10n": <SuperappVisual />,
   "content-maps": <ContentMapsVisual />,
-  "product-taxonomy": <ProductTaxonomyVisual />,
   "playbook": <PlaybookVisual />,
 };
 
