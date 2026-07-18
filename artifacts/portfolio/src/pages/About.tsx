@@ -17,13 +17,29 @@ export default function About() {
       className="flex-1 flex flex-col px-6 md:px-16 lg:px-24 py-12 md:py-24 max-w-7xl mx-auto w-full"
     >
       <div className="mb-8 md:mb-12">
-        <div 
-          className="inline-block px-4 py-2 border-2 border-foreground mb-8 w-fit rotate-[-2deg] bg-background font-sans"
+        <motion.div
+          initial="rest"
+          whileHover="hover"
+          animate="rest"
+          className="inline-block px-4 py-2 border-2 border-foreground mb-8 w-fit rotate-[-2deg] bg-background font-sans cursor-default"
         >
           <span className="font-bold uppercase tracking-wider text-xs md:text-sm">
-            hi, i'm mohana 👋
+            hi, i'm mohana{" "}
+            <motion.span
+              className="inline-block origin-bottom-right"
+              variants={{
+                rest: { rotate: 0, scale: 1 },
+                hover: {
+                  rotate: [0, 20, -8, 18, -5, 12, 0],
+                  scale: [1, 1.4, 1.4, 1.4, 1.4, 1.35, 1],
+                  transition: { duration: 0.8, ease: "easeInOut" },
+                },
+              }}
+            >
+              👋
+            </motion.span>
           </span>
-        </div>
+        </motion.div>
       </div>
       <h1 className="text-[2.25rem] sm:text-[3rem] md:text-[3.75rem] lg:text-[4.75rem] leading-[0.95] tracking-[-0.03em] font-serif mb-10">
         writer<span className="text-primary">.</span> content strategist<span className="text-primary">.</span> <br className="hidden md:block" /> 
