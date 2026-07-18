@@ -121,10 +121,8 @@ export default function Work() {
       <div className="px-6 md:px-14 py-12 md:py-20 max-w-6xl mx-auto w-full">
         {/* Page header */}
         <header className="mb-10 md:mb-14">
-          <span className="text-[11px] uppercase tracking-[0.2em] font-sans font-medium text-muted-foreground block mb-3">
-            Portfolio
-          </span>
-          <h1 className="text-5xl md:text-7xl font-serif tracking-tight">Work</h1>
+          <span className="text-[11px] uppercase tracking-[0.2em] font-sans font-medium text-muted-foreground block mb-3">SELECTED WORK</span>
+          <h1 className="text-5xl md:text-7xl font-serif tracking-tight">What I've<br />built.</h1>
         </header>
 
         {/* 2-column card grid */}
