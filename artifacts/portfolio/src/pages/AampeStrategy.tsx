@@ -300,45 +300,12 @@ function Pill({ label, cls }: { label: string; cls: string }) {
 
 function ContentMapVisual() {
   return (
-    <div className="overflow-x-auto border border-border/40 rounded-sm">
-      <table className="w-full text-xs font-sans border-collapse min-w-[760px]">
-        <thead>
-          <tr className="bg-muted/20 border-b border-border/40">
-            {["Sub-feature", "Content Type", "Topic", "Example", "Impact", "Status"].map((h) => (
-              <th key={h} className="text-left px-3 py-2.5 text-[9px] uppercase tracking-[0.15em] font-semibold text-muted-foreground border-r border-border/20 last:border-r-0 whitespace-nowrap">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {CM_DATA.map((group, gi) =>
-            group.rows.map((row, ri) => (
-              <tr key={`${gi}-${ri}`} className={`border-b border-border/[0.15] ${ri === 0 && gi > 0 ? "border-t border-border/30" : ""}`}>
-                {ri === 0 && (
-                  <td
-                    rowSpan={group.rows.length}
-                    className="px-3 py-2.5 font-sans font-semibold text-foreground/75 align-top border-r border-border/20 whitespace-nowrap text-[11px]"
-                  >
-                    {group.subfeature}
-                  </td>
-                )}
-                <td className="px-3 py-2.5 border-r border-border/20">
-                  <Pill label={row.ct} cls={CT_COLORS[row.ct] ?? "bg-muted text-muted-foreground"} />
-                </td>
-                <td className="px-3 py-2.5 text-foreground/75 border-r border-border/20 whitespace-nowrap">{row.topic}</td>
-                <td className="px-3 py-2.5 text-foreground/55 border-r border-border/20 leading-relaxed">{row.example}</td>
-                <td className="px-3 py-2.5 border-r border-border/20">
-                  <Pill label={row.impact} cls={IMPACT_COLORS[row.impact]} />
-                </td>
-                <td className="px-3 py-2.5">
-                  <Pill label={row.status} cls={STATUS_COLORS[row.status]} />
-                </td>
-              </tr>
-            ))
-          )}
-        </tbody>
-      </table>
+    <div className="border border-border/10 overflow-hidden">
+      <img
+        src="/content-map.png"
+        alt="Content map sample — feature, content type, topic, example, impact, and status columns"
+        className="w-full h-auto"
+      />
     </div>
   );
 }
