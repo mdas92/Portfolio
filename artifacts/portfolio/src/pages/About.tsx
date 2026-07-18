@@ -132,14 +132,14 @@ export default function About() {
                   className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
                 >
                   {/* Stacked dates */}
-                  <div className="md:col-span-3 flex flex-col gap-10">
+                  <div className="md:col-span-3 flex flex-col justify-between">
                     <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{item.date}</div>
                     {seniorEntry && (
                       <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{seniorEntry.date}</div>
                     )}
                   </div>
                   {/* Stacked text — both PayU roles */}
-                  <div className="md:col-span-4 flex flex-col gap-10">
+                  <div className="md:col-span-4 flex flex-col justify-between">
                     <div className="flex flex-col gap-2">
                       <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">{item.role}</h3>
                       <div className="text-muted-foreground font-medium mb-2">{item.company}</div>
