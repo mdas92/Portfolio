@@ -43,6 +43,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "aampe-strategy",
+    tag: "Content Strategy · Infrastructure",
+    title: "Content Strategy for a Million Agents",
+    summary: "How I turned content strategy into infrastructure — building the semantic layer powering agentic personalisation at scale.",
+    role: "Content Strategist & Methodology Owner",
+    context: "Aampe — AI-powered lifecycle marketing platform",
+    year: "2025",
+    featured: true,
+    challenge: "",
+    whatIDid: [],
+    result: "",
+    image: "",
+  },
+  {
     slug: "product-taxonomy",
     tag: "Information Architecture · Product Language",
     title: "What's in a Name? Defining Product Taxonomy for Aampe",

@@ -21,9 +21,11 @@ import {
   RewardsVisual,
   GreetingVisual,
   ShoppingVisual,
+  AampeStrategyVisual,
 } from "../components/ProjectCardVisuals";
 
 const cardVisuals: Record<string, React.ReactNode> = {
+  "aampe-strategy": <AampeStrategyVisual compact />,
   "product-taxonomy": <ProductTaxonomyVisual compact />,
   "content-maps": <ContentMapsVisual compact />,
   "fintech-overhaul": <FintechVisual compact />,

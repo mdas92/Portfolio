@@ -511,3 +511,52 @@ export function ShoppingVisual({ compact }: { compact?: boolean }) {
     </div>
   );
 }
+
+export function AampeStrategyVisual({ compact }: { compact?: boolean }) {
+  const h = compact ? 110 : 192;
+  const COLS = 20;
+  const ROWS = compact ? 6 : 10;
+  const DOT = compact ? 4 : 6;
+  const GAP = compact ? 15 : 17;
+  // A diagonal band of highlighted dots representing the "semantic layer"
+  const highlighted = new Set([
+    22, 23, 38, 39, 40, 55, 56, 57, 58, 72, 73, 74, 75, 91, 92, 93, 110, 111,
+  ]);
+
+  return (
+    <div style={{ background: C.white, height: h, width: '100%', position: 'relative', overflow: 'hidden' }}>
+      {/* Dot matrix */}
+      <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0 }}>
+        {Array.from({ length: ROWS }, (_, r) =>
+          Array.from({ length: COLS }, (_, c) => {
+            const idx = r * COLS + c;
+            const hi = highlighted.has(idx);
+            return (
+              <circle
+                key={idx}
+                cx={8 + c * GAP}
+                cy={8 + r * GAP}
+                r={hi ? DOT / 2 + 1 : DOT / 2}
+                fill={hi ? C.violet : C.violetLight}
+                opacity={hi ? 0.8 : 0.28}
+              />
+            );
+          })
+        )}
+      </svg>
+      {/* Scale label — bottom right */}
+      <div style={{ position: 'absolute', bottom: compact ? 10 : 18, right: compact ? 12 : 18, textAlign: 'right' }}>
+        <div style={{ fontSize: compact ? 26 : 38, fontFamily: 'Londrina Solid, serif', color: C.dark, lineHeight: 1 }}>
+          1M+
+        </div>
+        <div style={{ fontSize: 8, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, color: C.muted, letterSpacing: '0.14em', textTransform: 'uppercase' as const, marginTop: 2 }}>
+          Agents
+        </div>
+      </div>
+      {/* Layer label — top left */}
+      <div style={{ position: 'absolute', top: compact ? 10 : 16, left: compact ? 10 : 16, fontSize: 8, fontFamily: 'DM Sans, sans-serif', fontWeight: 700, color: C.violet, letterSpacing: '0.14em', textTransform: 'uppercase' as const, opacity: 0.7 }}>
+        Semantic Layer
+      </div>
+    </div>
+  );
+}
