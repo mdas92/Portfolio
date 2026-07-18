@@ -11,24 +11,24 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: hsl(var(--border));
 
-  --font-sans: "Space Grotesk", sans-serif;
-  --font-serif: "DM Serif Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Londrina Solid", cursive;
 }
 
 :root {
-  /* #FFFCF0 — warm cream */
-  --background: 48 100% 97%;
-  /* #0D3B2E — deep forest green */
-  --foreground: 163 64% 14%;
-  /* #C45C26 — burnt sienna */
-  --primary: 21 68% 46%;
-  --primary-foreground: 48 100% 97%;
+  /* White */
+  --background: 0 0% 100%;
+  /* Near-black #0C0C0C */
+  --foreground: 0 0% 5%;
+  /* Violet #6D28D9 */
+  --primary: 263 70% 50%;
+  --primary-foreground: 0 0% 100%;
 
-  /* Slightly darker cream */
-  --muted: 48 50% 93%;
-  --muted-foreground: rgba(13,59,46,0.55);
+  /* Light gray */
+  --muted: 0 0% 96%;
+  --muted-foreground: rgba(102, 102, 102, 0.9);
 
-  --border: 163 15% 82%;
+  --border: 0 0% 91%;
 }
 
 @layer base {
@@ -37,14 +37,14 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-color: #FFFCF0;
-    color: #0D3B2E;
+    background-color: #ffffff;
+    color: #0c0c0c;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif text-foreground;
   }
   ::selection {
-    background-color: #C5F135;
-    color: #0D3B2E;
+    background-color: #D8C5FF;
+    color: #6D28D9;
   }
 }
