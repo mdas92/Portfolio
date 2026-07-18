@@ -50,12 +50,12 @@ export default function ProductTaxonomy() {
         </Link>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-6 tracking-tight leading-tight">
-          What's in a Name? Defining Product Taxonomy for Aampe
+          Product Taxonomy: renaming an AI product while it runs
         </h1>
 
         <p className="text-lg md:text-xl font-sans text-muted-foreground mb-12 max-w-3xl leading-relaxed">
           Aampe's product objects grew their names ad hoc, and customers were paying the tax. I
-          helped drive the standardization of the product's taxonomy - the evidence, the
+          helped drive the standardization of the product's taxonomy: the evidence, the
           framework, the decision session, the ratified glossary, and the implementation plan.
         </p>
 
