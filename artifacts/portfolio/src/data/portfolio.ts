@@ -382,18 +382,43 @@ export const projects: Project[] = [
     context: "Internal deliverable distributed to all active clients",
     year: "2025",
     featured: true,
-    challenge: "As the client portfolio grew, onboarding was inconsistent and time-consuming. There was no single resource covering label strategy, message architecture, and best practices — from first-day clients to high-maturity accounts.",
-    whatIDid: [
-      "Labels and content strategies — how to structure a label library, what makes a good value proposition, common mistakes.",
-      "Step-by-step message creation guide: from brief to published campaign.",
-      "Best practices: writing copy that supports agent learning, not just copy that sounds good.",
-      "Beyond the basics: advanced creative strategies for high-maturity accounts.",
-      "Content Personalisation Map: a visual framework for identifying gaps across audiences and use cases.",
-      "Content Scorecard: a maturity model for evaluating how far along a client is and what to focus on next."
-    ],
+    challenge: "",
+    whatIDid: [],
     result: "Adopted company-wide within days of internal launch. Distributed to all active clients. Used as a live reference in onboarding sessions, working visits, and sales demos throughout April.",
-    quote: "This deck is on fire… Components never were so clear.",
-    image: "/playbook.png"
+    quote: "This is an incredible deck… should be mandatory during onboarding.",
+    image: "/playbook.png",
+    sections: [
+      {
+        heading: "The problem: no shared resource for content methodology",
+        content: "As the client portfolio at Aampe grew, onboarding new clients onto the platform's content methodology was inconsistent and time-consuming. There was no single resource that covered label strategy, message architecture, creative best practices, and how to think about content maturity — leaving account teams to reinvent the wheel for each new engagement. Every kick-off relied on tribal knowledge, and clients at different maturity stages received uneven guidance.",
+      },
+      {
+        heading: "What the Playbook covers",
+        content: "I built the Content Playbook — a comprehensive Figma deck covering everything a client or account manager needs to create effective agentic content.",
+        bullets: [
+          "**Labels and content strategies.** How to structure a label library, what makes a good value proposition, and common mistakes to avoid — including how to think about mutual exclusivity and how many labels is too many.",
+          "**Step-by-step message creation guide.** From brief to published campaign: how to write for agent learning, not just for clicks.",
+          "**Best practices.** Writing copy that supports agent learning, not just copy that sounds good — the difference between what performs and what teaches the agent something useful.",
+          "**Beyond the basics.** Advanced creative strategies for high-maturity accounts: when to experiment, how to structure creative variety, and how to push past evergreen content.",
+          "**Content Personalisation Map.** A visual framework for identifying gaps in an account's message coverage across audiences and use cases — an early version of the content mapping methodology I later scaled company-wide.",
+          "**Content Scorecard.** A maturity model for evaluating how far along a client is and what to focus on next — giving account teams a shared language for client progression.",
+        ],
+      },
+      {
+        heading: "Distribution and reach",
+        content: "The Playbook was shared across the entire client base from March 2025 onwards — used as a live reference in onboarding sessions, working visits, and sales demos. Clients who received it included a major sports league, a fintech rewards app, a barbershop booking platform, a Southeast Asian super app, a travel accommodation platform, a food delivery app, and a tax filing service.",
+        note: "\"This deck is on fire… Components never were so clear.\"",
+      },
+      {
+        heading: "Outcomes",
+        bullets: [
+          "Adopted company-wide within days of its internal launch — passed from account team to account team without prompting.",
+          "Became the standard reference for client onboarding sessions and working visits throughout April and beyond.",
+          "Used in sales demos to communicate the methodology's depth and structure to prospective clients.",
+          "The Content Personalisation Map concept inside it later evolved into the full Content Maps methodology — credited in a $90K closed-won deal.",
+        ],
+      },
+    ],
   },
   {
     slug: "barbershop-booking",
