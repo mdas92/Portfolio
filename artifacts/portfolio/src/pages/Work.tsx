@@ -137,6 +137,19 @@ export default function Work() {
             <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
+
+        {/* More work CTA */}
+        <div className="mt-16 pt-10 border-t border-border/50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <p className="text-base font-sans text-foreground/60 leading-relaxed max-w-md">
+            If you'd like to see more of the work I've done over the past 12 years of my career, reach out to me on my email.
+          </p>
+          <a
+            href="mailto:mohanadas.dsi@gmail.com?subject=Hi!%20I'd%20love%20to%20see%20more%20of%20your%20work!"
+            className="flex-shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground font-sans font-semibold text-sm px-5 py-2.5 rounded-md hover:bg-primary/90 transition-colors"
+          >
+            Request Samples
+          </a>
+        </div>
       </div>
     </div>
   );
