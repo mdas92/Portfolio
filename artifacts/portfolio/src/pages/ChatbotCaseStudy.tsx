@@ -725,13 +725,6 @@ export default function ChatbotCaseStudy() {
       >
         <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
           <StepHeading emoji="2️⃣" title="Guidelines and Framework" />
-          <div className="w-full overflow-hidden border border-border/10 rounded-sm mb-12">
-            <img
-              src="/chatbot-common.avif"
-              alt="Common chatbot UI components and framework"
-              className="w-full h-auto"
-            />
-          </div>
 
           <div className="flex flex-col divide-y divide-border/50">
             {[
@@ -787,23 +780,34 @@ export default function ChatbotCaseStudy() {
             tested the top 3 queries for:
           </p>
 
-          {/* Prototype image + IA card */}
+          {/* Prototype image + IA card + common components */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            <div className="overflow-hidden border border-border/10 rounded-sm">
+            {/* Left: IA image at natural ratio */}
+            <div className="overflow-hidden border border-border/10">
               <img
                 src="/chatbot-ia.avif"
                 alt="Information Architecture prototype test — chatbot"
-                className="w-full h-full object-cover"
+                className="w-full h-auto"
               />
             </div>
-            <div className="border border-border/50 p-8 flex flex-col justify-center gap-4">
-              <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
-                Information Architecture
-              </h3>
-              <p className="text-foreground/80 font-sans leading-relaxed">
-                What is the user's mental model? Do they seek help based on Use cases or based on Products? What should
-                our top-level categories look like?
-              </p>
+            {/* Right: IA card stacked above common.avif */}
+            <div className="flex flex-col gap-5">
+              <div className="border border-border/50 p-8 flex flex-col gap-4">
+                <h3 className="text-[10px] uppercase tracking-[0.2em] font-medium text-muted-foreground">
+                  Information Architecture
+                </h3>
+                <p className="text-foreground/80 font-sans leading-relaxed">
+                  What is the user's mental model? Do they seek help based on Use cases or based on Products? What should
+                  our top-level categories look like?
+                </p>
+              </div>
+              <div className="overflow-hidden border border-border/10">
+                <img
+                  src="/chatbot-common.avif"
+                  alt="Common chatbot UI components and framework"
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
 
