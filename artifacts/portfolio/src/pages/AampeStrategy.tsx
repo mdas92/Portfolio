@@ -375,6 +375,53 @@ function PanelContentMap() {
 
       <Placeholder label="AI-assisted content map workflow — coming soon" />
 
+      {/* Impact */}
+      <div className="flex flex-col gap-8">
+        <div>
+          <span className="text-[9px] uppercase tracking-[0.2em] font-sans font-bold text-primary/70 block mb-6">Impact</span>
+          {/* Stat highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            {[
+              { stat: "$90K", label: "Credited in a closed-won deal" },
+              { stat: "~15", label: "People trained company-wide" },
+              { stat: "15+", label: "Accounts with deployed maps" },
+              { stat: "60-day", label: "Proposed certification for new hires" },
+            ].map(({ stat, label }) => (
+              <div key={stat} className="border border-border/30 p-5">
+                <div className="font-serif text-3xl text-foreground mb-2">{stat}</div>
+                <div className="text-xs font-sans text-foreground/55 leading-snug">{label}</div>
+              </div>
+            ))}
+          </div>
+          {/* Outcome cards */}
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              {
+                type: "Commercial",
+                body: "Credited as a key session in the $90K Mintos closed-won deal. A prospect called the map-led deck 'the selling point of the session.'",
+              },
+              {
+                type: "Operational",
+                body: "Went from 'doesn't exist on accounts a year in' to a standard expected at onboarding and QBRs, embedded in the 4-session onboarding methodology.",
+              },
+              {
+                type: "Organizational",
+                body: "~15 people across every function built full end-to-end maps; proposed as a 60-day certification for all new hires.",
+              },
+              {
+                type: "Technical",
+                body: "Designed a repeatable Content Map creation workflow, with LLMs used to automate the process.",
+              },
+            ].map(({ type, body }) => (
+              <div key={type} className="border border-border/30 p-5 flex flex-col gap-2">
+                <span className="text-[9px] uppercase tracking-[0.18em] font-sans font-bold text-foreground/40">{type}</span>
+                <p className="text-sm font-sans text-foreground/70 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Blog link */}
       <div className="border-t border-border/30 pt-8">
         <p className="text-sm font-sans text-foreground/60">
