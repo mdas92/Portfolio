@@ -48,7 +48,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
   const href = `/work/${project.slug}`;
   const isSoon = project.comingSoon;
 
-  const inner = (
+  const cardBody = (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -69,11 +69,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
       {/* Card body */}
       <div className="flex flex-col gap-3 p-5 flex-1">
-        {isSoon && (
-          <span className="self-start text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-black">
-            Coming Soon
-          </span>
-        )}
         <div className="flex items-start justify-between gap-3">
           <span className="text-[10px] font-sans font-semibold uppercase tracking-widest text-primary leading-tight">
             {project.tag}
@@ -105,8 +100,20 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     </motion.div>
   );
 
-  if (isSoon) return <div>{inner}</div>;
-  return <Link href={href}>{inner}</Link>;
+  if (isSoon) {
+    return (
+      <div className="relative">
+        {cardBody}
+        {/* White overlay greys out the entire card */}
+        <div className="absolute inset-0 rounded-xl bg-white/60 pointer-events-none" />
+        {/* COMING SOON label sits above the overlay */}
+        <span className="absolute top-[130px] left-5 z-10 text-[9px] font-sans font-bold uppercase tracking-[0.2em] text-black">
+          Coming Soon
+        </span>
+      </div>
+    );
+  }
+  return <Link href={href}>{cardBody}</Link>;
 };
 
 export default function Work() {
