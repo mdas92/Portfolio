@@ -115,53 +115,106 @@ export default function About() {
           Career
         </span>
         <div className="flex flex-col border-t border-border/50">
-          {journey.map((item, i) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
-            >
-              <div className="md:col-span-3">
-                <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">
-                  {item.date}
+          {journey.map((item, i) => {
+            // Senior UX Writer (id:2) is rendered inside the Lead UX Writer (id:1) grouped block
+            if (item.id === 2) return null;
+
+            // Lead UX Writer — group with Senior UX Writer + shared PayU photo
+            if (item.id === 1) {
+              const seniorEntry = journey.find(e => e.id === 2);
+              return (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
+                >
+                  {/* Stacked dates */}
+                  <div className="md:col-span-3 flex flex-col gap-10">
+                    <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{item.date}</div>
+                    {seniorEntry && (
+                      <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">{seniorEntry.date}</div>
+                    )}
+                  </div>
+                  {/* Stacked text — both PayU roles */}
+                  <div className="md:col-span-4 flex flex-col gap-10">
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">{item.role}</h3>
+                      <div className="text-muted-foreground font-medium mb-2">{item.company}</div>
+                      <p className="text-foreground/80 leading-relaxed font-light">{item.description}</p>
+                    </div>
+                    {seniorEntry && (
+                      <div className="flex flex-col gap-2">
+                        <h3 className="text-2xl font-serif text-foreground">{seniorEntry.role}</h3>
+                        <div className="text-muted-foreground font-medium mb-2">{seniorEntry.company}</div>
+                        <p className="text-foreground/80 leading-relaxed font-light">{seniorEntry.description}</p>
+                      </div>
+                    )}
+                  </div>
+                  {/* PayU photo spanning both roles */}
+                  <div className="md:col-span-4 flex items-start justify-end">
+                    <img
+                      src="/payu-photo.jpg"
+                      alt="Mohana at PayU"
+                      className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
+                      style={{ aspectRatio: "3/4", objectPosition: "center top" }}
+                    />
+                  </div>
+                </motion.div>
+              );
+            }
+
+            // All other entries — standard layout
+            return (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-10 md:py-12 border-b border-border/50 group"
+              >
+                <div className="md:col-span-3">
+                  <div className="text-muted-foreground font-sans font-medium text-sm tracking-wide">
+                    {item.date}
+                  </div>
                 </div>
-              </div>
-              <div className={`flex flex-col gap-2 ${item.id === 5 || item.id === 4 ? "md:col-span-4" : "md:col-span-8"}`}>
-                <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">
-                  {item.role}
-                </h3>
-                <div className="text-muted-foreground font-medium mb-2">
-                  {item.company}
+                <div className={`flex flex-col gap-2 ${item.id === 5 || item.id === 4 ? "md:col-span-4" : "md:col-span-8"}`}>
+                  <h3 className="text-2xl font-serif text-foreground group-hover:text-primary transition-colors">
+                    {item.role}
+                  </h3>
+                  <div className="text-muted-foreground font-medium mb-2">
+                    {item.company}
+                  </div>
+                  <p className="text-foreground/80 leading-relaxed font-light">
+                    {item.description}
+                  </p>
                 </div>
-                <p className="text-foreground/80 leading-relaxed font-light">
-                  {item.description}
-                </p>
-              </div>
-              {item.id === 5 && (
-                <div className="md:col-span-4 flex items-start justify-end">
-                  <img
-                    src="/adobe-photo.jpg"
-                    alt="Mohana at Adobe"
-                    className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
-                    style={{ aspectRatio: "3/4", objectPosition: "center top" }}
-                  />
-                </div>
-              )}
-              {item.id === 4 && (
-                <div className="md:col-span-4 flex items-start justify-end">
-                  <img
-                    src="/goibibo-photo.jpg"
-                    alt="Designers of GoIbibo 2020 Batch"
-                    className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
-                    style={{ aspectRatio: "3/4", objectPosition: "center top" }}
-                  />
-                </div>
-              )}
-            </motion.div>
-          ))}
+                {item.id === 5 && (
+                  <div className="md:col-span-4 flex items-start justify-end">
+                    <img
+                      src="/adobe-photo.jpg"
+                      alt="Mohana at Adobe"
+                      className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
+                      style={{ aspectRatio: "3/4", objectPosition: "center top" }}
+                    />
+                  </div>
+                )}
+                {item.id === 4 && (
+                  <div className="md:col-span-4 flex items-start justify-end">
+                    <img
+                      src="/goibibo-photo.jpg"
+                      alt="Designers of GoIbibo 2020 Batch"
+                      className="w-full max-w-[216px] md:max-w-none object-cover border border-border/30"
+                      style={{ aspectRatio: "3/4", objectPosition: "center top" }}
+                    />
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </motion.div>
     </motion.div>
