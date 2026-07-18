@@ -1,6 +1,186 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 
+const sectionAnim = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.5 },
+} as const;
+
+const V = "rgb(109,40,217)";
+const SF = "DM Sans, sans-serif";
+
+function IconUser() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={V} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function IconBot() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={V} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="11" width="18" height="10" rx="2" />
+      <circle cx="12" cy="5" r="2" />
+      <path d="M12 7v4" />
+      <path d="M8 15h.01M12 15h.01M16 15h.01" />
+    </svg>
+  );
+}
+
+function IconTag() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={V} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+      <line x1="7" y1="7" x2="7.01" y2="7" />
+    </svg>
+  );
+}
+
+function Plus() {
+  return <span style={{ fontFamily: SF, color: "rgba(0,0,0,0.3)", fontSize: 18, lineHeight: 1 }}>+</span>;
+}
+
+function AgentScaleVisual() {
+  const N = 7;
+  return (
+    <div className="border border-border/10 p-8 flex flex-col gap-6 h-full">
+      <div className="flex items-center gap-3">
+        <span className="text-[9px] uppercase tracking-[0.18em] font-sans font-semibold text-muted-foreground w-14 shrink-0">Users</span>
+        <div className="flex gap-2 flex-wrap items-center">
+          {Array.from({ length: N }).map((_, i) => (
+            <div key={i} style={{ width: 30, height: 30, borderRadius: "50%", border: "1.5px solid rgba(109,40,217,0.18)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(109,40,217,0.35)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+          ))}
+          <span className="text-xs font-sans text-muted-foreground">× 1M</span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <div className="w-14 shrink-0" />
+        <div className="flex gap-[13px]">
+          {Array.from({ length: N }).map((_, i) => (
+            <svg key={i} width="2" height="20" viewBox="0 0 2 20"><line x1="1" y1="0" x2="1" y2="20" stroke="rgba(109,40,217,0.2)" strokeWidth="1.5" strokeDasharray="3 3" /></svg>
+          ))}
+        </div>
+      </div>
+
+      <div className="flex items-center gap-3">
+        <span className="text-[9px] uppercase tracking-[0.18em] font-sans font-semibold text-primary/70 w-14 shrink-0">Agents</span>
+        <div className="flex gap-2 flex-wrap items-center">
+          {Array.from({ length: N }).map((_, i) => (
+            <div key={i} style={{ width: 30, height: 30, borderRadius: "50%", background: "rgba(109,40,217,0.09)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={V} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="10" rx="2" /><circle cx="12" cy="5" r="2" /><path d="M12 7v4" /><path d="M8 15h.01M12 15h.01M16 15h.01" />
+              </svg>
+            </div>
+          ))}
+          <span className="text-xs font-sans text-primary/60">× 1M</span>
+        </div>
+      </div>
+
+      <p className="text-[11px] font-sans text-muted-foreground leading-relaxed border-t border-border/30 pt-5 mt-1">
+        Each user gets a dedicated agent. The agent determines the optimal message, timing, and content — for that individual, at scale.
+      </p>
+    </div>
+  );
+}
+
+function MessageAnatomyVisual() {
+  return (
+    <div className="border border-border/10 overflow-hidden">
+      <div className="bg-muted/20 px-5 py-3 border-b border-border/10">
+        <span className="text-[9px] uppercase tracking-[0.16em] font-sans font-semibold text-muted-foreground">Message Anatomy</span>
+      </div>
+      <div className="p-6 flex flex-col gap-6">
+        <div>
+          <div className="text-[8px] uppercase tracking-[0.15em] font-sans font-semibold text-muted-foreground mb-2">Message Header</div>
+          <div className="border border-border/40 rounded-sm px-3 py-2 flex items-center gap-2">
+            <span className="text-xs font-sans text-foreground/50 bg-muted/50 px-2 py-0.5 rounded-sm">What's for dinner?</span>
+            <div className="ml-auto w-5 h-5 bg-primary/10 rounded-sm flex items-center justify-center">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={V} strokeWidth="2.5" strokeLinecap="round">
+                <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="text-[8px] uppercase tracking-[0.15em] font-sans font-semibold text-muted-foreground mb-2">Message</div>
+          <div className="border border-border/40 rounded-sm px-3 py-3 flex items-center flex-wrap gap-x-1 gap-y-2 text-xs font-sans">
+            <span className="text-foreground/40">Get</span>
+            <span className="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-sm font-medium">15% discount</span>
+            <span className="text-foreground/40">on the</span>
+            <span className="bg-violet-100 text-violet-700 px-2 py-0.5 rounded-sm font-medium">most asked for</span>
+            <span className="text-foreground/40">Tap here</span>
+            <span className="bg-pink-100 text-pink-700 px-2 py-0.5 rounded-sm font-medium">burgers</span>
+            <span className="text-foreground/40">in town</span>
+          </div>
+        </div>
+        <p className="text-[11px] font-sans text-muted-foreground leading-relaxed">
+          Each highlighted block is a semantic label — the signal agents use to learn what resonates with each individual user over time.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function PushNotifVisual() {
+  return (
+    <div className="flex items-center justify-center py-16 px-8">
+      <div style={{ position: "relative", width: "100%", maxWidth: 300 }}>
+        <div style={{ position: "absolute", top: -30, left: "18%", fontSize: 11, color: "#10B981", fontFamily: SF, fontWeight: 700, whiteSpace: "nowrap" }}>Greeting</div>
+        <div style={{ position: "absolute", top: -10, right: -10, fontSize: 11, color: "#8B5CF6", fontFamily: SF, fontWeight: 700, whiteSpace: "nowrap" }}>Value Proposition</div>
+        <div style={{ position: "absolute", bottom: -30, left: -10, fontSize: 11, color: "#F59E0B", fontFamily: SF, fontWeight: 700, whiteSpace: "nowrap" }}>Incentive</div>
+        <div style={{ position: "absolute", bottom: -30, right: -10, fontSize: 11, color: "#3B82F6", fontFamily: SF, fontWeight: 700, whiteSpace: "nowrap" }}>Call to action</div>
+        <div style={{ background: "#1C1C1E", borderRadius: 16, padding: "14px 16px", boxShadow: "0 24px 64px rgba(0,0,0,0.28)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+            <div style={{ width: 22, height: 22, borderRadius: 6, background: "#2D2D30", flexShrink: 0 }} />
+            <span style={{ fontSize: 10, color: "#888", fontFamily: SF }}>Your Travel App</span>
+          </div>
+          <div style={{ fontSize: 12.5, fontFamily: SF, lineHeight: 1.75, color: "white", display: "flex", flexDirection: "column", gap: 4 }}>
+            <span style={{ background: "rgba(16,185,129,0.22)", borderRadius: 4, padding: "1px 6px" }}>Planning to go to Tokyo? 🗺️</span>
+            <span style={{ background: "rgba(139,92,246,0.22)", borderRadius: 4, padding: "1px 6px" }}>Explore top-rated hotels in Shibuya.</span>
+            <span>
+              <span style={{ background: "rgba(245,158,11,0.28)", borderRadius: 4, padding: "1px 6px" }}>Enjoy 20% on select hotels.</span>{" "}
+              <span style={{ background: "rgba(59,130,246,0.28)", borderRadius: 4, padding: "1px 6px" }}>Book now!</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LabelChain({ items, variant }: { items: string[]; variant: "good" | "bad" }) {
+  const good = variant === "good";
+  const color = good ? "#166534" : "#991B1B";
+  const bg = good ? "#F0FDF4" : "#FEF2F2";
+  const border = good ? "#BBF7D0" : "#FECACA";
+  const arrowColor = good ? "#4ADE80" : "#F87171";
+  return (
+    <div className="flex items-center gap-2 flex-wrap">
+      {items.map((label, i) => (
+        <div key={i} className="flex items-center gap-2">
+          <span style={{ background: bg, border: `1px solid ${border}`, color, fontFamily: SF, fontSize: 13, fontWeight: 500, padding: "6px 14px", borderRadius: 4, whiteSpace: "nowrap" as const }}>
+            {label}
+          </span>
+          {i < items.length - 1 && (
+            <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+              <path d="M0 6h14M10 1l6 5-6 5" stroke={arrowColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function AampeStrategy() {
   return (
     <motion.article
@@ -53,6 +233,139 @@ export default function AampeStrategy() {
           </span>
         </div>
       </div>
+
+      {/* ──────────────────────────────────────────
+          Section 1 — About Aampe
+      ────────────────────────────────────────── */}
+      <motion.section {...sectionAnim} className="border-t border-border/50">
+        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <span className="text-[10px] uppercase tracking-[0.2em] font-sans font-medium text-muted-foreground block mb-8">
+                Context
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif mb-8 leading-snug">About Aampe</h2>
+              <div className="flex items-center gap-3 mb-6">
+                <IconUser />
+                <Plus />
+                <IconBot />
+              </div>
+              <p className="text-xs font-sans font-bold uppercase tracking-widest text-foreground mb-4">
+                One agent for every user, scaling to millions.
+              </p>
+              <p className="text-foreground/70 font-sans leading-relaxed">
+                When a customer brings on 1 million users, Aampe assigns a dedicated agent for each end user. This agent determines the optimal message to send, the timing, and the content that best suits each individual.
+              </p>
+            </div>
+            <AgentScaleVisual />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ──────────────────────────────────────────
+          Section 2 — How agents learn at scale
+      ────────────────────────────────────────── */}
+      <motion.section {...sectionAnim} className="border-t border-border/50 bg-foreground/[0.02]">
+        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif mb-8 leading-snug">
+                How can a million agents learn effectively at scale?
+              </h2>
+              <p className="text-foreground/70 font-sans leading-relaxed mb-5">
+                Agents don't learn directly from users; instead, they learn from labels — the taxonomy linked to each message variant in the system.
+              </p>
+              <p className="text-foreground/70 font-sans leading-relaxed mb-10">
+                To create and deliver content at scale, a machine learning product requires these labels.
+              </p>
+              <div className="flex items-center gap-3">
+                <IconUser />
+                <Plus />
+                <IconBot />
+                <Plus />
+                <IconTag />
+              </div>
+            </div>
+            <MessageAnatomyVisual />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ──────────────────────────────────────────
+          Section 3 — Push notification labeling
+      ────────────────────────────────────────── */}
+      <motion.section {...sectionAnim} className="border-t border-border/50">
+        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif mb-8 leading-snug">
+                In a push notification, content would be labeled this way
+              </h2>
+              <p className="text-foreground/70 font-sans leading-relaxed mb-10">
+                Labels serve as the framework for every message — Greeting, Value Proposition, Call to Action, and Tone. Agents utilise these labels to understand what resonates with each user over time. The label acts as a crucial signal; if it's inaccurate, the learning process is flawed.
+              </p>
+              <div className="flex items-center gap-3">
+                <IconUser />
+                <Plus />
+                <IconBot />
+                <Plus />
+                <IconTag />
+              </div>
+            </div>
+            <PushNotifVisual />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ──────────────────────────────────────────
+          Section 4 — Effective labels
+      ────────────────────────────────────────── */}
+      <motion.section {...sectionAnim} className="border-t border-border/50 bg-foreground/[0.02]">
+        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif mb-14 leading-snug max-w-3xl">
+            Effective labels lead to improved agent performance and allows for better learning across surfaces.
+          </h2>
+          <div className="flex flex-col gap-5">
+            <LabelChain
+              variant="good"
+              items={["Greeting / Friendly", "Value Prop / Discovery", "CTA / Direct", "Agent learns correctly ✓"]}
+            />
+            <LabelChain
+              variant="bad"
+              items={["Greeting / Urgency ✗", "Wrong signal", "Agent learns wrong", "Compounds at 100k/day"]}
+            />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* ──────────────────────────────────────────
+          Section 5 — Placeholder (replaces slide 08)
+      ────────────────────────────────────────── */}
+      <motion.section {...sectionAnim} className="border-t border-border/50">
+        <div className="max-w-6xl mx-auto px-6 md:px-16 lg:px-24 py-20">
+          <h2 className="text-3xl md:text-4xl font-serif mb-12 leading-snug">
+            [Section heading — placeholder]
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="border border-dashed border-border/50 p-8 flex flex-col gap-4 min-h-64">
+                <div className="w-8 h-8 border border-dashed border-border/50 rounded-sm flex items-center justify-center">
+                  <span className="text-xs font-sans text-muted-foreground/40">{n}</span>
+                </div>
+                <div className="h-4 bg-muted/30 rounded-sm w-3/4" />
+                <div className="flex flex-col gap-2 mt-2">
+                  <div className="h-3 bg-muted/20 rounded-sm w-full" />
+                  <div className="h-3 bg-muted/20 rounded-sm w-5/6" />
+                  <div className="h-3 bg-muted/20 rounded-sm w-4/5" />
+                </div>
+                <p className="text-[11px] font-sans text-muted-foreground/40 uppercase tracking-widest mt-auto">
+                  Content placeholder
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
     </motion.article>
   );
 }
