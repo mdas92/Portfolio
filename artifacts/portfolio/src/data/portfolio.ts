@@ -625,6 +625,7 @@ export const projects: Project[] = [
   },
   {
     slug: "lazycard",
+    archived: true,
     tag: "UX Writing · Fintech",
     title: "UX Writing Review for LazyCard",
     summary: "Full content audit and rewrite for a new physical and digital credit card - first project as LazyPay's first UX Writer.",
@@ -669,6 +670,7 @@ export const projects: Project[] = [
   },
   {
     slug: "expense-mgmt",
+    archived: true,
     tag: "Content Strategy · Fintech",
     title: "Exploring Expense Management",
     summary: "Research-driven IA, content strategy, and terminology framework for a new expense tracking feature - built before a single screen was designed.",
