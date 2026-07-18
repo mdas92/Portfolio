@@ -53,6 +53,147 @@ function StepHeading({ emoji, title }: { emoji: string; title: string }) {
 const LP_PINK = "#E5477D";
 const SF = "system-ui, -apple-system, sans-serif";
 
+function IADiagram() {
+  const V = "#6D28D9";
+  const W = 840;
+  const RW = 120, RH = 36;
+  const CW = 128, CH = 32;
+  const rootX = (W - RW) / 2;
+  const rootY1 = 44;
+  const connY1 = rootY1 + RH + 18;
+  const childY1 = connY1 + 28;
+  const labels1 = ["Account & Limits", "My transactions", "Repayments", "Loans & EMIs", "..."];
+  const gap = 14;
+  const totalW = labels1.length * CW + (labels1.length - 1) * gap;
+  const sx = (W - totalW) / 2;
+  const cxs = labels1.map((_, i) => sx + i * (CW + gap) + CW / 2);
+  const vsY = childY1 + CH + 32;
+  const rootY2 = vsY + 42;
+  const connY2 = rootY2 + RH + 18;
+  const childY2 = connY2 + 28;
+  const labels2 = ["Account & Limits", "PayLater", "XpressLoans", "BillPay", "..."];
+  const H = childY2 + CH + 24;
+  const dL = { stroke: "#C4B5FD", strokeWidth: 1, strokeDasharray: "5 3", fill: "none" as const };
+  const gL = { stroke: "#D1D5DB", strokeWidth: 1, strokeDasharray: "5 3", fill: "none" as const };
+  const mk = { markerWidth: 8, markerHeight: 8, refX: 6, refY: 3, orient: "auto" };
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto", display: "block" }}>
+      <defs>
+        <marker id="ia-v" {...mk}>
+          <polygon points="0,0 0,6 6,3" fill="#C4B5FD" />
+        </marker>
+        <marker id="ia-g" {...mk}>
+          <polygon points="0,0 0,6 6,3" fill="#D1D5DB" />
+        </marker>
+      </defs>
+      <text x={W/2} y={22} textAnchor="middle" fontSize={9} fontFamily="DM Sans, sans-serif" fill="#A78BFA" letterSpacing="2">USE CASES</text>
+      <rect x={rootX} y={rootY1} width={RW} height={RH} rx={5} fill={V} />
+      <text x={W/2} y={rootY1 + 22} textAnchor="middle" fontSize={13} fontFamily="DM Sans, sans-serif" fontWeight="600" fill="white">Greeting</text>
+      <line x1={W/2} y1={rootY1 + RH} x2={W/2} y2={connY1} {...dL} />
+      <line x1={cxs[0]} y1={connY1} x2={cxs[cxs.length-1]} y2={connY1} {...dL} />
+      {cxs.map((cx, i) => <line key={i} x1={cx} y1={connY1} x2={cx} y2={childY1} {...dL} markerEnd="url(#ia-v)" />)}
+      {labels1.map((label, i) => {
+        const x = sx + i * (CW + gap);
+        const dots = label === "...";
+        return (
+          <g key={i}>
+            <rect x={x} y={childY1} width={CW} height={CH} rx={5}
+              fill={dots ? "rgba(109,40,217,0.04)" : "rgba(109,40,217,0.09)"}
+              stroke={dots ? "rgba(109,40,217,0.12)" : "rgba(109,40,217,0.28)"}
+              strokeWidth={1} strokeDasharray={dots ? "4 3" : undefined} />
+            <text x={x + CW/2} y={childY1 + 21} textAnchor="middle" fontSize={11} fontFamily="DM Sans, sans-serif" fill={dots ? "#A78BFA" : V}>{label}</text>
+          </g>
+        );
+      })}
+      <text x={W/2} y={vsY + 18} textAnchor="middle" fontSize={26} fontFamily="Londrina Solid, serif" fontWeight="700" fill="#111827">VS</text>
+      <text x={W/2} y={rootY2 - 14} textAnchor="middle" fontSize={9} fontFamily="DM Sans, sans-serif" fill="#9CA3AF" letterSpacing="2">PRODUCTS</text>
+      <rect x={rootX} y={rootY2} width={RW} height={RH} rx={5} fill="rgba(109,40,217,0.12)" stroke={V} strokeWidth={1} strokeDasharray="4 3" />
+      <text x={W/2} y={rootY2 + 22} textAnchor="middle" fontSize={13} fontFamily="DM Sans, sans-serif" fontWeight="600" fill={V}>Greeting</text>
+      <line x1={W/2} y1={rootY2 + RH} x2={W/2} y2={connY2} {...gL} />
+      <line x1={cxs[0]} y1={connY2} x2={cxs[cxs.length-1]} y2={connY2} {...gL} />
+      {cxs.map((cx, i) => <line key={i} x1={cx} y1={connY2} x2={cx} y2={childY2} {...gL} markerEnd="url(#ia-g)" />)}
+      {labels2.map((label, i) => {
+        const x = sx + i * (CW + gap);
+        const dots = label === "...";
+        return (
+          <g key={i}>
+            <rect x={x} y={childY2} width={CW} height={CH} rx={5}
+              fill={dots ? "rgba(0,0,0,0.02)" : "rgba(0,0,0,0.04)"}
+              stroke={dots ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.12)"}
+              strokeWidth={1} strokeDasharray={dots ? "4 3" : undefined} />
+            <text x={x + CW/2} y={childY2 + 21} textAnchor="middle" fontSize={11} fontFamily="DM Sans, sans-serif" fill={dots ? "#9CA3AF" : "#374151"}>{label}</text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+function CommonFlowDiagram() {
+  const V = "#6D28D9";
+  const W = 640;
+  const NW = 108, NH = 38;
+  const CCW = 148, CCH = 50;
+  const qX = 222, qY = 186;
+  const qCX = qX + NW / 2;   // 276
+  const qCY = qY + NH / 2;   // 205
+  const gX = 14, gY = qY;
+  const gCY = gY + NH / 2;   // 205
+  const ccX = 396, ccY = qY + (NH - CCH) / 2; // 180
+  const ccCX = ccX + CCW / 2; // 470
+  const ccCY = ccY + CCH / 2; // 205
+  const eYv = ccY + CCH + 64; // 294
+  const eX = ccCX - NW / 2;   // 416
+  const eCX = ccCX;            // 470
+  const eCY = eYv + NH / 2;   // 313
+  const csY = eYv + NH + 56;  // 388
+  const H = csY + NH + 28;    // 454
+  const dL = { stroke: "#C4B5FD", strokeWidth: 1.2, strokeDasharray: "5 3", fill: "none" as const };
+  const mk = { markerWidth: 8, markerHeight: 8, refX: 6, refY: 3, orient: "auto" };
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} style={{ width: "100%", height: "auto", display: "block" }}>
+      <defs>
+        <marker id="cf-arr" {...mk}>
+          <polygon points="0,0 0,6 6,3" fill="#C4B5FD" />
+        </marker>
+      </defs>
+      {/* Timeout */}
+      <rect x={qX} y={18} width={NW} height={NH} rx={5} fill="rgba(0,0,0,0.04)" stroke="rgba(0,0,0,0.12)" strokeWidth={1} strokeDasharray="4 3" />
+      <text x={qCX} y={42} textAnchor="middle" fontSize={12} fontFamily="DM Sans, sans-serif" fill="#6B7280">Timeout</text>
+      {/* Query → Timeout */}
+      <line x1={qCX} y1={qY} x2={qCX} y2={56} {...dL} markerEnd="url(#cf-arr)" />
+      {/* Greeting */}
+      <rect x={gX} y={gY} width={NW} height={NH} rx={5} fill={V} />
+      <text x={gX + NW/2} y={gY + 24} textAnchor="middle" fontSize={12} fontFamily="DM Sans, sans-serif" fontWeight="600" fill="white">Greeting</text>
+      {/* Greeting → Query */}
+      <line x1={gX + NW} y1={gCY} x2={qX} y2={qCY} {...dL} markerEnd="url(#cf-arr)" />
+      {/* Query */}
+      <rect x={qX} y={qY} width={NW} height={NH} rx={5} fill="rgba(109,40,217,0.09)" stroke="rgba(109,40,217,0.28)" strokeWidth={1} />
+      <text x={qCX} y={qY + 24} textAnchor="middle" fontSize={12} fontFamily="DM Sans, sans-serif" fontWeight="600" fill={V}>Query</text>
+      {/* Query → CC fallback */}
+      <line x1={qX + NW} y1={qCY} x2={ccX} y2={ccCY} {...dL} markerEnd="url(#cf-arr)" />
+      {/* CC fallback */}
+      <rect x={ccX} y={ccY} width={CCW} height={CCH} rx={5} fill="rgba(0,0,0,0.04)" stroke="rgba(0,0,0,0.12)" strokeWidth={1} />
+      <text x={ccCX} y={ccY + 19} textAnchor="middle" fontSize={11} fontFamily="DM Sans, sans-serif" fill="#374151">Customer Care</text>
+      <text x={ccCX} y={ccY + 34} textAnchor="middle" fontSize={11} fontFamily="DM Sans, sans-serif" fill="#374151">fallback</text>
+      {/* CC → Ending */}
+      <line x1={ccCX} y1={ccY + CCH} x2={eCX} y2={eYv} {...dL} markerEnd="url(#cf-arr)" />
+      {/* Query → Ending diagonal */}
+      <path d={`M ${qCX} ${qY + NH} C ${qCX} ${eCY - 20} ${eX + 30} ${eCY} ${eX} ${eCY}`} {...dL} markerEnd="url(#cf-arr)" />
+      {/* Ending */}
+      <rect x={eX} y={eYv} width={NW} height={NH} rx={5} fill="rgba(0,0,0,0.04)" stroke="rgba(0,0,0,0.12)" strokeWidth={1} />
+      <text x={eCX} y={eYv + 24} textAnchor="middle" fontSize={12} fontFamily="DM Sans, sans-serif" fill="#374151">Ending</text>
+      {/* Ending → CSAT */}
+      <line x1={eCX} y1={eYv + NH} x2={eCX} y2={csY} {...dL} markerEnd="url(#cf-arr)" />
+      {/* CSAT */}
+      <rect x={eX} y={csY} width={NW} height={NH} rx={5} fill="rgba(0,0,0,0.04)" stroke="rgba(0,0,0,0.12)" strokeWidth={1} />
+      <text x={eCX} y={csY + 24} textAnchor="middle" fontSize={12} fontFamily="DM Sans, sans-serif" fill="#374151">CSAT</text>
+      {/* Loop: Ending → back to Greeting */}
+      <path d={`M ${eX} ${eCY} C 280 ${eYv + 80} 50 ${eYv + 80} 50 ${gCY} L ${gX + NW} ${gCY}`} {...dL} markerEnd="url(#cf-arr)" />
+    </svg>
+  );
+}
+
 function HeroVisual() {
   const H = 480;
   const W = 1400;
@@ -782,13 +923,9 @@ export default function ChatbotCaseStudy() {
 
           {/* Prototype image + IA card + common components */}
           <div className="grid md:grid-cols-2 gap-6 mb-16">
-            {/* Left: IA image at natural ratio */}
-            <div className="overflow-hidden border border-border/10">
-              <img
-                src="/chatbot-ia.avif"
-                alt="Information Architecture prototype test — chatbot"
-                className="w-full h-auto"
-              />
+            {/* Left: IA diagram */}
+            <div className="border border-border/10 p-6 flex items-center">
+              <IADiagram />
             </div>
             {/* Right: IA card stacked above common.avif */}
             <div className="flex flex-col gap-5">
@@ -801,12 +938,8 @@ export default function ChatbotCaseStudy() {
                   our top-level categories look like?
                 </p>
               </div>
-              <div className="overflow-hidden border border-border/10">
-                <img
-                  src="/chatbot-common.avif"
-                  alt="Common chatbot UI components and framework"
-                  className="w-full h-auto"
-                />
+              <div className="border border-border/10 p-5">
+                <CommonFlowDiagram />
               </div>
             </div>
           </div>
